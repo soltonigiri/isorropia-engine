@@ -1,13 +1,10 @@
 name: Data refresh
 
 on:
-  schedule:
-    - cron: '17 3 * * 1'
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   refresh:
@@ -26,38 +23,8 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Generate review candidates
-        run: npm run refresh
+      - name: Check source metadata
+        run: npm run refresh -- --check
 
       - name: Validate curated data
         run: npm run check
-
-      - name: Detect candidate changes
-        id: changes
-        shell: bash
-        run: |
-          if [[ -n "$(git status --porcelain -- data/candidates)" ]]; then
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Open draft data-refresh pull request
-        if: steps.changes.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          branch="bot/data-refresh-$(date -u +%F)-${GITHUB_RUN_ID}"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c "$branch"
-          git add data/candidates
-          git commit -m "data: propose SCP profile refresh"
-          git push --set-upstream origin "$branch"
-          gh pr create \
-            --draft \
-            --base main \
-            --head "$branch" \
-            --title "data: review SCP profile refresh" \
-            --body "Automated refresh candidates. Verify evidence and promote accepted files into data/profiles before marking this PR ready."

@@ -20,6 +20,7 @@ export {
   runMaintenance,
   verifyMaintenanceRun,
 } from './maintenance.js';
+export { writeWindowsTaskDefinition } from './windows-task.js';
 export {
   CodexQualitativeModelRunner,
   EXTRACTION_MODEL,
