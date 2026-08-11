@@ -6,6 +6,7 @@ import {
   runMaintenance,
   verifyMaintenanceRun,
 } from './maintenance.js';
+import { writeWindowsTaskDefinition } from './windows-task.js';
 
 type Parsed = {
   command: string;
@@ -58,9 +59,46 @@ async function main(): Promise<unknown> {
         repositoryDirectory,
       });
     }
+    case 'scheduled': {
+      assertOptions(parsed, ['--limit', '--repository', '--data-dir', '--private-dir']);
+      const repositoryDirectory = path.resolve(
+        stringOption(parsed, '--repository') ?? '.',
+      );
+      const run = await runMaintenance({
+        ...common,
+        dryRun: false,
+        limit: numberOption(parsed, '--limit'),
+      });
+      const publish = await publishMaintenanceRun({
+        ...common,
+        runId: run.run_id,
+        repositoryDirectory,
+      });
+      return { run, publish };
+    }
+    case 'task-definition': {
+      assertOptions(parsed, [
+        '--repository', '--private-dir', '--windows-user', '--distro', '--task-name',
+      ]);
+      const windowsUser = stringOption(parsed, '--windows-user');
+      if (!windowsUser) throw new Error('--windows-user is required');
+      return writeWindowsTaskDefinition({
+        repositoryDirectory: path.resolve(
+          stringOption(parsed, '--repository') ?? '.',
+        ),
+        windowsUser,
+        ...(common.privateDirectory ? { privateDirectory: common.privateDirectory } : {}),
+        ...(stringOption(parsed, '--distro') ? {
+          distro: stringOption(parsed, '--distro')!,
+        } : {}),
+        ...(stringOption(parsed, '--task-name') ? {
+          taskName: stringOption(parsed, '--task-name')!,
+        } : {}),
+      });
+    }
     default:
       throw new Error(
-        'Usage: maintenance <plan|run|verify|publish> [options]',
+        'Usage: maintenance <plan|run|verify|publish|scheduled|task-definition> [options]',
       );
   }
 }
