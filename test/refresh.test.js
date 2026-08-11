@@ -73,6 +73,8 @@ test('refresh writes a candidate without overwriting curated data', async (t) =>
   });
 
   assert.deepEqual(summary.changed, ['scp-500']);
+  assert.deepEqual(summary.semantic_refresh_required, ['scp-500']);
+  assert.deepEqual(summary.invalidated_interactions, []);
   assert.equal(await readFile(profilePath, 'utf8'), before);
   const candidate = JSON.parse(
     await readFile(path.join(directory, 'candidates', 'scp-500.json'), 'utf8'),

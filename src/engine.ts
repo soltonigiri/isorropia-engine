@@ -103,8 +103,8 @@ export class IsorropiaEngine {
     average_edge_score: number;
     disclaimer: typeof DISCLAIMER;
   } {
-    if (this.dataset.profiles.length !== 100) {
-      throw new Error('CENTRAL CONTAINMENT requires exactly 100 curated profiles');
+    if (this.dataset.profiles.length < 2) {
+      throw new Error('CENTRAL CONTAINMENT requires at least two curated profiles');
     }
 
     const profiles = [...this.dataset.profiles].sort((left, right) =>

@@ -150,6 +150,25 @@ export type DatasetManifest = {
   attributions: AttributionEntry[];
 };
 
+export type SelectionPolicy = {
+  version: number;
+  weekly_analysis_limit: number;
+  eligibility: {
+    domain: 'scp-wiki.wikidot.com';
+    required_tag: 'scp';
+    minimum_rating: number;
+    minimum_age_days: number;
+    require_content_file: true;
+    require_attribution: true;
+  };
+  weights: {
+    rating_percentile: number;
+    tag_novelty: number;
+    reference_adjacency: number;
+    series_underrepresentation: number;
+  };
+};
+
 export type GoldenCase = {
   id: string;
   mode: Mode;
@@ -167,6 +186,7 @@ export type Dataset = {
   edges: Edge[];
   semantics: SemanticProfile[];
   interactions: PairInteraction[];
+  selectionPolicy: SelectionPolicy;
   manifest: DatasetManifest;
   golden: GoldenCase[];
 };

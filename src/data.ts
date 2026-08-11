@@ -9,6 +9,7 @@ import type {
   PairInteraction,
   Profile,
   Rule,
+  SelectionPolicy,
   SemanticProfile,
 } from './types.js';
 
@@ -42,6 +43,9 @@ export async function loadDataset(
   const interactions = await readJson<PairInteraction[]>(
     path.join(dataDirectory, 'interactions.json'),
   );
+  const selectionPolicy = await readJson<SelectionPolicy>(
+    path.join(dataDirectory, 'selection-policy.json'),
+  );
   const edgeText = await readFile(path.join(dataDirectory, 'edges.jsonl'), 'utf8');
   const edges = edgeText
     .split('\n')
@@ -62,6 +66,7 @@ export async function loadDataset(
     edges,
     semantics,
     interactions,
+    selectionPolicy,
     manifest,
     golden,
   };

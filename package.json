@@ -21,6 +21,7 @@
     "refresh": "npm run build --silent && node dist/refresh-cli.js",
     "artifacts": "npm run build --silent && node dist/artifacts-cli.js",
     "attribution": "npm run build --silent && node dist/attribution-cli.js",
+    "maintenance": "npm run build --silent && node dist/maintenance-cli.js",
     "check": "npm run test && npm run validate",
     "prepack": "npm run check"
   },

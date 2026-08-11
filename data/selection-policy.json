@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "weekly_analysis_limit": 100,
+  "eligibility": {
+    "domain": "scp-wiki.wikidot.com",
+    "required_tag": "scp",
+    "minimum_rating": 50,
+    "minimum_age_days": 30,
+    "require_content_file": true,
+    "require_attribution": true
+  },
+  "weights": {
+    "rating_percentile": 0.4,
+    "tag_novelty": 0.25,
+    "reference_adjacency": 0.2,
+    "series_underrepresentation": 0.15
+  }
+}
