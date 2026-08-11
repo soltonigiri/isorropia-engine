@@ -4,9 +4,11 @@ import {
   DISCLAIMER,
   type Dataset,
   type Mode,
+  type PairInteraction,
   type PairResponse,
   type PairResult,
   type Profile,
+  type SemanticProfile,
 } from './types.js';
 
 export const SETTING_THRESHOLDS = {
@@ -21,11 +23,22 @@ export type Setting = keyof typeof SETTING_THRESHOLDS;
 
 export class IsorropiaEngine {
   private readonly profileMap: Map<string, Profile>;
+  private readonly semanticMap: Map<string, SemanticProfile>;
+  private readonly interactionMap: Map<string, PairInteraction>;
   readonly ruleVersion: string;
 
   constructor(private readonly dataset: Dataset) {
     this.profileMap = new Map(
       dataset.profiles.map((profile) => [profile.page_id, profile]),
+    );
+    this.semanticMap = new Map(
+      dataset.semantics.map((profile) => [profile.page_id, profile]),
+    );
+    this.interactionMap = new Map(
+      dataset.interactions.map((interaction) => [
+        interactionKey(interaction.mode, interaction.pages[0], interaction.pages[1]),
+        interaction,
+      ]),
     );
     this.ruleVersion = createHash('sha256')
       .update(JSON.stringify(dataset.rules))
@@ -45,19 +58,25 @@ export class IsorropiaEngine {
 
     const threshold = params.setting
       ? SETTING_THRESHOLDS[params.setting]
-      : 0;
+      : SETTING_THRESHOLDS['1:1'];
     const limit = params.limit ?? 5;
     const results = this.dataset.profiles
       .filter((candidate) => candidate.page_id !== query.page_id)
-      .map((candidate) =>
-        scorePair({
+      .map((candidate) => {
+        const interaction = this.interactionMap.get(
+          interactionKey(params.mode, query.page_id, candidate.page_id),
+        );
+        return scorePair({
           query,
           candidate,
           mode: params.mode,
           rules: this.dataset.rules,
           edges: this.dataset.edges,
-        }),
-      )
+          interaction,
+          semantics: this.semanticMap,
+        });
+      })
+      .filter((result): result is PairResult => result !== undefined)
       .filter((result) => result.confidence >= threshold)
       .sort(compareResults)
       .slice(0, limit);
@@ -106,8 +125,12 @@ export class IsorropiaEngine {
           mode: 'cycle',
           rules: this.dataset.rules,
           edges: this.dataset.edges,
+          interaction: this.interactionMap.get(
+            interactionKey('cycle', left.page_id, right.page_id),
+          ),
+          semantics: this.semanticMap,
         });
-        if (result.score <= 0) continue;
+        if (!result || result.confidence < SETTING_THRESHOLDS['1:1']) continue;
         const candidate = {
           cycle: [left.page_id, right.page_id],
           minimum: result.score,
@@ -128,6 +151,11 @@ export class IsorropiaEngine {
       disclaimer: DISCLAIMER,
     };
   }
+}
+
+function interactionKey(mode: Mode, left: string, right: string): string {
+  const [first, second] = [left, right].sort();
+  return `${mode}:${first}:${second}`;
 }
 
 export function normalizePageId(value: string): string {

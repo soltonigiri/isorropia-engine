@@ -35,6 +35,74 @@ export type Profile = {
   curated: true;
 };
 
+export type SemanticClaimKind = 'effect' | 'dependency' | 'narrative';
+
+export type SemanticClaim = {
+  id: string;
+  kind: SemanticClaimKind;
+  domain: string;
+  operation: string;
+  subject?: string;
+  target?: string;
+  vector?: string;
+  trigger?: string;
+  scope?: string;
+  persistence?: string;
+  outcomes: string[];
+  preconditions: string[];
+  limitations: string[];
+  evidence: Evidence[];
+};
+
+export type ReadingProfile = {
+  themes: string[];
+  forms: string[];
+  structures: string[];
+  tones: string[];
+  motifs: string[];
+};
+
+export type SemanticProfile = {
+  page_id: string;
+  source_revision: number;
+  claims: SemanticClaim[];
+  reading?: ReadingProfile;
+  reviewed_modes?: Mode[];
+};
+
+export type InteractionRubric = {
+  mode_fit: 'core' | 'strong' | 'partial';
+  coherence: 'complete' | 'conditional' | 'thematic';
+  specificity: 'article-specific' | 'domain-specific' | 'generic';
+  discovery_value: 'high' | 'medium' | 'low';
+};
+
+type InteractionBase = {
+  id: string;
+  pages: [string, string];
+  mode: Mode;
+  source_revisions: Record<string, number>;
+};
+
+export type AcceptedInteraction = InteractionBase & {
+  verdict: 'accepted';
+  mechanism: string;
+  claim_refs: Record<string, string[]>;
+  causal_chain: string[];
+  explanation: string;
+  assumption?: string;
+  limitation?: string;
+  rubric: InteractionRubric;
+  support: 'A' | 'B' | 'C';
+};
+
+export type RejectedInteraction = InteractionBase & {
+  verdict: 'rejected';
+  reason: string;
+};
+
+export type PairInteraction = AcceptedInteraction | RejectedInteraction;
+
 export type Edge = {
   from: string;
   to: string;
@@ -87,7 +155,9 @@ export type GoldenCase = {
   mode: Mode;
   left: string;
   right: string;
-  minimum_score: number;
+  expectation?: 'include' | 'exclude';
+  minimum_score?: number;
+  maximum_rank?: number;
   required_rule?: string;
 };
 
@@ -95,6 +165,8 @@ export type Dataset = {
   profiles: Profile[];
   rules: Rule[];
   edges: Edge[];
+  semantics: SemanticProfile[];
+  interactions: PairInteraction[];
   manifest: DatasetManifest;
   golden: GoldenCase[];
 };
@@ -116,6 +188,9 @@ export type PairResult = {
     query: Evidence;
     candidate: Evidence;
   };
+  causal_chain?: string[];
+  assumption?: string;
+  limitation?: string;
 };
 
 export type PairResponse = {

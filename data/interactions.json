@@ -1,0 +1,284 @@
+[
+  {
+    "id": "cycle-death-boundary-3984-2935",
+    "pages": ["scp-2935", "scp-3984"],
+    "mode": "cycle",
+    "source_revisions": { "scp-2935": 93, "scp-3984": 46 },
+    "verdict": "accepted",
+    "mechanism": "opposed-universal-death-effects",
+    "claim_refs": {
+      "scp-2935": ["universal-life-termination"],
+      "scp-3984": ["animalia-cannot-die"]
+    },
+    "causal_chain": [
+      "SCP-3984 prevents Animalia from completing death",
+      "the SCP-2935 phenomenon terminates all life and life-like entities",
+      "co-manifestation creates a boundary where neither terminal state cleanly dominates"
+    ],
+    "explanation": "Universal death prevention and universal life termination form a direct, article-specific containment-cycle hypothesis.",
+    "assumption": "The SCP-2935 effect must cross into the reality affected by SCP-3984.",
+    "limitation": "SCP-3984 does not heal accumulated injury, so equilibrium would not imply a healthy or humane state.",
+    "rubric": {
+      "mode_fit": "core",
+      "coherence": "complete",
+      "specificity": "article-specific",
+      "discovery_value": "high"
+    },
+    "support": "A"
+  },
+  {
+    "id": "reject-cycle-3984-006",
+    "pages": ["scp-006", "scp-3984"],
+    "mode": "cycle",
+    "source_revisions": { "scp-006": 62, "scp-3984": 46 },
+    "verdict": "rejected",
+    "reason": "SCP-006 repairs living tissue but neither constrains global death prevention nor supplies an opposing terminal effect."
+  },
+  {
+    "id": "reject-cycle-3984-008",
+    "pages": ["scp-008", "scp-3984"],
+    "mode": "cycle",
+    "source_revisions": { "scp-008": 66, "scp-3984": 46 },
+    "verdict": "rejected",
+    "reason": "SCP-008 infection adds injury and altered behavior without providing a stable countermeasure to SCP-3984."
+  },
+  {
+    "id": "reject-cycle-3984-009",
+    "pages": ["scp-009", "scp-3984"],
+    "mode": "cycle",
+    "source_revisions": { "scp-009": 139, "scp-3984": 46 },
+    "verdict": "rejected",
+    "reason": "A shared matter-domain tag does not establish a death-related containment cycle."
+  },
+  {
+    "id": "reject-cycle-3984-106",
+    "pages": ["scp-106", "scp-3984"],
+    "mode": "cycle",
+    "source_revisions": { "scp-106": 130, "scp-3984": 46 },
+    "verdict": "rejected",
+    "reason": "Corrosion and intangibility do not supply a mechanism that balances SCP-3984's death-prevention phenomenon."
+  },
+  {
+    "id": "breach-co-infection-008-610",
+    "pages": ["scp-008", "scp-610"],
+    "mode": "breach",
+    "source_revisions": { "scp-008": 66, "scp-610": 65 },
+    "verdict": "accepted",
+    "mechanism": "co-infection-cascade",
+    "claim_refs": {
+      "scp-008": ["infectious-lethal-prion", "infected-host-reanimation"],
+      "scp-610": ["contact-flesh-infection", "infected-body-reactivation"]
+    },
+    "causal_chain": [
+      "SCP-008 produces mobile aggressive infected hosts",
+      "contact among hosts and contaminated tissue exposes both outbreaks to the same population",
+      "SCP-610 rapidly transforms tissue and produces more aggressive spreaders"
+    ],
+    "explanation": "Two contact-driven transformations can turn the same casualties into competing, mobile propagation fronts.",
+    "assumption": "Hosts or infected material must be biologically susceptible to both anomalies.",
+    "limitation": "Neither article establishes the result of actual cross-infection.",
+    "rubric": {
+      "mode_fit": "core",
+      "coherence": "conditional",
+      "specificity": "article-specific",
+      "discovery_value": "high"
+    },
+    "support": "B"
+  },
+  {
+    "id": "breach-co-infection-008-217",
+    "pages": ["scp-008", "scp-217"],
+    "mode": "breach",
+    "source_revisions": { "scp-008": 66, "scp-217": 41 },
+    "verdict": "accepted",
+    "mechanism": "co-infection-cascade",
+    "claim_refs": {
+      "scp-008": ["infectious-lethal-prion"],
+      "scp-217": ["clockwork-virus"]
+    },
+    "causal_chain": [
+      "both anomalies spread through direct contact or bodily fluids",
+      "the same exposed population can carry two independently persistent transformations",
+      "slow SCP-217 conversion conceals cases inside the faster SCP-008 emergency"
+    ],
+    "explanation": "Overlapping transmission routes and very different progression speeds make detection, triage, and quarantine mutually harder.",
+    "assumption": "Co-infection is biologically possible even though neither source documents it.",
+    "rubric": {
+      "mode_fit": "core",
+      "coherence": "conditional",
+      "specificity": "article-specific",
+      "discovery_value": "medium"
+    },
+    "support": "B"
+  },
+  {
+    "id": "breach-operational-cascade-008-871",
+    "pages": ["scp-008", "scp-871"],
+    "mode": "breach",
+    "source_revisions": { "scp-008": 66, "scp-871": 28 },
+    "verdict": "accepted",
+    "mechanism": "operational-cascade",
+    "claim_refs": {
+      "scp-008": ["infectious-lethal-prion"],
+      "scp-871": ["continuous-consumption-containment", "self-replicating-cakes"]
+    },
+    "causal_chain": [
+      "an SCP-008 outbreak incapacitates personnel and available consumers",
+      "scheduled consumption of SCP-871 instances is missed",
+      "surviving cakes duplicate until containment becomes a second exponential emergency"
+    ],
+    "explanation": "SCP-008 does not infect the cakes; it attacks the human labor on which SCP-871 containment depends.",
+    "assumption": "The outbreak must disrupt the personnel or supply chain responsible for SCP-871 consumption.",
+    "limitation": "The interaction is operational rather than a direct anomalous reaction.",
+    "rubric": {
+      "mode_fit": "strong",
+      "coherence": "conditional",
+      "specificity": "article-specific",
+      "discovery_value": "high"
+    },
+    "support": "B"
+  },
+  {
+    "id": "reject-breach-008-049",
+    "pages": ["scp-008", "scp-049"],
+    "mode": "breach",
+    "source_revisions": { "scp-008": 66, "scp-049": 121 },
+    "verdict": "rejected",
+    "reason": "SCP-049 creates SCP-049-2 through individual surgery; its Pestilence is unidentified and the article does not establish contagious propagation."
+  },
+  {
+    "id": "reject-breach-008-7795",
+    "pages": ["scp-008", "scp-7795"],
+    "mode": "breach",
+    "source_revisions": { "scp-008": 66, "scp-7795": 18 },
+    "verdict": "rejected",
+    "reason": "SCP-7795 returns one specific person on an annual cycle and creates neither additional hosts nor a transmissible reanimation vector."
+  },
+  {
+    "id": "double-canon-chaos-3999-4010",
+    "pages": ["scp-3999", "scp-4010"],
+    "mode": "double-feature",
+    "source_revisions": { "scp-3999": 119, "scp-4010": 25 },
+    "verdict": "accepted",
+    "mechanism": "metafictional-order-and-chaos",
+    "claim_refs": {
+      "scp-3999": ["talloran-centered-metafictional-breakdown"],
+      "scp-4010": ["timeline-establishment-rewrites-reality", "talloran-and-3999-reference"]
+    },
+    "causal_chain": [
+      "SCP-3999 breaks document, reality, and authorship around Talloran",
+      "SCP-4010 tries to force contradictory Foundation history into one ordered timeline",
+      "SCP-4010 explicitly invokes Talloran's suffering inside that reconstruction"
+    ],
+    "explanation": "Read together, SCP-3999 is uncontrolled metafictional chaos and SCP-4010 is the catastrophic attempt to impose canon-wide order on it.",
+    "rubric": {
+      "mode_fit": "core",
+      "coherence": "complete",
+      "specificity": "article-specific",
+      "discovery_value": "high"
+    },
+    "support": "A"
+  },
+  {
+    "id": "double-antinarrative-timeline-2747-4010",
+    "pages": ["scp-2747", "scp-4010"],
+    "mode": "double-feature",
+    "source_revisions": { "scp-2747": 37, "scp-4010": 25 },
+    "verdict": "accepted",
+    "mechanism": "narrative-order-versus-erasure",
+    "claim_refs": {
+      "scp-2747": ["anafabula-narrative-erasure"],
+      "scp-4010": ["timeline-establishment-rewrites-reality"]
+    },
+    "causal_chain": [
+      "SCP-4010 makes reality depend on a coherent total narrative",
+      "SCP-2747 describes a pattern that removes narratives and their containing realities",
+      "the pair explores opposite terminal consequences of treating fiction as structure"
+    ],
+    "explanation": "One article assembles canon until reality changes; the other follows an anti-narrative until the containing fiction disappears.",
+    "rubric": {
+      "mode_fit": "core",
+      "coherence": "complete",
+      "specificity": "article-specific",
+      "discovery_value": "medium"
+    },
+    "support": "B"
+  },
+  {
+    "id": "double-reader-canon-4010-5999",
+    "pages": ["scp-4010", "scp-5999"],
+    "mode": "double-feature",
+    "source_revisions": { "scp-4010": 25, "scp-5999": 84 },
+    "verdict": "accepted",
+    "mechanism": "reader-activated-metafiction",
+    "claim_refs": {
+      "scp-4010": ["timeline-establishment-rewrites-reality"],
+      "scp-5999": ["reader-driven-containment-sequence"]
+    },
+    "causal_chain": [
+      "SCP-4010 turns the act of arranging a story into a reality-changing operation",
+      "SCP-5999 turns the reader's continued progress into its containment and release mechanism",
+      "both make engagement with the document part of the anomaly"
+    ],
+    "explanation": "Both articles implicate the reader in a document whose completion changes what the document contains.",
+    "rubric": {
+      "mode_fit": "core",
+      "coherence": "conditional",
+      "specificity": "article-specific",
+      "discovery_value": "high"
+    },
+    "support": "B"
+  },
+  {
+    "id": "double-foundation-as-system-3301-4010",
+    "pages": ["scp-3301", "scp-4010"],
+    "mode": "double-feature",
+    "source_revisions": { "scp-3301": 109, "scp-4010": 25 },
+    "verdict": "accepted",
+    "mechanism": "foundation-mythos-as-rule-system",
+    "claim_refs": {
+      "scp-3301": ["anomalous-foundation-board-game"],
+      "scp-4010": ["timeline-establishment-rewrites-reality"]
+    },
+    "causal_chain": [
+      "SCP-3301 compresses Foundation mythology into playable rules and pieces",
+      "SCP-4010 compresses contradictory Foundation history into an ordered timeline",
+      "both ask what is lost when the setting becomes one closed system"
+    ],
+    "explanation": "A playful game-system and a tragic timeline-system offer complementary treatments of the Foundation trying to model itself.",
+    "limitation": "The connection is formal and thematic, not a shared anomalous mechanism.",
+    "rubric": {
+      "mode_fit": "strong",
+      "coherence": "conditional",
+      "specificity": "article-specific",
+      "discovery_value": "medium"
+    },
+    "support": "C"
+  },
+  {
+    "id": "double-reality-authorship-239-4010",
+    "pages": ["scp-239", "scp-4010"],
+    "mode": "double-feature",
+    "source_revisions": { "scp-239": 79, "scp-4010": 25 },
+    "verdict": "accepted",
+    "mechanism": "belief-and-authorship-rewrite-reality",
+    "claim_refs": {
+      "scp-239": ["intent-driven-reality-alteration"],
+      "scp-4010": ["timeline-establishment-rewrites-reality"]
+    },
+    "causal_chain": [
+      "SCP-239 makes nearby reality conform to one person's belief",
+      "SCP-4010 makes reality conform to one constructed historical account",
+      "the pair contrasts personal belief with institutional authorship"
+    ],
+    "explanation": "Both concern authored reality, but at sharply different scales: one child's belief and an institution's total history.",
+    "limitation": "SCP-239 is not metafictional; the pairing rests on contrast rather than shared form.",
+    "rubric": {
+      "mode_fit": "partial",
+      "coherence": "thematic",
+      "specificity": "domain-specific",
+      "discovery_value": "low"
+    },
+    "support": "C"
+  }
+]

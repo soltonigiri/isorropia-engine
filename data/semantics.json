@@ -1,0 +1,828 @@
+[
+  {
+    "page_id": "scp-006",
+    "source_revision": 62,
+    "claims": [
+      {
+        "id": "restorative-spring-water",
+        "kind": "effect",
+        "domain": "biology",
+        "operation": "restore",
+        "target": "living-organism",
+        "vector": "ingestion",
+        "trigger": "administration",
+        "scope": "individual",
+        "persistence": "lasting",
+        "outcomes": [
+          "accelerated-dna-repair",
+          "tissue-regeneration",
+          "pathogen-destruction"
+        ],
+        "preconditions": [
+          "exposure-to-spring-water"
+        ],
+        "limitations": [
+          "does-not-prevent-all-death"
+        ],
+        "evidence": [
+          {
+            "revision": 62,
+            "section": "Description",
+            "locator": "Ingesting the liquid produces the following properties in human beings: the ability to regenerate DNA damaged by sufficient duplication, heightened excitement of cellular duplication, vastly improved abilities in the repair of damaged tissue, and a frightening increase in the effectiveness of the human immune system"
+          }
+        ]
+      }
+    ],
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-008",
+    "source_revision": 66,
+    "claims": [
+      {
+        "id": "infectious-lethal-prion",
+        "kind": "effect",
+        "domain": "biology",
+        "operation": "infect",
+        "target": "human",
+        "vector": "bodily-fluid-or-mucous-membrane",
+        "trigger": "exposure",
+        "scope": "epidemic",
+        "persistence": "persistent",
+        "outcomes": [
+          "human-incapacitation",
+          "death",
+          "containment-staff-loss"
+        ],
+        "preconditions": [
+          "direct-fluid-exposure"
+        ],
+        "limitations": [
+          "not-airborne",
+          "not-waterborne"
+        ],
+        "evidence": [
+          {
+            "revision": 66,
+            "section": "Description",
+            "locator": "SCP-008 is a complex prion, samples of which are stored in each of the known G2 sites"
+          }
+        ]
+      },
+      {
+        "id": "infected-host-reanimation",
+        "kind": "effect",
+        "domain": "death",
+        "operation": "reanimate",
+        "target": "infected-human-body",
+        "trigger": "terminal-infection",
+        "scope": "individual-host",
+        "persistence": "persistent",
+        "outcomes": [
+          "mobile-host",
+          "aggressive-behavior"
+        ],
+        "preconditions": [
+          "prior-scp-008-infection"
+        ],
+        "limitations": [
+          "does-not-reanimate-unrelated-corpses"
+        ],
+        "evidence": [
+          {
+            "revision": 66,
+            "section": "Description",
+            "locator": "Coma onset will be considered onset of death"
+          },
+          {
+            "revision": 66,
+            "section": "Description",
+            "locator": "Subject can adapt to its damaged nervous systems but is limited to basic physical activities, including standing up, balancing on two legs, walking, biting, grabbing, and crawling"
+          }
+        ]
+      }
+    ],
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-049",
+    "source_revision": 121,
+    "claims": [
+      {
+        "id": "surgical-corpse-reanimation",
+        "kind": "effect",
+        "domain": "death",
+        "operation": "reanimate",
+        "subject": "scp-049",
+        "target": "corpse",
+        "trigger": "surgical-procedure",
+        "scope": "individual",
+        "persistence": "persistent",
+        "outcomes": [
+          "scp-049-2-instance"
+        ],
+        "preconditions": [
+          "scp-049-performs-surgery"
+        ],
+        "limitations": [
+          "pestilence-is-unidentified",
+          "not-shown-as-contagious-transmission"
+        ],
+        "evidence": [
+          {
+            "revision": 121,
+            "section": "Description",
+            "locator": "perform a crude surgery on the corpse using the implements contained within a black doctor's bag"
+          }
+        ]
+      }
+    ],
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-217",
+    "source_revision": 41,
+    "claims": [
+      {
+        "id": "clockwork-virus",
+        "kind": "effect",
+        "domain": "biology",
+        "operation": "infect-and-transform",
+        "target": "animal-tissue",
+        "vector": "touch-or-bodily-fluid",
+        "trigger": "exposure",
+        "scope": "epidemic",
+        "persistence": "persistent",
+        "outcomes": [
+          "organic-metal-conversion",
+          "covert-community-spread"
+        ],
+        "preconditions": [
+          "physical-contact-or-fluid-transfer"
+        ],
+        "limitations": [
+          "slow-visible-progression"
+        ],
+        "evidence": [
+          {
+            "revision": 41,
+            "section": "Description",
+            "locator": "SCP-217 is a virus, incurable by current means, with a rate of infectivity at 100%"
+          }
+        ]
+      }
+    ],
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-239",
+    "source_revision": 79,
+    "claims": [
+      {
+        "id": "intent-driven-reality-alteration",
+        "kind": "effect",
+        "domain": "reality",
+        "operation": "alter",
+        "subject": "scp-239",
+        "target": "surrounding-reality",
+        "trigger": "will-or-belief",
+        "scope": "local",
+        "persistence": "variable",
+        "outcomes": [
+          "reality-conforms-to-expressed-will"
+        ],
+        "preconditions": [
+          "scp-239-conscious-intent-or-belief"
+        ],
+        "limitations": [
+          "centered-on-one-individual"
+        ],
+        "evidence": [
+          {
+            "revision": 79,
+            "section": "Description",
+            "locator": "SCP-239 seemingly has the ability to do whatever she expresses a will to do"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "themes": [
+        "power",
+        "childhood",
+        "containment-ethics"
+      ],
+      "forms": [
+        "reality-bender-dossier"
+      ],
+      "structures": [
+        "containment-conflict"
+      ],
+      "tones": [
+        "tragic",
+        "clinical"
+      ],
+      "motifs": [
+        "belief",
+        "control"
+      ]
+    },
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-2747",
+    "source_revision": 37,
+    "claims": [
+      {
+        "id": "anafabula-narrative-erasure",
+        "kind": "narrative",
+        "domain": "narrative",
+        "operation": "erase",
+        "target": "fictional-narrative",
+        "trigger": "anafabula-manifestation",
+        "scope": "work-and-containing-reality",
+        "persistence": "terminal",
+        "outcomes": [
+          "narrative-disappearance",
+          "recursive-erasure"
+        ],
+        "preconditions": [
+          "characteristic-narrative-elements-cohere"
+        ],
+        "limitations": [
+          "mechanism-inferred-from-fictional-works"
+        ],
+        "evidence": [
+          {
+            "revision": 37,
+            "section": "Description",
+            "locator": "SCP-2747 represents evidence of a naturally-occurring anafabula, or anti-narrative"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "themes": [
+        "fiction",
+        "erasure",
+        "recursion"
+      ],
+      "forms": [
+        "metafiction",
+        "nested-analysis"
+      ],
+      "structures": [
+        "recursive",
+        "fragmentary"
+      ],
+      "tones": [
+        "intellectual-horror"
+      ],
+      "motifs": [
+        "absence",
+        "seven",
+        "anti-narrative"
+      ]
+    },
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-2935",
+    "source_revision": 93,
+    "claims": [
+      {
+        "id": "universal-life-termination",
+        "kind": "effect",
+        "domain": "death",
+        "operation": "terminate-life",
+        "target": "all-life-and-life-like-entities",
+        "trigger": "cross-reality-transfer",
+        "scope": "universal",
+        "persistence": "terminal",
+        "outcomes": [
+          "complete-biological-death",
+          "complete-anomalous-life-cessation"
+        ],
+        "preconditions": [
+          "effect-enters-a-reality"
+        ],
+        "limitations": [
+          "documented-in-an-alternate-reality"
+        ],
+        "evidence": [
+          {
+            "revision": 93,
+            "section": "Description",
+            "locator": "all life, including both biological and non-biological, as well as any sentient entities, machines, computers and other \"life-like\" phenomena, within SCP-2935 ended on April 20th, 2016"
+          }
+        ]
+      }
+    ],
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-3301",
+    "source_revision": 109,
+    "claims": [
+      {
+        "id": "anomalous-foundation-board-game",
+        "kind": "narrative",
+        "domain": "reality",
+        "operation": "manifest-game-world",
+        "target": "players-and-surroundings",
+        "trigger": "wonderbutton-activation",
+        "scope": "game-session",
+        "persistence": "transient",
+        "outcomes": [
+          "physical-gameboard-manifestation",
+          "foundation-mythos-made-playable"
+        ],
+        "preconditions": [
+          "players-activate-the-game"
+        ],
+        "limitations": [
+          "primarily-recreational-and-bounded"
+        ],
+        "evidence": [
+          {
+            "revision": 109,
+            "section": "Description",
+            "locator": "Pressing this button, labeled within the manual as the “WonderButton”, activates the primary anomalous features of SCP-3301, and begins a game of “THE FOUNDATION”"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "themes": [
+        "foundation-mythos",
+        "play",
+        "self-reference"
+      ],
+      "forms": [
+        "game-manual",
+        "catalogue"
+      ],
+      "structures": [
+        "modular",
+        "participatory"
+      ],
+      "tones": [
+        "comic",
+        "adventurous"
+      ],
+      "motifs": [
+        "board-game",
+        "wondertainment"
+      ]
+    },
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-3984",
+    "source_revision": 46,
+    "claims": [
+      {
+        "id": "animalia-cannot-die",
+        "kind": "effect",
+        "domain": "death",
+        "operation": "prevent-death",
+        "target": "kingdom-animalia",
+        "trigger": "passive-global-phenomenon",
+        "scope": "global",
+        "persistence": "persistent",
+        "outcomes": [
+          "continued-consciousness-after-lethal-injury",
+          "end-of-death-scenario"
+        ],
+        "preconditions": [
+          "subject-is-member-of-animalia"
+        ],
+        "limitations": [
+          "does-not-heal-injury",
+          "does-not-stop-aging"
+        ],
+        "evidence": [
+          {
+            "revision": 46,
+            "section": "Description",
+            "locator": "including humans, are unable to die"
+          }
+        ]
+      }
+    ],
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-3999",
+    "source_revision": 119,
+    "claims": [
+      {
+        "id": "talloran-centered-metafictional-breakdown",
+        "kind": "narrative",
+        "domain": "narrative",
+        "operation": "rewrite-and-destabilize",
+        "target": "researcher-talloran-and-article-reality",
+        "trigger": "authorial-narrative-control",
+        "scope": "article-and-reality",
+        "persistence": "recursive",
+        "outcomes": [
+          "reality-breakdown",
+          "document-breakdown",
+          "metafictional-author-reveal"
+        ],
+        "preconditions": [
+          "talloran-remains-inside-the-narrative"
+        ],
+        "limitations": [
+          "deliberately-unstable-document-form"
+        ],
+        "evidence": [
+          {
+            "revision": 119,
+            "section": "SCP-3999",
+            "locator": "SCP-3999 is a fictional entity written by a biologically male human"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "themes": [
+        "authorship",
+        "suffering",
+        "fiction"
+      ],
+      "forms": [
+        "metafiction",
+        "document-breakdown"
+      ],
+      "structures": [
+        "recursive",
+        "surreal"
+      ],
+      "tones": [
+        "psychological-horror"
+      ],
+      "motifs": [
+        "talloran",
+        "author",
+        "reality-collapse"
+      ]
+    },
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-4010",
+    "source_revision": 25,
+    "claims": [
+      {
+        "id": "timeline-establishment-rewrites-reality",
+        "kind": "narrative",
+        "domain": "narrative",
+        "operation": "order-and-rewrite",
+        "target": "foundation-timeline-and-reality",
+        "trigger": "completion-of-a-consistent-timeline",
+        "scope": "canon-wide",
+        "persistence": "persistent",
+        "outcomes": [
+          "contradictions-resolved",
+          "major-reality-changes",
+          "anomalies-removed"
+        ],
+        "preconditions": [
+          "project-kronos-orders-the-timeline"
+        ],
+        "limitations": [
+          "ordering-itself-creates-paradox"
+        ],
+        "evidence": [
+          {
+            "revision": 25,
+            "section": "Description",
+            "locator": "SCP-4010 is an act of establishing the timeline of our universe while accounting for every shift in reality and every temporal change documented"
+          }
+        ]
+      },
+      {
+        "id": "talloran-and-3999-reference",
+        "kind": "narrative",
+        "domain": "narrative",
+        "operation": "reference",
+        "target": "researcher-talloran",
+        "scope": "article",
+        "outcomes": [
+          "direct-thematic-link-to-scp-3999"
+        ],
+        "preconditions": [],
+        "limitations": [],
+        "evidence": [
+          {
+            "revision": 25,
+            "section": "Project Kronos timeline",
+            "locator": "Is this how Researcher Talloran suffered?"
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "themes": [
+        "canon",
+        "order",
+        "contradiction"
+      ],
+      "forms": [
+        "metafiction",
+        "timeline"
+      ],
+      "structures": [
+        "recursive",
+        "accumulative"
+      ],
+      "tones": [
+        "existential",
+        "tragic"
+      ],
+      "motifs": [
+        "history",
+        "author",
+        "paradox"
+      ]
+    },
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-5999",
+    "source_revision": 84,
+    "claims": [
+      {
+        "id": "reader-driven-containment-sequence",
+        "kind": "narrative",
+        "domain": "narrative",
+        "operation": "use-reader-progression",
+        "target": "reader",
+        "trigger": "continued-reading",
+        "scope": "interactive-article",
+        "persistence": "session",
+        "outcomes": [
+          "containment-warnings-become-story-mechanism",
+          "reader-reaches-stage-zero"
+        ],
+        "preconditions": [
+          "reader-continues-through-seven-sections"
+        ],
+        "limitations": [
+          "fictional-interface-mechanism"
+        ],
+        "evidence": [
+          {
+            "revision": 84,
+            "section": "Reduced Format",
+            "locator": "The above is instrumental to proper containment. Do not stop reading."
+          }
+        ]
+      }
+    ],
+    "reading": {
+      "themes": [
+        "containment",
+        "reader-complicity",
+        "horror-fiction"
+      ],
+      "forms": [
+        "metafiction",
+        "interactive-document"
+      ],
+      "structures": [
+        "seven-stage-descent",
+        "fragmentary"
+      ],
+      "tones": [
+        "horror",
+        "ominous"
+      ],
+      "motifs": [
+        "reader",
+        "chains",
+        "warning"
+      ]
+    },
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-610",
+    "source_revision": 65,
+    "claims": [
+      {
+        "id": "contact-flesh-infection",
+        "kind": "effect",
+        "domain": "biology",
+        "operation": "infect-and-transform",
+        "target": "human-and-animal-tissue",
+        "vector": "physical-contact-or-particulate",
+        "trigger": "exposure",
+        "scope": "regional-outbreak",
+        "persistence": "persistent",
+        "outcomes": [
+          "rapid-tissue-growth",
+          "host-transformation",
+          "aggressive-spreader"
+        ],
+        "preconditions": [
+          "contact-with-infected-material"
+        ],
+        "limitations": [
+          "cold-conditions-slow-spread"
+        ],
+        "evidence": [
+          {
+            "revision": 65,
+            "section": "Description",
+            "locator": "SCP-610 appears to be a contagious skin disease at first"
+          }
+        ]
+      },
+      {
+        "id": "infected-body-reactivation",
+        "kind": "effect",
+        "domain": "death",
+        "operation": "reactivate",
+        "target": "infected-body",
+        "trigger": "cessation-of-life-functions",
+        "scope": "individual-host",
+        "persistence": "persistent",
+        "outcomes": [
+          "renewed-life-functions",
+          "increased-spread-capability"
+        ],
+        "preconditions": [
+          "advanced-scp-610-infection"
+        ],
+        "limitations": [],
+        "evidence": [
+          {
+            "revision": 65,
+            "section": "Description",
+            "locator": "life functions will cease for approximately 3 minutes after which time they will restart at 2-3 times the activity rate of a normal human"
+          }
+        ]
+      }
+    ],
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-7795",
+    "source_revision": 18,
+    "claims": [
+      {
+        "id": "annual-personal-rematerialization",
+        "kind": "effect",
+        "domain": "time-and-death",
+        "operation": "rematerialize-and-de-age",
+        "target": "mia-hargrove",
+        "trigger": "day-after-thirteenth-birthday-death",
+        "scope": "one-person",
+        "persistence": "annual-cycle",
+        "outcomes": [
+          "single-subject-return",
+          "one-year-de-aging"
+        ],
+        "preconditions": [
+          "scp-7795-dies-on-her-thirteenth-birthday"
+        ],
+        "limitations": [
+          "does-not-create-additional-hosts",
+          "does-not-spread-between-people"
+        ],
+        "evidence": [
+          {
+            "revision": 18,
+            "section": "Description",
+            "locator": "The day following its death, SCP-7795 will materialize in its bed, having de-aged exactly one year"
+          }
+        ]
+      }
+    ],
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  },
+  {
+    "page_id": "scp-871",
+    "source_revision": 28,
+    "claims": [
+      {
+        "id": "self-replicating-cakes",
+        "kind": "effect",
+        "domain": "replication",
+        "operation": "replicate",
+        "target": "cake-instance",
+        "trigger": "instance-not-consumed-or-destroyed",
+        "scope": "exponential",
+        "persistence": "persistent",
+        "outcomes": [
+          "unbounded-cake-population",
+          "earth-uninhabitable"
+        ],
+        "preconditions": [
+          "instance-survives-replication-window"
+        ],
+        "limitations": [
+          "does-not-use-biological-infection",
+          "replicates-itself-only"
+        ],
+        "evidence": [
+          {
+            "revision": 28,
+            "section": "Description",
+            "locator": "Any instance of SCP-871 which is not consumed will cause a new cake to be created in its vicinity after 24 hours"
+          }
+        ]
+      },
+      {
+        "id": "continuous-consumption-containment",
+        "kind": "dependency",
+        "domain": "containment",
+        "operation": "consume-instances",
+        "subject": "human-personnel",
+        "target": "scp-871-instances",
+        "trigger": "continuous-schedule",
+        "scope": "all-contained-instances",
+        "persistence": "continuous",
+        "outcomes": [
+          "replication-prevented"
+        ],
+        "preconditions": [
+          "sufficient-available-consumers"
+        ],
+        "limitations": [
+          "staff-loss-causes-missed-consumption"
+        ],
+        "evidence": [
+          {
+            "revision": 28,
+            "section": "Special Containment Procedures",
+            "locator": "3 Class D personnel are to be escorted by armed guards to its cell, where they are to be sealed with the instance and induced to consume it"
+          }
+        ]
+      }
+    ],
+    "reviewed_modes": [
+      "cycle",
+      "breach",
+      "double-feature"
+    ]
+  }
+]

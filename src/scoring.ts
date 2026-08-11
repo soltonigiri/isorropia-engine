@@ -1,12 +1,15 @@
 import type {
   Edge,
   Evidence,
+  AcceptedInteraction,
   MatchedRule,
   Mode,
+  PairInteraction,
   PairResult,
   Profile,
   Rule,
   RuleMatcher,
+  SemanticProfile,
 } from './types.js';
 
 const IGNORED_SHARED_TAGS = new Set([
@@ -37,12 +40,24 @@ export function scorePair(params: {
   mode: Mode;
   rules: Rule[];
   edges: Edge[];
-}): PairResult {
+  interaction?: PairInteraction;
+  semantics?: Map<string, SemanticProfile>;
+}): PairResult | undefined {
   const context: MatchContext = {
     left: params.query,
     right: params.candidate,
     edges: params.edges,
   };
+  if (params.interaction) {
+    if (!isCurrentInteraction(params.interaction, context)) return undefined;
+    if (params.interaction.verdict === 'rejected') return undefined;
+    return scoreAcceptedInteraction(
+      params.interaction,
+      context,
+      params.semantics ?? new Map(),
+    );
+  }
+
   const matchedRules = params.rules
     .filter((rule) => rule.mode === params.mode)
     .filter((rule) => matches(rule.matcher, context));
@@ -54,21 +69,25 @@ export function scorePair(params: {
     }));
 
   const rawScore = matched.reduce((sum, rule) => sum + rule.weight, 0);
-  const linked = hasExplicitLink(context);
-  const score = Math.min(100, Math.round(rawScore * 5));
-  const confidence = round(
-    Math.min(
-      0.99,
-      0.25 + rawScore / 40 + Math.min(0.15, matched.length * 0.03) +
-        (linked ? 0.08 : 0),
-    ),
-  );
+  if (rawScore === 0) return undefined;
   const strongestRule = [...matchedRules].sort(
     (left, right) => right.weight - left.weight || left.id.localeCompare(right.id),
   )[0];
   const evidence = strongestRule
     ? evidenceForMatcher(strongestRule.matcher, context)
     : undefined;
+  const queryEvidence = evidence?.query ?? params.query.effects[0]!.evidence;
+  const candidateEvidence = evidence?.candidate ?? params.candidate.effects[0]!.evidence;
+  const sourceEvidenceCount = [queryEvidence, candidateEvidence].filter(
+    (item) => item.section !== 'metadata.tags',
+  ).length;
+  const scoreCap = sourceEvidenceCount === 2 ? 100 : sourceEvidenceCount === 1 ? 60 : 35;
+  const score = Math.min(scoreCap, Math.min(100, Math.round(rawScore * 5)));
+  const confidence = sourceEvidenceCount === 2
+    ? 0.75
+    : sourceEvidenceCount === 1
+      ? 0.45
+      : 0.3;
 
   return {
     page_id: params.candidate.page_id,
@@ -78,10 +97,84 @@ export function scorePair(params: {
     confidence,
     rules: matched,
     evidence: {
-      query: evidence?.query ?? params.query.effects[0]!.evidence,
-      candidate: evidence?.candidate ?? params.candidate.effects[0]!.evidence,
+      query: queryEvidence,
+      candidate: candidateEvidence,
     },
   };
+}
+
+function scoreAcceptedInteraction(
+  interaction: AcceptedInteraction,
+  context: MatchContext,
+  semantics: Map<string, SemanticProfile>,
+): PairResult {
+  const score =
+    rubricPoints.mode_fit[interaction.rubric.mode_fit] +
+    rubricPoints.coherence[interaction.rubric.coherence] +
+    rubricPoints.specificity[interaction.rubric.specificity] +
+    rubricPoints.discovery_value[interaction.rubric.discovery_value];
+  const queryEvidence = evidenceForClaim(
+    semantics,
+    context.left.page_id,
+    interaction.claim_refs[context.left.page_id]?.[0],
+  );
+  const candidateEvidence = evidenceForClaim(
+    semantics,
+    context.right.page_id,
+    interaction.claim_refs[context.right.page_id]?.[0],
+  );
+  return {
+    page_id: context.right.page_id,
+    title: context.right.title,
+    url: context.right.url,
+    score,
+    confidence: supportConfidence[interaction.support],
+    rules: [
+      {
+        id: interaction.id,
+        weight: 100,
+        explanation: interaction.explanation,
+      },
+    ],
+    evidence: {
+      query: queryEvidence ?? context.left.effects[0]!.evidence,
+      candidate: candidateEvidence ?? context.right.effects[0]!.evidence,
+    },
+    causal_chain: interaction.causal_chain,
+    ...(interaction.assumption ? { assumption: interaction.assumption } : {}),
+    ...(interaction.limitation ? { limitation: interaction.limitation } : {}),
+  };
+}
+
+const rubricPoints = {
+  mode_fit: { core: 35, strong: 30, partial: 20 },
+  coherence: { complete: 30, conditional: 20, thematic: 10 },
+  specificity: { 'article-specific': 20, 'domain-specific': 12, generic: 5 },
+  discovery_value: { high: 15, medium: 10, low: 5 },
+} as const;
+
+const supportConfidence = { A: 0.9, B: 0.75, C: 0.55, D: 0.3 } as const;
+
+function isCurrentInteraction(
+  interaction: PairInteraction,
+  context: MatchContext,
+): boolean {
+  return [context.left, context.right].every(
+    (profile) =>
+      interaction.source_revisions[profile.page_id] === profile.source_revision,
+  );
+}
+
+function evidenceForClaim(
+  semantics: Map<string, SemanticProfile>,
+  pageId: string,
+  claimId: string | undefined,
+): Evidence | undefined {
+  if (!claimId) return undefined;
+  return semantics
+    .get(pageId)
+    ?.claims.find((claim) => claim.id === claimId)
+    ?.evidence[0];
 }
 
 function evidenceForMatcher(
@@ -131,13 +224,19 @@ function findOperationPair(
   leftProfile: Profile,
   rightProfile: Profile,
 ): [Profile['effects'][number], Profile['effects'][number]] | undefined {
-  const left = leftProfile.effects.find((effect) =>
-    leftOperations.includes(effect.operation),
-  );
-  const right = rightProfile.effects.find((effect) =>
-    rightOperations.includes(effect.operation),
-  );
+  const left = preferredEffect(leftProfile, leftOperations);
+  const right = preferredEffect(rightProfile, rightOperations);
   return left && right ? [left, right] : undefined;
+}
+
+function preferredEffect(profile: Profile, operations: string[]): Profile['effects'][number] | undefined {
+  return profile.effects
+    .filter((effect) => operations.includes(effect.operation))
+    .sort(
+      (left, right) =>
+        Number(left.evidence.section === 'metadata.tags') -
+        Number(right.evidence.section === 'metadata.tags'),
+    )[0];
 }
 
 function metadataEvidence(profile: Profile, tag: string): Evidence {
@@ -220,8 +319,4 @@ function hasExplicitLink(context: MatchContext): boolean {
 function intersection(left: string[], right: string[]): string[] {
   const rightSet = new Set(right);
   return Array.from(new Set(left.filter((value) => rightSet.has(value))));
-}
-
-function round(value: number): number {
-  return Math.round(value * 100) / 100;
 }
