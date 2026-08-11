@@ -33,6 +33,21 @@ test('CLI emits structured JSON without decorative SCP-2521 output', async () =>
   assert.equal(output.disclaimer, 'Containment hypothesis — not canonical.');
 });
 
+test('CLI keeps plain human output when stdout is not a terminal', async () => {
+  const { stdout } = await execFileAsync(process.execPath, [
+    'dist/cli.js',
+    'pair',
+    'scp-3984',
+    '--mode',
+    'cycle',
+    '--limit',
+    '1',
+  ]);
+
+  assert.equal(stdout.includes('╭'), false);
+  assert.match(stdout, /score=100 confidence=0\.90/);
+});
+
 test('CLI rejects unsupported modes', async () => {
   await assert.rejects(
     execFileAsync(process.execPath, [

@@ -22,6 +22,37 @@ test('the reference end-of-death cycle is ranked first with source evidence', ()
   assert.equal(response.disclaimer, 'Containment hypothesis — not canonical.');
 });
 
+test('rich terminal output is structured, scannable, and width-bounded', () => {
+  const response = engine.pair({ pageId: 'scp-3984', mode: 'cycle', limit: 2 });
+  const output = formatPairResponse(response, {
+    rich: true,
+    color: false,
+    width: 78,
+  });
+
+  assert.match(output, /╭━+╮/);
+  assert.match(output, /CYCLE ANALYSIS/);
+  assert.match(output, /CONFIDENCE  █+░+  0\.90/);
+  assert.match(output, /SCORE 100/);
+  assert.match(output, /RULES\s+cycle-death-boundary-3984-2935/);
+  assert.match(output, /CONDITION\s+The SCP-2935 effect must cross/);
+  assert.match(output, /QUERY\s+rev\.46/);
+  assert.match(output, /MATCH\s+rev\.93/);
+  assert.match(output, /━{20,}/);
+  assert.equal(
+    output.split('\n').every((line) => Array.from(line).length <= 78),
+    true,
+  );
+});
+
+test('plain output remains available for pipes and narrow terminals', () => {
+  const response = engine.pair({ pageId: 'scp-3984', mode: 'cycle', limit: 1 });
+  const output = formatPairResponse(response, { rich: false });
+
+  assert.equal(output.includes('╭'), false);
+  assert.match(output, /score=100 confidence=0\.90/);
+});
+
 test('the same input and dataset produce byte-identical JSON', () => {
   const first = JSON.stringify(engine.pair({ pageId: 'scp-055', mode: 'breach' }));
   const second = JSON.stringify(engine.pair({ pageId: 'scp-055', mode: 'breach' }));
