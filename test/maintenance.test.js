@@ -9,6 +9,7 @@ import {
   IsorropiaEngine,
   loadDataset,
   normalizeArticleSource,
+  prepareMaintenanceCheckout,
   publishMaintenanceRun,
   rankExpansionCandidates,
   runMaintenance,
@@ -143,6 +144,12 @@ test('publish uses an explicit data allowlist and creates only a draft PR', asyn
   let statusCalls = 0;
   const commandRunner = async (command, args, cwd) => {
     calls.push({ command, args, cwd });
+    if (command === 'git' && args[0] === 'branch') {
+      return { stdout: 'main\n', stderr: '' };
+    }
+    if (command === 'git' && args[0] === 'rev-parse') {
+      return { stdout: '0123456789abcdef\n', stderr: '' };
+    }
     if (command === 'git' && args[0] === 'status') {
       statusCalls += 1;
       return statusCalls === 1
@@ -177,6 +184,42 @@ test('publish uses an explicit data allowlist and creates only a draft PR', asyn
   assert.equal(add.args.includes('-A'), false);
   const pr = calls.find((call) => call.command === 'gh');
   assert.equal(pr.args.includes('--draft'), true);
+  assert.deepEqual(calls.at(-1).args, ['switch', 'main']);
+});
+
+test('scheduled maintenance starts from a clean fast-forwarded main checkout', async () => {
+  const calls = [];
+  let statusCalls = 0;
+  const commandRunner = async (command, args, cwd) => {
+    calls.push({ command, args, cwd });
+    if (command === 'git' && args[0] === 'status') {
+      statusCalls += 1;
+      return { stdout: '', stderr: '' };
+    }
+    if (command === 'git' && args[0] === 'rev-parse') {
+      return { stdout: '0123456789abcdef\n', stderr: '' };
+    }
+    return { stdout: '', stderr: '' };
+  };
+
+  await prepareMaintenanceCheckout({
+    repositoryDirectory: '/srv/isorropia',
+    commandRunner,
+  });
+
+  assert.deepEqual(
+    calls.map((call) => call.args),
+    [
+      ['status', '--porcelain'],
+      ['switch', 'main'],
+      ['fetch', 'origin', 'main'],
+      ['merge', '--ff-only', 'origin/main'],
+      ['rev-parse', 'HEAD'],
+      ['rev-parse', 'origin/main'],
+      ['status', '--porcelain'],
+    ],
+  );
+  assert.equal(statusCalls, 2);
 });
 
 test('catalog expansion adds a profile only when an accepted interaction survives validation', async (t) => {

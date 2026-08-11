@@ -2,6 +2,7 @@
 import path from 'node:path';
 import {
   createMaintenancePlan,
+  prepareMaintenanceCheckout,
   publishMaintenanceRun,
   runMaintenance,
   verifyMaintenanceRun,
@@ -64,6 +65,7 @@ async function main(): Promise<unknown> {
       const repositoryDirectory = path.resolve(
         stringOption(parsed, '--repository') ?? '.',
       );
+      await prepareMaintenanceCheckout({ repositoryDirectory });
       const run = await runMaintenance({
         ...common,
         dryRun: false,
