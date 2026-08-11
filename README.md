@@ -4,6 +4,8 @@ An explainable anomaly-pairing engine for containment cycles, catastrophic inter
 
 Give it one SCP. It returns up to five supported, non-canonical pairing hypotheses with deterministic scores, confidence, rules, and source evidence.
 
+<!-- ●●|●●●●●|●●|● -->
+
 ## Requirements
 
 - Node.js 24 or newer
