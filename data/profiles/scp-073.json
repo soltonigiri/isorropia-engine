@@ -1,0 +1,74 @@
+{
+  "page_id": "scp-073",
+  "scp_number": 73,
+  "wikidot_page_id": "1957854",
+  "title": "SCP-073",
+  "url": "https://scp-wiki.wikidot.com/scp-073",
+  "authors": [
+    "Kain Pathos Crow"
+  ],
+  "language": "en",
+  "source_revision": 35,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "able",
+    "alive",
+    "cain",
+    "euclid",
+    "humanoid",
+    "indestructible",
+    "inscription",
+    "mechanical",
+    "mythological",
+    "sapient",
+    "scp"
+  ],
+  "themes": [
+    "indestructible",
+    "mechanical",
+    "alive"
+  ],
+  "effects": [
+    {
+      "domain": "durability",
+      "operation": "resist",
+      "target": "destruction",
+      "trigger": "damage",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 35,
+        "section": "metadata.tags",
+        "locator": "tag:indestructible"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "construct",
+      "target": "mechanism",
+      "trigger": "operation",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 35,
+        "section": "metadata.tags",
+        "locator": "tag:mechanical"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "organism",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 35,
+        "section": "metadata.tags",
+        "locator": "tag:alive"
+      }
+    }
+  ],
+  "curated": true
+}

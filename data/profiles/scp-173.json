@@ -1,0 +1,75 @@
+{
+  "page_id": "scp-173",
+  "scp_number": 173,
+  "wikidot_page_id": "1956234",
+  "title": "SCP-173",
+  "url": "https://scp-wiki.wikidot.com/scp-173",
+  "authors": [
+    "Moto42"
+  ],
+  "language": "en",
+  "source_revision": 57,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "autonomous",
+    "ectoentropic",
+    "euclid",
+    "featured",
+    "horror",
+    "hostile",
+    "murder-monster",
+    "mystery",
+    "observational",
+    "scp",
+    "sculpture",
+    "the-sculpture"
+  ],
+  "themes": [
+    "observational",
+    "hostile",
+    "autonomous"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 57,
+        "section": "metadata.tags",
+        "locator": "tag:observational"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 57,
+        "section": "metadata.tags",
+        "locator": "tag:hostile"
+      }
+    },
+    {
+      "domain": "containment",
+      "operation": "move",
+      "target": "self",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 57,
+        "section": "metadata.tags",
+        "locator": "tag:autonomous"
+      }
+    }
+  ],
+  "curated": true
+}

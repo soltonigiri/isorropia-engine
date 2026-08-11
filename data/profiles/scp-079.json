@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-079",
+  "scp_number": 79,
+  "wikidot_page_id": "1959738",
+  "title": "SCP-079",
+  "url": "https://scp-wiki.wikidot.com/scp-079",
+  "authors": [
+    "Unknown Author"
+  ],
+  "language": "en",
+  "source_revision": 40,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "artificial-intelligence",
+    "computer",
+    "electronic",
+    "euclid",
+    "hard-to-destroy-reptile",
+    "media",
+    "old-ai",
+    "sapient",
+    "scp"
+  ],
+  "themes": [
+    "artificial-intelligence",
+    "computer",
+    "electronic"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "process",
+      "target": "digital_system",
+      "trigger": "execution",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 40,
+        "section": "metadata.tags",
+        "locator": "tag:artificial-intelligence"
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "process",
+      "target": "digital_system",
+      "trigger": "execution",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 40,
+        "section": "metadata.tags",
+        "locator": "tag:computer"
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "transmit",
+      "target": "digital_system",
+      "trigger": "execution",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 40,
+        "section": "metadata.tags",
+        "locator": "tag:electronic"
+      }
+    }
+  ],
+  "curated": true
+}

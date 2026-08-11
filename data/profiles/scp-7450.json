@@ -1,0 +1,86 @@
+{
+  "page_id": "scp-7450",
+  "scp_number": 7450,
+  "wikidot_page_id": "1436460153",
+  "title": "SCP-7450",
+  "url": "https://scp-wiki.wikidot.com/scp-7450",
+  "authors": [
+    "djkaktus"
+  ],
+  "language": "en",
+  "source_revision": 23,
+  "series": "series-8",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "abcs-of-death",
+    "agent-lament",
+    "auditory",
+    "bird",
+    "bleak",
+    "cognitohazard",
+    "compulsion",
+    "deity",
+    "doctor-clef",
+    "doctor-light",
+    "esoteric-class",
+    "foundation-made",
+    "horror",
+    "humanoid",
+    "k-class-scenario",
+    "mobile",
+    "reality-bending",
+    "scp",
+    "transfiguration",
+    "uncontained",
+    "visual",
+    "weapon"
+  ],
+  "themes": [
+    "cognitohazard",
+    "compulsion",
+    "auditory"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 23,
+        "section": "metadata.tags",
+        "locator": "tag:cognitohazard"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "compel",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 23,
+        "section": "metadata.tags",
+        "locator": "tag:compulsion"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "auditory_trigger",
+      "target": "observer",
+      "trigger": "audition",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 23,
+        "section": "metadata.tags",
+        "locator": "tag:auditory"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,86 @@
+{
+  "page_id": "scp-8980",
+  "scp_number": 8980,
+  "wikidot_page_id": "1457015713",
+  "title": "SCP-8980",
+  "url": "https://scp-wiki.wikidot.com/scp-8980",
+  "authors": [
+    "Yossipossi"
+  ],
+  "language": "en",
+  "source_revision": 28,
+  "series": "series-9",
+  "tags": [
+    "_cc",
+    "_cc4",
+    "_licensebox",
+    "_listpages",
+    "alive",
+    "bleak",
+    "bureaucracy",
+    "computer",
+    "deepwell-catalog",
+    "director-graham",
+    "electrical",
+    "ethics-committee",
+    "euclid",
+    "fire-suppression-dept",
+    "foundation-personnel",
+    "horror",
+    "humanoid",
+    "odongo-tejani",
+    "phobia-anthology",
+    "psychological-horror",
+    "reviewers-spotlight",
+    "sapient",
+    "scp",
+    "spook-nico-2024-unofficial"
+  ],
+  "themes": [
+    "computer",
+    "electrical",
+    "bureaucracy"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "process",
+      "target": "digital_system",
+      "trigger": "execution",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "metadata.tags",
+        "locator": "tag:computer"
+      }
+    },
+    {
+      "domain": "energy",
+      "operation": "generate",
+      "target": "electricity",
+      "trigger": "operation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "metadata.tags",
+        "locator": "tag:electrical"
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "constrain",
+      "target": "institution",
+      "trigger": "procedure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "metadata.tags",
+        "locator": "tag:bureaucracy"
+      }
+    }
+  ],
+  "curated": true
+}

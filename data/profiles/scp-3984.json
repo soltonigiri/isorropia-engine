@@ -1,0 +1,89 @@
+{
+  "page_id": "scp-3984",
+  "scp_number": 3984,
+  "wikidot_page_id": "78907646",
+  "title": "SCP-3984",
+  "url": "https://scp-wiki.wikidot.com/scp-3984",
+  "authors": [
+    "Croquembouche"
+  ],
+  "language": "en",
+  "source_revision": 46,
+  "series": "series-4",
+  "tags": [
+    "_licensebox",
+    "d-11424",
+    "doomsday2018",
+    "end-of-death",
+    "intangible",
+    "k-class-scenario",
+    "keter",
+    "medical",
+    "neurological",
+    "phenomenon",
+    "scp",
+    "uncontained"
+  ],
+  "themes": [
+    "end-of-death",
+    "intangible",
+    "k-class-scenario"
+  ],
+  "effects": [
+    {
+      "domain": "death",
+      "operation": "prevent_death",
+      "target": "life",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 46,
+        "section": "metadata.tags",
+        "locator": "tag:end-of-death"
+      }
+    },
+    {
+      "domain": "matter",
+      "operation": "phase",
+      "target": "material",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 46,
+        "section": "metadata.tags",
+        "locator": "tag:intangible"
+      }
+    },
+    {
+      "domain": "civilization",
+      "operation": "destabilize",
+      "target": "baseline_reality",
+      "trigger": "event",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 46,
+        "section": "metadata.tags",
+        "locator": "tag:k-class-scenario"
+      }
+    },
+    {
+      "domain": "death",
+      "operation": "prevent_death",
+      "target": "animal_life",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [
+        "kingdom_animalia"
+      ],
+      "evidence": {
+        "revision": 46,
+        "section": "Description",
+        "locator": "no member of the kingdom Animalia ... is capable of dying"
+      }
+    }
+  ],
+  "curated": true
+}

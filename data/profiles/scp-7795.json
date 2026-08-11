@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-7795",
+  "scp_number": 7795,
+  "wikidot_page_id": "1436886097",
+  "title": "SCP-7795",
+  "url": "https://scp-wiki.wikidot.com/scp-7795",
+  "authors": [
+    "Trintavon"
+  ],
+  "language": "en",
+  "source_revision": 18,
+  "series": "series-8",
+  "tags": [
+    "_licensebox",
+    "abcs-of-death",
+    "alive",
+    "bleak",
+    "esoteric-class",
+    "humanoid",
+    "reanimation",
+    "sapient",
+    "scp",
+    "surrealistics-dept",
+    "temporal"
+  ],
+  "themes": [
+    "reanimation",
+    "temporal",
+    "humanoid"
+  ],
+  "effects": [
+    {
+      "domain": "death",
+      "operation": "reanimate",
+      "target": "corpse",
+      "trigger": "death",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 18,
+        "section": "metadata.tags",
+        "locator": "tag:reanimation"
+      }
+    },
+    {
+      "domain": "time",
+      "operation": "alter",
+      "target": "timeline",
+      "trigger": "event",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 18,
+        "section": "metadata.tags",
+        "locator": "tag:temporal"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "human",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 18,
+        "section": "metadata.tags",
+        "locator": "tag:humanoid"
+      }
+    }
+  ],
+  "curated": true
+}

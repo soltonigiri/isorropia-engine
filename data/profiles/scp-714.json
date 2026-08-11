@@ -1,0 +1,54 @@
+{
+  "page_id": "scp-714",
+  "scp_number": 714,
+  "wikidot_page_id": "3413704",
+  "title": "SCP-714",
+  "url": "https://scp-wiki.wikidot.com/scp-714",
+  "authors": [
+    "Arcalane"
+  ],
+  "language": "en",
+  "source_revision": 36,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "jewelry",
+    "safe",
+    "scp",
+    "self-repairing"
+  ],
+  "themes": [
+    "self-repairing",
+    "jewelry"
+  ],
+  "effects": [
+    {
+      "domain": "durability",
+      "operation": "regenerate",
+      "target": "self",
+      "trigger": "damage",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:self-repairing"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "wearer",
+      "trigger": "wearing",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:jewelry"
+      }
+    }
+  ],
+  "curated": true
+}

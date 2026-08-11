@@ -1,0 +1,70 @@
+{
+  "page_id": "scp-513",
+  "scp_number": 513,
+  "wikidot_page_id": "5162465",
+  "title": "SCP-513",
+  "url": "https://scp-wiki.wikidot.com/scp-513",
+  "authors": [
+    "beefwit"
+  ],
+  "language": "en",
+  "source_revision": 34,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "artifact",
+    "auditory",
+    "cognitohazard",
+    "euclid",
+    "mind-affecting",
+    "scp"
+  ],
+  "themes": [
+    "auditory",
+    "cognitohazard",
+    "mind-affecting"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "auditory_trigger",
+      "target": "observer",
+      "trigger": "audition",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 34,
+        "section": "metadata.tags",
+        "locator": "tag:auditory"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 34,
+        "section": "metadata.tags",
+        "locator": "tag:cognitohazard"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 34,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    }
+  ],
+  "curated": true
+}

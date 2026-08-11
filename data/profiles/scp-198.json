@@ -1,0 +1,68 @@
+{
+  "page_id": "scp-198",
+  "scp_number": 198,
+  "wikidot_page_id": "5189099",
+  "title": "SCP-198",
+  "url": "https://scp-wiki.wikidot.com/scp-198",
+  "authors": [
+    "Soulbane"
+  ],
+  "language": "en",
+  "source_revision": 23,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "artifact",
+    "euclid",
+    "liquid",
+    "scp",
+    "transfiguration"
+  ],
+  "themes": [
+    "transfiguration",
+    "artifact",
+    "liquid"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "body",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 23,
+        "section": "metadata.tags",
+        "locator": "tag:transfiguration"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "user",
+      "trigger": "contact",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 23,
+        "section": "metadata.tags",
+        "locator": "tag:artifact"
+      }
+    },
+    {
+      "domain": "matter",
+      "operation": "flow",
+      "target": "material",
+      "trigger": "contact",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 23,
+        "section": "metadata.tags",
+        "locator": "tag:liquid"
+      }
+    }
+  ],
+  "curated": true
+}

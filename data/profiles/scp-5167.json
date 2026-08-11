@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-5167",
+  "scp_number": 5167,
+  "wikidot_page_id": "1306980414",
+  "title": "SCP-5167",
+  "url": "https://scp-wiki.wikidot.com/scp-5167",
+  "authors": [
+    "Tanhony"
+  ],
+  "language": "en",
+  "source_revision": 11,
+  "series": "series-6",
+  "tags": [
+    "_licensebox",
+    "cognitohazard",
+    "featured",
+    "game",
+    "keter",
+    "mind-affecting",
+    "online",
+    "sapient",
+    "scp",
+    "uncontained"
+  ],
+  "themes": [
+    "cognitohazard",
+    "online",
+    "game"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 11,
+        "section": "metadata.tags",
+        "locator": "tag:cognitohazard"
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "network_user",
+      "trigger": "network_access",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 11,
+        "section": "metadata.tags",
+        "locator": "tag:online"
+      }
+    },
+    {
+      "domain": "concept",
+      "operation": "impose_rules",
+      "target": "participant",
+      "trigger": "participation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 11,
+        "section": "metadata.tags",
+        "locator": "tag:game"
+      }
+    }
+  ],
+  "curated": true
+}

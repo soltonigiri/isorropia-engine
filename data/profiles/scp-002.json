@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-002",
+  "scp_number": 2,
+  "wikidot_page_id": "1927127",
+  "title": "SCP-002",
+  "url": "https://scp-wiki.wikidot.com/scp-002",
+  "authors": [
+    "Unknown Author"
+  ],
+  "language": "en",
+  "source_revision": 78,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "alive",
+    "body-horror",
+    "euclid",
+    "featured",
+    "horror",
+    "illustrated",
+    "scp",
+    "structure",
+    "transfiguration"
+  ],
+  "themes": [
+    "structure",
+    "transfiguration",
+    "alive"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "contain",
+      "target": "interior_space",
+      "trigger": "entry",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 78,
+        "section": "metadata.tags",
+        "locator": "tag:structure"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "body",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 78,
+        "section": "metadata.tags",
+        "locator": "tag:transfiguration"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "organism",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 78,
+        "section": "metadata.tags",
+        "locator": "tag:alive"
+      }
+    }
+  ],
+  "curated": true
+}

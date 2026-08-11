@@ -1,0 +1,1026 @@
+{
+  "database_version": "de7a62c894fc",
+  "generated_at": "2026-08-11T14:26:58.949Z",
+  "source": "https://scp-data.tedivm.com/data/scp/items/index.json",
+  "profile_count": 100,
+  "attributions": [
+    {
+      "page_id": "scp-002",
+      "title": "SCP-002",
+      "url": "https://scp-wiki.wikidot.com/scp-002",
+      "authors": [
+        "Unknown Author"
+      ],
+      "revision": 78,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-005",
+      "title": "SCP-005",
+      "url": "https://scp-wiki.wikidot.com/scp-005",
+      "authors": [
+        "Unknown Author"
+      ],
+      "revision": 44,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-006",
+      "title": "SCP-006",
+      "url": "https://scp-wiki.wikidot.com/scp-006",
+      "authors": [
+        "Unknown Author"
+      ],
+      "revision": 62,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-008",
+      "title": "SCP-008",
+      "url": "https://scp-wiki.wikidot.com/scp-008",
+      "authors": [
+        "Unknown Author"
+      ],
+      "revision": 66,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-009",
+      "title": "SCP-009",
+      "url": "https://scp-wiki.wikidot.com/scp-009",
+      "authors": [
+        "Chameleon X"
+      ],
+      "revision": 139,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-012",
+      "title": "SCP-012",
+      "url": "https://scp-wiki.wikidot.com/scp-012",
+      "authors": [
+        "ITIFAMCO"
+      ],
+      "revision": 48,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-015",
+      "title": "SCP-015",
+      "url": "https://scp-wiki.wikidot.com/scp-015",
+      "authors": [
+        "Dr Gears"
+      ],
+      "revision": 55,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-017",
+      "title": "SCP-017",
+      "url": "https://scp-wiki.wikidot.com/scp-017",
+      "authors": [
+        "CityToast"
+      ],
+      "revision": 46,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-018",
+      "title": "SCP-018",
+      "url": "https://scp-wiki.wikidot.com/scp-018",
+      "authors": [
+        "Epic Phail Spy"
+      ],
+      "revision": 52,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-023",
+      "title": "SCP-023",
+      "url": "https://scp-wiki.wikidot.com/scp-023",
+      "authors": [
+        "Pig_catapult"
+      ],
+      "revision": 67,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-028",
+      "title": "SCP-028",
+      "url": "https://scp-wiki.wikidot.com/scp-028",
+      "authors": [
+        "Dr Gears"
+      ],
+      "revision": 47,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-035",
+      "title": "SCP-035",
+      "url": "https://scp-wiki.wikidot.com/scp-035",
+      "authors": [
+        "Kain Pathos Crow"
+      ],
+      "revision": 72,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-040",
+      "title": "SCP-040",
+      "url": "https://scp-wiki.wikidot.com/scp-040",
+      "authors": [
+        "Kain Pathos Crow"
+      ],
+      "revision": 69,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-049",
+      "title": "SCP-049",
+      "url": "https://scp-wiki.wikidot.com/scp-049",
+      "authors": [
+        "Gabriel Jade"
+      ],
+      "revision": 121,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-055",
+      "title": "SCP-055",
+      "url": "https://scp-wiki.wikidot.com/scp-055",
+      "authors": [
+        "CptBellman",
+        "qntm"
+      ],
+      "revision": 51,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-058",
+      "title": "SCP-058",
+      "url": "https://scp-wiki.wikidot.com/scp-058",
+      "authors": [
+        "Unknown Author"
+      ],
+      "revision": 60,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-073",
+      "title": "SCP-073",
+      "url": "https://scp-wiki.wikidot.com/scp-073",
+      "authors": [
+        "Kain Pathos Crow"
+      ],
+      "revision": 35,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-076",
+      "title": "SCP-076",
+      "url": "https://scp-wiki.wikidot.com/scp-076",
+      "authors": [
+        "Kain Pathos Crow"
+      ],
+      "revision": 81,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-079",
+      "title": "SCP-079",
+      "url": "https://scp-wiki.wikidot.com/scp-079",
+      "authors": [
+        "Unknown Author"
+      ],
+      "revision": 40,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-087",
+      "title": "SCP-087",
+      "url": "https://scp-wiki.wikidot.com/scp-087",
+      "authors": [
+        "Zaeyde"
+      ],
+      "revision": 54,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-093",
+      "title": "SCP-093",
+      "url": "https://scp-wiki.wikidot.com/scp-093",
+      "authors": [
+        "Unknown Author"
+      ],
+      "revision": 39,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-096",
+      "title": "SCP-096",
+      "url": "https://scp-wiki.wikidot.com/scp-096",
+      "authors": [
+        "Dr Dan"
+      ],
+      "revision": 58,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-106",
+      "title": "SCP-106",
+      "url": "https://scp-wiki.wikidot.com/scp-106",
+      "authors": [
+        "Dr Gears"
+      ],
+      "revision": 130,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-140",
+      "title": "SCP-140",
+      "url": "https://scp-wiki.wikidot.com/scp-140",
+      "authors": [
+        "AssertiveRoland"
+      ],
+      "revision": 47,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-173",
+      "title": "SCP-173",
+      "url": "https://scp-wiki.wikidot.com/scp-173",
+      "authors": [
+        "Moto42"
+      ],
+      "revision": 57,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-178",
+      "title": "SCP-178",
+      "url": "https://scp-wiki.wikidot.com/scp-178",
+      "authors": [
+        "91stCataclysm"
+      ],
+      "revision": 26,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-184",
+      "title": "SCP-184",
+      "url": "https://scp-wiki.wikidot.com/scp-184",
+      "authors": [
+        "Dr Gears"
+      ],
+      "revision": 54,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-198",
+      "title": "SCP-198",
+      "url": "https://scp-wiki.wikidot.com/scp-198",
+      "authors": [
+        "Soulbane"
+      ],
+      "revision": 23,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-217",
+      "title": "SCP-217",
+      "url": "https://scp-wiki.wikidot.com/scp-217",
+      "authors": [
+        "Dr Gears"
+      ],
+      "revision": 41,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-239",
+      "title": "SCP-239",
+      "url": "https://scp-wiki.wikidot.com/scp-239",
+      "authors": [
+        "Dantensen"
+      ],
+      "revision": 79,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-294",
+      "title": "SCP-294",
+      "url": "https://scp-wiki.wikidot.com/scp-294",
+      "authors": [
+        "Arcibi"
+      ],
+      "revision": 116,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-300",
+      "title": "SCP-300",
+      "url": "https://scp-wiki.wikidot.com/scp-300",
+      "authors": [
+        "Aelanna"
+      ],
+      "revision": 27,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-303",
+      "title": "SCP-303",
+      "url": "https://scp-wiki.wikidot.com/scp-303",
+      "authors": [
+        "AJAlkaline"
+      ],
+      "revision": 36,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-354",
+      "title": "SCP-354",
+      "url": "https://scp-wiki.wikidot.com/scp-354",
+      "authors": [
+        "Dave Rapp"
+      ],
+      "revision": 69,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-426",
+      "title": "SCP-426",
+      "url": "https://scp-wiki.wikidot.com/scp-426",
+      "authors": [
+        "Flah"
+      ],
+      "revision": 49,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-447",
+      "title": "SCP-447",
+      "url": "https://scp-wiki.wikidot.com/scp-447",
+      "authors": [
+        "DrClef"
+      ],
+      "revision": 28,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-458",
+      "title": "SCP-458",
+      "url": "https://scp-wiki.wikidot.com/scp-458",
+      "authors": [
+        "Palhinuk"
+      ],
+      "revision": 125,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-500",
+      "title": "SCP-500",
+      "url": "https://scp-wiki.wikidot.com/scp-500",
+      "authors": [
+        "snorlison"
+      ],
+      "revision": 51,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-507",
+      "title": "SCP-507",
+      "url": "https://scp-wiki.wikidot.com/scp-507",
+      "authors": [
+        "PennywiseTheClown"
+      ],
+      "revision": 44,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-513",
+      "title": "SCP-513",
+      "url": "https://scp-wiki.wikidot.com/scp-513",
+      "authors": [
+        "beefwit"
+      ],
+      "revision": 34,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-529",
+      "title": "SCP-529",
+      "url": "https://scp-wiki.wikidot.com/scp-529",
+      "authors": [
+        "Unknown Author"
+      ],
+      "revision": 32,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-610",
+      "title": "SCP-610",
+      "url": "https://scp-wiki.wikidot.com/scp-610",
+      "authors": [
+        "NekoChris"
+      ],
+      "revision": 65,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-682",
+      "title": "SCP-682",
+      "url": "https://scp-wiki.wikidot.com/scp-682",
+      "authors": [
+        "Dr Gears",
+        "Epic Phail Spy"
+      ],
+      "revision": 69,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-689",
+      "title": "SCP-689",
+      "url": "https://scp-wiki.wikidot.com/scp-689",
+      "authors": [
+        "Unknown Author"
+      ],
+      "revision": 27,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-701",
+      "title": "SCP-701",
+      "url": "https://scp-wiki.wikidot.com/scp-701",
+      "authors": [
+        "tinwatchman"
+      ],
+      "revision": 60,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-714",
+      "title": "SCP-714",
+      "url": "https://scp-wiki.wikidot.com/scp-714",
+      "authors": [
+        "Arcalane"
+      ],
+      "revision": 36,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-860",
+      "title": "SCP-860",
+      "url": "https://scp-wiki.wikidot.com/scp-860",
+      "authors": [
+        "Enma Ai"
+      ],
+      "revision": 35,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-871",
+      "title": "SCP-871",
+      "url": "https://scp-wiki.wikidot.com/scp-871",
+      "authors": [
+        "Seibai"
+      ],
+      "revision": 28,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-882",
+      "title": "SCP-882",
+      "url": "https://scp-wiki.wikidot.com/scp-882",
+      "authors": [
+        "Dr Gears"
+      ],
+      "revision": 33,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-914",
+      "title": "SCP-914",
+      "url": "https://scp-wiki.wikidot.com/scp-914",
+      "authors": [
+        "Dr Gears"
+      ],
+      "revision": 52,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-939",
+      "title": "SCP-939",
+      "url": "https://scp-wiki.wikidot.com/scp-939",
+      "authors": [
+        "Adam Smascher",
+        "EchoFourDelta"
+      ],
+      "revision": 38,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-966",
+      "title": "SCP-966",
+      "url": "https://scp-wiki.wikidot.com/scp-966",
+      "authors": [
+        "Enma Ai"
+      ],
+      "revision": 69,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-978",
+      "title": "SCP-978",
+      "url": "https://scp-wiki.wikidot.com/scp-978",
+      "authors": [
+        "agatharights"
+      ],
+      "revision": 31,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-999",
+      "title": "SCP-999",
+      "url": "https://scp-wiki.wikidot.com/scp-999",
+      "authors": [
+        "ProfSnider"
+      ],
+      "revision": 40,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1000",
+      "title": "SCP-1000",
+      "url": "https://scp-wiki.wikidot.com/scp-1000",
+      "authors": [
+        "thedeadlymoose"
+      ],
+      "revision": 88,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1048",
+      "title": "SCP-1048",
+      "url": "https://scp-wiki.wikidot.com/scp-1048",
+      "authors": [
+        "trennerdios"
+      ],
+      "revision": 48,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1123",
+      "title": "SCP-1123",
+      "url": "https://scp-wiki.wikidot.com/scp-1123",
+      "authors": [
+        "sandrewswann"
+      ],
+      "revision": 32,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1171",
+      "title": "SCP-1171",
+      "url": "https://scp-wiki.wikidot.com/scp-1171",
+      "authors": [
+        "DrEverettMann"
+      ],
+      "revision": 19,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1230",
+      "title": "SCP-1230",
+      "url": "https://scp-wiki.wikidot.com/scp-1230",
+      "authors": [
+        "MrPixel"
+      ],
+      "revision": 52,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1295",
+      "title": "SCP-1295",
+      "url": "https://scp-wiki.wikidot.com/scp-1295",
+      "authors": [
+        "Dmatix"
+      ],
+      "revision": 21,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1471",
+      "title": "SCP-1471",
+      "url": "https://scp-wiki.wikidot.com/scp-1471",
+      "authors": [
+        "LurkD"
+      ],
+      "revision": 36,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1678",
+      "title": "SCP-1678",
+      "url": "https://scp-wiki.wikidot.com/scp-1678",
+      "authors": [
+        "AstronautJoe"
+      ],
+      "revision": 87,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1730",
+      "title": "SCP-1730",
+      "url": "https://scp-wiki.wikidot.com/scp-1730",
+      "authors": [
+        "djkaktus"
+      ],
+      "revision": 192,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1762",
+      "title": "SCP-1762",
+      "url": "https://scp-wiki.wikidot.com/scp-1762",
+      "authors": [
+        "OZ Ouroboros"
+      ],
+      "revision": 51,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1879",
+      "title": "SCP-1879",
+      "url": "https://scp-wiki.wikidot.com/scp-1879",
+      "authors": [
+        "marslifeform"
+      ],
+      "revision": 17,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-1981",
+      "title": "SCP-1981",
+      "url": "https://scp-wiki.wikidot.com/scp-1981",
+      "authors": [
+        "Digiwizzard"
+      ],
+      "revision": 67,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-2000",
+      "title": "SCP-2000",
+      "url": "https://scp-wiki.wikidot.com/scp-2000",
+      "authors": [
+        "HammerMaiden"
+      ],
+      "revision": 68,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-2200",
+      "title": "SCP-2200",
+      "url": "https://scp-wiki.wikidot.com/scp-2200",
+      "authors": [
+        "PeppersGhost"
+      ],
+      "revision": 38,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-2316",
+      "title": "SCP-2316",
+      "url": "https://scp-wiki.wikidot.com/scp-2316",
+      "authors": [
+        "djkaktus"
+      ],
+      "revision": 80,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-2521",
+      "title": "SCP-2521",
+      "url": "https://scp-wiki.wikidot.com/scp-2521",
+      "authors": [
+        "LurkD"
+      ],
+      "revision": 33,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-2719",
+      "title": "SCP-2719",
+      "url": "https://scp-wiki.wikidot.com/scp-2719",
+      "authors": [
+        "Randomini"
+      ],
+      "revision": 18,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-2747",
+      "title": "SCP-2747",
+      "url": "https://scp-wiki.wikidot.com/scp-2747",
+      "authors": [
+        "minmin"
+      ],
+      "revision": 37,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-2845",
+      "title": "SCP-2845",
+      "url": "https://scp-wiki.wikidot.com/scp-2845",
+      "authors": [
+        "Djoric"
+      ],
+      "revision": 45,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-2935",
+      "title": "SCP-2935",
+      "url": "https://scp-wiki.wikidot.com/scp-2935",
+      "authors": [
+        "djkaktus"
+      ],
+      "revision": 93,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-3000",
+      "title": "SCP-3000",
+      "url": "https://scp-wiki.wikidot.com/scp-3000",
+      "authors": [
+        "A Random Day",
+        "djkaktus",
+        "Joreth"
+      ],
+      "revision": 104,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-3001",
+      "title": "SCP-3001",
+      "url": "https://scp-wiki.wikidot.com/scp-3001",
+      "authors": [
+        "OZ Ouroboros"
+      ],
+      "revision": 30,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-3008",
+      "title": "SCP-3008",
+      "url": "https://scp-wiki.wikidot.com/scp-3008",
+      "authors": [
+        "Mortos"
+      ],
+      "revision": 30,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-3125",
+      "title": "SCP-3125",
+      "url": "https://scp-wiki.wikidot.com/scp-3125",
+      "authors": [
+        "qntm"
+      ],
+      "revision": 47,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-3301",
+      "title": "SCP-3301",
+      "url": "https://scp-wiki.wikidot.com/scp-3301",
+      "authors": [
+        "djkaktus"
+      ],
+      "revision": 109,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-3984",
+      "title": "SCP-3984",
+      "url": "https://scp-wiki.wikidot.com/scp-3984",
+      "authors": [
+        "Croquembouche"
+      ],
+      "revision": 46,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-3999",
+      "title": "SCP-3999",
+      "url": "https://scp-wiki.wikidot.com/scp-3999",
+      "authors": [
+        "LordStonefish"
+      ],
+      "revision": 119,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-4010",
+      "title": "SCP-4010",
+      "url": "https://scp-wiki.wikidot.com/scp-4010",
+      "authors": [
+        "Utylike"
+      ],
+      "revision": 25,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-4666",
+      "title": "SCP-4666",
+      "url": "https://scp-wiki.wikidot.com/scp-4666",
+      "authors": [
+        "Hercules Rockefeller"
+      ],
+      "revision": 42,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-4999",
+      "title": "SCP-4999",
+      "url": "https://scp-wiki.wikidot.com/scp-4999",
+      "authors": [
+        "CadaverCommander"
+      ],
+      "revision": 71,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-5000",
+      "title": "SCP-5000",
+      "url": "https://scp-wiki.wikidot.com/scp-5000",
+      "authors": [
+        "Tanhony"
+      ],
+      "revision": 32,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-5031",
+      "title": "SCP-5031",
+      "url": "https://scp-wiki.wikidot.com/scp-5031",
+      "authors": [
+        "PeppersGhost"
+      ],
+      "revision": 77,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-5167",
+      "title": "SCP-5167",
+      "url": "https://scp-wiki.wikidot.com/scp-5167",
+      "authors": [
+        "Tanhony"
+      ],
+      "revision": 11,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-5555",
+      "title": "SCP-5555",
+      "url": "https://scp-wiki.wikidot.com/scp-5555",
+      "authors": [
+        "A Random Day",
+        "Rounderhouse",
+        "Uncle Nicolini"
+      ],
+      "revision": 73,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-5999",
+      "title": "SCP-5999",
+      "url": "https://scp-wiki.wikidot.com/scp-5999",
+      "authors": [
+        "Modern_Erasmus",
+        "S D Locke",
+        "TheeSherm",
+        "VolgunStrife",
+        "Woedenaz"
+      ],
+      "revision": 84,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-6000",
+      "title": "SCP-6000",
+      "url": "https://scp-wiki.wikidot.com/scp-6000",
+      "authors": [
+        "Rounderhouse"
+      ],
+      "revision": 59,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-6500",
+      "title": "SCP-6500",
+      "url": "https://scp-wiki.wikidot.com/scp-6500",
+      "authors": [
+        "Aethris",
+        "Anonymous",
+        "DarkStuff",
+        "Grigori Karpin",
+        "HarryBlank",
+        "Placeholder McD",
+        "S D Locke"
+      ],
+      "revision": 74,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-7000",
+      "title": "SCP-7000",
+      "url": "https://scp-wiki.wikidot.com/scp-7000",
+      "authors": [
+        "HarryBlank"
+      ],
+      "revision": 119,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-7004",
+      "title": "SCP-7004",
+      "url": "https://scp-wiki.wikidot.com/scp-7004",
+      "authors": [
+        "AnAnomalousWriter",
+        "Ecronak"
+      ],
+      "revision": 36,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-7179",
+      "title": "SCP-7179",
+      "url": "https://scp-wiki.wikidot.com/scp-7179",
+      "authors": [
+        "Calibold"
+      ],
+      "revision": 40,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-7450",
+      "title": "SCP-7450",
+      "url": "https://scp-wiki.wikidot.com/scp-7450",
+      "authors": [
+        "djkaktus"
+      ],
+      "revision": 23,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-7795",
+      "title": "SCP-7795",
+      "url": "https://scp-wiki.wikidot.com/scp-7795",
+      "authors": [
+        "Trintavon"
+      ],
+      "revision": 18,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-7819",
+      "title": "SCP-7819",
+      "url": "https://scp-wiki.wikidot.com/scp-7819",
+      "authors": [
+        "Rounderhouse"
+      ],
+      "revision": 13,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-8000",
+      "title": "SCP-8000",
+      "url": "https://scp-wiki.wikidot.com/scp-8000",
+      "authors": [
+        "PlaguePJP"
+      ],
+      "revision": 89,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-8980",
+      "title": "SCP-8980",
+      "url": "https://scp-wiki.wikidot.com/scp-8980",
+      "authors": [
+        "Yossipossi"
+      ],
+      "revision": 28,
+      "license": "CC BY-SA 3.0"
+    },
+    {
+      "page_id": "scp-8999",
+      "title": "SCP-8999",
+      "url": "https://scp-wiki.wikidot.com/scp-8999",
+      "authors": [
+        "J Dune"
+      ],
+      "revision": 16,
+      "license": "CC BY-SA 3.0"
+    }
+  ]
+}

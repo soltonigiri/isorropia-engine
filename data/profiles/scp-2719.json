@@ -1,0 +1,54 @@
+{
+  "page_id": "scp-2719",
+  "scp_number": 2719,
+  "wikidot_page_id": "26361951",
+  "title": "SCP-2719",
+  "url": "https://scp-wiki.wikidot.com/scp-2719",
+  "authors": [
+    "Randomini"
+  ],
+  "language": "en",
+  "source_revision": 18,
+  "series": "series-3",
+  "tags": [
+    "_licensebox",
+    "concept",
+    "doctor-reynders",
+    "hard-to-destroy-reptile",
+    "keter",
+    "scp"
+  ],
+  "themes": [
+    "concept",
+    "hard-to-destroy-reptile"
+  ],
+  "effects": [
+    {
+      "domain": "concept",
+      "operation": "alter",
+      "target": "concept",
+      "trigger": "cognition",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 18,
+        "section": "metadata.tags",
+        "locator": "tag:concept"
+      }
+    },
+    {
+      "domain": "durability",
+      "operation": "resist",
+      "target": "destruction",
+      "trigger": "damage",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 18,
+        "section": "metadata.tags",
+        "locator": "tag:hard-to-destroy-reptile"
+      }
+    }
+  ],
+  "curated": true
+}

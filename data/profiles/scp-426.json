@@ -1,0 +1,71 @@
+{
+  "page_id": "scp-426",
+  "scp_number": 426,
+  "wikidot_page_id": "4676561",
+  "title": "SCP-426",
+  "url": "https://scp-wiki.wikidot.com/scp-426",
+  "authors": [
+    "Flah"
+  ],
+  "language": "en",
+  "source_revision": 49,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "appliance",
+    "electrical",
+    "euclid",
+    "infohazard",
+    "meta",
+    "mind-affecting",
+    "scp",
+    "surrealism"
+  ],
+  "themes": [
+    "infohazard",
+    "mind-affecting",
+    "appliance"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 49,
+        "section": "metadata.tags",
+        "locator": "tag:infohazard"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 49,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "user_request",
+      "trigger": "operation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 49,
+        "section": "metadata.tags",
+        "locator": "tag:appliance"
+      }
+    }
+  ],
+  "curated": true
+}

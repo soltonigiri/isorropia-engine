@@ -1,0 +1,77 @@
+{
+  "page_id": "scp-7819",
+  "scp_number": 7819,
+  "wikidot_page_id": "1451178201",
+  "title": "SCP-7819",
+  "url": "https://scp-wiki.wikidot.com/scp-7819",
+  "authors": [
+    "Rounderhouse"
+  ],
+  "language": "en",
+  "source_revision": 13,
+  "series": "series-8",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "building",
+    "foundation-personnel",
+    "horror",
+    "keter",
+    "location",
+    "mystery",
+    "phenomenon",
+    "predatory",
+    "psychological-horror",
+    "reviewers-spotlight",
+    "scp",
+    "spatial",
+    "uncontained"
+  ],
+  "themes": [
+    "predatory",
+    "location",
+    "phenomenon"
+  ],
+  "effects": [
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "prey",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 13,
+        "section": "metadata.tags",
+        "locator": "tag:predatory"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "contain",
+      "target": "occupant",
+      "trigger": "entry",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 13,
+        "section": "metadata.tags",
+        "locator": "tag:location"
+      }
+    },
+    {
+      "domain": "containment",
+      "operation": "manifest",
+      "target": "environment",
+      "trigger": "event",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 13,
+        "section": "metadata.tags",
+        "locator": "tag:phenomenon"
+      }
+    }
+  ],
+  "curated": true
+}

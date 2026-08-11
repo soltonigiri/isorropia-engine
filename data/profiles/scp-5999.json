@@ -1,0 +1,84 @@
+{
+  "page_id": "scp-5999",
+  "scp_number": 5999,
+  "wikidot_page_id": "986256503",
+  "title": "SCP-5999",
+  "url": "https://scp-wiki.wikidot.com/scp-5999",
+  "authors": [
+    "Modern_Erasmus",
+    "S D Locke",
+    "TheeSherm",
+    "VolgunStrife",
+    "Woedenaz"
+  ],
+  "language": "en",
+  "source_revision": 84,
+  "series": "series-6",
+  "tags": [
+    "5000",
+    "_cc",
+    "_cc4",
+    "_licensebox",
+    "_listpages",
+    "alive",
+    "audio",
+    "co-authored",
+    "esoteric-class",
+    "horror",
+    "humanoid",
+    "illustrated",
+    "infohazard",
+    "meta",
+    "mystery",
+    "phenomenon",
+    "scp",
+    "video"
+  ],
+  "themes": [
+    "infohazard",
+    "meta",
+    "audio"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 84,
+        "section": "metadata.tags",
+        "locator": "tag:infohazard"
+      }
+    },
+    {
+      "domain": "narrative",
+      "operation": "alter",
+      "target": "narrative",
+      "trigger": "representation",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 84,
+        "section": "metadata.tags",
+        "locator": "tag:meta"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "auditory_trigger",
+      "target": "listener",
+      "trigger": "audition",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 84,
+        "section": "metadata.tags",
+        "locator": "tag:audio"
+      }
+    }
+  ],
+  "curated": true
+}

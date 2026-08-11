@@ -1,0 +1,80 @@
+{
+  "page_id": "scp-2845",
+  "scp_number": 2845,
+  "wikidot_page_id": "21425109",
+  "title": "SCP-2845",
+  "url": "https://scp-wiki.wikidot.com/scp-2845",
+  "authors": [
+    "Djoric"
+  ],
+  "language": "en",
+  "source_revision": 45,
+  "series": "series-3",
+  "tags": [
+    "_licensebox",
+    "animal",
+    "apocalyptic",
+    "deer",
+    "deity",
+    "ectoentropic",
+    "esoteric-class",
+    "extraterrestrial",
+    "fantasy",
+    "horror",
+    "indestructible",
+    "post-apocalyptic",
+    "ritual",
+    "sapient",
+    "scp",
+    "telekinetic",
+    "telepathic",
+    "transfiguration"
+  ],
+  "themes": [
+    "deity",
+    "ectoentropic",
+    "indestructible"
+  ],
+  "effects": [
+    {
+      "domain": "belief",
+      "operation": "influence",
+      "target": "worshipper",
+      "trigger": "ritual",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 45,
+        "section": "metadata.tags",
+        "locator": "tag:deity"
+      }
+    },
+    {
+      "domain": "energy",
+      "operation": "generate",
+      "target": "energy",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 45,
+        "section": "metadata.tags",
+        "locator": "tag:ectoentropic"
+      }
+    },
+    {
+      "domain": "durability",
+      "operation": "resist",
+      "target": "destruction",
+      "trigger": "damage",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 45,
+        "section": "metadata.tags",
+        "locator": "tag:indestructible"
+      }
+    }
+  ],
+  "curated": true
+}

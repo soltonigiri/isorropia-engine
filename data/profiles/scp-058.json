@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-058",
+  "scp_number": 58,
+  "wikidot_page_id": "1957543",
+  "title": "SCP-058",
+  "url": "https://scp-wiki.wikidot.com/scp-058",
+  "authors": [
+    "Unknown Author"
+  ],
+  "language": "en",
+  "source_revision": 60,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "alive",
+    "auditory",
+    "bovine",
+    "horror",
+    "hostile",
+    "keter",
+    "murder-monster",
+    "scp",
+    "surrealism"
+  ],
+  "themes": [
+    "hostile",
+    "auditory",
+    "alive"
+  ],
+  "effects": [
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 60,
+        "section": "metadata.tags",
+        "locator": "tag:hostile"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "auditory_trigger",
+      "target": "observer",
+      "trigger": "audition",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 60,
+        "section": "metadata.tags",
+        "locator": "tag:auditory"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "organism",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 60,
+        "section": "metadata.tags",
+        "locator": "tag:alive"
+      }
+    }
+  ],
+  "curated": true
+}

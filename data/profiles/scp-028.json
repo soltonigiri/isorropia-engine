@@ -1,0 +1,69 @@
+{
+  "page_id": "scp-028",
+  "scp_number": 28,
+  "wikidot_page_id": "1956725",
+  "title": "SCP-028",
+  "url": "https://scp-wiki.wikidot.com/scp-028",
+  "authors": [
+    "Dr Gears"
+  ],
+  "language": "en",
+  "source_revision": 47,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "event-featured",
+    "knowledge",
+    "location",
+    "mind-affecting",
+    "safe",
+    "scp"
+  ],
+  "themes": [
+    "knowledge",
+    "mind-affecting",
+    "location"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "reveal",
+      "target": "subject",
+      "trigger": "contact",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 47,
+        "section": "metadata.tags",
+        "locator": "tag:knowledge"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 47,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "contain",
+      "target": "occupant",
+      "trigger": "entry",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 47,
+        "section": "metadata.tags",
+        "locator": "tag:location"
+      }
+    }
+  ],
+  "curated": true
+}

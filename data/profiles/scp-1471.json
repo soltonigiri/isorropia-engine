@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-1471",
+  "scp_number": 1471,
+  "wikidot_page_id": "16492770",
+  "title": "SCP-1471",
+  "url": "https://scp-wiki.wikidot.com/scp-1471",
+  "authors": [
+    "LurkD"
+  ],
+  "language": "en",
+  "source_revision": 36,
+  "series": "series-2",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "computer",
+    "euclid",
+    "humanoid",
+    "malo",
+    "media",
+    "scp",
+    "transmission",
+    "uncontained",
+    "visual"
+  ],
+  "themes": [
+    "transmission",
+    "media",
+    "visual"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "audience",
+      "trigger": "network_access",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:transmission"
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "transmit",
+      "target": "audience",
+      "trigger": "playback",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:media"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:visual"
+      }
+    }
+  ],
+  "curated": true
+}

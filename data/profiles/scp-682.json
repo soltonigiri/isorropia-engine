@@ -1,0 +1,81 @@
+{
+  "page_id": "scp-682",
+  "scp_number": 682,
+  "wikidot_page_id": "1956155",
+  "title": "SCP-682",
+  "url": "https://scp-wiki.wikidot.com/scp-682",
+  "authors": [
+    "Dr Gears",
+    "Epic Phail Spy"
+  ],
+  "language": "en",
+  "source_revision": 69,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "action",
+    "adaptive",
+    "alive",
+    "audio",
+    "co-authored",
+    "hard-to-destroy-reptile",
+    "horror",
+    "hostile",
+    "illustrated",
+    "indestructible",
+    "keter",
+    "murder-monster",
+    "reptile",
+    "sapient",
+    "scp",
+    "self-repairing"
+  ],
+  "themes": [
+    "adaptive",
+    "indestructible",
+    "hostile"
+  ],
+  "effects": [
+    {
+      "domain": "containment",
+      "operation": "adapt",
+      "target": "containment_method",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 69,
+        "section": "metadata.tags",
+        "locator": "tag:adaptive"
+      }
+    },
+    {
+      "domain": "durability",
+      "operation": "resist",
+      "target": "destruction",
+      "trigger": "damage",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 69,
+        "section": "metadata.tags",
+        "locator": "tag:indestructible"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 69,
+        "section": "metadata.tags",
+        "locator": "tag:hostile"
+      }
+    }
+  ],
+  "curated": true
+}

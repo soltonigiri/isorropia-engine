@@ -1,0 +1,74 @@
+{
+  "page_id": "scp-294",
+  "scp_number": 294,
+  "wikidot_page_id": "1958940",
+  "title": "SCP-294",
+  "url": "https://scp-wiki.wikidot.com/scp-294",
+  "authors": [
+    "Arcibi"
+  ],
+  "language": "en",
+  "source_revision": 116,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "appliance",
+    "comedy",
+    "euclid",
+    "exchange",
+    "featured",
+    "food",
+    "hand-drawn-cassy",
+    "scp",
+    "slice-of-life",
+    "teleportation"
+  ],
+  "themes": [
+    "exchange",
+    "teleportation",
+    "appliance"
+  ],
+  "effects": [
+    {
+      "domain": "matter",
+      "operation": "exchange",
+      "target": "material",
+      "trigger": "request",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 116,
+        "section": "metadata.tags",
+        "locator": "tag:exchange"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "entity",
+      "trigger": "activation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 116,
+        "section": "metadata.tags",
+        "locator": "tag:teleportation"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "user_request",
+      "trigger": "operation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 116,
+        "section": "metadata.tags",
+        "locator": "tag:appliance"
+      }
+    }
+  ],
+  "curated": true
+}

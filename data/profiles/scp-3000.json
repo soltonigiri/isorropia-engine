@@ -1,0 +1,86 @@
+{
+  "page_id": "scp-3000",
+  "scp_number": 3000,
+  "wikidot_page_id": "48103896",
+  "title": "SCP-3000",
+  "url": "https://scp-wiki.wikidot.com/scp-3000",
+  "authors": [
+    "A Random Day",
+    "djkaktus",
+    "Joreth"
+  ],
+  "language": "en",
+  "source_revision": 104,
+  "series": "series-4",
+  "tags": [
+    "3000",
+    "_cc",
+    "_licensebox",
+    "alive",
+    "animal",
+    "aquatic",
+    "co-authored",
+    "cognitohazard",
+    "deity",
+    "empathic",
+    "fish",
+    "horror",
+    "illustrated",
+    "memory-affecting",
+    "mythological",
+    "psychological-horror",
+    "religious",
+    "religious-fiction",
+    "science-fiction",
+    "scp",
+    "thaumiel",
+    "visual"
+  ],
+  "themes": [
+    "cognitohazard",
+    "deity",
+    "aquatic"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 104,
+        "section": "metadata.tags",
+        "locator": "tag:cognitohazard"
+      }
+    },
+    {
+      "domain": "belief",
+      "operation": "influence",
+      "target": "worshipper",
+      "trigger": "ritual",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 104,
+        "section": "metadata.tags",
+        "locator": "tag:deity"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "aquatic_organism",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 104,
+        "section": "metadata.tags",
+        "locator": "tag:aquatic"
+      }
+    }
+  ],
+  "curated": true
+}

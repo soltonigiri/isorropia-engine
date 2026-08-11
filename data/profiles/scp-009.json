@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-009",
+  "scp_number": 9,
+  "wikidot_page_id": "4353016",
+  "title": "SCP-009",
+  "url": "https://scp-wiki.wikidot.com/scp-009",
+  "authors": [
+    "Chameleon X"
+  ],
+  "language": "en",
+  "source_revision": 139,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "ectoentropic",
+    "euclid",
+    "illustrated",
+    "liquid",
+    "rewrite",
+    "scp",
+    "self-replicating",
+    "thermal"
+  ],
+  "themes": [
+    "self-replicating",
+    "thermal",
+    "liquid"
+  ],
+  "effects": [
+    {
+      "domain": "replication",
+      "operation": "replicate",
+      "target": "self",
+      "trigger": "resource_access",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 139,
+        "section": "metadata.tags",
+        "locator": "tag:self-replicating"
+      }
+    },
+    {
+      "domain": "energy",
+      "operation": "alter_temperature",
+      "target": "matter",
+      "trigger": "contact",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 139,
+        "section": "metadata.tags",
+        "locator": "tag:thermal"
+      }
+    },
+    {
+      "domain": "matter",
+      "operation": "flow",
+      "target": "material",
+      "trigger": "contact",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 139,
+        "section": "metadata.tags",
+        "locator": "tag:liquid"
+      }
+    }
+  ],
+  "curated": true
+}

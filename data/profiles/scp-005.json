@@ -1,0 +1,55 @@
+{
+  "page_id": "scp-005",
+  "scp_number": 5,
+  "wikidot_page_id": "1956980",
+  "title": "SCP-005",
+  "url": "https://scp-wiki.wikidot.com/scp-005",
+  "authors": [
+    "Unknown Author"
+  ],
+  "language": "en",
+  "source_revision": 44,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_genreless",
+    "_licensebox",
+    "adaptive",
+    "safe",
+    "scp",
+    "tool"
+  ],
+  "themes": [
+    "tool",
+    "adaptive"
+  ],
+  "effects": [
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "user",
+      "trigger": "operation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 44,
+        "section": "metadata.tags",
+        "locator": "tag:tool"
+      }
+    },
+    {
+      "domain": "containment",
+      "operation": "adapt",
+      "target": "containment_method",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 44,
+        "section": "metadata.tags",
+        "locator": "tag:adaptive"
+      }
+    }
+  ],
+  "curated": true
+}

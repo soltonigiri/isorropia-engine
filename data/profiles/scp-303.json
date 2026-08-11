@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-303",
+  "scp_number": 303,
+  "wikidot_page_id": "5052398",
+  "title": "SCP-303",
+  "url": "https://scp-wiki.wikidot.com/scp-303",
+  "authors": [
+    "AJAlkaline"
+  ],
+  "language": "en",
+  "source_revision": 36,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "euclid",
+    "horror",
+    "humanoid",
+    "mind-affecting",
+    "mystery",
+    "observational",
+    "psychological-horror",
+    "scp",
+    "teleportation"
+  ],
+  "themes": [
+    "mind-affecting",
+    "teleportation",
+    "observational"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "entity",
+      "trigger": "activation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:teleportation"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:observational"
+      }
+    }
+  ],
+  "curated": true
+}

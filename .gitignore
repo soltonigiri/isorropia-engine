@@ -1,0 +1,18 @@
+# Dependencies and generated outputs
+node_modules/
+dist/
+release/
+coverage/
+*.tgz
+*.log
+npm-debug.log*
+
+# Local configuration and private working material
+.env
+.env.*
+!.env.example
+.private/
+AGENTS.md
+.vscode/
+.idea/
+.DS_Store

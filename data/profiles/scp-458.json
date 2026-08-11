@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-458",
+  "scp_number": 458,
+  "wikidot_page_id": "2326634",
+  "title": "SCP-458",
+  "url": "https://scp-wiki.wikidot.com/scp-458",
+  "authors": [
+    "Palhinuk"
+  ],
+  "language": "en",
+  "source_revision": 125,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "collaboration",
+    "ectoentropic",
+    "food",
+    "indestructible",
+    "safe",
+    "scp",
+    "teenage-gaea",
+    "telepathic"
+  ],
+  "themes": [
+    "food",
+    "ectoentropic",
+    "telepathic"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "nourish",
+      "target": "consumer",
+      "trigger": "consumption",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 125,
+        "section": "metadata.tags",
+        "locator": "tag:food"
+      }
+    },
+    {
+      "domain": "energy",
+      "operation": "generate",
+      "target": "energy",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 125,
+        "section": "metadata.tags",
+        "locator": "tag:ectoentropic"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "mind",
+      "trigger": "proximity",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 125,
+        "section": "metadata.tags",
+        "locator": "tag:telepathic"
+      }
+    }
+  ],
+  "curated": true
+}

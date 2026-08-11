@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-1678",
+  "scp_number": 1678,
+  "wikidot_page_id": "14055751",
+  "title": "SCP-1678",
+  "url": "https://scp-wiki.wikidot.com/scp-1678",
+  "authors": [
+    "AstronautJoe"
+  ],
+  "language": "en",
+  "source_revision": 87,
+  "series": "series-2",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "city",
+    "euclid",
+    "historical",
+    "illustrated",
+    "k-class-scenario",
+    "pattern-screamer",
+    "scp",
+    "subterranean"
+  ],
+  "themes": [
+    "city",
+    "k-class-scenario",
+    "subterranean"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "contain",
+      "target": "population",
+      "trigger": "entry",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 87,
+        "section": "metadata.tags",
+        "locator": "tag:city"
+      }
+    },
+    {
+      "domain": "civilization",
+      "operation": "destabilize",
+      "target": "baseline_reality",
+      "trigger": "event",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 87,
+        "section": "metadata.tags",
+        "locator": "tag:k-class-scenario"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "contain",
+      "target": "occupant",
+      "trigger": "entry",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 87,
+        "section": "metadata.tags",
+        "locator": "tag:subterranean"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,88 @@
+{
+  "page_id": "scp-5000",
+  "scp_number": 5000,
+  "wikidot_page_id": "986170346",
+  "title": "SCP-5000",
+  "url": "https://scp-wiki.wikidot.com/scp-5000",
+  "authors": [
+    "Tanhony"
+  ],
+  "language": "en",
+  "source_revision": 32,
+  "series": "series-6",
+  "tags": [
+    "5000",
+    "_cc",
+    "_licensebox",
+    "action",
+    "adventure",
+    "anomalous-event",
+    "apocalyptic",
+    "british-occult-service",
+    "broken-god",
+    "doctor-gears",
+    "ectoentropic",
+    "electronic",
+    "ethics-committee",
+    "foundation-made",
+    "global-occult-coalition",
+    "horror",
+    "manna-charitable-foundation",
+    "mechanical",
+    "media",
+    "mystery",
+    "odongo-tejani",
+    "safe",
+    "scp",
+    "sensory",
+    "serpents-hand",
+    "wanderers-library"
+  ],
+  "themes": [
+    "apocalyptic",
+    "electronic",
+    "anomalous-event"
+  ],
+  "effects": [
+    {
+      "domain": "civilization",
+      "operation": "destroy",
+      "target": "civilization",
+      "trigger": "event",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 32,
+        "section": "metadata.tags",
+        "locator": "tag:apocalyptic"
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "transmit",
+      "target": "digital_system",
+      "trigger": "execution",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 32,
+        "section": "metadata.tags",
+        "locator": "tag:electronic"
+      }
+    },
+    {
+      "domain": "civilization",
+      "operation": "destabilize",
+      "target": "baseline_reality",
+      "trigger": "event",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 32,
+        "section": "metadata.tags",
+        "locator": "tag:anomalous-event"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,74 @@
+{
+  "page_id": "scp-023",
+  "scp_number": 23,
+  "wikidot_page_id": "4405291",
+  "title": "SCP-023",
+  "url": "https://scp-wiki.wikidot.com/scp-023",
+  "authors": [
+    "Pig_catapult"
+  ],
+  "language": "en",
+  "source_revision": 67,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "alive",
+    "animal",
+    "canine",
+    "cognitohazard",
+    "euclid",
+    "fire",
+    "intangible",
+    "scp",
+    "sun",
+    "teleportation",
+    "visual"
+  ],
+  "themes": [
+    "visual",
+    "teleportation",
+    "fire"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 67,
+        "section": "metadata.tags",
+        "locator": "tag:visual"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "entity",
+      "trigger": "activation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 67,
+        "section": "metadata.tags",
+        "locator": "tag:teleportation"
+      }
+    },
+    {
+      "domain": "energy",
+      "operation": "damage",
+      "target": "material",
+      "trigger": "exposure",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 67,
+        "section": "metadata.tags",
+        "locator": "tag:fire"
+      }
+    }
+  ],
+  "curated": true
+}

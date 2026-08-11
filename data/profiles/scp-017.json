@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-017",
+  "scp_number": 17,
+  "wikidot_page_id": "1956533",
+  "title": "SCP-017",
+  "url": "https://scp-wiki.wikidot.com/scp-017",
+  "authors": [
+    "CityToast"
+  ],
+  "language": "en",
+  "source_revision": 46,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "hostile",
+    "humanoid",
+    "illustrated",
+    "keter",
+    "light",
+    "murder-monster",
+    "scp",
+    "shadow"
+  ],
+  "themes": [
+    "shadow",
+    "hostile",
+    "light"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "conceal",
+      "target": "entity",
+      "trigger": "low_light",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 46,
+        "section": "metadata.tags",
+        "locator": "tag:shadow"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 46,
+        "section": "metadata.tags",
+        "locator": "tag:hostile"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "reveal",
+      "target": "observer",
+      "trigger": "illumination",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 46,
+        "section": "metadata.tags",
+        "locator": "tag:light"
+      }
+    }
+  ],
+  "curated": true
+}

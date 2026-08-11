@@ -1,0 +1,77 @@
+{
+  "page_id": "scp-076",
+  "scp_number": 76,
+  "wikidot_page_id": "1956457",
+  "title": "SCP-076",
+  "url": "https://scp-wiki.wikidot.com/scp-076",
+  "authors": [
+    "Kain Pathos Crow"
+  ],
+  "language": "en",
+  "source_revision": 81,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "able",
+    "action",
+    "alive",
+    "extradimensional",
+    "hostile",
+    "humanoid",
+    "inscription",
+    "keter",
+    "military-fiction",
+    "mythological",
+    "raisa",
+    "rewrite",
+    "sapient",
+    "scp"
+  ],
+  "themes": [
+    "hostile",
+    "extradimensional",
+    "military-fiction"
+  ],
+  "effects": [
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 81,
+        "section": "metadata.tags",
+        "locator": "tag:hostile"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 81,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "opponent",
+      "trigger": "conflict",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 81,
+        "section": "metadata.tags",
+        "locator": "tag:military-fiction"
+      }
+    }
+  ],
+  "curated": true
+}

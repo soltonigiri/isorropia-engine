@@ -1,0 +1,78 @@
+{
+  "page_id": "scp-1730",
+  "scp_number": 1730,
+  "wikidot_page_id": "25359534",
+  "title": "SCP-1730",
+  "url": "https://scp-wiki.wikidot.com/scp-1730",
+  "authors": [
+    "djkaktus"
+  ],
+  "language": "en",
+  "source_revision": 192,
+  "series": "series-2",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "adventure",
+    "anomalous-event",
+    "audio",
+    "bobble-the-clown",
+    "building",
+    "extradimensional",
+    "foundation-made",
+    "horror",
+    "illustrated",
+    "mystery",
+    "neutralized",
+    "samsara",
+    "scp",
+    "spatial"
+  ],
+  "themes": [
+    "extradimensional",
+    "building",
+    "foundation-made"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 192,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "contain",
+      "target": "interior_space",
+      "trigger": "entry",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 192,
+        "section": "metadata.tags",
+        "locator": "tag:building"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "construct",
+      "target": "anomalous_system",
+      "trigger": "operation",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 192,
+        "section": "metadata.tags",
+        "locator": "tag:foundation-made"
+      }
+    }
+  ],
+  "curated": true
+}

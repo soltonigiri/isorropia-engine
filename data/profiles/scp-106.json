@@ -1,0 +1,76 @@
+{
+  "page_id": "scp-106",
+  "scp_number": 106,
+  "wikidot_page_id": "4807564",
+  "title": "SCP-106",
+  "url": "https://scp-wiki.wikidot.com/scp-106",
+  "authors": [
+    "Dr Gears"
+  ],
+  "language": "en",
+  "source_revision": 130,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "body-horror",
+    "corrosive",
+    "extradimensional",
+    "horror",
+    "hostile",
+    "humanoid",
+    "illustrated",
+    "keter",
+    "murder-monster",
+    "sapient",
+    "scp",
+    "the-old-man"
+  ],
+  "themes": [
+    "corrosive",
+    "extradimensional",
+    "hostile"
+  ],
+  "effects": [
+    {
+      "domain": "matter",
+      "operation": "damage",
+      "target": "material",
+      "trigger": "contact",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 130,
+        "section": "metadata.tags",
+        "locator": "tag:corrosive"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 130,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 130,
+        "section": "metadata.tags",
+        "locator": "tag:hostile"
+      }
+    }
+  ],
+  "curated": true
+}

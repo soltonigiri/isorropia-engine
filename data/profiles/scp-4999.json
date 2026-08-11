@@ -1,0 +1,74 @@
+{
+  "page_id": "scp-4999",
+  "scp_number": 4999,
+  "wikidot_page_id": "92077880",
+  "title": "SCP-4999",
+  "url": "https://scp-wiki.wikidot.com/scp-4999",
+  "authors": [
+    "CadaverCommander"
+  ],
+  "language": "en",
+  "source_revision": 71,
+  "series": "series-5",
+  "tags": [
+    "4000",
+    "_cc",
+    "_licensebox",
+    "bittersweet",
+    "humanoid",
+    "illustrated",
+    "keter",
+    "observational",
+    "reviewers-spotlight",
+    "scp",
+    "teleportation",
+    "uncontained"
+  ],
+  "themes": [
+    "observational",
+    "teleportation",
+    "humanoid"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 71,
+        "section": "metadata.tags",
+        "locator": "tag:observational"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "entity",
+      "trigger": "activation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 71,
+        "section": "metadata.tags",
+        "locator": "tag:teleportation"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "human",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 71,
+        "section": "metadata.tags",
+        "locator": "tag:humanoid"
+      }
+    }
+  ],
+  "curated": true
+}

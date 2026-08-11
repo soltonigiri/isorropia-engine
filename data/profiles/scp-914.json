@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-914",
+  "scp_number": 914,
+  "wikidot_page_id": "1957485",
+  "title": "SCP-914",
+  "url": "https://scp-wiki.wikidot.com/scp-914",
+  "authors": [
+    "Dr Gears"
+  ],
+  "language": "en",
+  "source_revision": 52,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "clockwork",
+    "featured",
+    "mystery",
+    "safe",
+    "sapient",
+    "science-fiction",
+    "scp",
+    "transfiguration"
+  ],
+  "themes": [
+    "transfiguration",
+    "clockwork",
+    "sapient"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "body",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 52,
+        "section": "metadata.tags",
+        "locator": "tag:transfiguration"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "construct",
+      "target": "mechanism",
+      "trigger": "operation",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 52,
+        "section": "metadata.tags",
+        "locator": "tag:clockwork"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "observer",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 52,
+        "section": "metadata.tags",
+        "locator": "tag:sapient"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-1171",
+  "scp_number": 1171,
+  "wikidot_page_id": "13937021",
+  "title": "SCP-1171",
+  "url": "https://scp-wiki.wikidot.com/scp-1171",
+  "authors": [
+    "DrEverettMann"
+  ],
+  "language": "en",
+  "source_revision": 19,
+  "series": "series-2",
+  "tags": [
+    "_licensebox",
+    "alien",
+    "building",
+    "comedy",
+    "euclid",
+    "extradimensional",
+    "location",
+    "otherworldly",
+    "sapient",
+    "scp",
+    "slice-of-life"
+  ],
+  "themes": [
+    "alien",
+    "extradimensional",
+    "sapient"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "otherworldly_entity",
+      "trigger": "contact",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 19,
+        "section": "metadata.tags",
+        "locator": "tag:alien"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 19,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "observer",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 19,
+        "section": "metadata.tags",
+        "locator": "tag:sapient"
+      }
+    }
+  ],
+  "curated": true
+}

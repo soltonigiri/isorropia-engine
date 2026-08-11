@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-860",
+  "scp_number": 860,
+  "wikidot_page_id": "5210497",
+  "title": "SCP-860",
+  "url": "https://scp-wiki.wikidot.com/scp-860",
+  "authors": [
+    "Enma Ai"
+  ],
+  "language": "en",
+  "source_revision": 35,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "extradimensional",
+    "forest",
+    "horror",
+    "mystery",
+    "otherworldly",
+    "portal",
+    "safe",
+    "scp",
+    "tool"
+  ],
+  "themes": [
+    "portal",
+    "tool",
+    "extradimensional"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "traveler",
+      "trigger": "threshold_crossing",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 35,
+        "section": "metadata.tags",
+        "locator": "tag:portal"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "user",
+      "trigger": "operation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 35,
+        "section": "metadata.tags",
+        "locator": "tag:tool"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 35,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    }
+  ],
+  "curated": true
+}

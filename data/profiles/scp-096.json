@@ -1,0 +1,75 @@
+{
+  "page_id": "scp-096",
+  "scp_number": 96,
+  "wikidot_page_id": "4711778",
+  "title": "SCP-096",
+  "url": "https://scp-wiki.wikidot.com/scp-096",
+  "authors": [
+    "Dr Dan"
+  ],
+  "language": "en",
+  "source_revision": 58,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "alive",
+    "cognitohazard",
+    "doctor-dan",
+    "euclid",
+    "horror",
+    "humanoid",
+    "military-fiction",
+    "murder-monster",
+    "observational",
+    "scp",
+    "shy-guy",
+    "visual"
+  ],
+  "themes": [
+    "observational",
+    "murder-monster",
+    "cognitohazard"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 58,
+        "section": "metadata.tags",
+        "locator": "tag:observational"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 58,
+        "section": "metadata.tags",
+        "locator": "tag:murder-monster"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 58,
+        "section": "metadata.tags",
+        "locator": "tag:cognitohazard"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,75 @@
+{
+  "page_id": "scp-1295",
+  "scp_number": 1295,
+  "wikidot_page_id": "15232409",
+  "title": "SCP-1295",
+  "url": "https://scp-wiki.wikidot.com/scp-1295",
+  "authors": [
+    "Dmatix"
+  ],
+  "language": "en",
+  "source_revision": 21,
+  "series": "series-2",
+  "tags": [
+    "_licensebox",
+    "alive",
+    "building",
+    "comedy",
+    "fantasy",
+    "humanoid",
+    "keter",
+    "mind-affecting",
+    "religious-fiction",
+    "sapient",
+    "scp",
+    "slice-of-life",
+    "transfiguration"
+  ],
+  "themes": [
+    "mind-affecting",
+    "religious-fiction",
+    "sapient"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 21,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    },
+    {
+      "domain": "belief",
+      "operation": "influence",
+      "target": "worshipper",
+      "trigger": "ritual",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 21,
+        "section": "metadata.tags",
+        "locator": "tag:religious-fiction"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "observer",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 21,
+        "section": "metadata.tags",
+        "locator": "tag:sapient"
+      }
+    }
+  ],
+  "curated": true
+}

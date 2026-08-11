@@ -1,0 +1,75 @@
+{
+  "page_id": "scp-610",
+  "scp_number": 610,
+  "wikidot_page_id": "3285943",
+  "title": "SCP-610",
+  "url": "https://scp-wiki.wikidot.com/scp-610",
+  "authors": [
+    "NekoChris"
+  ],
+  "language": "en",
+  "source_revision": 65,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "alive",
+    "body-horror",
+    "contagion",
+    "horror",
+    "illustrated",
+    "keter",
+    "location",
+    "mind-affecting",
+    "mystery",
+    "scp",
+    "transfiguration"
+  ],
+  "themes": [
+    "contagion",
+    "transfiguration",
+    "mind-affecting"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "infect",
+      "target": "organism",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 65,
+        "section": "metadata.tags",
+        "locator": "tag:contagion"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "body",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 65,
+        "section": "metadata.tags",
+        "locator": "tag:transfiguration"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 65,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    }
+  ],
+  "curated": true
+}

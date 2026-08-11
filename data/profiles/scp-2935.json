@@ -1,0 +1,94 @@
+{
+  "page_id": "scp-2935",
+  "scp_number": 2935,
+  "wikidot_page_id": "44674263",
+  "title": "SCP-2935",
+  "url": "https://scp-wiki.wikidot.com/scp-2935",
+  "authors": [
+    "djkaktus"
+  ],
+  "language": "en",
+  "source_revision": 93,
+  "series": "series-3",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "adventure",
+    "anomalous-event",
+    "concept",
+    "hard-to-destroy-reptile",
+    "horror",
+    "keter",
+    "location",
+    "old-ai",
+    "otherworldly",
+    "portal",
+    "possessive-mask",
+    "post-apocalyptic",
+    "scp",
+    "spatial",
+    "the-sculpture"
+  ],
+  "themes": [
+    "portal",
+    "anomalous-event",
+    "concept"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "traveler",
+      "trigger": "threshold_crossing",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 93,
+        "section": "metadata.tags",
+        "locator": "tag:portal"
+      }
+    },
+    {
+      "domain": "civilization",
+      "operation": "destabilize",
+      "target": "baseline_reality",
+      "trigger": "event",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 93,
+        "section": "metadata.tags",
+        "locator": "tag:anomalous-event"
+      }
+    },
+    {
+      "domain": "concept",
+      "operation": "alter",
+      "target": "concept",
+      "trigger": "cognition",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 93,
+        "section": "metadata.tags",
+        "locator": "tag:concept"
+      }
+    },
+    {
+      "domain": "death",
+      "operation": "terminate_life",
+      "target": "all_life",
+      "trigger": "threshold_crossing",
+      "persistence": "persistent",
+      "constraints": [
+        "alternate_reality"
+      ],
+      "evidence": {
+        "revision": 93,
+        "section": "Description",
+        "locator": "all life ... ended on April 20th, 2016"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,84 @@
+{
+  "page_id": "scp-8000",
+  "scp_number": 8000,
+  "wikidot_page_id": "1452608893",
+  "title": "SCP-8000",
+  "url": "https://scp-wiki.wikidot.com/scp-8000",
+  "authors": [
+    "PlaguePJP"
+  ],
+  "language": "en",
+  "source_revision": 89,
+  "series": "series-9",
+  "tags": [
+    "8000",
+    "_cc",
+    "_licensebox",
+    "_listpages",
+    "alive",
+    "animal",
+    "director-lague",
+    "doctor-asheworth",
+    "doctor-blank",
+    "doctor-cimmerian",
+    "doctor-thereven",
+    "extradimensional",
+    "geoffrey-quincy-harrison",
+    "illustrated",
+    "integration-program",
+    "library",
+    "predictive",
+    "safe",
+    "sapient",
+    "scp",
+    "teleportation",
+    "uncontained"
+  ],
+  "themes": [
+    "extradimensional",
+    "alive",
+    "animal"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 89,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "organism",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 89,
+        "section": "metadata.tags",
+        "locator": "tag:alive"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "animal",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 89,
+        "section": "metadata.tags",
+        "locator": "tag:animal"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,74 @@
+{
+  "page_id": "scp-882",
+  "scp_number": 882,
+  "wikidot_page_id": "1954618",
+  "title": "SCP-882",
+  "url": "https://scp-wiki.wikidot.com/scp-882",
+  "authors": [
+    "Dr Gears"
+  ],
+  "language": "en",
+  "source_revision": 33,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "auditory",
+    "autonomous",
+    "broken-god",
+    "clockwork",
+    "compulsion",
+    "euclid",
+    "featured",
+    "hallucination",
+    "mind-affecting",
+    "scp"
+  ],
+  "themes": [
+    "compulsion",
+    "auditory",
+    "clockwork"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "compel",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 33,
+        "section": "metadata.tags",
+        "locator": "tag:compulsion"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "auditory_trigger",
+      "target": "observer",
+      "trigger": "audition",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 33,
+        "section": "metadata.tags",
+        "locator": "tag:auditory"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "construct",
+      "target": "mechanism",
+      "trigger": "operation",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 33,
+        "section": "metadata.tags",
+        "locator": "tag:clockwork"
+      }
+    }
+  ],
+  "curated": true
+}

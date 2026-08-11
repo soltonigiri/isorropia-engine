@@ -1,0 +1,74 @@
+{
+  "page_id": "scp-087",
+  "scp_number": 87,
+  "wikidot_page_id": "4297352",
+  "title": "SCP-087",
+  "url": "https://scp-wiki.wikidot.com/scp-087",
+  "authors": [
+    "Zaeyde"
+  ],
+  "language": "en",
+  "source_revision": 54,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "acoustic",
+    "building",
+    "chase",
+    "euclid",
+    "horror",
+    "illustrated",
+    "light",
+    "location",
+    "scp",
+    "spatial"
+  ],
+  "themes": [
+    "spatial",
+    "acoustic",
+    "location"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "distort",
+      "target": "space",
+      "trigger": "proximity",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 54,
+        "section": "metadata.tags",
+        "locator": "tag:spatial"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "auditory_trigger",
+      "target": "observer",
+      "trigger": "audition",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 54,
+        "section": "metadata.tags",
+        "locator": "tag:acoustic"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "contain",
+      "target": "occupant",
+      "trigger": "entry",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 54,
+        "section": "metadata.tags",
+        "locator": "tag:location"
+      }
+    }
+  ],
+  "curated": true
+}

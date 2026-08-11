@@ -1,0 +1,75 @@
+{
+  "page_id": "scp-939",
+  "scp_number": 939,
+  "wikidot_page_id": "9283245",
+  "title": "SCP-939",
+  "url": "https://scp-wiki.wikidot.com/scp-939",
+  "authors": [
+    "Adam Smascher",
+    "EchoFourDelta"
+  ],
+  "language": "en",
+  "source_revision": 38,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "auditory",
+    "co-authored",
+    "horror",
+    "keter",
+    "mimetic",
+    "murder-monster",
+    "nocturnal",
+    "predatory",
+    "scp",
+    "species",
+    "xenofiction"
+  ],
+  "themes": [
+    "mimetic",
+    "auditory",
+    "predatory"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "imitate",
+      "target": "observer",
+      "trigger": "encounter",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 38,
+        "section": "metadata.tags",
+        "locator": "tag:mimetic"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "auditory_trigger",
+      "target": "observer",
+      "trigger": "audition",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 38,
+        "section": "metadata.tags",
+        "locator": "tag:auditory"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "prey",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 38,
+        "section": "metadata.tags",
+        "locator": "tag:predatory"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,75 @@
+{
+  "page_id": "scp-1048",
+  "scp_number": 1048,
+  "wikidot_page_id": "12708276",
+  "title": "SCP-1048",
+  "url": "https://scp-wiki.wikidot.com/scp-1048",
+  "authors": [
+    "trennerdios"
+  ],
+  "language": "en",
+  "source_revision": 48,
+  "series": "series-2",
+  "tags": [
+    "_licensebox",
+    "autonomous",
+    "bear",
+    "body-horror",
+    "horror",
+    "hostile",
+    "keter",
+    "mind-affecting",
+    "murder-monster",
+    "scp",
+    "self-replicating",
+    "toy",
+    "uncontained"
+  ],
+  "themes": [
+    "self-replicating",
+    "mind-affecting",
+    "hostile"
+  ],
+  "effects": [
+    {
+      "domain": "replication",
+      "operation": "replicate",
+      "target": "self",
+      "trigger": "resource_access",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 48,
+        "section": "metadata.tags",
+        "locator": "tag:self-replicating"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 48,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 48,
+        "section": "metadata.tags",
+        "locator": "tag:hostile"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,71 @@
+{
+  "page_id": "scp-8999",
+  "scp_number": 8999,
+  "wikidot_page_id": "1452622683",
+  "title": "SCP-8999",
+  "url": "https://scp-wiki.wikidot.com/scp-8999",
+  "authors": [
+    "J Dune"
+  ],
+  "language": "en",
+  "source_revision": 16,
+  "series": "series-9",
+  "tags": [
+    "8000",
+    "_cc",
+    "_licensebox",
+    "alive",
+    "euclid",
+    "geological",
+    "sapient",
+    "scp",
+    "subterranean"
+  ],
+  "themes": [
+    "geological",
+    "sapient",
+    "subterranean"
+  ],
+  "effects": [
+    {
+      "domain": "matter",
+      "operation": "reshape",
+      "target": "terrain",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 16,
+        "section": "metadata.tags",
+        "locator": "tag:geological"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "observer",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 16,
+        "section": "metadata.tags",
+        "locator": "tag:sapient"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "contain",
+      "target": "occupant",
+      "trigger": "entry",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 16,
+        "section": "metadata.tags",
+        "locator": "tag:subterranean"
+      }
+    }
+  ],
+  "curated": true
+}

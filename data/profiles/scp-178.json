@@ -1,0 +1,69 @@
+{
+  "page_id": "scp-178",
+  "scp_number": 178,
+  "wikidot_page_id": "10666645",
+  "title": "SCP-178",
+  "url": "https://scp-wiki.wikidot.com/scp-178",
+  "authors": [
+    "91stCataclysm"
+  ],
+  "language": "en",
+  "source_revision": 26,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "clothing",
+    "euclid",
+    "humanoid",
+    "intangible",
+    "scp",
+    "visual"
+  ],
+  "themes": [
+    "visual",
+    "intangible",
+    "clothing"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 26,
+        "section": "metadata.tags",
+        "locator": "tag:visual"
+      }
+    },
+    {
+      "domain": "matter",
+      "operation": "phase",
+      "target": "material",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 26,
+        "section": "metadata.tags",
+        "locator": "tag:intangible"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "wearer",
+      "trigger": "wearing",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 26,
+        "section": "metadata.tags",
+        "locator": "tag:clothing"
+      }
+    }
+  ],
+  "curated": true
+}

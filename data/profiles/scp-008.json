@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-008",
+  "scp_number": 8,
+  "wikidot_page_id": "1954481",
+  "title": "SCP-008",
+  "url": "https://scp-wiki.wikidot.com/scp-008",
+  "authors": [
+    "Unknown Author"
+  ],
+  "language": "en",
+  "source_revision": 66,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "alive",
+    "biohazard",
+    "blood",
+    "contagion",
+    "euclid",
+    "illustrated",
+    "reanimation",
+    "scp",
+    "transfiguration"
+  ],
+  "themes": [
+    "contagion",
+    "reanimation",
+    "transfiguration"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "infect",
+      "target": "organism",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 66,
+        "section": "metadata.tags",
+        "locator": "tag:contagion"
+      }
+    },
+    {
+      "domain": "death",
+      "operation": "reanimate",
+      "target": "corpse",
+      "trigger": "death",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 66,
+        "section": "metadata.tags",
+        "locator": "tag:reanimation"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "body",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 66,
+        "section": "metadata.tags",
+        "locator": "tag:transfiguration"
+      }
+    }
+  ],
+  "curated": true
+}

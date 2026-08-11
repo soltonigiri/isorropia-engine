@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-7000",
+  "scp_number": 7000,
+  "wikidot_page_id": "1420322196",
+  "title": "SCP-7000",
+  "url": "https://scp-wiki.wikidot.com/scp-7000",
+  "authors": [
+    "HarryBlank"
+  ],
+  "language": "en",
+  "source_revision": 119,
+  "series": "series-8",
+  "tags": [
+    "7000",
+    "_cc",
+    "_licensebox",
+    "agent-adams",
+    "chaos-insurgency",
+    "concept",
+    "doctor-blank",
+    "doctor-dan",
+    "doctor-sokolsky",
+    "doctor-wettle",
+    "ettra",
+    "euclid",
+    "foundation-personnel",
+    "goldbaker-reinz",
+    "humanoid",
+    "illustrated",
+    "k-class-scenario",
+    "no-return",
+    "on-guard-43",
+    "phenomenon",
+    "probability",
+    "reality-bending",
+    "sauelsuesor",
+    "scp",
+    "the-engineer"
+  ],
+  "themes": [
+    "concept",
+    "ettra"
+  ],
+  "effects": [
+    {
+      "domain": "concept",
+      "operation": "alter",
+      "target": "concept",
+      "trigger": "cognition",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 119,
+        "section": "metadata.tags",
+        "locator": "tag:concept"
+      }
+    },
+    {
+      "domain": "containment",
+      "operation": "analyze",
+      "target": "anomaly",
+      "trigger": "procedure",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 119,
+        "section": "metadata.tags",
+        "locator": "tag:ettra"
+      }
+    }
+  ],
+  "curated": true
+}

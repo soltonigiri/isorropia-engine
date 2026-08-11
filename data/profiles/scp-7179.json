@@ -1,0 +1,74 @@
+{
+  "page_id": "scp-7179",
+  "scp_number": 7179,
+  "wikidot_page_id": "1436313401",
+  "title": "SCP-7179",
+  "url": "https://scp-wiki.wikidot.com/scp-7179",
+  "authors": [
+    "Calibold"
+  ],
+  "language": "en",
+  "source_revision": 40,
+  "series": "series-8",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "abcs-of-death",
+    "afterlife",
+    "extradimensional",
+    "island",
+    "noosphere",
+    "safe",
+    "scp",
+    "spatial",
+    "tactical-theology",
+    "temporal"
+  ],
+  "themes": [
+    "afterlife",
+    "temporal",
+    "spatial"
+  ],
+  "effects": [
+    {
+      "domain": "death",
+      "operation": "preserve_after_death",
+      "target": "consciousness",
+      "trigger": "death",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 40,
+        "section": "metadata.tags",
+        "locator": "tag:afterlife"
+      }
+    },
+    {
+      "domain": "time",
+      "operation": "alter",
+      "target": "timeline",
+      "trigger": "event",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 40,
+        "section": "metadata.tags",
+        "locator": "tag:temporal"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "distort",
+      "target": "space",
+      "trigger": "proximity",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 40,
+        "section": "metadata.tags",
+        "locator": "tag:spatial"
+      }
+    }
+  ],
+  "curated": true
+}

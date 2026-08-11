@@ -1,0 +1,75 @@
+{
+  "page_id": "scp-3301",
+  "scp_number": 3301,
+  "wikidot_page_id": "51619320",
+  "title": "SCP-3301",
+  "url": "https://scp-wiki.wikidot.com/scp-3301",
+  "authors": [
+    "djkaktus"
+  ],
+  "language": "en",
+  "source_revision": 109,
+  "series": "series-4",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "alleged-god",
+    "director-moose",
+    "dr-wondertainment",
+    "ethics-committee",
+    "game",
+    "illustrated",
+    "reality-bending",
+    "safe",
+    "scp",
+    "spatial",
+    "ten-dots"
+  ],
+  "themes": [
+    "game",
+    "reality-bending",
+    "spatial"
+  ],
+  "effects": [
+    {
+      "domain": "concept",
+      "operation": "impose_rules",
+      "target": "participant",
+      "trigger": "participation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 109,
+        "section": "metadata.tags",
+        "locator": "tag:game"
+      }
+    },
+    {
+      "domain": "reality",
+      "operation": "alter",
+      "target": "baseline_reality",
+      "trigger": "intent",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 109,
+        "section": "metadata.tags",
+        "locator": "tag:reality-bending"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "distort",
+      "target": "space",
+      "trigger": "proximity",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 109,
+        "section": "metadata.tags",
+        "locator": "tag:spatial"
+      }
+    }
+  ],
+  "curated": true
+}

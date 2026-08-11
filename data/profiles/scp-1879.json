@@ -1,0 +1,71 @@
+{
+  "page_id": "scp-1879",
+  "scp_number": 1879,
+  "wikidot_page_id": "16158065",
+  "title": "SCP-1879",
+  "url": "https://scp-wiki.wikidot.com/scp-1879",
+  "authors": [
+    "marslifeform"
+  ],
+  "language": "en",
+  "source_revision": 17,
+  "series": "series-2",
+  "tags": [
+    "_licensebox",
+    "event-featured",
+    "extradimensional",
+    "humanoid",
+    "keter",
+    "sapient",
+    "scp",
+    "teleportation",
+    "uncontained"
+  ],
+  "themes": [
+    "extradimensional",
+    "teleportation",
+    "uncontained"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 17,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "entity",
+      "trigger": "activation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 17,
+        "section": "metadata.tags",
+        "locator": "tag:teleportation"
+      }
+    },
+    {
+      "domain": "containment",
+      "operation": "escape",
+      "target": "boundary",
+      "trigger": "opportunity",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 17,
+        "section": "metadata.tags",
+        "locator": "tag:uncontained"
+      }
+    }
+  ],
+  "curated": true
+}

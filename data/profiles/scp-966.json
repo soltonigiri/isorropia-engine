@@ -1,0 +1,76 @@
+{
+  "page_id": "scp-966",
+  "scp_number": 966,
+  "wikidot_page_id": "5598746",
+  "title": "SCP-966",
+  "url": "https://scp-wiki.wikidot.com/scp-966",
+  "authors": [
+    "Enma Ai"
+  ],
+  "language": "en",
+  "source_revision": 69,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "alive",
+    "euclid",
+    "horror",
+    "humanoid",
+    "illustrated",
+    "murder-monster",
+    "predatory",
+    "radioactive",
+    "scp",
+    "sensory",
+    "sleep",
+    "species"
+  ],
+  "themes": [
+    "sensory",
+    "sleep",
+    "predatory"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "conceal",
+      "target": "observer",
+      "trigger": "perception",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 69,
+        "section": "metadata.tags",
+        "locator": "tag:sensory"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "induce_sleep",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 69,
+        "section": "metadata.tags",
+        "locator": "tag:sleep"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "prey",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 69,
+        "section": "metadata.tags",
+        "locator": "tag:predatory"
+      }
+    }
+  ],
+  "curated": true
+}

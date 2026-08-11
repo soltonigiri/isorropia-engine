@@ -1,0 +1,70 @@
+{
+  "page_id": "scp-871",
+  "scp_number": 871,
+  "wikidot_page_id": "10063069",
+  "title": "SCP-871",
+  "url": "https://scp-wiki.wikidot.com/scp-871",
+  "authors": [
+    "Seibai"
+  ],
+  "language": "en",
+  "source_revision": 28,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "event-featured",
+    "food",
+    "keter",
+    "metamorphic",
+    "scp",
+    "self-replicating"
+  ],
+  "themes": [
+    "self-replicating",
+    "food",
+    "metamorphic"
+  ],
+  "effects": [
+    {
+      "domain": "replication",
+      "operation": "replicate",
+      "target": "self",
+      "trigger": "resource_access",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "metadata.tags",
+        "locator": "tag:self-replicating"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "nourish",
+      "target": "consumer",
+      "trigger": "consumption",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "metadata.tags",
+        "locator": "tag:food"
+      }
+    },
+    {
+      "domain": "matter",
+      "operation": "transform",
+      "target": "material",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "metadata.tags",
+        "locator": "tag:metamorphic"
+      }
+    }
+  ],
+  "curated": true
+}

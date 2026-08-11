@@ -1,0 +1,74 @@
+{
+  "page_id": "scp-1981",
+  "scp_number": 1981,
+  "wikidot_page_id": "13327521",
+  "title": "SCP-1981",
+  "url": "https://scp-wiki.wikidot.com/scp-1981",
+  "authors": [
+    "Digiwizzard"
+  ],
+  "language": "en",
+  "source_revision": 67,
+  "series": "series-2",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "horror",
+    "humanoid",
+    "illustrated",
+    "media",
+    "metamorphic",
+    "mystery",
+    "political",
+    "safe",
+    "scp",
+    "visual"
+  ],
+  "themes": [
+    "media",
+    "visual",
+    "metamorphic"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "transmit",
+      "target": "audience",
+      "trigger": "playback",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 67,
+        "section": "metadata.tags",
+        "locator": "tag:media"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 67,
+        "section": "metadata.tags",
+        "locator": "tag:visual"
+      }
+    },
+    {
+      "domain": "matter",
+      "operation": "transform",
+      "target": "material",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 67,
+        "section": "metadata.tags",
+        "locator": "tag:metamorphic"
+      }
+    }
+  ],
+  "curated": true
+}

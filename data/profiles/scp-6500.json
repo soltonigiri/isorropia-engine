@@ -1,0 +1,112 @@
+{
+  "page_id": "scp-6500",
+  "scp_number": 6500,
+  "wikidot_page_id": "1311743975",
+  "title": "SCP-6500",
+  "url": "https://scp-wiki.wikidot.com/scp-6500",
+  "authors": [
+    "Aethris",
+    "Anonymous",
+    "DarkStuff",
+    "Grigori Karpin",
+    "HarryBlank",
+    "Placeholder McD",
+    "S D Locke"
+  ],
+  "language": "en",
+  "source_revision": 74,
+  "series": "series-7",
+  "tags": [
+    "6000",
+    "_cc",
+    "_licensebox",
+    "_listpages",
+    "alagadda",
+    "audio",
+    "biological",
+    "blackwood",
+    "chief-ibanez",
+    "co-authored",
+    "d-11424",
+    "daevite",
+    "deer-college",
+    "delta-t",
+    "doctor-light",
+    "doctor-mcdoctorate",
+    "entropic",
+    "esoteric-class",
+    "ethics-committee",
+    "faeowynn-wilson",
+    "global-occult-coalition",
+    "hanged-king",
+    "hy-brasil",
+    "interactive",
+    "la-rue-macabre",
+    "meta",
+    "narrative",
+    "no-return",
+    "on-guard-43",
+    "phenomenon",
+    "portal",
+    "religious",
+    "ritual",
+    "s&c-plastics",
+    "scp",
+    "spatial",
+    "superhero",
+    "temporal",
+    "the-old-man",
+    "three-moons-initiative",
+    "three-portlands",
+    "wanderers-library",
+    "weapon",
+    "wilsons-wildlife"
+  ],
+  "themes": [
+    "biological",
+    "daevite",
+    "audio"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "alter",
+      "target": "organism",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "metadata.tags",
+        "locator": "tag:biological"
+      }
+    },
+    {
+      "domain": "time",
+      "operation": "rewrite_history",
+      "target": "history",
+      "trigger": "record_change",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "metadata.tags",
+        "locator": "tag:daevite"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "auditory_trigger",
+      "target": "listener",
+      "trigger": "audition",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "metadata.tags",
+        "locator": "tag:audio"
+      }
+    }
+  ],
+  "curated": true
+}

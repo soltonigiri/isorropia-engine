@@ -1,0 +1,79 @@
+{
+  "page_id": "scp-1000",
+  "scp_number": 1000,
+  "wikidot_page_id": "11411322",
+  "title": "SCP-1000",
+  "url": "https://scp-wiki.wikidot.com/scp-1000",
+  "authors": [
+    "thedeadlymoose"
+  ],
+  "language": "en",
+  "source_revision": 88,
+  "series": "series-2",
+  "tags": [
+    "1000",
+    "_cc",
+    "_licensebox",
+    "alive",
+    "children-of-the-night",
+    "fantasy",
+    "featured",
+    "historical",
+    "humanoid",
+    "illustrated",
+    "k-class-scenario",
+    "keter",
+    "sapient",
+    "scp",
+    "serpents-hand",
+    "species",
+    "uncontained"
+  ],
+  "themes": [
+    "humanoid",
+    "k-class-scenario",
+    "sapient"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "human",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 88,
+        "section": "metadata.tags",
+        "locator": "tag:humanoid"
+      }
+    },
+    {
+      "domain": "civilization",
+      "operation": "destabilize",
+      "target": "baseline_reality",
+      "trigger": "event",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 88,
+        "section": "metadata.tags",
+        "locator": "tag:k-class-scenario"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "observer",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 88,
+        "section": "metadata.tags",
+        "locator": "tag:sapient"
+      }
+    }
+  ],
+  "curated": true
+}

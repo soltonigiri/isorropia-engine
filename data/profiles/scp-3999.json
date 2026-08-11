@@ -1,0 +1,80 @@
+{
+  "page_id": "scp-3999",
+  "scp_number": 3999,
+  "wikidot_page_id": "48130219",
+  "title": "SCP-3999",
+  "url": "https://scp-wiki.wikidot.com/scp-3999",
+  "authors": [
+    "LordStonefish"
+  ],
+  "language": "en",
+  "source_revision": 119,
+  "series": "series-4",
+  "tags": [
+    "3000",
+    "_adult",
+    "_cc",
+    "_licensebox",
+    "anomalous-event",
+    "apollyon",
+    "concept",
+    "draven-kondraki",
+    "foundation-personnel",
+    "horror",
+    "k-class-scenario",
+    "meta",
+    "metafiction",
+    "neutralized",
+    "psychological-horror",
+    "researcher-talloran",
+    "scp",
+    "surrealism"
+  ],
+  "themes": [
+    "concept",
+    "metafiction",
+    "k-class-scenario"
+  ],
+  "effects": [
+    {
+      "domain": "concept",
+      "operation": "alter",
+      "target": "concept",
+      "trigger": "cognition",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 119,
+        "section": "metadata.tags",
+        "locator": "tag:concept"
+      }
+    },
+    {
+      "domain": "narrative",
+      "operation": "alter",
+      "target": "narrative",
+      "trigger": "representation",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 119,
+        "section": "metadata.tags",
+        "locator": "tag:metafiction"
+      }
+    },
+    {
+      "domain": "civilization",
+      "operation": "destabilize",
+      "target": "baseline_reality",
+      "trigger": "event",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 119,
+        "section": "metadata.tags",
+        "locator": "tag:k-class-scenario"
+      }
+    }
+  ],
+  "curated": true
+}

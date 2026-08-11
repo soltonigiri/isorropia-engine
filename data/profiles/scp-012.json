@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-012",
+  "scp_number": 12,
+  "wikidot_page_id": "1954669",
+  "title": "SCP-012",
+  "url": "https://scp-wiki.wikidot.com/scp-012",
+  "authors": [
+    "ITIFAMCO"
+  ],
+  "language": "en",
+  "source_revision": 48,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "blood",
+    "cognitohazard",
+    "document",
+    "euclid",
+    "mind-affecting",
+    "musical",
+    "on-mount-golgotha",
+    "scp",
+    "visual"
+  ],
+  "themes": [
+    "cognitohazard",
+    "musical",
+    "visual"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 48,
+        "section": "metadata.tags",
+        "locator": "tag:cognitohazard"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "auditory_trigger",
+      "target": "listener",
+      "trigger": "audition",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 48,
+        "section": "metadata.tags",
+        "locator": "tag:musical"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 48,
+        "section": "metadata.tags",
+        "locator": "tag:visual"
+      }
+    }
+  ],
+  "curated": true
+}

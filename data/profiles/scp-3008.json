@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-3008",
+  "scp_number": 3008,
+  "wikidot_page_id": "49465243",
+  "title": "SCP-3008",
+  "url": "https://scp-wiki.wikidot.com/scp-3008",
+  "authors": [
+    "Mortos"
+  ],
+  "language": "en",
+  "source_revision": 30,
+  "series": "series-4",
+  "tags": [
+    "_licensebox",
+    "adventure",
+    "building",
+    "euclid",
+    "extradimensional",
+    "horror",
+    "hostile",
+    "humanoid",
+    "otherworldly",
+    "portal",
+    "scp"
+  ],
+  "themes": [
+    "portal",
+    "extradimensional",
+    "hostile"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "traveler",
+      "trigger": "threshold_crossing",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 30,
+        "section": "metadata.tags",
+        "locator": "tag:portal"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 30,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 30,
+        "section": "metadata.tags",
+        "locator": "tag:hostile"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,70 @@
+{
+  "page_id": "scp-978",
+  "scp_number": 978,
+  "wikidot_page_id": "3429324",
+  "title": "SCP-978",
+  "url": "https://scp-wiki.wikidot.com/scp-978",
+  "authors": [
+    "agatharights"
+  ],
+  "language": "en",
+  "source_revision": 31,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "photographic",
+    "safe",
+    "scp",
+    "telepathic",
+    "tool",
+    "visual"
+  ],
+  "themes": [
+    "photographic",
+    "telepathic",
+    "visual"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "record",
+      "target": "image",
+      "trigger": "photography",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 31,
+        "section": "metadata.tags",
+        "locator": "tag:photographic"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "mind",
+      "trigger": "proximity",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 31,
+        "section": "metadata.tags",
+        "locator": "tag:telepathic"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 31,
+        "section": "metadata.tags",
+        "locator": "tag:visual"
+      }
+    }
+  ],
+  "curated": true
+}

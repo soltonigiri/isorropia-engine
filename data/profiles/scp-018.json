@@ -1,0 +1,69 @@
+{
+  "page_id": "scp-018",
+  "scp_number": 18,
+  "wikidot_page_id": "1956551",
+  "title": "SCP-018",
+  "url": "https://scp-wiki.wikidot.com/scp-018",
+  "authors": [
+    "Epic Phail Spy"
+  ],
+  "language": "en",
+  "source_revision": 52,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "ectoentropic",
+    "euclid",
+    "scp",
+    "sphere",
+    "toy"
+  ],
+  "themes": [
+    "ectoentropic",
+    "toy",
+    "sphere"
+  ],
+  "effects": [
+    {
+      "domain": "energy",
+      "operation": "generate",
+      "target": "energy",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 52,
+        "section": "metadata.tags",
+        "locator": "tag:ectoentropic"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "user",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 52,
+        "section": "metadata.tags",
+        "locator": "tag:toy"
+      }
+    },
+    {
+      "domain": "motion",
+      "operation": "move",
+      "target": "self",
+      "trigger": "impact",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 52,
+        "section": "metadata.tags",
+        "locator": "tag:sphere"
+      }
+    }
+  ],
+  "curated": true
+}

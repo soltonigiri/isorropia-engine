@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-006",
+  "scp_number": 6,
+  "wikidot_page_id": "1953683",
+  "title": "SCP-006",
+  "url": "https://scp-wiki.wikidot.com/scp-006",
+  "authors": [
+    "Unknown Author"
+  ],
+  "language": "en",
+  "source_revision": 62,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "fantasy",
+    "liquid",
+    "location",
+    "medical",
+    "rewrite",
+    "safe",
+    "scp",
+    "self-repairing",
+    "spy-fiction"
+  ],
+  "themes": [
+    "medical",
+    "self-repairing",
+    "liquid"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "restore",
+      "target": "organism",
+      "trigger": "administration",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 62,
+        "section": "metadata.tags",
+        "locator": "tag:medical"
+      }
+    },
+    {
+      "domain": "durability",
+      "operation": "regenerate",
+      "target": "self",
+      "trigger": "damage",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 62,
+        "section": "metadata.tags",
+        "locator": "tag:self-repairing"
+      }
+    },
+    {
+      "domain": "matter",
+      "operation": "flow",
+      "target": "material",
+      "trigger": "contact",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 62,
+        "section": "metadata.tags",
+        "locator": "tag:liquid"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,76 @@
+{
+  "page_id": "scp-5031",
+  "scp_number": 5031,
+  "wikidot_page_id": "999917323",
+  "title": "SCP-5031",
+  "url": "https://scp-wiki.wikidot.com/scp-5031",
+  "authors": [
+    "PeppersGhost"
+  ],
+  "language": "en",
+  "source_revision": 77,
+  "series": "series-6",
+  "tags": [
+    "_delicious",
+    "_licensebox",
+    "alive",
+    "featured",
+    "heartwarming",
+    "humanoid",
+    "jam-con2020",
+    "keter",
+    "mobile",
+    "murder-monster",
+    "observational",
+    "predatory",
+    "sapient",
+    "scp"
+  ],
+  "themes": [
+    "predatory",
+    "sapient",
+    "observational"
+  ],
+  "effects": [
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "prey",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 77,
+        "section": "metadata.tags",
+        "locator": "tag:predatory"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "observer",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 77,
+        "section": "metadata.tags",
+        "locator": "tag:sapient"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 77,
+        "section": "metadata.tags",
+        "locator": "tag:observational"
+      }
+    }
+  ],
+  "curated": true
+}

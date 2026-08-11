@@ -1,0 +1,69 @@
+{
+  "page_id": "scp-1123",
+  "scp_number": 1123,
+  "wikidot_page_id": "13313428",
+  "title": "SCP-1123",
+  "url": "https://scp-wiki.wikidot.com/scp-1123",
+  "authors": [
+    "sandrewswann"
+  ],
+  "language": "en",
+  "source_revision": 32,
+  "series": "series-2",
+  "tags": [
+    "_licensebox",
+    "hallucination",
+    "mind-affecting",
+    "safe",
+    "scp",
+    "skeletal",
+    "tactile"
+  ],
+  "themes": [
+    "hallucination",
+    "mind-affecting",
+    "tactile"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "perception",
+      "trigger": "exposure",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 32,
+        "section": "metadata.tags",
+        "locator": "tag:hallucination"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 32,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "contact_trigger",
+      "target": "subject",
+      "trigger": "contact",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 32,
+        "section": "metadata.tags",
+        "locator": "tag:tactile"
+      }
+    }
+  ],
+  "curated": true
+}

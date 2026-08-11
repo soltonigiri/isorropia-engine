@@ -1,0 +1,79 @@
+{
+  "page_id": "scp-3125",
+  "scp_number": 3125,
+  "wikidot_page_id": "49478068",
+  "title": "SCP-3125",
+  "url": "https://scp-wiki.wikidot.com/scp-3125",
+  "authors": [
+    "qntm"
+  ],
+  "language": "en",
+  "source_revision": 47,
+  "series": "series-4",
+  "tags": [
+    "_licensebox",
+    "antimemetic",
+    "antimemetics-division",
+    "cognitohazard",
+    "concept",
+    "cosmic-horror",
+    "horror",
+    "hostile",
+    "k-class-scenario",
+    "keter",
+    "marion-wheeler",
+    "memetic",
+    "mystery",
+    "phenomenon",
+    "science-fiction",
+    "scp",
+    "uncontained"
+  ],
+  "themes": [
+    "antimemetic",
+    "cognitohazard",
+    "concept"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "suppress",
+      "target": "knowledge",
+      "trigger": "cognition",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 47,
+        "section": "metadata.tags",
+        "locator": "tag:antimemetic"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 47,
+        "section": "metadata.tags",
+        "locator": "tag:cognitohazard"
+      }
+    },
+    {
+      "domain": "concept",
+      "operation": "alter",
+      "target": "concept",
+      "trigger": "cognition",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 47,
+        "section": "metadata.tags",
+        "locator": "tag:concept"
+      }
+    }
+  ],
+  "curated": true
+}

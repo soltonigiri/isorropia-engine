@@ -1,0 +1,75 @@
+{
+  "page_id": "scp-140",
+  "scp_number": 140,
+  "wikidot_page_id": "4838925",
+  "title": "SCP-140",
+  "url": "https://scp-wiki.wikidot.com/scp-140",
+  "authors": [
+    "AssertiveRoland"
+  ],
+  "language": "en",
+  "source_revision": 47,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "alternate-history",
+    "autonomous",
+    "blood",
+    "daevite",
+    "document",
+    "fantasy",
+    "historical",
+    "illustrated",
+    "k-class-scenario",
+    "keter",
+    "scp"
+  ],
+  "themes": [
+    "alternate-history",
+    "document",
+    "k-class-scenario"
+  ],
+  "effects": [
+    {
+      "domain": "time",
+      "operation": "rewrite_history",
+      "target": "history",
+      "trigger": "record_change",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 47,
+        "section": "metadata.tags",
+        "locator": "tag:alternate-history"
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "record",
+      "target": "knowledge",
+      "trigger": "reading",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 47,
+        "section": "metadata.tags",
+        "locator": "tag:document"
+      }
+    },
+    {
+      "domain": "civilization",
+      "operation": "destabilize",
+      "target": "baseline_reality",
+      "trigger": "event",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 47,
+        "section": "metadata.tags",
+        "locator": "tag:k-class-scenario"
+      }
+    }
+  ],
+  "curated": true
+}

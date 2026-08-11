@@ -1,0 +1,76 @@
+{
+  "page_id": "scp-1762",
+  "scp_number": 1762,
+  "wikidot_page_id": "21517229",
+  "title": "SCP-1762",
+  "url": "https://scp-wiki.wikidot.com/scp-1762",
+  "authors": [
+    "OZ Ouroboros"
+  ],
+  "language": "en",
+  "source_revision": 51,
+  "series": "series-2",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "airborne",
+    "autonomous",
+    "bittersweet",
+    "document",
+    "dragon",
+    "fantasy",
+    "inscription",
+    "neutralized",
+    "reptile",
+    "safe",
+    "sapient",
+    "scp"
+  ],
+  "themes": [
+    "airborne",
+    "document",
+    "fantasy"
+  ],
+  "effects": [
+    {
+      "domain": "containment",
+      "operation": "spread",
+      "target": "environment",
+      "trigger": "air_exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 51,
+        "section": "metadata.tags",
+        "locator": "tag:airborne"
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "record",
+      "target": "knowledge",
+      "trigger": "reading",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 51,
+        "section": "metadata.tags",
+        "locator": "tag:document"
+      }
+    },
+    {
+      "domain": "narrative",
+      "operation": "manifest",
+      "target": "fiction",
+      "trigger": "engagement",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 51,
+        "section": "metadata.tags",
+        "locator": "tag:fantasy"
+      }
+    }
+  ],
+  "curated": true
+}

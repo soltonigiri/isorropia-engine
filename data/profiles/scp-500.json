@@ -1,0 +1,68 @@
+{
+  "page_id": "scp-500",
+  "scp_number": 500,
+  "wikidot_page_id": "1959069",
+  "title": "SCP-500",
+  "url": "https://scp-wiki.wikidot.com/scp-500",
+  "authors": [
+    "snorlison"
+  ],
+  "language": "en",
+  "source_revision": 51,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "artifact",
+    "chemical",
+    "medical",
+    "safe",
+    "scp"
+  ],
+  "themes": [
+    "medical",
+    "chemical",
+    "artifact"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "restore",
+      "target": "organism",
+      "trigger": "administration",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 51,
+        "section": "metadata.tags",
+        "locator": "tag:medical"
+      }
+    },
+    {
+      "domain": "matter",
+      "operation": "alter",
+      "target": "material",
+      "trigger": "contact",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 51,
+        "section": "metadata.tags",
+        "locator": "tag:chemical"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "user",
+      "trigger": "contact",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 51,
+        "section": "metadata.tags",
+        "locator": "tag:artifact"
+      }
+    }
+  ],
+  "curated": true
+}

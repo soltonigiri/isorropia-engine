@@ -1,0 +1,77 @@
+{
+  "page_id": "scp-4666",
+  "scp_number": 4666,
+  "wikidot_page_id": "94126350",
+  "title": "SCP-4666",
+  "url": "https://scp-wiki.wikidot.com/scp-4666",
+  "authors": [
+    "Hercules Rockefeller"
+  ],
+  "language": "en",
+  "source_revision": 42,
+  "series": "series-5",
+  "tags": [
+    "4000",
+    "_cc",
+    "_licensebox",
+    "child",
+    "christmas",
+    "horror",
+    "hostile",
+    "humanoid",
+    "illustrated",
+    "keter",
+    "murder-monster",
+    "scp",
+    "teleportation",
+    "toy",
+    "uncontained"
+  ],
+  "themes": [
+    "teleportation",
+    "hostile",
+    "murder-monster"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "entity",
+      "trigger": "activation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 42,
+        "section": "metadata.tags",
+        "locator": "tag:teleportation"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 42,
+        "section": "metadata.tags",
+        "locator": "tag:hostile"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 42,
+        "section": "metadata.tags",
+        "locator": "tag:murder-monster"
+      }
+    }
+  ],
+  "curated": true
+}

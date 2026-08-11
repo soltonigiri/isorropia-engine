@@ -1,0 +1,101 @@
+{
+  "page_id": "scp-5555",
+  "scp_number": 5555,
+  "wikidot_page_id": "986221979",
+  "title": "SCP-5555",
+  "url": "https://scp-wiki.wikidot.com/scp-5555",
+  "authors": [
+    "A Random Day",
+    "Rounderhouse",
+    "Uncle Nicolini"
+  ],
+  "language": "en",
+  "source_revision": 73,
+  "series": "series-6",
+  "tags": [
+    "5000",
+    "_cc",
+    "_licensebox",
+    "amos-marshall",
+    "anderson",
+    "are-we-cool-yet",
+    "bleak",
+    "broken-god",
+    "cadaver",
+    "co-authored",
+    "cogwork-orthodoxy",
+    "dc-al-fine",
+    "doctor-clef",
+    "doctor-glass",
+    "doctor-mann",
+    "dr-wondertainment",
+    "factory",
+    "game",
+    "gamers-against-weed",
+    "global-occult-coalition",
+    "grand-karcist-ion",
+    "herman-fuller",
+    "holly-light",
+    "jude-kriyot",
+    "location",
+    "maria-jones",
+    "marshall-carter-and-dark",
+    "nobody",
+    "reality-bending",
+    "robert-bumaro",
+    "safe",
+    "sarkic",
+    "scp",
+    "thaumaturgy",
+    "the-administrator",
+    "the-critic",
+    "vincent-anderson"
+  ],
+  "themes": [
+    "broken-god",
+    "cadaver",
+    "co-authored"
+  ],
+  "effects": [
+    {
+      "domain": "technology",
+      "operation": "construct",
+      "target": "mechanism",
+      "trigger": "assembly",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 73,
+        "section": "metadata.tags",
+        "locator": "tag:broken-god"
+      }
+    },
+    {
+      "domain": "death",
+      "operation": "preserve_after_death",
+      "target": "corpse",
+      "trigger": "death",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 73,
+        "section": "metadata.tags",
+        "locator": "tag:cadaver"
+      }
+    },
+    {
+      "domain": "narrative",
+      "operation": "combine",
+      "target": "narrative",
+      "trigger": "authorship",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 73,
+        "section": "metadata.tags",
+        "locator": "tag:co-authored"
+      }
+    }
+  ],
+  "curated": true
+}

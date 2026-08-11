@@ -1,0 +1,76 @@
+{
+  "page_id": "scp-2747",
+  "scp_number": 2747,
+  "wikidot_page_id": "45189325",
+  "title": "SCP-2747",
+  "url": "https://scp-wiki.wikidot.com/scp-2747",
+  "authors": [
+    "minmin"
+  ],
+  "language": "en",
+  "source_revision": 37,
+  "series": "series-3",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "anafabula",
+    "illustrated",
+    "infohazard",
+    "keter",
+    "media",
+    "meta",
+    "metafiction",
+    "narrative",
+    "online",
+    "phenomenon",
+    "scp",
+    "uncontained"
+  ],
+  "themes": [
+    "anafabula",
+    "infohazard",
+    "narrative"
+  ],
+  "effects": [
+    {
+      "domain": "narrative",
+      "operation": "suppress",
+      "target": "narrative",
+      "trigger": "representation",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 37,
+        "section": "metadata.tags",
+        "locator": "tag:anafabula"
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 37,
+        "section": "metadata.tags",
+        "locator": "tag:infohazard"
+      }
+    },
+    {
+      "domain": "narrative",
+      "operation": "alter",
+      "target": "narrative",
+      "trigger": "representation",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 37,
+        "section": "metadata.tags",
+        "locator": "tag:narrative"
+      }
+    }
+  ],
+  "curated": true
+}

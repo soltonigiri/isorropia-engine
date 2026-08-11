@@ -1,0 +1,41 @@
+{
+  "name": "isorropia-engine",
+  "version": "0.1.0",
+  "description": "Explainable SCP anomaly pairing for containment cycles, breaches, and double features",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "isorropia": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "data",
+    "README.md",
+    "LICENSE",
+    "LICENSE.content.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build --silent && node --test",
+    "validate": "npm run build --silent && node dist/cli.js validate",
+    "refresh": "npm run build --silent && node dist/refresh-cli.js",
+    "artifacts": "npm run build --silent && node dist/artifacts-cli.js",
+    "attribution": "npm run build --silent && node dist/attribution-cli.js",
+    "check": "npm run test && npm run validate",
+    "prepack": "npm run check"
+  },
+  "keywords": [
+    "scp",
+    "recommendation",
+    "cli",
+    "open-data"
+  ],
+  "license": "(MIT AND CC-BY-SA-3.0)",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.2"
+  }
+}

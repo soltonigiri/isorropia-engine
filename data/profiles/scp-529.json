@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-529",
+  "scp_number": 529,
+  "wikidot_page_id": "1956301",
+  "title": "SCP-529",
+  "url": "https://scp-wiki.wikidot.com/scp-529",
+  "authors": [
+    "Unknown Author"
+  ],
+  "language": "en",
+  "source_revision": 32,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "alive",
+    "animal",
+    "feline",
+    "half-cat-josie",
+    "heartwarming",
+    "illustrated",
+    "safe",
+    "scp"
+  ],
+  "themes": [
+    "alive",
+    "feline",
+    "heartwarming"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "organism",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 32,
+        "section": "metadata.tags",
+        "locator": "tag:alive"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "animal",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 32,
+        "section": "metadata.tags",
+        "locator": "tag:feline"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "calm",
+      "target": "subject",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 32,
+        "section": "metadata.tags",
+        "locator": "tag:heartwarming"
+      }
+    }
+  ],
+  "curated": true
+}

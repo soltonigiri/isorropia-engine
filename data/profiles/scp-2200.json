@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-2200",
+  "scp_number": 2200,
+  "wikidot_page_id": "21424524",
+  "title": "SCP-2200",
+  "url": "https://scp-wiki.wikidot.com/scp-2200",
+  "authors": [
+    "PeppersGhost"
+  ],
+  "language": "en",
+  "source_revision": 38,
+  "series": "series-3",
+  "tags": [
+    "_licensebox",
+    "afterlife",
+    "autonomous",
+    "keter",
+    "mobile",
+    "religious",
+    "scp",
+    "telepathic",
+    "teleportation",
+    "transfiguration",
+    "weapon"
+  ],
+  "themes": [
+    "transfiguration",
+    "teleportation",
+    "weapon"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "body",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 38,
+        "section": "metadata.tags",
+        "locator": "tag:transfiguration"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "entity",
+      "trigger": "activation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 38,
+        "section": "metadata.tags",
+        "locator": "tag:teleportation"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "activation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 38,
+        "section": "metadata.tags",
+        "locator": "tag:weapon"
+      }
+    }
+  ],
+  "curated": true
+}

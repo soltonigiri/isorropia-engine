@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-999",
+  "scp_number": 999,
+  "wikidot_page_id": "2982056",
+  "title": "SCP-999",
+  "url": "https://scp-wiki.wikidot.com/scp-999",
+  "authors": [
+    "ProfSnider"
+  ],
+  "language": "en",
+  "source_revision": 40,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "amorphous",
+    "biological",
+    "comedy",
+    "hard-to-destroy-reptile",
+    "heartwarming",
+    "olfactory",
+    "safe",
+    "scp",
+    "tactile",
+    "tickle-monster"
+  ],
+  "themes": [
+    "biological",
+    "heartwarming",
+    "tactile"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "alter",
+      "target": "organism",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 40,
+        "section": "metadata.tags",
+        "locator": "tag:biological"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "calm",
+      "target": "subject",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 40,
+        "section": "metadata.tags",
+        "locator": "tag:heartwarming"
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "contact_trigger",
+      "target": "subject",
+      "trigger": "contact",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 40,
+        "section": "metadata.tags",
+        "locator": "tag:tactile"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-040",
+  "scp_number": 40,
+  "wikidot_page_id": "1955188",
+  "title": "SCP-040",
+  "url": "https://scp-wiki.wikidot.com/scp-040",
+  "authors": [
+    "Kain Pathos Crow"
+  ],
+  "language": "en",
+  "source_revision": 69,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "alive",
+    "child",
+    "ectoentropic",
+    "esoteric-class",
+    "humanoid",
+    "rewrite",
+    "sapient",
+    "scp",
+    "transfiguration"
+  ],
+  "themes": [
+    "transfiguration",
+    "alive",
+    "sapient"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "body",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 69,
+        "section": "metadata.tags",
+        "locator": "tag:transfiguration"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "organism",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 69,
+        "section": "metadata.tags",
+        "locator": "tag:alive"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "observer",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 69,
+        "section": "metadata.tags",
+        "locator": "tag:sapient"
+      }
+    }
+  ],
+  "curated": true
+}

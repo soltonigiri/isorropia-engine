@@ -1,0 +1,70 @@
+{
+  "page_id": "scp-015",
+  "scp_number": 15,
+  "wikidot_page_id": "1954284",
+  "title": "SCP-015",
+  "url": "https://scp-wiki.wikidot.com/scp-015",
+  "authors": [
+    "Dr Gears"
+  ],
+  "language": "en",
+  "source_revision": 55,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "autonomous",
+    "euclid",
+    "illustrated",
+    "scp",
+    "self-replicating",
+    "structure"
+  ],
+  "themes": [
+    "self-replicating",
+    "structure",
+    "autonomous"
+  ],
+  "effects": [
+    {
+      "domain": "replication",
+      "operation": "replicate",
+      "target": "self",
+      "trigger": "resource_access",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 55,
+        "section": "metadata.tags",
+        "locator": "tag:self-replicating"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "contain",
+      "target": "interior_space",
+      "trigger": "entry",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 55,
+        "section": "metadata.tags",
+        "locator": "tag:structure"
+      }
+    },
+    {
+      "domain": "containment",
+      "operation": "move",
+      "target": "self",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 55,
+        "section": "metadata.tags",
+        "locator": "tag:autonomous"
+      }
+    }
+  ],
+  "curated": true
+}

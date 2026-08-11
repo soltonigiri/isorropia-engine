@@ -1,0 +1,78 @@
+{
+  "page_id": "scp-2521",
+  "scp_number": 2521,
+  "wikidot_page_id": "26684817",
+  "title": "SCP-2521",
+  "url": "https://scp-wiki.wikidot.com/scp-2521",
+  "authors": [
+    "LurkD"
+  ],
+  "language": "en",
+  "source_revision": 33,
+  "series": "series-3",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "cel-shaded",
+    "comic",
+    "humanoid",
+    "image-editing",
+    "infohazard",
+    "keter",
+    "meta",
+    "mystery",
+    "sapient",
+    "sc2015",
+    "scp",
+    "teleportation",
+    "ten-dots",
+    "uncontained"
+  ],
+  "themes": [
+    "infohazard",
+    "sapient",
+    "humanoid"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 33,
+        "section": "metadata.tags",
+        "locator": "tag:infohazard"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "observer",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 33,
+        "section": "metadata.tags",
+        "locator": "tag:sapient"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "human",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 33,
+        "section": "metadata.tags",
+        "locator": "tag:humanoid"
+      }
+    }
+  ],
+  "curated": true
+}

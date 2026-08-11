@@ -1,0 +1,75 @@
+{
+  "page_id": "scp-701",
+  "scp_number": 701,
+  "wikidot_page_id": "3222822",
+  "title": "SCP-701",
+  "url": "https://scp-wiki.wikidot.com/scp-701",
+  "authors": [
+    "tinwatchman"
+  ],
+  "language": "en",
+  "source_revision": 60,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "alagadda",
+    "euclid",
+    "fantasy",
+    "hanged-king",
+    "horror",
+    "humanoid",
+    "illustrated",
+    "memetic",
+    "mind-affecting",
+    "performance",
+    "scp"
+  ],
+  "themes": [
+    "memetic",
+    "performance",
+    "mind-affecting"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 60,
+        "section": "metadata.tags",
+        "locator": "tag:memetic"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "audience",
+      "trigger": "performance",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 60,
+        "section": "metadata.tags",
+        "locator": "tag:performance"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 60,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    }
+  ],
+  "curated": true
+}

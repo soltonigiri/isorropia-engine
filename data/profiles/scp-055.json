@@ -1,0 +1,78 @@
+{
+  "page_id": "scp-055",
+  "scp_number": 55,
+  "wikidot_page_id": "1955017",
+  "title": "SCP-055",
+  "url": "https://scp-wiki.wikidot.com/scp-055",
+  "authors": [
+    "CptBellman",
+    "qntm"
+  ],
+  "language": "en",
+  "source_revision": 51,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "antimemetic",
+    "co-authored",
+    "featured",
+    "infohazard",
+    "keter",
+    "memory-affecting",
+    "meta",
+    "mystery",
+    "phenomenon",
+    "science-fiction",
+    "scp"
+  ],
+  "themes": [
+    "antimemetic",
+    "memory-affecting",
+    "infohazard"
+  ],
+  "effects": [
+    {
+      "domain": "information",
+      "operation": "suppress",
+      "target": "knowledge",
+      "trigger": "cognition",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 51,
+        "section": "metadata.tags",
+        "locator": "tag:antimemetic"
+      }
+    },
+    {
+      "domain": "memory",
+      "operation": "alter",
+      "target": "memory",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 51,
+        "section": "metadata.tags",
+        "locator": "tag:memory-affecting"
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 51,
+        "section": "metadata.tags",
+        "locator": "tag:infohazard"
+      }
+    }
+  ],
+  "known_not": [
+    "round"
+  ],
+  "curated": true
+}

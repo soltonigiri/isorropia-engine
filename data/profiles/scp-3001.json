@@ -1,0 +1,76 @@
+{
+  "page_id": "scp-3001",
+  "scp_number": 3001,
+  "wikidot_page_id": "48072782",
+  "title": "SCP-3001",
+  "url": "https://scp-wiki.wikidot.com/scp-3001",
+  "authors": [
+    "OZ Ouroboros"
+  ],
+  "language": "en",
+  "source_revision": 30,
+  "series": "series-4",
+  "tags": [
+    "3000",
+    "_licensebox",
+    "doctor-scranton",
+    "euclid",
+    "extradimensional",
+    "horror",
+    "media",
+    "neurological",
+    "paradox",
+    "psychological-horror",
+    "science-fiction",
+    "scp",
+    "spatial",
+    "temporal"
+  ],
+  "themes": [
+    "extradimensional",
+    "neurological",
+    "paradox"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 30,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "alter",
+      "target": "nervous_system",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 30,
+        "section": "metadata.tags",
+        "locator": "tag:neurological"
+      }
+    },
+    {
+      "domain": "time",
+      "operation": "distort",
+      "target": "causality",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 30,
+        "section": "metadata.tags",
+        "locator": "tag:paradox"
+      }
+    }
+  ],
+  "curated": true
+}

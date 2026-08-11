@@ -1,0 +1,70 @@
+{
+  "page_id": "scp-300",
+  "scp_number": 300,
+  "wikidot_page_id": "4566064",
+  "title": "SCP-300",
+  "url": "https://scp-wiki.wikidot.com/scp-300",
+  "authors": [
+    "Aelanna"
+  ],
+  "language": "en",
+  "source_revision": 27,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "artifact",
+    "liquid",
+    "professor-aw",
+    "safe",
+    "scp",
+    "visual"
+  ],
+  "themes": [
+    "visual",
+    "liquid",
+    "artifact"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 27,
+        "section": "metadata.tags",
+        "locator": "tag:visual"
+      }
+    },
+    {
+      "domain": "matter",
+      "operation": "flow",
+      "target": "material",
+      "trigger": "contact",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 27,
+        "section": "metadata.tags",
+        "locator": "tag:liquid"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "user",
+      "trigger": "contact",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 27,
+        "section": "metadata.tags",
+        "locator": "tag:artifact"
+      }
+    }
+  ],
+  "curated": true
+}

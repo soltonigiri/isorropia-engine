@@ -1,0 +1,71 @@
+{
+  "page_id": "scp-1230",
+  "scp_number": 1230,
+  "wikidot_page_id": "13217411",
+  "title": "SCP-1230",
+  "url": "https://scp-wiki.wikidot.com/scp-1230",
+  "authors": [
+    "MrPixel"
+  ],
+  "language": "en",
+  "source_revision": 52,
+  "series": "series-2",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "document",
+    "dream",
+    "illustrated",
+    "memory-affecting",
+    "safe",
+    "scp",
+    "sleep"
+  ],
+  "themes": [
+    "dream",
+    "memory-affecting",
+    "sleep"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "induce_dream",
+      "target": "sleeper",
+      "trigger": "sleep",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 52,
+        "section": "metadata.tags",
+        "locator": "tag:dream"
+      }
+    },
+    {
+      "domain": "memory",
+      "operation": "alter",
+      "target": "memory",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 52,
+        "section": "metadata.tags",
+        "locator": "tag:memory-affecting"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "induce_sleep",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 52,
+        "section": "metadata.tags",
+        "locator": "tag:sleep"
+      }
+    }
+  ],
+  "curated": true
+}

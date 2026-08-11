@@ -1,0 +1,87 @@
+{
+  "page_id": "scp-6000",
+  "scp_number": 6000,
+  "wikidot_page_id": "1311742692",
+  "title": "SCP-6000",
+  "url": "https://scp-wiki.wikidot.com/scp-6000",
+  "authors": [
+    "Rounderhouse"
+  ],
+  "language": "en",
+  "source_revision": 59,
+  "series": "series-7",
+  "tags": [
+    "6000",
+    "_cc",
+    "_licensebox",
+    "_listpages",
+    "amorphous",
+    "apocalyptic",
+    "apollyon",
+    "building",
+    "director-moose",
+    "extradimensional",
+    "global-occult-coalition",
+    "historical",
+    "illustrated",
+    "indestructible",
+    "k-class-scenario",
+    "knowledge",
+    "library",
+    "location",
+    "portal",
+    "scp",
+    "serpents-hand",
+    "spatial",
+    "the-serpent",
+    "uncontained",
+    "wanderers-library"
+  ],
+  "themes": [
+    "extradimensional",
+    "apocalyptic",
+    "building"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 59,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "civilization",
+      "operation": "destroy",
+      "target": "civilization",
+      "trigger": "event",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 59,
+        "section": "metadata.tags",
+        "locator": "tag:apocalyptic"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "contain",
+      "target": "interior_space",
+      "trigger": "entry",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 59,
+        "section": "metadata.tags",
+        "locator": "tag:building"
+      }
+    }
+  ],
+  "curated": true
+}

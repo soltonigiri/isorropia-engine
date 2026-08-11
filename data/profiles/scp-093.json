@@ -1,0 +1,78 @@
+{
+  "page_id": "scp-093",
+  "scp_number": 93,
+  "wikidot_page_id": "1958684",
+  "title": "SCP-093",
+  "url": "https://scp-wiki.wikidot.com/scp-093",
+  "authors": [
+    "Unknown Author"
+  ],
+  "language": "en",
+  "source_revision": 39,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "adventure",
+    "artifact",
+    "autonomous",
+    "euclid",
+    "extradimensional",
+    "fantasy",
+    "featured",
+    "horror",
+    "indestructible",
+    "inscription",
+    "otherworldly",
+    "portal",
+    "religious-fiction",
+    "rewrite",
+    "scp"
+  ],
+  "themes": [
+    "extradimensional",
+    "autonomous",
+    "artifact"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 39,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "containment",
+      "operation": "move",
+      "target": "self",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 39,
+        "section": "metadata.tags",
+        "locator": "tag:autonomous"
+      }
+    },
+    {
+      "domain": "technology",
+      "operation": "enable",
+      "target": "user",
+      "trigger": "contact",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 39,
+        "section": "metadata.tags",
+        "locator": "tag:artifact"
+      }
+    }
+  ],
+  "curated": true
+}

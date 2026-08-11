@@ -1,0 +1,198 @@
+[
+  {
+    "id": "cycle-death-balance",
+    "mode": "cycle",
+    "weight": 20,
+    "description": "A death-prevention effect and a universal termination effect may force a stable boundary between life and death.",
+    "matcher": { "type": "operation_pair", "left": ["prevent_death"], "right": ["terminate_life"] }
+  },
+  {
+    "id": "cycle-infection-treatment",
+    "mode": "cycle",
+    "weight": 10,
+    "description": "A restorative biological effect may constrain an infectious effect.",
+    "matcher": { "type": "operation_pair", "left": ["infect"], "right": ["restore"] }
+  },
+  {
+    "id": "cycle-information-counterrecord",
+    "mode": "cycle",
+    "weight": 8,
+    "description": "Recording or revealing information may counter an information-suppression effect.",
+    "matcher": { "type": "operation_pair", "left": ["suppress"], "right": ["record", "reveal", "propagate"] }
+  },
+  {
+    "id": "cycle-threat-resilience",
+    "mode": "cycle",
+    "weight": 7,
+    "description": "A destructive threat may be bounded by an effect that resists destruction.",
+    "matcher": { "type": "operation_pair", "left": ["attack", "destroy"], "right": ["resist"] }
+  },
+  {
+    "id": "cycle-contained-transit",
+    "mode": "cycle",
+    "weight": 5,
+    "description": "A bounded location may constrain anomalous transit.",
+    "matcher": { "type": "operation_pair", "left": ["transport", "bridge"], "right": ["contain"] }
+  },
+  {
+    "id": "cycle-damage-regeneration",
+    "mode": "cycle",
+    "weight": 7,
+    "description": "Regeneration may offset a persistent damaging effect.",
+    "matcher": { "type": "operation_pair", "left": ["damage"], "right": ["regenerate"] }
+  },
+  {
+    "id": "cycle-cognitive-calming",
+    "mode": "cycle",
+    "weight": 7,
+    "description": "A calming effect may constrain coercive or mind-affecting behavior.",
+    "matcher": { "type": "operation_pair", "left": ["influence", "compel", "possess"], "right": ["calm"] }
+  },
+  {
+    "id": "cycle-reality-constraint",
+    "mode": "cycle",
+    "weight": 6,
+    "description": "A constraining effect may limit an anomalous alteration.",
+    "matcher": { "type": "operation_pair", "left": ["alter", "distort", "reshape"], "right": ["constrain"] }
+  },
+  {
+    "id": "cycle-complementary-domain",
+    "mode": "cycle",
+    "weight": 2,
+    "description": "Different operations in the same effect domain provide a weak containment-cycle hypothesis.",
+    "matcher": { "type": "different_operation_same_domain" }
+  },
+  {
+    "id": "cycle-explicit-link",
+    "mode": "cycle",
+    "weight": 2,
+    "description": "The source articles explicitly link the two anomalies.",
+    "matcher": { "type": "explicit_link" }
+  },
+  {
+    "id": "breach-infectious-replication",
+    "mode": "breach",
+    "weight": 10,
+    "description": "Infection combined with self-replication creates a strong propagation risk.",
+    "matcher": { "type": "operation_pair", "left": ["infect"], "right": ["replicate"] }
+  },
+  {
+    "id": "breach-cognitive-propagation",
+    "mode": "breach",
+    "weight": 9,
+    "description": "A transmissible information effect may amplify a cognitohazardous influence.",
+    "matcher": { "type": "operation_pair", "left": ["propagate", "transmit"], "right": ["influence", "compel", "possess"] }
+  },
+  {
+    "id": "breach-mobile-threat",
+    "mode": "breach",
+    "weight": 7,
+    "description": "An attack effect combined with anomalous transit increases breach reach.",
+    "matcher": { "type": "operation_pair", "left": ["attack"], "right": ["transport", "bridge"] }
+  },
+  {
+    "id": "breach-adaptive-threat",
+    "mode": "breach",
+    "weight": 9,
+    "description": "An adaptive effect paired with an active threat undermines repeated containment responses.",
+    "matcher": { "type": "operation_pair", "left": ["adapt"], "right": ["attack", "damage", "destroy"] }
+  },
+  {
+    "id": "breach-reanimated-infection",
+    "mode": "breach",
+    "weight": 8,
+    "description": "Reanimation may create additional persistent hosts for an infectious effect.",
+    "matcher": { "type": "operation_pair", "left": ["reanimate"], "right": ["infect"] }
+  },
+  {
+    "id": "breach-dimensional-cascade",
+    "mode": "breach",
+    "weight": 7,
+    "description": "Spatial distortion combined with a dimensional bridge can spread the incident across boundaries.",
+    "matcher": { "type": "operation_pair", "left": ["distort"], "right": ["bridge"] }
+  },
+  {
+    "id": "breach-mutual-alteration",
+    "mode": "breach",
+    "weight": 6,
+    "description": "Two alteration effects may recursively change each other's operating conditions.",
+    "matcher": { "type": "operation_pair", "left": ["alter", "transform"], "right": ["alter", "transform"] }
+  },
+  {
+    "id": "breach-escape-transit",
+    "mode": "breach",
+    "weight": 8,
+    "description": "An escape tendency combined with anomalous transit weakens location-based containment.",
+    "matcher": { "type": "operation_pair", "left": ["escape", "spread"], "right": ["transport", "bridge"] }
+  },
+  {
+    "id": "breach-catastrophe-energy",
+    "mode": "breach",
+    "weight": 6,
+    "description": "Unbounded energy generation can intensify a civilization-scale destabilization.",
+    "matcher": { "type": "operation_pair", "left": ["destabilize", "destroy"], "right": ["generate"] }
+  },
+  {
+    "id": "breach-shared-domain",
+    "mode": "breach",
+    "weight": 2,
+    "description": "Effects acting in the same domain have a weak interaction risk.",
+    "matcher": { "type": "same_domain" }
+  },
+  {
+    "id": "breach-explicit-link",
+    "mode": "breach",
+    "weight": 2,
+    "description": "The source articles explicitly link the two anomalies.",
+    "matcher": { "type": "explicit_link" }
+  },
+  {
+    "id": "double-shared-theme",
+    "mode": "double-feature",
+    "weight": 8,
+    "description": "The curated profiles share a central theme.",
+    "matcher": { "type": "shared_theme", "minimum": 1 }
+  },
+  {
+    "id": "double-shared-tags",
+    "mode": "double-feature",
+    "weight": 8,
+    "description": "The articles share at least two substantive SCP Wiki tags.",
+    "matcher": { "type": "shared_tag", "minimum": 2 }
+  },
+  {
+    "id": "double-shared-domain",
+    "mode": "double-feature",
+    "weight": 4,
+    "description": "The anomalies explore the same effect domain.",
+    "matcher": { "type": "same_domain" }
+  },
+  {
+    "id": "double-shared-trigger",
+    "mode": "double-feature",
+    "weight": 3,
+    "description": "The anomalies are activated through the same kind of encounter.",
+    "matcher": { "type": "same_trigger" }
+  },
+  {
+    "id": "double-shared-persistence",
+    "mode": "double-feature",
+    "weight": 2,
+    "description": "The effects persist on a comparable timescale.",
+    "matcher": { "type": "same_persistence" }
+  },
+  {
+    "id": "double-same-series",
+    "mode": "double-feature",
+    "weight": 1,
+    "description": "The articles were published in the same SCP series.",
+    "matcher": { "type": "same_series" }
+  },
+  {
+    "id": "double-explicit-link",
+    "mode": "double-feature",
+    "weight": 5,
+    "description": "One source article explicitly links the other.",
+    "matcher": { "type": "explicit_link" }
+  }
+]

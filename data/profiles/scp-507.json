@@ -1,0 +1,72 @@
+{
+  "page_id": "scp-507",
+  "scp_number": 507,
+  "wikidot_page_id": "2259056",
+  "title": "SCP-507",
+  "url": "https://scp-wiki.wikidot.com/scp-507",
+  "authors": [
+    "PennywiseTheClown"
+  ],
+  "language": "en",
+  "source_revision": 44,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "adventure",
+    "alive",
+    "extradimensional",
+    "grabnok",
+    "humanoid",
+    "otherworldly",
+    "safe",
+    "sapient",
+    "scp"
+  ],
+  "themes": [
+    "extradimensional",
+    "humanoid",
+    "sapient"
+  ],
+  "effects": [
+    {
+      "domain": "space",
+      "operation": "bridge",
+      "target": "dimension",
+      "trigger": "threshold_crossing",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 44,
+        "section": "metadata.tags",
+        "locator": "tag:extradimensional"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "human",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 44,
+        "section": "metadata.tags",
+        "locator": "tag:humanoid"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "communicate",
+      "target": "observer",
+      "trigger": "interaction",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 44,
+        "section": "metadata.tags",
+        "locator": "tag:sapient"
+      }
+    }
+  ],
+  "curated": true
+}

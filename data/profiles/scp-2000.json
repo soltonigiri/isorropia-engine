@@ -1,0 +1,80 @@
+{
+  "page_id": "scp-2000",
+  "scp_number": 2000,
+  "wikidot_page_id": "20715059",
+  "title": "SCP-2000",
+  "url": "https://scp-wiki.wikidot.com/scp-2000",
+  "authors": [
+    "HammerMaiden"
+  ],
+  "language": "en",
+  "source_revision": 68,
+  "series": "series-3",
+  "tags": [
+    "2000",
+    "_cc",
+    "_licensebox",
+    "deus-ex-machina",
+    "doctor-clef",
+    "doctor-gears",
+    "foundation-made",
+    "genetic",
+    "historical",
+    "memory-affecting",
+    "post-apocalyptic",
+    "science-fiction",
+    "scp",
+    "structure",
+    "temporal",
+    "thad-xyank",
+    "thaumiel",
+    "the-administrator"
+  ],
+  "themes": [
+    "foundation-made",
+    "genetic",
+    "memory-affecting"
+  ],
+  "effects": [
+    {
+      "domain": "technology",
+      "operation": "construct",
+      "target": "anomalous_system",
+      "trigger": "operation",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 68,
+        "section": "metadata.tags",
+        "locator": "tag:foundation-made"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "alter",
+      "target": "genome",
+      "trigger": "procedure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 68,
+        "section": "metadata.tags",
+        "locator": "tag:genetic"
+      }
+    },
+    {
+      "domain": "memory",
+      "operation": "alter",
+      "target": "memory",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 68,
+        "section": "metadata.tags",
+        "locator": "tag:memory-affecting"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,81 @@
+{
+  "page_id": "scp-049",
+  "scp_number": 49,
+  "wikidot_page_id": "4295790",
+  "title": "SCP-049",
+  "url": "https://scp-wiki.wikidot.com/scp-049",
+  "authors": [
+    "Gabriel Jade"
+  ],
+  "language": "en",
+  "source_revision": 121,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "audio",
+    "biological",
+    "chemical",
+    "co-authored",
+    "contagion",
+    "euclid",
+    "horror",
+    "humanoid",
+    "illustrated",
+    "murder-monster",
+    "mystery",
+    "plague-doctor",
+    "reanimation",
+    "rewrite",
+    "sapient",
+    "scp",
+    "tactile"
+  ],
+  "themes": [
+    "contagion",
+    "biological",
+    "murder-monster"
+  ],
+  "effects": [
+    {
+      "domain": "biology",
+      "operation": "infect",
+      "target": "organism",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 121,
+        "section": "metadata.tags",
+        "locator": "tag:contagion"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "alter",
+      "target": "organism",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 121,
+        "section": "metadata.tags",
+        "locator": "tag:biological"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 121,
+        "section": "metadata.tags",
+        "locator": "tag:murder-monster"
+      }
+    }
+  ],
+  "curated": true
+}

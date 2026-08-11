@@ -1,0 +1,88 @@
+{
+  "page_id": "scp-7004",
+  "scp_number": 7004,
+  "wikidot_page_id": "1420314445",
+  "title": "SCP-7004",
+  "url": "https://scp-wiki.wikidot.com/scp-7004",
+  "authors": [
+    "AnAnomalousWriter",
+    "Ecronak"
+  ],
+  "language": "en",
+  "source_revision": 36,
+  "series": "series-8",
+  "tags": [
+    "7000",
+    "_cc",
+    "_licensebox",
+    "_listpages",
+    "alive",
+    "apocalyptic",
+    "apollyon",
+    "bleak",
+    "body-horror",
+    "co-authored",
+    "deus-ex-machina",
+    "doctor-clef",
+    "extradimensional",
+    "foundation-made",
+    "horror",
+    "humanoid",
+    "infohazard",
+    "memetic",
+    "post-apocalyptic",
+    "psychological-horror",
+    "sapient",
+    "sarkic",
+    "scp",
+    "transfiguration",
+    "uncontained"
+  ],
+  "themes": [
+    "apocalyptic",
+    "alive",
+    "body-horror"
+  ],
+  "effects": [
+    {
+      "domain": "civilization",
+      "operation": "destroy",
+      "target": "civilization",
+      "trigger": "event",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:apocalyptic"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "sustain",
+      "target": "organism",
+      "trigger": "passive",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:alive"
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "body",
+      "trigger": "exposure",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "metadata.tags",
+        "locator": "tag:body-horror"
+      }
+    }
+  ],
+  "curated": true
+}

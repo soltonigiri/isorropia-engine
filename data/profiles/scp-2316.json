@@ -1,0 +1,77 @@
+{
+  "page_id": "scp-2316",
+  "scp_number": 2316,
+  "wikidot_page_id": "34265125",
+  "title": "SCP-2316",
+  "url": "https://scp-wiki.wikidot.com/scp-2316",
+  "authors": [
+    "djkaktus"
+  ],
+  "language": "en",
+  "source_revision": 80,
+  "series": "series-3",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "cadaver",
+    "class-of-76",
+    "cognitohazard",
+    "hive-mind",
+    "horror",
+    "keter",
+    "location",
+    "meta",
+    "mind-affecting",
+    "mystery",
+    "psychological-horror",
+    "scp",
+    "visual"
+  ],
+  "themes": [
+    "cognitohazard",
+    "hive-mind",
+    "mind-affecting"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 80,
+        "section": "metadata.tags",
+        "locator": "tag:cognitohazard"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "link",
+      "target": "group",
+      "trigger": "proximity",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 80,
+        "section": "metadata.tags",
+        "locator": "tag:hive-mind"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 80,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    }
+  ],
+  "curated": true
+}

@@ -1,0 +1,73 @@
+{
+  "page_id": "scp-689",
+  "scp_number": 689,
+  "wikidot_page_id": "1959164",
+  "title": "SCP-689",
+  "url": "https://scp-wiki.wikidot.com/scp-689",
+  "authors": [
+    "Unknown Author"
+  ],
+  "language": "en",
+  "source_revision": 27,
+  "series": "series-1",
+  "tags": [
+    "_licensebox",
+    "cognitohazard",
+    "featured",
+    "horror",
+    "keter",
+    "murder-monster",
+    "observational",
+    "scp",
+    "sculpture",
+    "teleportation",
+    "visual"
+  ],
+  "themes": [
+    "observational",
+    "teleportation",
+    "murder-monster"
+  ],
+  "effects": [
+    {
+      "domain": "perception",
+      "operation": "observation_trigger",
+      "target": "observer",
+      "trigger": "observation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 27,
+        "section": "metadata.tags",
+        "locator": "tag:observational"
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "entity",
+      "trigger": "activation",
+      "persistence": "transient",
+      "constraints": [],
+      "evidence": {
+        "revision": 27,
+        "section": "metadata.tags",
+        "locator": "tag:teleportation"
+      }
+    },
+    {
+      "domain": "harm",
+      "operation": "attack",
+      "target": "life",
+      "trigger": "encounter",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 27,
+        "section": "metadata.tags",
+        "locator": "tag:murder-monster"
+      }
+    }
+  ],
+  "curated": true
+}

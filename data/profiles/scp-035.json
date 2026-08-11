@@ -1,0 +1,78 @@
+{
+  "page_id": "scp-035",
+  "scp_number": 35,
+  "wikidot_page_id": "1956304",
+  "title": "SCP-035",
+  "url": "https://scp-wiki.wikidot.com/scp-035",
+  "authors": [
+    "Kain Pathos Crow"
+  ],
+  "language": "en",
+  "source_revision": 72,
+  "series": "series-1",
+  "tags": [
+    "_cc",
+    "_licensebox",
+    "blood",
+    "clothing",
+    "cognitohazard",
+    "ectoentropic",
+    "horror",
+    "illustrated",
+    "keter",
+    "mind-affecting",
+    "possessive-mask",
+    "psychological-horror",
+    "sapient",
+    "scp",
+    "telepathic",
+    "visual"
+  ],
+  "themes": [
+    "possessive-mask",
+    "cognitohazard",
+    "mind-affecting"
+  ],
+  "effects": [
+    {
+      "domain": "cognition",
+      "operation": "possess",
+      "target": "wearer",
+      "trigger": "wearing",
+      "persistence": "persistent",
+      "constraints": [],
+      "evidence": {
+        "revision": 72,
+        "section": "metadata.tags",
+        "locator": "tag:possessive-mask"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "observer",
+      "trigger": "information_exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 72,
+        "section": "metadata.tags",
+        "locator": "tag:cognitohazard"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "influence",
+      "target": "subject",
+      "trigger": "exposure",
+      "persistence": "variable",
+      "constraints": [],
+      "evidence": {
+        "revision": 72,
+        "section": "metadata.tags",
+        "locator": "tag:mind-affecting"
+      }
+    }
+  ],
+  "curated": true
+}
