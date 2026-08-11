@@ -933,6 +933,7 @@ function buildInteractionCandidates(
   deferred: Map<string, string>,
 ): InteractionCandidate[] {
   const allSemantics = new Map(dataset.semantics.map((item) => [item.page_id, item]));
+  for (const [pageId, semantic] of generated) allSemantics.set(pageId, semantic);
   const profiles = new Map(dataset.profiles.map((profile) => [profile.page_id, profile]));
   const output: InteractionCandidate[] = [];
   const seen = new Set<string>();
@@ -1142,7 +1143,7 @@ async function applyProposal(options: {
       };
       curationChanged = true;
     }
-    edges = edges.filter((edge) => edge.from !== pageId && edge.to !== pageId);
+    edges = edges.filter((edge) => edge.from !== pageId);
     edgesChanged = true;
   }
   const selected = new Set(profiles.keys());

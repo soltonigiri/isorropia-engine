@@ -50,10 +50,16 @@ export function validateDataset(dataset: Dataset): ValidationResult {
   }
 
   for (const edge of dataset.edges) {
-    if (!profileIds.has(edge.from) || !profileIds.has(edge.to)) {
+    const sourceProfile = profilesById.get(edge.from);
+    if (!sourceProfile || !profileIds.has(edge.to)) {
       errors.push(`Edge references unknown profile: ${edge.from} -> ${edge.to}`);
     }
-    validateEvidence(edge.evidence, `${edge.from} -> ${edge.to}`, edge.evidence.revision, errors);
+    validateEvidence(
+      edge.evidence,
+      `${edge.from} -> ${edge.to}`,
+      sourceProfile?.source_revision ?? edge.evidence.revision,
+      errors,
+    );
   }
 
   const semanticsById = new Map(dataset.semantics.map((profile) => [profile.page_id, profile]));
