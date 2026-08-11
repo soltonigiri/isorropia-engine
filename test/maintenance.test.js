@@ -13,6 +13,7 @@ import {
   publishMaintenanceRun,
   rankExpansionCandidates,
   runMaintenance,
+  validateDataset,
 } from '../dist/index.js';
 
 const sourceData = path.resolve('data');
@@ -88,6 +89,110 @@ test('article normalization keeps prose and removes known page boilerplate', () 
   ].join('\n'));
 
   assert.equal(normalized, '**Description:** Article-specific prose.');
+});
+
+test('validation rejects an edge whose evidence predates its source profile', async () => {
+  const dataset = structuredClone(await loadDataset());
+  const edge = dataset.edges[0];
+  edge.evidence.revision += 1;
+
+  const result = validateDataset(dataset);
+
+  assert.equal(result.valid, false);
+  assert.ok(result.errors.includes(`Evidence revision mismatch: ${edge.from} -> ${edge.to}`));
+});
+
+test('one run uses current semantics for every changed article and preserves incoming links', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'isorropia-multi-update-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const dataDirectory = path.join(root, 'data');
+  const privateDirectory = path.join(root, 'private');
+  await cp(sourceData, dataDirectory, { recursive: true });
+  const goldenPath = path.join(dataDirectory, 'golden-pairs.json');
+  const golden = JSON.parse(await readFile(goldenPath, 'utf8'));
+  await writeFile(
+    goldenPath,
+    `${JSON.stringify(golden.filter((item) =>
+      !['scp-006', 'scp-3301'].includes(item.left) &&
+      !['scp-006', 'scp-3301'].includes(item.right),
+    ), null, 2)}\n`,
+  );
+  const dataset = await loadDataset(dataDirectory);
+  const index = sourceIndexFor(dataset);
+  const changedPageIds = ['scp-006', 'scp-3301'];
+  for (const pageId of changedPageIds) {
+    index[pageId.toUpperCase()].history.push({});
+  }
+  const articleSource = Object.fromEntries(changedPageIds.map((pageId) => [
+    pageId.toUpperCase(),
+    {
+      ...index[pageId.toUpperCase()],
+      link: pageId,
+      raw_source: `+ Description\n${pageId.toUpperCase()} changes local reality after direct contact.`,
+    },
+  ]));
+  const fetchImpl = async (input) => {
+    const url = String(input);
+    return url.endsWith('/index.json')
+      ? new Response(JSON.stringify(index), { status: 200 })
+      : new Response(JSON.stringify(articleSource), { status: 200 });
+  };
+  const modelRunner = {
+    async extract(chunks) {
+      return chunks.map((chunk) => ({
+        page_id: chunk.page_id,
+        source_revision: chunk.source_revision,
+        claims: [{
+          id: 'local-reality-game-manifestation',
+          kind: 'effect',
+          domain: 'reality',
+          operation: 'manifest-game-world',
+          target: 'local-reality',
+          outcomes: ['physical-gameboard-manifestation'],
+          preconditions: ['players-activate-the-game'],
+          limitations: ['direct-contact-only'],
+          evidence: [{
+            revision: chunk.source_revision,
+            section: 'Description',
+            locator: `${chunk.page_id.toUpperCase()} changes local reality after direct contact.`,
+          }],
+        }],
+        reading: {
+          themes: ['foundation-mythos'],
+          forms: ['game-manual'],
+          structures: ['participatory'],
+          tones: ['adventurous'],
+          motifs: ['board-game'],
+        },
+      }));
+    },
+    async judge(candidates) {
+      return candidates.map((candidate) => rejectedReview(candidate.review_id));
+    },
+  };
+
+  const summary = await runMaintenance({
+    limit: 2,
+    dryRun: true,
+    dataDirectory,
+    privateDirectory,
+    fetchImpl,
+    modelRunner,
+    now: new Date('2026-08-12T00:00:00Z'),
+  });
+  const proposal = await loadDataset(summary.proposal_directory);
+
+  assert.deepEqual(summary.proposed, changedPageIds);
+  assert.equal(
+    proposal.edges.some((edge) => edge.from === 'scp-018' && edge.to === 'scp-006'),
+    true,
+  );
+  for (const interaction of proposal.interactions) {
+    for (const pageId of interaction.pages) {
+      const profile = proposal.profiles.find((item) => item.page_id === pageId);
+      assert.equal(interaction.source_revisions[pageId], profile.source_revision);
+    }
+  }
 });
 
 test('maintenance dry-run fills one missing semantic profile in a private proposal', async (t) => {
