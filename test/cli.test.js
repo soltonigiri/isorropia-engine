@@ -11,9 +11,51 @@ test('CLI help exposes only the documented command surface', async () => {
     '--help',
   ]);
   assert.match(stdout, /isorropia pair/);
+  assert.match(stdout, /isorropia catalog/);
   assert.match(stdout, /isorropia validate/);
   assert.equal(stdout.includes('judgement'), false);
   assert.equal(stdout.includes('roster'), false);
+});
+
+test('CLI catalog lists the included profiles in numeric order', async () => {
+  const { stdout } = await execFileAsync(process.execPath, [
+    'dist/cli.js',
+    'catalog',
+  ]);
+  const lines = stdout.trim().split('\n');
+  assert.equal(lines.length, 100);
+  assert.equal(lines[0], 'scp-002');
+  assert.ok(lines.includes('scp-008'));
+  const numbers = lines.map((line) => Number(/^scp-(\d+)/.exec(line)?.[1]));
+  assert.deepEqual(numbers, [...numbers].sort((left, right) => left - right));
+});
+
+test('CLI catalog emits stable profile metadata as JSON', async () => {
+  const { stdout } = await execFileAsync(process.execPath, [
+    'dist/cli.js',
+    'catalog',
+    '--json',
+  ]);
+  const catalog = JSON.parse(stdout);
+  assert.equal(catalog.length, 100);
+  assert.deepEqual(catalog[0], {
+    page_id: 'scp-002',
+    title: 'SCP-002',
+    url: 'https://scp-wiki.wikidot.com/scp-002',
+  });
+});
+
+test('CLI points unknown profiles to the catalog', async () => {
+  await assert.rejects(
+    execFileAsync(process.execPath, [
+      'dist/cli.js',
+      'pair',
+      'scp-99999',
+      '--mode',
+      'cycle',
+    ]),
+    /not in the curated catalog; run "isorropia catalog"/,
+  );
 });
 
 test('CLI emits structured JSON without decorative SCP-2521 output', async () => {
