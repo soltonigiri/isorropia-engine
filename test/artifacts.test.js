@@ -18,11 +18,20 @@ test('release artifacts contain the validated 100-profile dataset', async (t) =>
   );
   assert.equal(json.profiles.length, 100);
   assert.equal(json.manifest.attributions.length, 100);
+  assert.ok(json.semantics.length >= 10);
+  assert.ok(json.interactions.length >= 10);
+  assert.equal(json.rankings['scp-008'].breach[0].page_id, 'scp-610');
 
   const database = new DatabaseSync(result.sqlite, { readOnly: true });
   try {
     const row = database.prepare('SELECT COUNT(*) AS count FROM profiles').get();
     assert.equal(row.count, 100);
+    const ranking = database
+      .prepare(
+        'SELECT candidate_page_id FROM rankings WHERE query_page_id = ? AND mode = ? ORDER BY rank LIMIT 1',
+      )
+      .get('scp-008', 'breach');
+    assert.equal(ranking.candidate_page_id, 'scp-610');
   } finally {
     database.close();
   }

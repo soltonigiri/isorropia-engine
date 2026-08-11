@@ -8,6 +8,6 @@ export { formatPairResponse } from './format.js';
 export { buildArtifacts } from './artifacts.js';
 export { synchronizeAttribution } from './attribution.js';
 export { refreshData } from './refresh.js';
-export { validateDataset } from './validate.js';
+export { validateDataset, validateGoldenRankings } from './validate.js';
 export { calculateDatabaseVersion } from './version.js';
 export * from './types.js';

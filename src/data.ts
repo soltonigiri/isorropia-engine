@@ -6,8 +6,10 @@ import type {
   DatasetManifest,
   Edge,
   GoldenCase,
+  PairInteraction,
   Profile,
   Rule,
+  SemanticProfile,
 } from './types.js';
 
 export function defaultDataDirectory(): string {
@@ -34,6 +36,12 @@ export async function loadDataset(
   const golden = await readJson<GoldenCase[]>(
     path.join(dataDirectory, 'golden-pairs.json'),
   );
+  const semantics = await readJson<SemanticProfile[]>(
+    path.join(dataDirectory, 'semantics.json'),
+  );
+  const interactions = await readJson<PairInteraction[]>(
+    path.join(dataDirectory, 'interactions.json'),
+  );
   const edgeText = await readFile(path.join(dataDirectory, 'edges.jsonl'), 'utf8');
   const edges = edgeText
     .split('\n')
@@ -48,7 +56,15 @@ export async function loadDataset(
       }
     });
 
-  return { profiles, rules, edges, manifest, golden };
+  return {
+    profiles,
+    rules,
+    edges,
+    semantics,
+    interactions,
+    manifest,
+    golden,
+  };
 }
 
 async function readJson<T>(filePath: string): Promise<T> {

@@ -51,6 +51,7 @@ test('double-feature scoring ignores internal and editorial tags', () => {
     pageId: 'scp-914',
     mode: 'double-feature',
     limit: 99,
+    setting: 'rough',
   });
   const scp002 = response.results.find((result) => result.page_id === 'scp-002');
   assert.ok(scp002);
@@ -63,6 +64,59 @@ test('double-feature scoring ignores internal and editorial tags', () => {
       'tag:_cc',
     ),
     false,
+  );
+});
+
+test('qualitative breach interactions outrank tag-only matches and preserve assumptions', () => {
+  const response = engine.pair({ pageId: 'scp-008', mode: 'breach' });
+
+  assert.deepEqual(
+    response.results.map((result) => result.page_id),
+    ['scp-610', 'scp-217', 'scp-871'],
+  );
+  assert.match(response.results[2].rules[0].explanation, /does not infect the cakes/);
+  assert.match(response.results[2].assumption, /personnel or supply chain/);
+  assert.equal(response.results[2].confidence, 0.75);
+});
+
+test('reviewed negative interactions suppress misleading tag matches', () => {
+  const normal = engine.pair({
+    pageId: 'scp-008',
+    mode: 'breach',
+    limit: 99,
+  });
+  const rough = engine.pair({
+    pageId: 'scp-008',
+    mode: 'breach',
+    limit: 99,
+    setting: 'rough',
+  });
+
+  for (const response of [normal, rough]) {
+    assert.equal(response.results.some((result) => result.page_id === 'scp-049'), false);
+    assert.equal(response.results.some((result) => result.page_id === 'scp-7795'), false);
+  }
+});
+
+test('default output returns only supported results while rough exposes weak signals', () => {
+  const normal = engine.pair({ pageId: 'scp-3984', mode: 'cycle' });
+  const rough = engine.pair({
+    pageId: 'scp-3984',
+    mode: 'cycle',
+    setting: 'rough',
+  });
+
+  assert.deepEqual(normal.results.map((result) => result.page_id), ['scp-2935']);
+  assert.ok(rough.results.length > normal.results.length);
+  assert.ok(rough.results.slice(1).every((result) => result.confidence <= 0.55));
+});
+
+test('double-feature ranking follows reviewed narrative fit instead of page id', () => {
+  const response = engine.pair({ pageId: 'scp-4010', mode: 'double-feature' });
+
+  assert.deepEqual(
+    response.results.map((result) => result.page_id),
+    ['scp-3999', 'scp-2747', 'scp-5999', 'scp-3301', 'scp-239'],
   );
 });
 
