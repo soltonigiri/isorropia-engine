@@ -43,19 +43,20 @@ Every result is labeled `Containment hypothesis — not canonical.`
 
 ## Data
 
-The dataset contains 100 structurally validated SCP EN profiles. Article-grounded semantic claims and reviewed pair interactions are stored separately from metadata-derived fallback signals. Confidence measures source support, while score measures the strength and discovery value of the pairing.
+The dataset starts with 100 structurally validated SCP EN profiles and can grow through reviewed data updates. Article-grounded semantic claims and reviewed pair interactions are stored separately from metadata-derived fallback signals. Confidence measures source support, while score measures the strength and discovery value of the pairing.
 
 ```text
 data/
 ├── profiles/          # curated profiles used by the CLI
 ├── candidates/        # unaccepted refresh proposals
-├── curation.json      # fixed 100-page selection and maintained effect mappings
+├── curation.json      # selected pages and maintained effect mappings
 ├── edges.jsonl        # explicit links among selected articles
 ├── semantics.json     # article-grounded effects, dependencies, and reading traits
 ├── interactions.json  # accepted hypotheses and reviewed negative pairs
 ├── golden-pairs.json # positive and negative acceptance examples
 ├── manifest.json     # source revisions and attribution
 ├── rules.json        # deterministic scoring rules
+├── selection-policy.json # eligibility and balanced expansion weights
 └── tag-effects.json  # official-tag to effect mapping
 ```
 
@@ -66,7 +67,9 @@ npm run refresh -- --check
 npm run refresh
 ```
 
-Changed pages are written under `data/candidates/`. Curated files under `data/profiles/` are not overwritten.
+Changed pages are written under `data/candidates/`. Curated files under `data/profiles/` are not overwritten. The refresh summary lists semantic profiles that must be rebuilt and pair interactions invalidated by the revision change.
+
+Qualitative maintenance runs outside the normal CLI. Full article text, intermediate model output, logs, and local state remain private working material; only validated structured data is eligible for review. Runtime pairing remains deterministic and offline.
 
 The primary API supplies the initial creator field. To apply author overrides and co-author entries from the SCP Wiki's official Attribution Metadata without making it part of the refresh dependency chain, run `npm run attribution -- --apply`. An unavailable auxiliary response leaves the existing attribution unchanged.
 

@@ -12,8 +12,8 @@ export function validateDataset(dataset: Dataset): ValidationResult {
   const profileIds = new Set<string>();
   const profilesById = new Map(dataset.profiles.map((profile) => [profile.page_id, profile]));
 
-  if (dataset.profiles.length !== 100) {
-    errors.push(`Expected 100 profiles, got ${dataset.profiles.length}`);
+  if (dataset.profiles.length < 100) {
+    errors.push(`Expected at least 100 profiles, got ${dataset.profiles.length}`);
   }
   for (const profile of dataset.profiles) {
     if (!/^scp-\d{3,}$/.test(profile.page_id)) {
@@ -144,6 +144,8 @@ export function validateDataset(dataset: Dataset): ValidationResult {
     }
   }
 
+  validateSelectionPolicy(dataset, errors);
+
   if (dataset.manifest.profile_count !== dataset.profiles.length) {
     errors.push('Manifest profile_count does not match profiles');
   }
@@ -258,6 +260,24 @@ export function validateGoldenRankings(dataset: Dataset): string[] {
     }
   }
   return errors;
+}
+
+function validateSelectionPolicy(dataset: Dataset, errors: string[]): void {
+  const policy = dataset.selectionPolicy;
+  if (!Number.isInteger(policy.version) || policy.version < 1) {
+    errors.push('Invalid selection policy version');
+  }
+  if (
+    !Number.isInteger(policy.weekly_analysis_limit) ||
+    policy.weekly_analysis_limit < 1 ||
+    policy.weekly_analysis_limit > 100
+  ) {
+    errors.push('Invalid weekly analysis limit');
+  }
+  const total = Object.values(policy.weights).reduce((sum, weight) => sum + weight, 0);
+  if (Math.abs(total - 1) > Number.EPSILON * 10) {
+    errors.push('Selection policy weights must total 1');
+  }
 }
 
 function validateEvidence(

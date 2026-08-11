@@ -10,6 +10,7 @@ import type {
   DatasetManifest,
   Edge,
   Effect,
+  PairInteraction,
   Profile,
 } from './types.js';
 import { calculateDatabaseVersion } from './version.js';
@@ -37,6 +38,8 @@ export type RefreshSummary = {
   changed: string[];
   unchanged: number;
   written: boolean;
+  semantic_refresh_required: string[];
+  invalidated_interactions: string[];
 };
 
 export async function refreshData(options: {
@@ -52,6 +55,10 @@ export async function refreshData(options: {
   const tagEffects = await readJson<Record<string, TagEffect>>(
     path.join(dataDirectory, 'tag-effects.json'),
   );
+  const interactions = await readJsonIfPresent<PairInteraction[]>(
+    path.join(dataDirectory, 'interactions.json'),
+    [],
+  );
   const index = await fetchItemsIndex(options.fetchImpl);
   const built = curation.map((entry) =>
     buildProfile({ entry, source: sourceEntry(index, entry.page_id), tagEffects }),
@@ -65,6 +72,8 @@ export async function refreshData(options: {
       changed: built.map((profile) => profile.page_id),
       unchanged: 0,
       written: true,
+      semantic_refresh_required: built.map((profile) => profile.page_id),
+      invalidated_interactions: interactions.map((interaction) => interaction.id),
     };
   }
 
@@ -82,6 +91,15 @@ export async function refreshData(options: {
     changed: changed.map((profile) => profile.page_id),
     unchanged: built.length - changed.length,
     written: !options.check && changed.length > 0,
+    semantic_refresh_required: changed.map((profile) => profile.page_id),
+    invalidated_interactions: interactions
+      .filter((interaction) =>
+        interaction.pages.some((pageId) =>
+          changed.some((profile) => profile.page_id === pageId),
+        ),
+      )
+      .map((interaction) => interaction.id)
+      .sort(),
   };
   if (options.check || changed.length === 0) return summary;
 
@@ -271,6 +289,18 @@ async function loadExistingProfiles(directory: string): Promise<Map<string, Prof
 
 async function readJson<T>(filePath: string): Promise<T> {
   return JSON.parse(await readFile(filePath, 'utf8')) as T;
+}
+
+async function readJsonIfPresent<T>(
+  filePath: string,
+  fallback: T,
+): Promise<T> {
+  try {
+    return await readJson<T>(filePath);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') return fallback;
+    throw error;
+  }
 }
 
 async function atomicWrite(filePath: string, content: string): Promise<void> {

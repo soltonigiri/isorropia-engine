@@ -49,6 +49,7 @@ export async function buildArtifacts(options: {
     edges: dataset.edges,
     semantics: dataset.semantics,
     interactions: dataset.interactions,
+    selection_policy: dataset.selectionPolicy,
     rankings,
     golden: dataset.golden,
   });
