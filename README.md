@@ -25,6 +25,7 @@ isorropia pair scp-4010 --mode double-feature
 ```
 
 The normal command uses only the curated local dataset. It does not call an LLM or an external service.
+Interactive terminals use a width-aware rich layout; pipes and narrow terminals keep the compact plain-text format.
 
 ### Modes
 

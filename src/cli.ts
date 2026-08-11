@@ -47,7 +47,16 @@ async function main(argv: string[]): Promise<void> {
       process.stdout.write(`${JSON.stringify(response, null, 2)}\n`);
     } else {
       process.stdout.write(
-        `${formatPairResponse(response, { judgement: command === 'judgement' })}\n`,
+        `${formatPairResponse(response, {
+          judgement: command === 'judgement',
+          rich:
+            process.stdout.isTTY === true && process.env.TERM !== 'dumb',
+          color:
+            process.stdout.isTTY === true &&
+            process.env.TERM !== 'dumb' &&
+            process.env.NO_COLOR === undefined,
+          width: process.stdout.columns || undefined,
+        })}\n`,
       );
     }
     return;
