@@ -15,6 +15,7 @@ export {
   createMaintenancePlan,
   defaultPrivateDirectory,
   normalizeArticleSource,
+  prepareMaintenanceCheckout,
   publishMaintenanceRun,
   rankExpansionCandidates,
   runMaintenance,

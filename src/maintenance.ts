@@ -140,6 +140,34 @@ export function defaultPrivateDirectory(): string {
   return path.resolve('.private', 'maintenance');
 }
 
+export async function prepareMaintenanceCheckout(options: {
+  repositoryDirectory?: string;
+  commandRunner?: CommandRunner;
+} = {}): Promise<void> {
+  const repositoryDirectory = options.repositoryDirectory ?? path.resolve('.');
+  const commandRunner = options.commandRunner ?? defaultCommandRunner;
+  const status = await commandRunner('git', ['status', '--porcelain'], repositoryDirectory);
+  if (status.stdout.trim()) {
+    throw new Error('Scheduled maintenance requires a clean dedicated checkout');
+  }
+  await commandRunner('git', ['switch', 'main'], repositoryDirectory);
+  await commandRunner('git', ['fetch', 'origin', 'main'], repositoryDirectory);
+  await commandRunner('git', ['merge', '--ff-only', 'origin/main'], repositoryDirectory);
+  const localHead = await commandRunner('git', ['rev-parse', 'HEAD'], repositoryDirectory);
+  const remoteHead = await commandRunner(
+    'git',
+    ['rev-parse', 'origin/main'],
+    repositoryDirectory,
+  );
+  if (localHead.stdout.trim() !== remoteHead.stdout.trim()) {
+    throw new Error('Scheduled maintenance requires main to match origin/main');
+  }
+  const after = await commandRunner('git', ['status', '--porcelain'], repositoryDirectory);
+  if (after.stdout.trim()) {
+    throw new Error('Scheduled maintenance checkout is not clean after updating main');
+  }
+}
+
 export async function createMaintenancePlan(options: {
   limit?: number;
   dataDirectory?: string;
@@ -509,6 +537,24 @@ export async function publishMaintenanceRun(options: {
   if (status.stdout.trim()) {
     throw new Error('Publish requires a clean dedicated checkout');
   }
+  const currentBranch = await commandRunner(
+    'git',
+    ['branch', '--show-current'],
+    repositoryDirectory,
+  );
+  if (currentBranch.stdout.trim() !== 'main') {
+    throw new Error('Publish requires the main branch');
+  }
+  await commandRunner('git', ['fetch', 'origin', 'main'], repositoryDirectory);
+  const localHead = await commandRunner('git', ['rev-parse', 'HEAD'], repositoryDirectory);
+  const remoteHead = await commandRunner(
+    'git',
+    ['rev-parse', 'origin/main'],
+    repositoryDirectory,
+  );
+  if (localHead.stdout.trim() !== remoteHead.stdout.trim()) {
+    throw new Error('Publish requires main to match origin/main; rerun the analysis');
+  }
   const verified = await verifyMaintenanceRun({
     runId: options.runId,
     dataDirectory,
@@ -582,6 +628,7 @@ export async function publishMaintenanceRun(options: {
   }
   state.catalog_count = plan.catalog_count;
   await writeState(privateDirectory, state);
+  await commandRunner('git', ['switch', 'main'], repositoryDirectory);
   return { published: true, pr_url: prUrl, changed_paths: verified.changed_paths };
 }
 
