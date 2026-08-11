@@ -60,3 +60,18 @@ test('CLI rejects unsupported modes', async () => {
     /--mode must be one of/,
   );
 });
+
+test('CLI rejects unknown options instead of silently using defaults', async () => {
+  await assert.rejects(
+    execFileAsync(process.execPath, [
+      'dist/cli.js',
+      'pair',
+      'scp-008',
+      '--mode',
+      'breach',
+      '--limti',
+      '1',
+    ]),
+    /Unknown option: --limti/,
+  );
+});

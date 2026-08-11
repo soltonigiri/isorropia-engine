@@ -36,6 +36,12 @@ async function main(argv: string[]): Promise<void> {
     const pageId = args[0];
     if (!pageId) throw new Error(`${command} requires an SCP identifier`);
     const options = parseOptions(args.slice(1));
+    assertOptions(
+      options,
+      command === 'pair'
+        ? ['mode', 'setting', 'limit', 'json']
+        : ['setting', 'limit', 'json'],
+    );
     if (command === 'judgement' && options.setting !== undefined) {
       throw new Error('judgement uses its fixed 0.50 acceptance threshold');
     }
@@ -64,6 +70,7 @@ async function main(argv: string[]): Promise<void> {
 
   if (command === 'roster') {
     const options = parseOptions(args);
+    assertOptions(options, ['sector', 'json']);
     if (options.sector !== 'core') {
       throw new Error('roster requires --sector core');
     }
@@ -85,7 +92,7 @@ async function main(argv: string[]): Promise<void> {
 }
 
 function parseOptions(args: string[]): Record<string, string | true> {
-  const options: Record<string, string | true> = {};
+  const options: Record<string, string | true> = Object.create(null);
   for (let index = 0; index < args.length; index += 1) {
     const arg = args[index]!;
     if (!arg.startsWith('--')) throw new Error(`Unexpected argument: ${arg}`);
@@ -100,6 +107,16 @@ function parseOptions(args: string[]): Record<string, string | true> {
     index += 1;
   }
   return options;
+}
+
+function assertOptions(
+  options: Record<string, string | true>,
+  allowed: string[],
+): void {
+  const allowedSet = new Set(allowed);
+  for (const option of Object.keys(options)) {
+    if (!allowedSet.has(option)) throw new Error(`Unknown option: --${option}`);
+  }
 }
 
 function parseMode(value: string | true | undefined): Mode {
