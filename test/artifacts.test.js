@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
@@ -10,6 +10,7 @@ import { buildArtifacts } from '../dist/index.js';
 test('release artifacts contain the validated 100-profile dataset', async (t) => {
   const directory = await mkdtemp(path.join(os.tmpdir(), 'isorropia-artifacts-'));
   t.after(() => rm(directory, { recursive: true, force: true }));
+  await writeFile(path.join(directory, 'isorropia.sqlite.tmp'), 'interrupted build');
   const result = await buildArtifacts({ outputDirectory: directory });
   assert.equal(result.profile_count, 100);
 
@@ -35,4 +36,9 @@ test('release artifacts contain the validated 100-profile dataset', async (t) =>
   } finally {
     database.close();
   }
+  const files = await readdir(directory);
+  assert.equal(
+    files.some((name) => /^(?:isorropia\.sqlite|isorropia-data\.json\.gz)\..+\.tmp$/.test(name)),
+    false,
+  );
 });

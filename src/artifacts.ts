@@ -1,5 +1,6 @@
 import { gzipSync, gunzipSync } from 'node:zlib';
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { randomUUID } from 'node:crypto';
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 import { loadDataset, defaultDataDirectory } from './data.js';
@@ -63,139 +64,143 @@ export async function buildArtifacts(options: {
   }
 
   const sqlitePath = path.join(outputDirectory, 'isorropia.sqlite');
-  const temporarySqlitePath = `${sqlitePath}.tmp`;
-  const database = new DatabaseSync(temporarySqlitePath);
+  const temporarySqlitePath = temporaryPath(sqlitePath);
   try {
-    database.exec(`
-      PRAGMA journal_mode = DELETE;
-      CREATE TABLE metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
-      CREATE TABLE profiles (
-        page_id TEXT PRIMARY KEY,
-        scp_number INTEGER NOT NULL,
-        title TEXT NOT NULL,
-        url TEXT NOT NULL,
-        source_revision INTEGER NOT NULL,
-        profile_json TEXT NOT NULL
+    const database = new DatabaseSync(temporarySqlitePath);
+    try {
+      database.exec(`
+        PRAGMA journal_mode = DELETE;
+        CREATE TABLE metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+        CREATE TABLE profiles (
+          page_id TEXT PRIMARY KEY,
+          scp_number INTEGER NOT NULL,
+          title TEXT NOT NULL,
+          url TEXT NOT NULL,
+          source_revision INTEGER NOT NULL,
+          profile_json TEXT NOT NULL
+        );
+        CREATE TABLE rules (
+          id TEXT PRIMARY KEY,
+          mode TEXT NOT NULL,
+          weight REAL NOT NULL,
+          rule_json TEXT NOT NULL
+        );
+        CREATE TABLE edges (
+          source TEXT NOT NULL,
+          target TEXT NOT NULL,
+          type TEXT NOT NULL,
+          edge_json TEXT NOT NULL
+        );
+        CREATE INDEX edges_source_idx ON edges(source);
+        CREATE INDEX edges_target_idx ON edges(target);
+        CREATE TABLE semantic_profiles (
+          page_id TEXT PRIMARY KEY,
+          source_revision INTEGER NOT NULL,
+          semantic_json TEXT NOT NULL
+        );
+        CREATE TABLE interactions (
+          id TEXT PRIMARY KEY,
+          left_page_id TEXT NOT NULL,
+          right_page_id TEXT NOT NULL,
+          mode TEXT NOT NULL,
+          verdict TEXT NOT NULL,
+          interaction_json TEXT NOT NULL
+        );
+        CREATE INDEX interactions_left_idx ON interactions(left_page_id, mode);
+        CREATE INDEX interactions_right_idx ON interactions(right_page_id, mode);
+        CREATE TABLE rankings (
+          query_page_id TEXT NOT NULL,
+          mode TEXT NOT NULL,
+          candidate_page_id TEXT NOT NULL,
+          score INTEGER NOT NULL,
+          confidence REAL NOT NULL,
+          rank INTEGER NOT NULL,
+          result_json TEXT NOT NULL,
+          PRIMARY KEY (query_page_id, mode, candidate_page_id)
+        );
+        CREATE INDEX rankings_lookup_idx ON rankings(query_page_id, mode, rank);
+      `);
+      database.exec('BEGIN IMMEDIATE');
+      const insertMetadata = database.prepare(
+        'INSERT INTO metadata (key, value) VALUES (?, ?)',
       );
-      CREATE TABLE rules (
-        id TEXT PRIMARY KEY,
-        mode TEXT NOT NULL,
-        weight REAL NOT NULL,
-        rule_json TEXT NOT NULL
+      insertMetadata.run('database_version', dataset.manifest.database_version);
+      insertMetadata.run('manifest', JSON.stringify(dataset.manifest));
+      const insertProfile = database.prepare(
+        'INSERT INTO profiles (page_id, scp_number, title, url, source_revision, profile_json) VALUES (?, ?, ?, ?, ?, ?)',
       );
-      CREATE TABLE edges (
-        source TEXT NOT NULL,
-        target TEXT NOT NULL,
-        type TEXT NOT NULL,
-        edge_json TEXT NOT NULL
-      );
-      CREATE INDEX edges_source_idx ON edges(source);
-      CREATE INDEX edges_target_idx ON edges(target);
-      CREATE TABLE semantic_profiles (
-        page_id TEXT PRIMARY KEY,
-        source_revision INTEGER NOT NULL,
-        semantic_json TEXT NOT NULL
-      );
-      CREATE TABLE interactions (
-        id TEXT PRIMARY KEY,
-        left_page_id TEXT NOT NULL,
-        right_page_id TEXT NOT NULL,
-        mode TEXT NOT NULL,
-        verdict TEXT NOT NULL,
-        interaction_json TEXT NOT NULL
-      );
-      CREATE INDEX interactions_left_idx ON interactions(left_page_id, mode);
-      CREATE INDEX interactions_right_idx ON interactions(right_page_id, mode);
-      CREATE TABLE rankings (
-        query_page_id TEXT NOT NULL,
-        mode TEXT NOT NULL,
-        candidate_page_id TEXT NOT NULL,
-        score INTEGER NOT NULL,
-        confidence REAL NOT NULL,
-        rank INTEGER NOT NULL,
-        result_json TEXT NOT NULL,
-        PRIMARY KEY (query_page_id, mode, candidate_page_id)
-      );
-      CREATE INDEX rankings_lookup_idx ON rankings(query_page_id, mode, rank);
-    `);
-    database.exec('BEGIN IMMEDIATE');
-    const insertMetadata = database.prepare(
-      'INSERT INTO metadata (key, value) VALUES (?, ?)',
-    );
-    insertMetadata.run('database_version', dataset.manifest.database_version);
-    insertMetadata.run('manifest', JSON.stringify(dataset.manifest));
-    const insertProfile = database.prepare(
-      'INSERT INTO profiles (page_id, scp_number, title, url, source_revision, profile_json) VALUES (?, ?, ?, ?, ?, ?)',
-    );
-    for (const profile of dataset.profiles) {
-      insertProfile.run(
-        profile.page_id,
-        profile.scp_number,
-        profile.title,
-        profile.url,
-        profile.source_revision,
-        JSON.stringify(profile),
-      );
-    }
-    const insertRule = database.prepare(
-      'INSERT INTO rules (id, mode, weight, rule_json) VALUES (?, ?, ?, ?)',
-    );
-    for (const rule of dataset.rules) {
-      insertRule.run(rule.id, rule.mode, rule.weight, JSON.stringify(rule));
-    }
-    const insertEdge = database.prepare(
-      'INSERT INTO edges (source, target, type, edge_json) VALUES (?, ?, ?, ?)',
-    );
-    for (const edge of dataset.edges) {
-      insertEdge.run(edge.from, edge.to, edge.type, JSON.stringify(edge));
-    }
-    const insertSemantic = database.prepare(
-      'INSERT INTO semantic_profiles (page_id, source_revision, semantic_json) VALUES (?, ?, ?)',
-    );
-    for (const semantic of dataset.semantics) {
-      insertSemantic.run(
-        semantic.page_id,
-        semantic.source_revision,
-        JSON.stringify(semantic),
-      );
-    }
-    const insertInteraction = database.prepare(
-      'INSERT INTO interactions (id, left_page_id, right_page_id, mode, verdict, interaction_json) VALUES (?, ?, ?, ?, ?, ?)',
-    );
-    for (const interaction of dataset.interactions) {
-      insertInteraction.run(
-        interaction.id,
-        interaction.pages[0],
-        interaction.pages[1],
-        interaction.mode,
-        interaction.verdict,
-        JSON.stringify(interaction),
-      );
-    }
-    const insertRanking = database.prepare(
-      'INSERT INTO rankings (query_page_id, mode, candidate_page_id, score, confidence, rank, result_json) VALUES (?, ?, ?, ?, ?, ?, ?)',
-    );
-    for (const profile of dataset.profiles) {
-      for (const mode of MODES) {
-        const results = rankings[profile.page_id]![mode]!;
-        results.forEach((result, index) => {
-          insertRanking.run(
-            profile.page_id,
-            mode,
-            result.page_id,
-            result.score,
-            result.confidence,
-            index + 1,
-            JSON.stringify(result),
-          );
-        });
+      for (const profile of dataset.profiles) {
+        insertProfile.run(
+          profile.page_id,
+          profile.scp_number,
+          profile.title,
+          profile.url,
+          profile.source_revision,
+          JSON.stringify(profile),
+        );
       }
+      const insertRule = database.prepare(
+        'INSERT INTO rules (id, mode, weight, rule_json) VALUES (?, ?, ?, ?)',
+      );
+      for (const rule of dataset.rules) {
+        insertRule.run(rule.id, rule.mode, rule.weight, JSON.stringify(rule));
+      }
+      const insertEdge = database.prepare(
+        'INSERT INTO edges (source, target, type, edge_json) VALUES (?, ?, ?, ?)',
+      );
+      for (const edge of dataset.edges) {
+        insertEdge.run(edge.from, edge.to, edge.type, JSON.stringify(edge));
+      }
+      const insertSemantic = database.prepare(
+        'INSERT INTO semantic_profiles (page_id, source_revision, semantic_json) VALUES (?, ?, ?)',
+      );
+      for (const semantic of dataset.semantics) {
+        insertSemantic.run(
+          semantic.page_id,
+          semantic.source_revision,
+          JSON.stringify(semantic),
+        );
+      }
+      const insertInteraction = database.prepare(
+        'INSERT INTO interactions (id, left_page_id, right_page_id, mode, verdict, interaction_json) VALUES (?, ?, ?, ?, ?, ?)',
+      );
+      for (const interaction of dataset.interactions) {
+        insertInteraction.run(
+          interaction.id,
+          interaction.pages[0],
+          interaction.pages[1],
+          interaction.mode,
+          interaction.verdict,
+          JSON.stringify(interaction),
+        );
+      }
+      const insertRanking = database.prepare(
+        'INSERT INTO rankings (query_page_id, mode, candidate_page_id, score, confidence, rank, result_json) VALUES (?, ?, ?, ?, ?, ?, ?)',
+      );
+      for (const profile of dataset.profiles) {
+        for (const mode of MODES) {
+          const results = rankings[profile.page_id]![mode]!;
+          results.forEach((result, index) => {
+            insertRanking.run(
+              profile.page_id,
+              mode,
+              result.page_id,
+              result.score,
+              result.confidence,
+              index + 1,
+              JSON.stringify(result),
+            );
+          });
+        }
+      }
+      database.exec('COMMIT');
+    } finally {
+      database.close();
     }
-    database.exec('COMMIT');
+    await rename(temporarySqlitePath, sqlitePath);
   } finally {
-    database.close();
+    await rm(temporarySqlitePath, { force: true });
   }
-  await rename(temporarySqlitePath, sqlitePath);
 
   const verification = new DatabaseSync(sqlitePath, { readOnly: true });
   try {
@@ -213,7 +218,15 @@ export async function buildArtifacts(options: {
 }
 
 async function atomicWrite(filePath: string, content: Uint8Array): Promise<void> {
-  const temporaryPath = `${filePath}.tmp`;
-  await writeFile(temporaryPath, content);
-  await rename(temporaryPath, filePath);
+  const temporaryFilePath = temporaryPath(filePath);
+  try {
+    await writeFile(temporaryFilePath, content);
+    await rename(temporaryFilePath, filePath);
+  } finally {
+    await rm(temporaryFilePath, { force: true });
+  }
+}
+
+function temporaryPath(filePath: string): string {
+  return `${filePath}.${process.pid}.${randomUUID()}.tmp`;
 }
