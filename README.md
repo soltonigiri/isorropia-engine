@@ -1,92 +1,87 @@
 # Isorropía Engine
 
-An explainable anomaly-pairing engine for containment cycles, catastrophic interactions, and suspiciously good double features.
+[日本語](README.ja.md)
 
-Give it one SCP. It returns up to five supported, non-canonical pairing hypotheses with deterministic scores, confidence, rules, and source evidence.
+Find SCP articles that might work together in an interesting way.
+
+Give it one SCP and choose what you want to find:
+
+- an anomaly that may contain or balance it
+- an anomaly that may make a breach worse
+- an article that may make a good double feature
+
+Each suggestion includes a score, confidence, a short reason, and source references. The suggestions are ideas, not SCP canon.
 
 <!-- ●●|●●●●●|●●|● -->
 
-## Requirements
+## Quick start
 
-- Node.js 24 or newer
+Requires Node.js 24 or newer.
 
-## Setup
-
-```bash
+```sh
+git clone https://github.com/soltonigiri/isorropia-engine.git
+cd isorropia-engine
 npm install
 npm run build
 node dist/cli.js pair scp-3984 --mode cycle
 ```
 
-After package installation, the executable name is `isorropia`:
+More examples:
 
-```bash
-isorropia pair scp-3984 --mode cycle
-isorropia pair scp-008 --mode breach --json
-isorropia pair scp-4010 --mode double-feature
+```sh
+node dist/cli.js pair scp-008 --mode breach --setting rough
+node dist/cli.js pair scp-4010 --mode double-feature
+node dist/cli.js pair scp-008 --mode breach --json
 ```
 
-The normal command uses only the curated local dataset. It does not call an LLM or an external service.
-Interactive terminals use a width-aware rich layout; pipes and narrow terminals keep the compact plain-text format.
+## Modes
 
-### Modes
+- `cycle`: may contain or balance each other
+- `breach`: may make a containment failure worse
+- `double-feature`: may be interesting to read together
 
-- `cycle`: effects that may constrain or balance each other
-- `breach`: effects that may amplify or propagate a containment failure
-- `double-feature`: articles with related effects, themes, triggers, or source links
+## Reading the results
 
-Every result is labeled `Containment hypothesis — not canonical.`
+- **Score** shows how strong the pairing is.
+- **Confidence** shows how well the article sources support the explanation.
 
-### SCP-914 settings
+SCP-914 settings control how strict the results are. The default is `1:1`.
 
-`--setting rough|coarse|1:1|fine|very-fine` filters results by minimum confidence. It never changes scoring. The default is `1:1`; use `rough` to inspect metadata-only signals that are excluded from normal recommendations.
+- `rough`: includes weak matches
+- `coarse`, `1:1`, `fine`, `very-fine`: become gradually stricter
 
-## Data
+Interactive terminals use a formatted layout. Pipes and narrow windows use simpler text.
 
-The dataset starts with 100 structurally validated SCP EN profiles and can grow through reviewed data updates. Article-grounded semantic claims and reviewed pair interactions are stored separately from metadata-derived fallback signals. Confidence measures source support, while score measures the strength and discovery value of the pairing.
+Shortened example:
 
 ```text
-data/
-├── profiles/          # curated profiles used by the CLI
-├── candidates/        # unaccepted refresh proposals
-├── curation.json      # selected pages and maintained effect mappings
-├── edges.jsonl        # explicit links among selected articles
-├── semantics.json     # article-grounded effects, dependencies, and reading traits
-├── interactions.json  # accepted hypotheses and reviewed negative pairs
-├── golden-pairs.json # positive and negative acceptance examples
-├── manifest.json     # source revisions and attribution
-├── rules.json        # deterministic scoring rules
-├── selection-policy.json # eligibility and balanced expansion weights
-└── tag-effects.json  # official-tag to effect mapping
+╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮
+┃  ISORROPÍA ENGINE                                                          ┃
+┃  CYCLE ANALYSIS                                           TARGET SCP-3984  ┃
+╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯
+
+ 01  SCP-2935                                                        SCORE 100
+     CONFIDENCE  ██████████████████░░  0.90
+     ⇄  Universal death prevention and universal life termination form a
+        direct, article-specific containment-cycle hypothesis.
+     CONDITION   The SCP-2935 effect must cross into the reality affected by
+                 SCP-3984.
+     QUERY       rev.46 · Description › including humans, are unable to die
+     MATCH       rev.93 · Description › all life ... within SCP-2935 ended
+
+Containment hypothesis — not canonical.
 ```
 
-Refresh checks access the SCP Data API directly:
+## Development
 
-```bash
-npm run refresh -- --check
-npm run refresh
-```
+Run the tests and validate the included data:
 
-Changed pages are written under `data/candidates/`. Curated files under `data/profiles/` are not overwritten. The refresh summary lists semantic profiles that must be rebuilt and pair interactions invalidated by the revision change.
-
-Qualitative maintenance runs outside the normal CLI. Full article text, intermediate model output, logs, and local state remain private working material; only validated structured data is eligible for review. Runtime pairing remains deterministic and offline.
-
-The primary API supplies the initial creator field. To apply author overrides and co-author entries from the SCP Wiki's official Attribution Metadata without making it part of the refresh dependency chain, run `npm run attribution -- --apply`. An unavailable auxiliary response leaves the existing attribution unchanged.
-
-## Validation and artifacts
-
-```bash
+```sh
 npm run check
-npm run artifacts
 ```
 
-`npm run artifacts` validates the dataset before generating:
-
-- `release/isorropia-data.json.gz`
-- `release/isorropia.sqlite`
-
-Both artifacts include a precomputed ranking index. Runtime clients only look up a page and mode, filter by confidence, and apply the requested limit; qualitative analysis is never performed at runtime.
+The project starts with 100 reviewed SCP EN articles.
 
 ## License
 
-The code is MIT licensed. SCP-derived profiles, quotations, and metadata are distributed under CC BY-SA 3.0 with per-page attribution in `data/manifest.json`. This is an unofficial project and is not endorsed by the SCP Wiki.
+The code is available under the [MIT License](LICENSE). SCP-derived profiles, quotations, and metadata are distributed under [CC BY-SA 3.0](LICENSE.content.md). This is an unofficial project and is not endorsed by the SCP Wiki.
