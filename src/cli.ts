@@ -3,6 +3,7 @@ import { loadDataset } from './data.js';
 import {
   IsorropiaEngine,
   SETTING_THRESHOLDS,
+  normalizePageId,
   type Setting,
 } from './engine.js';
 import { formatPairResponse } from './format.js';
@@ -18,6 +19,32 @@ async function main(argv: string[]): Promise<void> {
 
   const dataset = await loadDataset();
   const engine = new IsorropiaEngine(dataset);
+
+  if (command === 'catalog') {
+    const options = parseOptions(args);
+    assertOptions(options, ['json']);
+    const catalog = [...dataset.profiles]
+      .sort(
+        (left, right) =>
+          left.scp_number - right.scp_number ||
+          left.page_id.localeCompare(right.page_id),
+      )
+      .map(({ page_id, title, url }) => ({ page_id, title, url }));
+    if (options.json) {
+      process.stdout.write(`${JSON.stringify(catalog, null, 2)}\n`);
+    } else {
+      process.stdout.write(
+        `${catalog
+          .map((profile) =>
+            profile.title.toLowerCase() === profile.page_id
+              ? profile.page_id
+              : `${profile.page_id}\t${profile.title}`,
+          )
+          .join('\n')}\n`,
+      );
+    }
+    return;
+  }
 
   if (command === 'validate') {
     const validation = validateDataset(dataset);
@@ -48,7 +75,18 @@ async function main(argv: string[]): Promise<void> {
     const mode = command === 'judgement' ? 'cycle' : parseMode(options.mode);
     const setting = parseSetting(options.setting);
     const limit = options.limit ? parseLimit(options.limit) : 5;
-    const response = engine.pair({ pageId, mode, limit, setting });
+    const normalizedPageId = normalizePageId(pageId);
+    if (!dataset.profiles.some((profile) => profile.page_id === normalizedPageId)) {
+      throw new Error(
+        `Unknown SCP profile: ${normalizedPageId}. It is not in the curated catalog; run "isorropia catalog" to list available profiles.`,
+      );
+    }
+    const response = engine.pair({
+      pageId: normalizedPageId,
+      mode,
+      limit,
+      setting,
+    });
     if (options.json) {
       process.stdout.write(`${JSON.stringify(response, null, 2)}\n`);
     } else {
@@ -152,6 +190,7 @@ function helpText(): string {
 
 Usage:
   isorropia pair <scp-id> --mode <cycle|breach|double-feature> [--setting <value>] [--limit 5] [--json]
+  isorropia catalog [--json]
   isorropia validate
 `;
 }

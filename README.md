@@ -26,6 +26,14 @@ npm run build
 node dist/cli.js pair scp-3984 --mode cycle
 ```
 
+List the SCP articles included in the catalog:
+
+```sh
+node dist/cli.js catalog
+```
+
+Add `--json` for structured output.
+
 More examples:
 
 ```sh
