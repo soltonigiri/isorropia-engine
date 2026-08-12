@@ -1,4 +1,5 @@
 import { execFile } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import {
   cp,
   mkdir,
@@ -14,6 +15,8 @@ import { buildArtifacts } from './artifacts.js';
 import { defaultDataDirectory, loadDataset } from './data.js';
 import {
   CodexQualitativeModelRunner,
+  EXTRACTION_MODEL,
+  JUDGEMENT_MODEL,
   type ArticleChunk,
   type InteractionCandidate,
   type JudgementReview,
@@ -57,6 +60,7 @@ const MAX_ARTICLES_PER_EXTRACTION = 5;
 const MAX_EXTRACTION_CHARACTERS = 200_000;
 const MAX_ARTICLE_CHUNK_CHARACTERS = 175_000;
 const MAX_PROFILES_PER_JUDGEMENT = 10;
+const MAX_CONCURRENT_JUDGEMENTS = 6;
 const MAX_INTERACTION_COUNTERPARTS = 20;
 const MAX_ACCEPTED_PER_PROFILE_MODE = 3;
 
@@ -349,19 +353,26 @@ export async function runMaintenance(options: {
     try {
       mergeExtractionBatch(
         extracted,
-        await modelRunner.extract(batch, runDirectory),
+        await cachedExtraction({
+          modelRunner,
+          chunks: batch,
+          privateDirectory,
+          runDirectory,
+        }),
       );
     } catch (error) {
       for (const pageId of new Set(batch.map((chunk) => chunk.page_id))) {
         const entry = plan.entries.find((item) => item.page_id === pageId)!;
-        if (entry.reason !== 'catalog-expansion') throw error;
         try {
-          const oneArticleChunks = chunks.filter((chunk) => chunk.page_id === pageId);
-          mergeExtractionBatch(
-            extracted,
-            await modelRunner.extract(oneArticleChunks, runDirectory),
-          );
+          extracted.set(pageId, await validatedArticleExtraction({
+            modelRunner,
+            chunks: chunks.filter((chunk) => chunk.page_id === pageId),
+            article: articles.find((article) => article.entry.page_id === pageId)!,
+            privateDirectory,
+            runDirectory,
+          }));
         } catch (individualError) {
+          if (entry.reason !== 'catalog-expansion') throw individualError;
           deferred.set(pageId, errorMessage(individualError));
         }
       }
@@ -369,41 +380,47 @@ export async function runMaintenance(options: {
   }
 
   const articleById = new Map(articles.map((article) => [article.entry.page_id, article]));
-  for (const [pageId, semantic] of extracted) {
-    const article = articleById.get(pageId);
-    if (!article) throw new Error(`Model returned an unrequested profile: ${pageId}`);
-    validateGeneratedSemantic(semantic, article);
-  }
   for (const entry of plan.entries) {
     if (deferred.has(entry.page_id)) continue;
-    if (!extracted.has(entry.page_id)) {
-      const message = `Model omitted semantic profile: ${entry.page_id}`;
-      if (entry.reason !== 'catalog-expansion') throw new Error(message);
-      deferred.set(entry.page_id, message);
+    const pageId = entry.page_id;
+    const article = articleById.get(pageId)!;
+    const semantic = extracted.get(pageId);
+    try {
+      if (!semantic) throw new Error(`Model omitted semantic profile: ${pageId}`);
+      validateGeneratedSemantic(semantic, article);
+    } catch (error) {
+      try {
+        extracted.set(pageId, await validatedArticleExtraction({
+          modelRunner,
+          chunks: chunks.filter((chunk) => chunk.page_id === pageId),
+          article,
+          privateDirectory,
+          runDirectory,
+        }));
+      } catch (individualError) {
+        if (entry.reason !== 'catalog-expansion') throw individualError;
+        deferred.set(pageId, errorMessage(individualError));
+        extracted.delete(pageId);
+      }
     }
+  }
+  for (const pageId of extracted.keys()) {
+    if (!articleById.has(pageId)) throw new Error(`Model returned an unrequested profile: ${pageId}`);
   }
 
   const interactionCandidates = buildInteractionCandidates(dataset, extracted, deferred);
   const reviews: JudgementReview[] = [];
-  for (const batch of judgementBatches(interactionCandidates)) {
-    const expectedPages = new Set(batch.map((candidate) => candidate.subject_page_id));
-    try {
-      reviews.push(...await modelRunner.judge(batch, runDirectory));
-    } catch (error) {
-      for (const pageId of expectedPages) {
-        const entry = plan.entries.find((item) => item.page_id === pageId);
-        if (!entry || entry.reason !== 'catalog-expansion') throw error;
-        try {
-          const oneProfile = batch.filter(
-            (candidate) => candidate.subject_page_id === pageId,
-          );
-          reviews.push(...await modelRunner.judge(oneProfile, runDirectory));
-        } catch (individualError) {
-          deferred.set(pageId, errorMessage(individualError));
-          extracted.delete(pageId);
-        }
-      }
-    }
+  for (const groups of judgementGroupBatches(interactionCandidates)) {
+    reviews.push(...await reviewInteractionGroups({
+      groups,
+      modelRunner,
+      dataset,
+      extracted,
+      deferred,
+      plan,
+      privateDirectory,
+      runDirectory,
+    }));
   }
 
   const activeCandidates = interactionCandidates.filter(
@@ -725,12 +742,89 @@ async function loadArticle(options: {
   if (!rawSource?.trim()) {
     throw new Error(`SCP Data API has no raw_source for ${options.entry.page_id}`);
   }
+  let normalizedSource = normalizeArticleSource(rawSource);
+  const rendersDynamicContent =
+    /\[\[module\s+ListPages\b[\s\S]*?%%content%%/i.test(rawSource);
+  if (
+    (rendersDynamicContent || !hasSubstantiveArticleText(normalizedSource)) &&
+    article.raw_content?.trim()
+  ) {
+    normalizedSource = await loadRenderedArticleSource({
+      entry: options.entry,
+      source: options.source,
+      rawContent: article.raw_content,
+      privateDirectory: options.privateDirectory,
+      fetchImpl: options.fetchImpl,
+    });
+  }
+  if (!hasSubstantiveArticleText(normalizedSource)) {
+    throw new Error(`SCP Data API has no substantive source for ${options.entry.page_id}`);
+  }
   return {
     entry: options.entry,
     source: options.source,
     raw_source: rawSource,
-    normalized_source: normalizeArticleSource(rawSource),
+    normalized_source: normalizedSource,
   };
+}
+
+async function loadRenderedArticleSource(options: {
+  entry: MaintenancePlanEntry;
+  source: SourceIndexEntry;
+  rawContent: string;
+  privateDirectory: string;
+  fetchImpl?: typeof fetch;
+}): Promise<string> {
+  const documents = [options.rawContent];
+  const sourceUrl = new URL(options.source.url ?? '');
+  const offsetPattern = /href=["']([^"']+\/offset\/(\d+))["']/gi;
+  const seen = new Set<string>();
+  for (const match of options.rawContent.matchAll(offsetPattern)) {
+    const offsetUrl = new URL(match[1]!, sourceUrl);
+    const expectedPrefix = `${sourceUrl.pathname.replace(/\/$/, '')}/offset/`;
+    if (
+      offsetUrl.origin !== sourceUrl.origin ||
+      !offsetUrl.pathname.startsWith(expectedPrefix) ||
+      seen.has(offsetUrl.href)
+    ) continue;
+    seen.add(offsetUrl.href);
+    const offset = match[2]!;
+    const cachePath = path.join(
+      options.privateDirectory,
+      'cache',
+      'rendered',
+      `${options.entry.page_id}-r${options.entry.source_revision}-offset-${offset}.html`,
+    );
+    let html: string;
+    try {
+      html = await readFile(cachePath, 'utf8');
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
+      const response = await (options.fetchImpl ?? globalThis.fetch)(offsetUrl, {
+        redirect: 'error',
+      });
+      if (!response.ok) {
+        throw new Error(
+          `SCP rendered source request failed (${response.status}) for ${options.entry.page_id}`,
+        );
+      }
+      html = await response.text();
+      await atomicWrite(cachePath, html);
+    }
+    documents.push(html);
+  }
+  return documents
+    .map(normalizeRenderedArticleContent)
+    .filter(Boolean)
+    .join('\n\n');
+}
+
+function hasSubstantiveArticleText(source: string): boolean {
+  const prose = source
+    .replace(/^\s*\[\[[^\]]+\]\]\s*$/gm, '')
+    .replace(/^\s*(?:-{4,}|={4,})\s*$/gm, '')
+    .replace(/\s/g, '');
+  return prose.length >= 12;
 }
 
 async function fetchContentShard(
@@ -800,7 +894,57 @@ export function normalizeArticleSource(rawSource: string): string {
     if (/^\[\[(?:> |< )?image\b/i.test(trimmed)) continue;
     filtered.push(line.replace(/[ \t]+$/g, ''));
   }
-  return filtered.join('\n').replace(/\n{4,}/g, '\n\n\n').trim();
+  return filtered
+    .join('\n')
+    .replace(/\\\s*\n\s*/g, ' ')
+    .replace(/\*\*([^*\n]+)\*\*/g, '$1')
+    .replace(/\n{4,}/g, '\n\n\n')
+    .trim();
+}
+
+export function normalizeRenderedArticleContent(rawContent: string): string {
+  const pageContent = rawContent.match(/<div\s+id=["']page-content["'][^>]*>/i);
+  let content = pageContent
+    ? rawContent.slice((pageContent.index ?? 0) + pageContent[0].length)
+    : rawContent;
+  const boundaries = [
+    /<div\s+class=["'][^"']*\bcollection\b/i,
+    /<div\s+class=["'][^"']*\bfooter-wikiwalk-nav\b/i,
+    /<div\s+class=["'][^"']*\blicensebox\b/i,
+    /<div\s+id=["']page-info-break["']/i,
+  ].flatMap((pattern) => {
+    const match = pattern.exec(content);
+    return match?.index === undefined ? [] : [match.index];
+  });
+  if (boundaries.length > 0) content = content.slice(0, Math.min(...boundaries));
+  return decodeHtmlEntities(
+    content
+      .replace(/<!--[\s\S]*?-->/g, '')
+      .replace(/<(?:script|style|noscript|iframe)\b[^>]*>[\s\S]*?<\/(?:script|style|noscript|iframe)>/gi, '')
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<\/(?:p|div|h[1-6]|li|tr|table|blockquote|section|article)>/gi, '\n')
+      .replace(/<[^>]+>/g, ''),
+  )
+    .replace(/\r\n?/g, '\n')
+    .split('\n')
+    .map((line) => line.trim())
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function decodeHtmlEntities(value: string): string {
+  const named: Record<string, string> = {
+    amp: '&', apos: "'", gt: '>', lt: '<', nbsp: ' ', quot: '"',
+  };
+  return value.replace(/&(#(?:x[0-9a-f]+|\d+)|[a-z]+);/gi, (entity, body: string) => {
+    if (body.startsWith('#')) {
+      const hexadecimal = body[1]?.toLowerCase() === 'x';
+      const codePoint = Number.parseInt(body.slice(hexadecimal ? 2 : 1), hexadecimal ? 16 : 10);
+      return Number.isFinite(codePoint) ? String.fromCodePoint(codePoint) : entity;
+    }
+    return named[body.toLowerCase()] ?? entity;
+  });
 }
 
 function articleChunks(article: LoadedArticle): ArticleChunk[] {
@@ -868,6 +1012,64 @@ function extractionBatches(chunks: ArticleChunk[]): ArticleChunk[][] {
   return batches;
 }
 
+async function cachedExtraction(options: {
+  modelRunner: QualitativeModelRunner;
+  chunks: ArticleChunk[];
+  privateDirectory: string;
+  runDirectory: string;
+}): Promise<SemanticProfile[]> {
+  const cachePath = modelCheckpointPath(
+    options.privateDirectory,
+    'extraction-batch-v1',
+    { model: EXTRACTION_MODEL, chunks: options.chunks },
+  );
+  const cached = await readModelCheckpoint<SemanticProfile[]>(cachePath);
+  if (cached) return cached;
+  const profiles = await options.modelRunner.extract(options.chunks, options.runDirectory);
+  await writeModelCheckpoint(cachePath, profiles);
+  return profiles;
+}
+
+async function validatedArticleExtraction(options: {
+  modelRunner: QualitativeModelRunner;
+  chunks: ArticleChunk[];
+  article: LoadedArticle;
+  privateDirectory: string;
+  runDirectory: string;
+}): Promise<SemanticProfile> {
+  const cachePath = modelCheckpointPath(
+    options.privateDirectory,
+    'extraction-article-v1',
+    { model: EXTRACTION_MODEL, chunks: options.chunks },
+  );
+  const cached = await readModelCheckpoint<SemanticProfile[]>(cachePath);
+  if (cached) {
+    try {
+      return mergeAndValidateArticleProfiles(cached, options.article);
+    } catch {
+      // Ignore an invalid private checkpoint and regenerate only this article.
+    }
+  }
+  const profiles = await options.modelRunner.extract(options.chunks, options.runDirectory);
+  const semantic = mergeAndValidateArticleProfiles(profiles, options.article);
+  await writeModelCheckpoint(cachePath, profiles);
+  return semantic;
+}
+
+function mergeAndValidateArticleProfiles(
+  profiles: SemanticProfile[],
+  article: LoadedArticle,
+): SemanticProfile {
+  const merged = new Map<string, SemanticProfile>();
+  mergeExtractionBatch(merged, profiles);
+  const semantic = merged.get(article.entry.page_id);
+  if (!semantic || merged.size !== 1) {
+    throw new Error(`Model omitted semantic profile during repair: ${article.entry.page_id}`);
+  }
+  validateGeneratedSemantic(semantic, article);
+  return semantic;
+}
+
 function mergeExtractionBatch(
   target: Map<string, SemanticProfile>,
   profiles: SemanticProfile[],
@@ -895,6 +1097,19 @@ function mergeExtractionBatch(
   }
 }
 
+function normalizeEvidenceSections(profile: SemanticProfile): SemanticProfile {
+  return {
+    ...profile,
+    claims: profile.claims.map((claim) => ({
+      ...claim,
+      evidence: claim.evidence.map((evidence) => ({
+        ...evidence,
+        section: evidence.section.trim() || 'Article source',
+      })),
+    })),
+  };
+}
+
 function validateGeneratedSemantic(
   semantic: SemanticProfile,
   article: LoadedArticle,
@@ -908,7 +1123,13 @@ function validateGeneratedSemantic(
   if (semantic.claims.length === 0) {
     throw new Error(`Semantic profile has no claims: ${semantic.page_id}`);
   }
-  const normalizedRaw = normalizeWhitespace(article.raw_source);
+  const normalizedRaw = normalizeWhitespace(article.normalized_source);
+  const displayedRaw = normalizeWhitespace(
+    article.normalized_source.replace(
+      /\[\[footnote\]\][\s\S]*?\[\[\/footnote\]\]/gi,
+      '',
+    ),
+  );
   const claimIds = new Set<string>();
   for (const claim of semantic.claims) {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(claim.id) || claimIds.has(claim.id)) {
@@ -920,7 +1141,10 @@ function validateGeneratedSemantic(
         throw new Error(`Generated evidence revision mismatch: ${semantic.page_id}/${claim.id}`);
       }
       const locator = normalizeWhitespace(evidence.locator);
-      if (locator.length < 12 || !normalizedRaw.includes(locator)) {
+      if (
+        locator.length < 12 ||
+        (!normalizedRaw.includes(locator) && !displayedRaw.includes(locator))
+      ) {
         throw new Error(`Generated evidence is not an exact source excerpt: ${semantic.page_id}/${claim.id}`);
       }
     }
@@ -973,7 +1197,9 @@ function buildInteractionCandidates(
   return output;
 }
 
-function judgementBatches(candidates: InteractionCandidate[]): InteractionCandidate[][] {
+function judgementGroupBatches(
+  candidates: InteractionCandidate[],
+): InteractionCandidate[][][] {
   const byPrimary = new Map<string, InteractionCandidate[]>();
   for (const candidate of candidates) {
     const primary = candidate.subject_page_id;
@@ -981,20 +1207,167 @@ function judgementBatches(candidates: InteractionCandidate[]): InteractionCandid
     list.push(candidate);
     byPrimary.set(primary, list);
   }
-  const batches: InteractionCandidate[][] = [];
-  let current: InteractionCandidate[] = [];
-  let profileCount = 0;
+  const batches: InteractionCandidate[][][] = [];
+  let current: InteractionCandidate[][] = [];
   for (const list of byPrimary.values()) {
-    if (profileCount === MAX_PROFILES_PER_JUDGEMENT) {
+    if (current.length === MAX_PROFILES_PER_JUDGEMENT) {
       batches.push(current);
       current = [];
-      profileCount = 0;
     }
-    current.push(...list);
-    profileCount += 1;
+    current.push(list);
   }
   if (current.length > 0) batches.push(current);
   return batches;
+}
+
+async function reviewInteractionGroups(options: {
+  groups: InteractionCandidate[][];
+  modelRunner: QualitativeModelRunner;
+  dataset: Dataset;
+  extracted: Map<string, SemanticProfile>;
+  deferred: Map<string, string>;
+  plan: MaintenancePlan;
+  privateDirectory: string;
+  runDirectory: string;
+}): Promise<JudgementReview[]> {
+  const reviews: JudgementReview[] = [];
+  const pending: InteractionCandidate[][] = [];
+  for (const group of options.groups) {
+    const cached = await readValidatedJudgementCheckpoint({
+      candidates: group,
+      dataset: options.dataset,
+      extracted: options.extracted,
+      privateDirectory: options.privateDirectory,
+    });
+    if (cached) reviews.push(...cached);
+    else pending.push(group);
+  }
+  if (pending.length === 0) return reviews;
+
+  for (
+    let offset = 0;
+    offset < pending.length;
+    offset += MAX_CONCURRENT_JUDGEMENTS
+  ) {
+    const concurrent = pending.slice(offset, offset + MAX_CONCURRENT_JUDGEMENTS);
+    const results = await Promise.all(concurrent.map(async (group) => {
+      const pageId = group[0]!.subject_page_id;
+      const entry = options.plan.entries.find((item) => item.page_id === pageId)!;
+      try {
+        const groupReviews = normalizeSwappedClaimReferences(
+          group,
+          await options.modelRunner.judge(group, options.runDirectory),
+        );
+        validateReviews(group, groupReviews, options.extracted, options.dataset);
+        await writeJudgementCheckpoint(
+          options.privateDirectory,
+          group,
+          groupReviews,
+        );
+        return { reviews: groupReviews };
+      } catch (error) {
+        if (entry.reason !== 'catalog-expansion') return { error };
+        options.deferred.set(pageId, errorMessage(error));
+        options.extracted.delete(pageId);
+        return { reviews: [] };
+      }
+    }));
+    for (const result of results) {
+      if (result.error) throw result.error;
+      reviews.push(...(result.reviews ?? []));
+    }
+  }
+  return reviews;
+}
+
+function normalizeSwappedClaimReferences(
+  candidates: InteractionCandidate[],
+  reviews: JudgementReview[],
+): JudgementReview[] {
+  const candidateById = new Map(candidates.map((candidate) => [
+    candidate.review_id,
+    candidate,
+  ]));
+  return reviews.map((review) => {
+    if (review.verdict === 'rejected') return review;
+    const candidate = candidateById.get(review.review_id);
+    if (!candidate) return review;
+    const leftClaims = new Set(candidate.left.claims.map((claim) => claim.id));
+    const rightClaims = new Set(candidate.right.claims.map((claim) => claim.id));
+    const normalizeClaimRef = (claimRef: string): string => {
+      for (const [pageId, claims] of [
+        [candidate.left.page_id, leftClaims],
+        [candidate.right.page_id, rightClaims],
+      ] as const) {
+        const prefix = `${pageId}:`;
+        const unprefixed = claimRef.startsWith(prefix)
+          ? claimRef.slice(prefix.length)
+          : claimRef;
+        if (claims.has(unprefixed)) return unprefixed;
+      }
+      return claimRef;
+    };
+    const leftClaimRefs = review.left_claim_refs.map(normalizeClaimRef);
+    const rightClaimRefs = review.right_claim_refs.map(normalizeClaimRef);
+    const normal =
+      leftClaimRefs.every((claim) => leftClaims.has(claim)) &&
+      rightClaimRefs.every((claim) => rightClaims.has(claim));
+    const swapped =
+      leftClaimRefs.length > 0 &&
+      rightClaimRefs.length > 0 &&
+      leftClaimRefs.every((claim) => rightClaims.has(claim)) &&
+      rightClaimRefs.every((claim) => leftClaims.has(claim));
+    if (!normal && swapped) {
+      return {
+        ...review,
+        left_claim_refs: rightClaimRefs,
+        right_claim_refs: leftClaimRefs,
+      };
+    }
+    return normal
+      ? {
+          ...review,
+          left_claim_refs: leftClaimRefs,
+          right_claim_refs: rightClaimRefs,
+        }
+      : review;
+  });
+}
+
+async function readValidatedJudgementCheckpoint(options: {
+  candidates: InteractionCandidate[];
+  dataset: Dataset;
+  extracted: Map<string, SemanticProfile>;
+  privateDirectory: string;
+}): Promise<JudgementReview[] | undefined> {
+  const cachePath = judgementCheckpointPath(options.privateDirectory, options.candidates);
+  const cached = await readModelCheckpoint<JudgementReview[]>(cachePath);
+  if (!cached) return undefined;
+  try {
+    validateReviews(options.candidates, cached, options.extracted, options.dataset);
+    return cached;
+  } catch {
+    return undefined;
+  }
+}
+
+async function writeJudgementCheckpoint(
+  privateDirectory: string,
+  candidates: InteractionCandidate[],
+  reviews: JudgementReview[],
+): Promise<void> {
+  await writeModelCheckpoint(judgementCheckpointPath(privateDirectory, candidates), reviews);
+}
+
+function judgementCheckpointPath(
+  privateDirectory: string,
+  candidates: InteractionCandidate[],
+): string {
+  return modelCheckpointPath(
+    privateDirectory,
+    'judgement-subject-v1',
+    { model: JUDGEMENT_MODEL, candidates },
+  );
 }
 
 function validateReviews(
@@ -1123,12 +1496,13 @@ async function applyProposal(options: {
   const changedProfiles = new Map<string, Profile>();
   const skippedPages = new Set<string>();
   for (const [pageId, semantic] of options.semantics) {
-    semanticById.set(pageId, semantic);
+    const normalizedSemantic = normalizeEvidenceSections(semantic);
+    semanticById.set(pageId, normalizedSemantic);
     const planEntryValue = options.plan.entries.find((entry) => entry.page_id === pageId)!;
     if (planEntryValue.reason === 'missing-semantics') continue;
     const source = sourceEntry(options.index, pageId);
     const existing = profiles.get(pageId);
-    const profile = profileFromSemantic(pageId, source, semantic, existing);
+    const profile = profileFromSemantic(pageId, source, normalizedSemantic, existing);
     profiles.set(pageId, profile);
     changedProfiles.set(pageId, profile);
     if (planEntryValue.reason === 'catalog-expansion') {
@@ -1603,6 +1977,34 @@ function emptyState(): MaintenanceState {
 
 async function writeState(privateDirectory: string, state: MaintenanceState): Promise<void> {
   await writeJson(path.join(privateDirectory, 'state.json'), state);
+}
+
+function modelCheckpointPath(
+  privateDirectory: string,
+  kind: string,
+  input: unknown,
+): string {
+  const digest = createHash('sha256')
+    .update(JSON.stringify(input))
+    .digest('hex');
+  return path.join(privateDirectory, 'model-cache', kind, `${digest}.json`);
+}
+
+async function readModelCheckpoint<T>(filePath: string): Promise<T | undefined> {
+  try {
+    const checkpoint = await readJson<{ version: 1; value: T }>(filePath);
+    return checkpoint.version === 1 ? checkpoint.value : undefined;
+  } catch (error) {
+    if (
+      (error as NodeJS.ErrnoException).code === 'ENOENT' ||
+      error instanceof SyntaxError
+    ) return undefined;
+    throw error;
+  }
+}
+
+async function writeModelCheckpoint(filePath: string, value: unknown): Promise<void> {
+  await writeJson(filePath, { version: 1, value });
 }
 
 async function writeJson(filePath: string, value: unknown): Promise<void> {
