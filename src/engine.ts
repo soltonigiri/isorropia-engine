@@ -111,7 +111,13 @@ export class IsorropiaEngine {
       left.page_id.localeCompare(right.page_id),
     );
     let selected:
-      | { cycle: string[]; minimum: number; average: number }
+      | {
+          cycle: string[];
+          minimum: number;
+          average: number;
+          minimumConfidence: number;
+          averageConfidence: number;
+        }
       | undefined;
     // A two-node cycle containing the globally strongest edge always equals or
     // outranks every longer cycle under the specified minimum/average ordering.
@@ -135,6 +141,8 @@ export class IsorropiaEngine {
           cycle: [left.page_id, right.page_id],
           minimum: result.score,
           average: result.score,
+          minimumConfidence: result.confidence,
+          averageConfidence: result.confidence,
         };
         if (!selected || compareCycles(candidate, selected) < 0) {
           selected = candidate;
@@ -174,12 +182,26 @@ function compareResults(left: PairResult, right: PairResult): number {
 }
 
 function compareCycles(
-  left: { cycle: string[]; minimum: number; average: number },
-  right: { cycle: string[]; minimum: number; average: number },
+  left: {
+    cycle: string[];
+    minimum: number;
+    average: number;
+    minimumConfidence: number;
+    averageConfidence: number;
+  },
+  right: {
+    cycle: string[];
+    minimum: number;
+    average: number;
+    minimumConfidence: number;
+    averageConfidence: number;
+  },
 ): number {
   return (
     right.minimum - left.minimum ||
     right.average - left.average ||
+    right.minimumConfidence - left.minimumConfidence ||
+    right.averageConfidence - left.averageConfidence ||
     left.cycle.join('|').localeCompare(right.cycle.join('|'))
   );
 }

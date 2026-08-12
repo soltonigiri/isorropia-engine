@@ -18,6 +18,38 @@ import {
 
 const sourceData = path.resolve('data');
 
+async function removeSemanticProfiles(dataDirectory, pageIds) {
+  const dataset = await loadDataset(dataDirectory);
+  const removed = new Set(pageIds);
+  const semantics = dataset.semantics.filter((item) => !removed.has(item.page_id));
+  const interactions = dataset.interactions.filter((item) =>
+    item.pages.every((pageId) => !removed.has(pageId)),
+  );
+  const manifest = {
+    ...dataset.manifest,
+    database_version: calculateDatabaseVersion(
+      dataset.profiles,
+      dataset.edges,
+      semantics,
+      interactions,
+    ),
+  };
+  await Promise.all([
+    writeFile(
+      path.join(dataDirectory, 'semantics.json'),
+      `${JSON.stringify(semantics, null, 2)}\n`,
+    ),
+    writeFile(
+      path.join(dataDirectory, 'interactions.json'),
+      `${JSON.stringify(interactions, null, 2)}\n`,
+    ),
+    writeFile(
+      path.join(dataDirectory, 'manifest.json'),
+      `${JSON.stringify(manifest, null, 2)}\n`,
+    ),
+  ]);
+}
+
 test('expansion selection is deterministic and breaks equal scores by page id', async () => {
   const dataset = await loadDataset();
   const common = {
@@ -88,7 +120,7 @@ test('article normalization keeps prose and removes known page boilerplate', () 
     'License details',
   ].join('\n'));
 
-  assert.equal(normalized, '**Description:** Article-specific prose.');
+  assert.equal(normalized, 'Description: Article-specific prose.');
 });
 
 test('validation rejects an edge whose evidence predates its source profile', async () => {
@@ -201,6 +233,7 @@ test('maintenance dry-run fills one missing semantic profile in a private propos
   const dataDirectory = path.join(root, 'data');
   const privateDirectory = path.join(root, 'private');
   await cp(sourceData, dataDirectory, { recursive: true });
+  await removeSemanticProfiles(dataDirectory, ['scp-002']);
   const dataset = await loadDataset(dataDirectory);
   const index = sourceIndexFor(dataset);
   const fetchImpl = sourceFetch(index);
@@ -226,6 +259,194 @@ test('maintenance dry-run fills one missing semantic profile in a private propos
   await assert.rejects(readFile(path.join(privateDirectory, 'state.json')), /ENOENT/);
 });
 
+test('maintenance retries only an article whose generated semantic evidence is invalid', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'isorropia-semantic-repair-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const dataDirectory = path.join(root, 'data');
+  const privateDirectory = path.join(root, 'private');
+  await cp(sourceData, dataDirectory, { recursive: true });
+  await removeSemanticProfiles(dataDirectory, ['scp-002']);
+  const dataset = await loadDataset(dataDirectory);
+  const index = sourceIndexFor(dataset);
+  const fetchImpl = sourceFetch(index);
+  const modelRunner = rejectingModelRunner();
+  const validExtract = modelRunner.extract;
+  let extractionCalls = 0;
+  modelRunner.extract = async (chunks) => {
+    extractionCalls += 1;
+    const profiles = await validExtract(chunks);
+    if (extractionCalls === 1) {
+      profiles[0].claims[0].evidence[0].locator = 'This excerpt is not in the article.';
+    }
+    return profiles;
+  };
+
+  const summary = await runMaintenance({
+    limit: 1,
+    dryRun: true,
+    dataDirectory,
+    privateDirectory,
+    fetchImpl,
+    modelRunner,
+    now: new Date('2026-08-12T00:00:00Z'),
+  });
+
+  assert.equal(extractionCalls, 2);
+  assert.deepEqual(summary.proposed, ['scp-002']);
+});
+
+test('maintenance falls back to rendered offset content when raw source is only a dynamic shell', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'isorropia-rendered-source-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const dataDirectory = path.join(root, 'data');
+  const privateDirectory = path.join(root, 'private');
+  await cp(sourceData, dataDirectory, { recursive: true });
+  await removeSemanticProfiles(dataDirectory, ['scp-002']);
+  const dataset = await loadDataset(dataDirectory);
+  const index = sourceIndexFor(dataset);
+  const fetchImpl = async (input) => {
+    const url = String(input);
+    if (url.endsWith('/index.json')) {
+      return new Response(JSON.stringify(index), { status: 200 });
+    }
+    if (url.endsWith('/scp-002/offset/1')) {
+      return new Response([
+        '<html><body><div id="page-content">',
+        '<p>SCP-002 converts introduced living humans into biological furniture.</p>',
+        '<div class="collection">Unrelated author links</div>',
+      ].join(''), { status: 200 });
+    }
+    return new Response(JSON.stringify({
+      'SCP-002': {
+        history: index['SCP-002'].history,
+        link: 'scp-002',
+        url: 'https://scp-wiki.wikidot.com/scp-002',
+        raw_source: [
+          '[[module css]]',
+          '.substantive-looking-selector { display: none; }',
+          '[[/module]]',
+          '[[module ListPages]]',
+          '%%content%%',
+          '[[/module]]',
+        ].join('\n'),
+        raw_content: [
+          '<div id="page-content"><p>Dynamic article introduction.</p>',
+          '<a href="/scp-002/offset/1">Read revision</a></div>',
+        ].join(''),
+      },
+    }), { status: 200 });
+  };
+
+  const summary = await runMaintenance({
+    limit: 1,
+    dryRun: true,
+    dataDirectory,
+    privateDirectory,
+    fetchImpl,
+    modelRunner: rejectingModelRunner(),
+    now: new Date('2026-08-12T00:00:00Z'),
+  });
+
+  assert.deepEqual(summary.proposed, ['scp-002']);
+});
+
+test('maintenance reuses validated article and subject checkpoints after a later failure', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'isorropia-checkpoints-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const dataDirectory = path.join(root, 'data');
+  const privateDirectory = path.join(root, 'private');
+  await cp(sourceData, dataDirectory, { recursive: true });
+  await removeSemanticProfiles(dataDirectory, ['scp-002', 'scp-005']);
+  const dataset = await loadDataset(dataDirectory);
+  const index = sourceIndexFor(dataset);
+  const pageIds = ['scp-002', 'scp-005'];
+  const sourceById = Object.fromEntries(pageIds.map((pageId) => [
+    pageId.toUpperCase(),
+    {
+      ...index[pageId.toUpperCase()],
+      link: pageId,
+      raw_source: `+ Description\n${pageId.toUpperCase()} produces an article-specific effect.`,
+    },
+  ]));
+  const fetchImpl = async (input) => String(input).endsWith('/index.json')
+    ? new Response(JSON.stringify(index), { status: 200 })
+    : new Response(JSON.stringify(sourceById), { status: 200 });
+  let extractionCalls = 0;
+  let firstRun = true;
+  const judgementCalls = [];
+  const modelRunner = {
+    async extract(chunks) {
+      extractionCalls += 1;
+      return chunks.map((chunk) => ({
+        page_id: chunk.page_id,
+        source_revision: chunk.source_revision,
+        claims: [{
+          id: 'article-specific-effect',
+          kind: 'effect',
+          domain: 'test',
+          operation: 'produce',
+          target: 'test-subject',
+          outcomes: ['test-effect'],
+          preconditions: [],
+          limitations: [],
+          evidence: [{
+            revision: chunk.source_revision,
+            section: 'Description',
+            locator: `${chunk.page_id.toUpperCase()} produces an article-specific effect.`,
+          }],
+        }],
+        reading: {
+          themes: ['test'],
+          forms: ['report'],
+          structures: ['linear'],
+          tones: ['clinical'],
+          motifs: ['test'],
+        },
+      }));
+    },
+    async judge(candidates) {
+      const subjects = [...new Set(candidates.map((candidate) =>
+        candidate.subject_page_id,
+      ))].sort();
+      judgementCalls.push(subjects);
+      if (firstRun && subjects.length === 1 && subjects[0] === 'scp-005') {
+        throw new Error('simulated scp-005 judgement failure');
+      }
+      return candidates
+        .filter((candidate) => !firstRun || candidate.subject_page_id === 'scp-002')
+        .map((candidate) => rejectedReview(candidate.review_id));
+    },
+  };
+
+  await assert.rejects(
+    runMaintenance({
+      limit: 2,
+      dryRun: true,
+      dataDirectory,
+      privateDirectory,
+      fetchImpl,
+      modelRunner,
+      now: new Date('2026-08-12T00:00:00Z'),
+    }),
+    /simulated scp-005 judgement failure/,
+  );
+  const callsBeforeResume = judgementCalls.length;
+  firstRun = false;
+  const summary = await runMaintenance({
+    limit: 2,
+    dryRun: true,
+    dataDirectory,
+    privateDirectory,
+    fetchImpl,
+    modelRunner,
+    now: new Date('2026-08-12T00:01:00Z'),
+  });
+
+  assert.equal(extractionCalls, 1);
+  assert.deepEqual(judgementCalls.slice(callsBeforeResume), [['scp-005']]);
+  assert.deepEqual(summary.proposed, pageIds);
+});
+
 test('publish uses an explicit data allowlist and creates only a draft PR', async (t) => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'isorropia-publish-'));
   t.after(() => rm(root, { recursive: true, force: true }));
@@ -233,6 +454,7 @@ test('publish uses an explicit data allowlist and creates only a draft PR', asyn
   const dataDirectory = path.join(repositoryDirectory, 'data');
   const privateDirectory = path.join(root, 'private');
   await cp(sourceData, dataDirectory, { recursive: true });
+  await removeSemanticProfiles(dataDirectory, ['scp-002']);
   const dataset = await loadDataset(dataDirectory);
   const index = sourceIndexFor(dataset);
   const fetchImpl = sourceFetch(index);
@@ -413,7 +635,7 @@ test('catalog expansion adds a profile only when an accepted interaction survive
           limitations: ['living-tissue-only'],
           evidence: [{
             revision: 1,
-            section: 'Description',
+            section: '',
             locator: 'SCP-9100 restores damaged living tissue after direct contact.',
           }],
         }],
@@ -436,8 +658,12 @@ test('catalog expansion adds a profile only when an accepted interaction survive
             review_id: candidate.review_id,
             verdict: 'accepted',
             mechanism: 'Read two article-specific restoration mechanisms in sequence.',
-            left_claim_refs: [candidate.left.claims[0].id],
-            right_claim_refs: [candidate.right.claims[0].id],
+            left_claim_refs: [
+              `${candidate.right.page_id}:${candidate.right.claims[0].id}`,
+            ],
+            right_claim_refs: [
+              `${candidate.left.page_id}:${candidate.left.claims[0].id}`,
+            ],
             causal_chain: ['One article establishes restoration.', 'The other changes its mechanism.'],
             explanation: 'The contrast depends on the distinct delivery conditions in both articles.',
             assumption: 'The reading order is curatorial.',
@@ -470,6 +696,11 @@ test('catalog expansion adds a profile only when an accepted interaction survive
   assert.equal(proposal.profiles.length, 101);
   assert.equal(new IsorropiaEngine(proposal).coreCycle().cycle.length, 2);
   assert.equal(proposal.profiles.some((profile) => profile.page_id === 'scp-9100'), true);
+  assert.equal(
+    proposal.semantics.find((semantic) => semantic.page_id === 'scp-9100')
+      .claims[0].evidence[0].section,
+    'Article source',
+  );
   assert.equal(
     proposal.interactions.some((interaction) =>
       interaction.verdict === 'accepted' && interaction.pages.includes('scp-9100'),
@@ -527,7 +758,7 @@ function sourceFetch(index) {
         history: index['SCP-002'].history,
         link: 'scp-002',
         url: 'https://scp-wiki.wikidot.com/scp-002',
-        raw_source: '+ Description\nSCP-002 converts introduced living humans into biological furniture.',
+        raw_source: '+ Description\nSCP-002 converts introduced living humans[[footnote]]A note.[[/footnote]] into biological furniture.',
       },
     }), { status: 200 });
   };
