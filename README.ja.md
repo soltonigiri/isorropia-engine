@@ -32,9 +32,9 @@ node dist/cli.js pair scp-3984 --mode cycle
 node dist/cli.js catalog
 ```
 
-構造化された出力が必要な場合は`--json`を付けます。
+`--json`で同じ結果をJSONとして取得できます。
 
-ほかの実行例：
+主なコマンドは次のとおりです。
 
 ```sh
 node dist/cli.js pair scp-008 --mode breach --setting rough
@@ -92,4 +92,4 @@ npm run check
 
 ## ライセンス
 
-コードは[MIT License](LICENSE)、SCP由来のプロファイル・引用・メタデータは[CC BY-SA 3.0](LICENSE.content.md)で提供します。このプロジェクトは非公式であり、SCP Wikiの承認を受けたものではありません。
+コードは[MIT License](LICENSE)、SCP由来のプロファイル・引用・メタデータは[CC BY-SA 3.0](LICENSE.content.md)で提供します。SCP Wikiの非公式プロジェクトです。

@@ -2,9 +2,8 @@
 import { refreshData } from './refresh.js';
 
 const args = new Set(process.argv.slice(2));
-const allowed = new Set(['--bootstrap', '--check']);
 for (const arg of args) {
-  if (!allowed.has(arg)) {
+  if (arg !== '--bootstrap' && arg !== '--check') {
     process.stderr.write(`Error: unknown option ${arg}\n`);
     process.exit(1);
   }
