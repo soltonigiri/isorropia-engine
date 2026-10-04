@@ -32,7 +32,7 @@ List the SCP articles included in the catalog:
 node dist/cli.js catalog
 ```
 
-Add `--json` for structured output.
+Add `--json` to return the same results as JSON.
 
 More examples:
 
@@ -92,4 +92,4 @@ The project starts with 100 reviewed SCP EN articles.
 
 ## License
 
-The code is available under the [MIT License](LICENSE). SCP-derived profiles, quotations, and metadata are distributed under [CC BY-SA 3.0](LICENSE.content.md). This is an unofficial project and is not endorsed by the SCP Wiki.
+The code is available under the [MIT License](LICENSE). SCP-derived profiles, quotations, and metadata are distributed under [CC BY-SA 3.0](LICENSE.content.md). This is an unofficial SCP Wiki project.

@@ -1,5 +1,5 @@
 export const SCP_DATA_API_ORIGIN = 'https://scp-data.tedivm.com';
-const INDEX_URL = `${SCP_DATA_API_ORIGIN}/data/scp/items/index.json`;
+export const SCP_DATA_API_INDEX_URL = `${SCP_DATA_API_ORIGIN}/data/scp/items/index.json`;
 
 export type SourceIndexEntry = {
   content_file?: string;
@@ -26,8 +26,7 @@ export type SourceArticle = SourceIndexEntry & {
 export async function fetchItemsIndex(
   fetchImpl: typeof fetch = globalThis.fetch,
 ): Promise<Record<string, SourceIndexEntry>> {
-  const url = new URL(INDEX_URL);
-  if (url.origin !== SCP_DATA_API_ORIGIN) throw new Error('Unexpected API origin');
+  const url = new URL(SCP_DATA_API_INDEX_URL);
   const response = await fetchImpl(url, { redirect: 'error' });
   if (!response.ok) {
     const body = await response.text().catch(() => '');
@@ -37,8 +36,6 @@ export async function fetchItemsIndex(
   }
   return (await response.json()) as Record<string, SourceIndexEntry>;
 }
-
-export const SCP_DATA_API_INDEX_URL = INDEX_URL;
 
 export function sourceRevision(entry: SourceIndexEntry): number {
   return Math.max(0, (entry.history?.length ?? 1) - 1);
