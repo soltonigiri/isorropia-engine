@@ -8,6 +8,13 @@ import test from 'node:test';
 import { buildArtifacts, IsorropiaEngine, loadDataset } from '../dist/index.js';
 
 test('release artifacts contain the validated 100-profile dataset', async (t) => {
+  const sourceRevision = 'a'.repeat(40);
+  const originalRevision = process.env.SOURCE_REVISION;
+  process.env.SOURCE_REVISION = sourceRevision;
+  t.after(() => {
+    if (originalRevision === undefined) delete process.env.SOURCE_REVISION;
+    else process.env.SOURCE_REVISION = originalRevision;
+  });
   const directory = await mkdtemp(path.join(os.tmpdir(), 'isorropia-artifacts-'));
   t.after(() => rm(directory, { recursive: true, force: true }));
   await writeFile(path.join(directory, 'isorropia.sqlite.tmp'), 'interrupted build');
@@ -33,7 +40,7 @@ test('release artifacts contain the validated 100-profile dataset', async (t) =>
     semantic_policy_digest: json.artifact_metadata.semantic_policy_digest,
     candidate_policy_digest: json.artifact_metadata.candidate_policy_digest,
     review_policy_digest: json.artifact_metadata.review_policy_digest,
-    source_revision: 'unknown',
+    source_revision: sourceRevision,
   });
   assert.match(json.artifact_metadata.rule_version, /^[a-f0-9]{12}$/);
 
