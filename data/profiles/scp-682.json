@@ -32,48 +32,50 @@
     "self-repairing"
   ],
   "themes": [
-    "adaptive",
-    "indestructible",
-    "hostile"
+    "containment-failure",
+    "indestructibility",
+    "institutional-escalation"
   ],
   "effects": [
     {
-      "domain": "containment",
-      "operation": "adapt",
-      "target": "containment_method",
-      "trigger": "exposure",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "suppress",
+      "target": "containment",
+      "trigger": "The chamber is filled with hydrochloric acid.",
+      "persistence": "while submerged",
+      "constraints": [
+        "The chamber is filled with hydrochloric acid."
+      ],
       "evidence": {
         "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:adaptive"
+        "section": "Special Containment Procedures",
+        "locator": "The containment chamber should be filled with hydrochloric acid until SCP-682 is submerged and incapacitated."
       }
     },
     {
-      "domain": "durability",
-      "operation": "resist",
-      "target": "destruction",
-      "trigger": "damage",
-      "persistence": "persistent",
+      "domain": "biology",
+      "operation": "restore",
+      "target": "its physical body",
+      "trigger": "ingestion of organic or inorganic matter",
+      "persistence": "constant",
       "constraints": [],
       "evidence": {
         "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:indestructible"
+        "section": "Description",
+        "locator": "Digestion seems to be aided by a set of filtering gills inside of SCP-682's nostrils, which are able to remove usable matter from any liquid solution, enabling it to constantly regenerate from the acid it is contained in."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "suppress",
+      "target": "SCP-409",
+      "trigger": "Event 682-E18 exposure",
+      "persistence": "now",
       "constraints": [],
       "evidence": {
         "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:hostile"
+        "section": "Addendum 682-E",
+        "locator": "SCP-682 appears to now be immune to [[[SCP-409]]]."
       }
     }
   ],

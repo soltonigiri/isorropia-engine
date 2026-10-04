@@ -39,48 +39,39 @@
     "wanderers-library"
   ],
   "themes": [
-    "apocalyptic",
-    "electronic",
-    "anomalous-event"
+    "apocalypse",
+    "institutional-betrayal",
+    "incomprehensible-revelation"
   ],
   "effects": [
     {
-      "domain": "civilization",
-      "operation": "destroy",
-      "target": "civilization",
-      "trigger": "event",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "perception",
+      "operation": "suppress",
+      "target": "people observing its occupant",
+      "trigger": "occupant uses the harness",
+      "persistence": "article-defined",
+      "constraints": [
+        "people can still see the occupant"
+      ],
       "evidence": {
         "revision": 32,
-        "section": "metadata.tags",
-        "locator": "tag:apocalyptic"
+        "section": "Journal Entry 0001-2",
+        "locator": "This perception filter thing doesn't mean people can't see me, but it does mean they can't recognize the fact that they can see me."
       }
     },
     {
       "domain": "information",
-      "operation": "transmit",
-      "target": "digital_system",
-      "trigger": "execution",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "other",
+      "target": "files and intelligence",
+      "trigger": "past damage",
+      "persistence": "article-defined",
+      "constraints": [
+        "damage means its former anomalous functions are unavailable"
+      ],
       "evidence": {
         "revision": 32,
-        "section": "metadata.tags",
-        "locator": "tag:electronic"
-      }
-    },
-    {
-      "domain": "civilization",
-      "operation": "destabilize",
-      "target": "baseline_reality",
-      "trigger": "event",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 32,
-        "section": "metadata.tags",
-        "locator": "tag:anomalous-event"
+        "section": "Description",
+        "locator": "Although SCP-5000 is believed to have once possessed a number of anomalous functions intended to protect and benefit its occupant, damage inflicted to it in the past means that it is currently only capable of basic file storage."
       }
     }
   ],

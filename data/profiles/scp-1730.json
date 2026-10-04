@@ -29,48 +29,54 @@
     "spatial"
   ],
   "themes": [
-    "extradimensional",
-    "building",
-    "foundation-made"
+    "institutional-cruelty",
+    "containment-collapse",
+    "survival-amid-consequence"
   ],
   "effects": [
     {
-      "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
+      "domain": "cognition",
+      "operation": "propagate",
+      "target": "any individual becoming aware of the symbols",
+      "trigger": "becoming aware of the symbols",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 192,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "section": "Addendum 1730.3: Exploration Log Transcripts",
+        "locator": "Further examination by Foundation cognitohazard specialists and screening technology ascertained that the symbols themselves were a sort of pyroclastic cognitohazard."
       }
     },
     {
       "domain": "space",
-      "operation": "contain",
-      "target": "interior_space",
-      "trigger": "entry",
-      "persistence": "persistent",
-      "constraints": [],
+      "operation": "transform",
+      "target": "local reality",
+      "trigger": "utilization of the device",
+      "persistence": "article-defined",
+      "constraints": [
+        "the device is utilized",
+        "the device is described as wildly unstable"
+      ],
       "evidence": {
         "revision": 192,
-        "section": "metadata.tags",
-        "locator": "tag:building"
+        "section": "Addendum 1730.4: Recovered Data from Power Station Terminal",
+        "locator": "Utilization of the device could make local reality unstable here, as well as wherever the device ends up."
       }
     },
     {
-      "domain": "technology",
-      "operation": "construct",
-      "target": "anomalous_system",
-      "trigger": "operation",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "space",
+      "operation": "suppress",
+      "target": "the Thresher device",
+      "trigger": "during extraction",
+      "persistence": "less than an hour before failsafes power the device back up",
+      "constraints": [
+        "power can be reduced long enough",
+        "complete disabling risks lives above ground"
+      ],
       "evidence": {
         "revision": 192,
-        "section": "metadata.tags",
-        "locator": "tag:foundation-made"
+        "section": "Addendum 1730.9: Extraction Log Transcripts",
+        "locator": "This device is the cause of the... instabilities, and while it is not possible to completely disable the device without risking our own lives or the lives of above-ground personnel, we should be able to reduce power to the device long enough for us to create a stable path to the surface, following this route, here."
       }
     }
   ],

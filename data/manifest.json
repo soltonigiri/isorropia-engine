@@ -1,6 +1,6 @@
 {
-  "database_version": "016c89bfb46d",
-  "generated_at": "2026-08-12T04:25:12.457Z",
+  "database_version": "144d2489be03",
+  "generated_at": "2026-08-13T11:20:18.437Z",
   "source": "https://scp-data.tedivm.com/data/scp/items/index.json",
   "profile_count": 100,
   "attributions": [
@@ -12,7 +12,8 @@
         "Unknown Author"
       ],
       "revision": 78,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "unresolved"
     },
     {
       "page_id": "scp-005",
@@ -22,7 +23,8 @@
         "Unknown Author"
       ],
       "revision": 44,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "unresolved"
     },
     {
       "page_id": "scp-006",
@@ -32,7 +34,8 @@
         "Unknown Author"
       ],
       "revision": 62,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "unresolved"
     },
     {
       "page_id": "scp-008",
@@ -42,7 +45,8 @@
         "Unknown Author"
       ],
       "revision": 66,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "unresolved"
     },
     {
       "page_id": "scp-009",
@@ -52,7 +56,8 @@
         "Chameleon X"
       ],
       "revision": 139,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-012",
@@ -62,7 +67,8 @@
         "ITIFAMCO"
       ],
       "revision": 48,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-015",
@@ -72,7 +78,8 @@
         "Dr Gears"
       ],
       "revision": 55,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-017",
@@ -82,7 +89,8 @@
         "CityToast"
       ],
       "revision": 46,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-018",
@@ -92,7 +100,8 @@
         "Epic Phail Spy"
       ],
       "revision": 52,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-023",
@@ -102,7 +111,8 @@
         "Pig_catapult"
       ],
       "revision": 67,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-028",
@@ -112,7 +122,8 @@
         "Dr Gears"
       ],
       "revision": 47,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-035",
@@ -122,7 +133,8 @@
         "Kain Pathos Crow"
       ],
       "revision": 72,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-040",
@@ -132,7 +144,8 @@
         "Kain Pathos Crow"
       ],
       "revision": 69,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-049",
@@ -141,8 +154,9 @@
       "authors": [
         "Gabriel Jade"
       ],
-      "revision": 121,
-      "license": "CC BY-SA 3.0"
+      "revision": 122,
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-055",
@@ -153,7 +167,8 @@
         "qntm"
       ],
       "revision": 51,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-058",
@@ -163,7 +178,8 @@
         "Unknown Author"
       ],
       "revision": 60,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "unresolved"
     },
     {
       "page_id": "scp-073",
@@ -173,7 +189,8 @@
         "Kain Pathos Crow"
       ],
       "revision": 35,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-076",
@@ -183,7 +200,8 @@
         "Kain Pathos Crow"
       ],
       "revision": 81,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-079",
@@ -193,7 +211,8 @@
         "Unknown Author"
       ],
       "revision": 40,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "unresolved"
     },
     {
       "page_id": "scp-087",
@@ -203,7 +222,8 @@
         "Zaeyde"
       ],
       "revision": 54,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-093",
@@ -213,7 +233,8 @@
         "Unknown Author"
       ],
       "revision": 39,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "unresolved"
     },
     {
       "page_id": "scp-096",
@@ -223,7 +244,8 @@
         "Dr Dan"
       ],
       "revision": 58,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1000",
@@ -233,7 +255,8 @@
         "thedeadlymoose"
       ],
       "revision": 88,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1048",
@@ -243,7 +266,8 @@
         "trennerdios"
       ],
       "revision": 48,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-106",
@@ -253,7 +277,8 @@
         "Dr Gears"
       ],
       "revision": 130,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1123",
@@ -263,7 +288,8 @@
         "sandrewswann"
       ],
       "revision": 32,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1171",
@@ -273,7 +299,8 @@
         "DrEverettMann"
       ],
       "revision": 19,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1230",
@@ -283,7 +310,8 @@
         "MrPixel"
       ],
       "revision": 52,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1295",
@@ -293,7 +321,8 @@
         "Dmatix"
       ],
       "revision": 21,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-140",
@@ -303,7 +332,8 @@
         "AssertiveRoland"
       ],
       "revision": 47,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1471",
@@ -313,7 +343,8 @@
         "LurkD"
       ],
       "revision": 36,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1678",
@@ -323,7 +354,8 @@
         "AstronautJoe"
       ],
       "revision": 87,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-173",
@@ -333,7 +365,8 @@
         "Moto42"
       ],
       "revision": 57,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1730",
@@ -343,7 +376,8 @@
         "djkaktus"
       ],
       "revision": 192,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1762",
@@ -353,7 +387,8 @@
         "OZ Ouroboros"
       ],
       "revision": 51,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-178",
@@ -363,7 +398,8 @@
         "91stCataclysm"
       ],
       "revision": 26,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-184",
@@ -373,7 +409,8 @@
         "Dr Gears"
       ],
       "revision": 54,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1879",
@@ -383,7 +420,8 @@
         "marslifeform"
       ],
       "revision": 17,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-198",
@@ -393,7 +431,8 @@
         "Soulbane"
       ],
       "revision": 23,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-1981",
@@ -403,7 +442,8 @@
         "Digiwizzard"
       ],
       "revision": 67,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-2000",
@@ -413,7 +453,8 @@
         "HammerMaiden"
       ],
       "revision": 68,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-217",
@@ -423,7 +464,8 @@
         "Dr Gears"
       ],
       "revision": 41,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-2200",
@@ -433,7 +475,8 @@
         "PeppersGhost"
       ],
       "revision": 38,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-2316",
@@ -443,7 +486,8 @@
         "djkaktus"
       ],
       "revision": 80,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-239",
@@ -453,7 +497,8 @@
         "Dantensen"
       ],
       "revision": 79,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-2521",
@@ -463,7 +508,8 @@
         "LurkD"
       ],
       "revision": 33,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-2719",
@@ -473,7 +519,8 @@
         "Randomini"
       ],
       "revision": 18,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-2747",
@@ -483,7 +530,8 @@
         "minmin"
       ],
       "revision": 37,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-2845",
@@ -493,7 +541,8 @@
         "Djoric"
       ],
       "revision": 45,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-2935",
@@ -503,7 +552,8 @@
         "djkaktus"
       ],
       "revision": 93,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-294",
@@ -513,7 +563,8 @@
         "Arcibi"
       ],
       "revision": 116,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-300",
@@ -523,7 +574,8 @@
         "Aelanna"
       ],
       "revision": 27,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-3000",
@@ -535,7 +587,8 @@
         "Joreth"
       ],
       "revision": 104,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-3001",
@@ -545,7 +598,8 @@
         "OZ Ouroboros"
       ],
       "revision": 30,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-3008",
@@ -554,8 +608,9 @@
       "authors": [
         "Mortos"
       ],
-      "revision": 30,
-      "license": "CC BY-SA 3.0"
+      "revision": 31,
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-303",
@@ -565,7 +620,8 @@
         "AJAlkaline"
       ],
       "revision": 36,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-3125",
@@ -575,7 +631,8 @@
         "qntm"
       ],
       "revision": 47,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-3301",
@@ -585,7 +642,8 @@
         "djkaktus"
       ],
       "revision": 109,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-354",
@@ -595,7 +653,8 @@
         "Dave Rapp"
       ],
       "revision": 69,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-3984",
@@ -605,7 +664,8 @@
         "Croquembouche"
       ],
       "revision": 46,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-3999",
@@ -615,7 +675,8 @@
         "LordStonefish"
       ],
       "revision": 119,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-4010",
@@ -625,7 +686,8 @@
         "Utylike"
       ],
       "revision": 25,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-426",
@@ -635,7 +697,8 @@
         "Flah"
       ],
       "revision": 49,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-447",
@@ -645,7 +708,8 @@
         "DrClef"
       ],
       "revision": 28,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-458",
@@ -655,7 +719,8 @@
         "Palhinuk"
       ],
       "revision": 125,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-4666",
@@ -665,7 +730,8 @@
         "Hercules Rockefeller"
       ],
       "revision": 42,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-4999",
@@ -675,7 +741,8 @@
         "CadaverCommander"
       ],
       "revision": 71,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-500",
@@ -685,7 +752,8 @@
         "snorlison"
       ],
       "revision": 51,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-5000",
@@ -695,7 +763,8 @@
         "Tanhony"
       ],
       "revision": 32,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-5031",
@@ -705,7 +774,8 @@
         "PeppersGhost"
       ],
       "revision": 77,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-507",
@@ -715,7 +785,8 @@
         "PennywiseTheClown"
       ],
       "revision": 44,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-513",
@@ -725,7 +796,8 @@
         "beefwit"
       ],
       "revision": 34,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-5167",
@@ -735,7 +807,8 @@
         "Tanhony"
       ],
       "revision": 11,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-529",
@@ -745,7 +818,8 @@
         "Unknown Author"
       ],
       "revision": 32,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "unresolved"
     },
     {
       "page_id": "scp-5555",
@@ -757,7 +831,8 @@
         "Uncle Nicolini"
       ],
       "revision": 73,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-5999",
@@ -771,7 +846,8 @@
         "Woedenaz"
       ],
       "revision": 84,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-6000",
@@ -781,7 +857,8 @@
         "Rounderhouse"
       ],
       "revision": 59,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-610",
@@ -791,7 +868,8 @@
         "NekoChris"
       ],
       "revision": 65,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-6500",
@@ -807,7 +885,8 @@
         "S D Locke"
       ],
       "revision": 74,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-682",
@@ -818,7 +897,8 @@
         "Epic Phail Spy"
       ],
       "revision": 69,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-689",
@@ -828,7 +908,8 @@
         "Unknown Author"
       ],
       "revision": 27,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "unresolved"
     },
     {
       "page_id": "scp-7000",
@@ -838,7 +919,8 @@
         "HarryBlank"
       ],
       "revision": 119,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-7004",
@@ -849,7 +931,8 @@
         "Ecronak"
       ],
       "revision": 36,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-701",
@@ -859,7 +942,8 @@
         "tinwatchman"
       ],
       "revision": 60,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-714",
@@ -869,7 +953,8 @@
         "Arcalane"
       ],
       "revision": 36,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-7179",
@@ -879,7 +964,8 @@
         "Calibold"
       ],
       "revision": 40,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-7450",
@@ -889,7 +975,8 @@
         "djkaktus"
       ],
       "revision": 23,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-7795",
@@ -899,7 +986,8 @@
         "Trintavon"
       ],
       "revision": 18,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-7819",
@@ -909,7 +997,8 @@
         "Rounderhouse"
       ],
       "revision": 13,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-8000",
@@ -918,8 +1007,9 @@
       "authors": [
         "PlaguePJP"
       ],
-      "revision": 89,
-      "license": "CC BY-SA 3.0"
+      "revision": 90,
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-860",
@@ -929,7 +1019,8 @@
         "Enma Ai"
       ],
       "revision": 35,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-871",
@@ -939,7 +1030,8 @@
         "Seibai"
       ],
       "revision": 28,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-882",
@@ -949,7 +1041,8 @@
         "Dr Gears"
       ],
       "revision": 33,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-8980",
@@ -959,7 +1052,8 @@
         "Yossipossi"
       ],
       "revision": 28,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-8999",
@@ -969,7 +1063,8 @@
         "J Dune"
       ],
       "revision": 16,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-914",
@@ -979,7 +1074,8 @@
         "Dr Gears"
       ],
       "revision": 52,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-939",
@@ -990,7 +1086,8 @@
         "EchoFourDelta"
       ],
       "revision": 38,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-966",
@@ -1000,7 +1097,8 @@
         "Enma Ai"
       ],
       "revision": 69,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-978",
@@ -1010,7 +1108,8 @@
         "agatharights"
       ],
       "revision": 31,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     },
     {
       "page_id": "scp-999",
@@ -1020,7 +1119,8 @@
         "ProfSnider"
       ],
       "revision": 40,
-      "license": "CC BY-SA 3.0"
+      "license": "CC BY-SA 3.0",
+      "status": "verified"
     }
   ]
 }

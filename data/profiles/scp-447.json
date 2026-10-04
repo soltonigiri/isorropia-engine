@@ -21,48 +21,50 @@
     "sphere"
   ],
   "themes": [
-    "liquid",
-    "cadaver",
-    "ectoentropic"
+    "containment-by-prohibition",
+    "concealed-consequence",
+    "absurd-utility"
   ],
   "effects": [
     {
-      "domain": "matter",
-      "operation": "flow",
-      "target": "material",
-      "trigger": "contact",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "other",
+      "target": "SCP-447-2",
+      "trigger": "article-defined-condition",
+      "persistence": "constant",
       "constraints": [],
       "evidence": {
         "revision": 28,
-        "section": "metadata.tags",
-        "locator": "tag:liquid"
+        "section": "Special Containment Procedures",
+        "locator": "Because SCP-447-1 constantly excretes a viscous greenish slime (designated SCP-447-2) at a rate of approximately 10 cc/hour, a Class D personnel in good physical condition is to be detailed to harvest the excreted slime at least once per day."
       }
     },
     {
-      "domain": "death",
-      "operation": "preserve_after_death",
-      "target": "corpse",
-      "trigger": "death",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "other",
+      "target": "dead bodies",
+      "trigger": "contact with a dead body",
+      "persistence": "article-defined",
+      "constraints": [
+        "The initial effects are expunged."
+      ],
       "evidence": {
         "revision": 28,
-        "section": "metadata.tags",
-        "locator": "tag:cadaver"
+        "section": "Description",
+        "locator": "The dangers of allowing SCP-447-1 or -2 to come into contact with dead bodies have been clearly documented: detailed eyewitness reports can be found in Appendix 447-B: Prior Incidents."
       }
     },
     {
-      "domain": "energy",
-      "operation": "generate",
-      "target": "energy",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "domain": "space",
+      "operation": "suppress",
+      "target": "dead bodies",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 28,
-        "section": "metadata.tags",
-        "locator": "tag:ectoentropic"
+        "section": "Special Containment Procedures",
+        "locator": "SCP-447-1 is to be kept within a fifty-gallon clear plastic container at all times, monitored by camera by a Security Level 3 or higher staff member to prevent overflow."
       }
     }
   ],

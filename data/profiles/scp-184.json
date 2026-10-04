@@ -24,48 +24,62 @@
     "spatial"
   ],
   "themes": [
-    "spatial",
-    "polyhedral",
-    "mystery"
+    "impossible-space",
+    "containment-risk"
   ],
   "effects": [
     {
       "domain": "space",
-      "operation": "distort",
-      "target": "space",
-      "trigger": "proximity",
-      "persistence": "persistent",
+      "operation": "transform",
+      "target": "enclosed structure",
+      "trigger": "When inside an enclosed structure",
+      "persistence": "begins one hour after entry and increases each day",
       "constraints": [],
       "evidence": {
         "revision": 54,
-        "section": "metadata.tags",
-        "locator": "tag:spatial"
+        "section": "Description",
+        "locator": "When inside an enclosed structure, SCP-184 expands the structure's inner dimensions without altering its outer dimensions."
       }
     },
     {
       "domain": "space",
-      "operation": "distort",
-      "target": "interior_space",
-      "trigger": "proximity",
-      "persistence": "persistent",
-      "constraints": [],
+      "operation": "propagate",
+      "target": "interior structure",
+      "trigger": "original dimensions of the room have been tripled",
+      "persistence": "after the initial wall expansion",
+      "constraints": [
+        "The initial expansion has tripled the room's original dimensions."
+      ],
       "evidence": {
         "revision": 54,
-        "section": "metadata.tags",
-        "locator": "tag:polyhedral"
+        "section": "Description",
+        "locator": "At this point, SCP-184 starts creating wholly new rooms."
       }
     },
     {
-      "domain": "information",
-      "operation": "conceal",
-      "target": "knowledge",
-      "trigger": "investigation",
-      "persistence": "persistent",
+      "domain": "space",
+      "operation": "transform",
+      "target": "affected structures",
+      "trigger": "removal of SCP-184",
+      "persistence": "no additional structures are created after removal",
       "constraints": [],
       "evidence": {
         "revision": 54,
-        "section": "metadata.tags",
-        "locator": "tag:mystery"
+        "section": "Description",
+        "locator": "The changes do not go away with the removal of SCP-184, but no additional structures are created."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "high-power electromagnet",
+      "trigger": "at all times",
+      "persistence": "until electromagnet power is restored after failure",
+      "constraints": [],
+      "evidence": {
+        "revision": 54,
+        "section": "Special Containment Procedures",
+        "locator": "SCP-184 is to be attached to a high-power electromagnet at all times."
       }
     }
   ],

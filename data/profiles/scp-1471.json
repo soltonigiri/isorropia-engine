@@ -24,48 +24,55 @@
     "visual"
   ],
   "themes": [
-    "transmission",
-    "media",
-    "visual"
+    "technological-intrusion",
+    "escalating-surveillance",
+    "inescapable-perception"
   ],
   "effects": [
     {
       "domain": "information",
       "operation": "propagate",
-      "target": "audience",
-      "trigger": "network_access",
-      "persistence": "persistent",
-      "constraints": [],
+      "target": "the individual",
+      "trigger": "After SCP-1471 is installed",
+      "persistence": "every 3-6 hours; escalating over 72 hours",
+      "constraints": [
+        "SCP-1471 is installed"
+      ],
       "evidence": {
         "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:transmission"
-      }
-    },
-    {
-      "domain": "information",
-      "operation": "transmit",
-      "target": "audience",
-      "trigger": "playback",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:media"
+        "section": "Description",
+        "locator": "After 72 hours, the mobile device will receive images of the individual in real time with SCP-1471-A appearing within close proximity to the subject."
       }
     },
     {
       "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "transform",
+      "target": "individuals",
+      "trigger": "after more than 90 hours of exposure",
+      "persistence": "irreversible and sustained",
+      "constraints": [
+        "more than 90 hours of exposure to the continuous images"
+      ],
       "evidence": {
         "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:visual"
+        "section": "Description",
+        "locator": "Continued exposure to SCP-1471 after this point will cause irreversible and sustained visualizations of SCP-1471-A."
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "restore",
+      "target": "SCP-1471's effect",
+      "trigger": "prior to 90 hours after installation",
+      "persistence": "article-defined",
+      "constraints": [
+        "elimination occurs prior to 90 hours after installation",
+        "the text identifies this as the only known treatment"
+      ],
+      "evidence": {
+        "revision": 36,
+        "section": "Description",
+        "locator": "Currently the only known treatment to reverse SCP-1471's effect is to eliminate the individual's visual exposure to these images prior to 90 hours after installation."
       }
     }
   ],

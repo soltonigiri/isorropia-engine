@@ -23,48 +23,35 @@
     "shadow"
   ],
   "themes": [
-    "shadow",
-    "hostile",
-    "light"
+    "absence",
+    "predation",
+    "vigilant-containment"
   ],
   "effects": [
     {
-      "domain": "perception",
-      "operation": "conceal",
-      "target": "entity",
-      "trigger": "low_light",
-      "persistence": "transient",
+      "domain": "space",
+      "operation": "transport",
+      "target": "the object casting the shadow",
+      "trigger": "shadows cast upon it",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 46,
-        "section": "metadata.tags",
-        "locator": "tag:shadow"
-      }
-    },
-    {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 46,
-        "section": "metadata.tags",
-        "locator": "tag:hostile"
+        "section": "Description",
+        "locator": "SCP-017 leaps at the object casting the shadow and completely encloses it in its shroud, whereupon it returns to its normal size, leaving no trace of the object behind."
       }
     },
     {
       "domain": "perception",
-      "operation": "reveal",
-      "target": "observer",
-      "trigger": "illumination",
-      "persistence": "transient",
+      "operation": "suppress",
+      "target": "SCP-017",
+      "trigger": "article-defined-condition",
+      "persistence": "constantly",
       "constraints": [],
       "evidence": {
         "revision": 46,
-        "section": "metadata.tags",
-        "locator": "tag:light"
+        "section": "Special Containment Procedures",
+        "locator": "Attached to the walls, ceiling, and floor of the room are high-intensity arc lamp spotlights pointed directly at the acrylic cage, to ensure that SCP-017 is constantly exposed to light from every angle."
       }
     }
   ],

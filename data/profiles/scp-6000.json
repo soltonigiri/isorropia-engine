@@ -38,48 +38,51 @@
     "wanderers-library"
   ],
   "themes": [
-    "extradimensional",
-    "apocalyptic",
-    "building"
+    "endings-and-continuance",
+    "containment-failure",
+    "stories-as-worlds",
+    "acceptance"
   ],
   "effects": [
     {
       "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
+      "operation": "transform",
+      "target": "the Earth",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 59,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "section": "DESCRIPTION",
+        "locator": "SCP-6000 is the section of the Earth that has been transformed into a section of the extradimensional location known as the Wanderer's Library."
       }
     },
     {
-      "domain": "civilization",
-      "operation": "destroy",
-      "target": "civilization",
-      "trigger": "event",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "information",
+      "operation": "propagate",
+      "target": "SCP-6000",
+      "trigger": "knowledge of SCP-6000's presence",
+      "persistence": "article-defined",
+      "constraints": [
+        "The relationship is described as seeming to occur."
+      ],
       "evidence": {
         "revision": 59,
-        "section": "metadata.tags",
-        "locator": "tag:apocalyptic"
+        "section": "Addendum 6000.7 — VEIL FAILURE",
+        "locator": "The knowledge of SCP-6000's presence to the global community seemed to rapidly accelerate its growth."
       }
     },
     {
-      "domain": "space",
-      "operation": "contain",
-      "target": "interior_space",
-      "trigger": "entry",
-      "persistence": "persistent",
+      "domain": "infrastructure",
+      "operation": "disable",
+      "target": "SCP-6000",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 59,
-        "section": "metadata.tags",
-        "locator": "tag:building"
+        "section": "SPECIAL CONTAINMENT PROCEDURES",
+        "locator": "Containment of SCP-6000 has failed."
       }
     }
   ],

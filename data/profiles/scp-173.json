@@ -26,48 +26,36 @@
     "the-sculpture"
   ],
   "themes": [
-    "observational",
-    "hostile",
-    "autonomous"
+    "observation-as-restraint",
+    "procedural-dread"
   ],
   "effects": [
     {
       "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "suppress",
+      "target": "SCP-173",
+      "trigger": "while within a direct line of sight",
+      "persistence": "while observed",
+      "constraints": [
+        "a direct line of sight is maintained"
+      ],
       "evidence": {
         "revision": 57,
-        "section": "metadata.tags",
-        "locator": "tag:observational"
+        "section": "Description",
+        "locator": "The object cannot move while within a direct line of sight."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "activate",
+      "target": "personnel",
+      "trigger": "in the event of an attack",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 57,
-        "section": "metadata.tags",
-        "locator": "tag:hostile"
-      }
-    },
-    {
-      "domain": "containment",
-      "operation": "move",
-      "target": "self",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 57,
-        "section": "metadata.tags",
-        "locator": "tag:autonomous"
+        "section": "Description",
+        "locator": "Object is reported to attack by snapping the neck at the base of the skull, or by strangulation."
       }
     }
   ],

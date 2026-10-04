@@ -23,48 +23,50 @@
     "teleportation"
   ],
   "themes": [
-    "mind-affecting",
-    "teleportation",
-    "observational"
+    "fear-of-thresholds",
+    "containment-through-architecture",
+    "unseen-presence"
   ],
   "effects": [
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
+      "operation": "activate",
+      "target": "sentient observer",
+      "trigger": "a sentient observer is opposite the barrier",
+      "persistence": "until SCP-303 dematerializes",
       "constraints": [],
       "evidence": {
         "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
+        "section": "Description",
+        "locator": "Any individual attempting to open the door or barrier experiences intense, paralyzing fear that lasts until SCP-303 dematerializes (either on its own or to avoid being directly seen by another observer)."
       }
     },
     {
-      "domain": "space",
-      "operation": "transport",
-      "target": "entity",
-      "trigger": "activation",
-      "persistence": "transient",
+      "domain": "infrastructure",
+      "operation": "disable",
+      "target": "electronic or complex mechanical devices",
+      "trigger": "SCP-303 encounters a device",
+      "persistence": "temporary",
       "constraints": [],
       "evidence": {
         "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:teleportation"
+        "section": "Description",
+        "locator": "Any electronic or complex mechanical devices that SCP-303 encounters are temporarily disabled."
       }
     },
     {
-      "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "infrastructure",
+      "operation": "transform",
+      "target": "two entrances",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "where possible"
+      ],
       "evidence": {
         "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:observational"
+        "section": "Special Containment Procedures",
+        "locator": "All rooms in Site ██ are to be altered where possible so as to have two entrances separated by a distance of 10m or line of sight."
       }
     }
   ],

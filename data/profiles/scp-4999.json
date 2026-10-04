@@ -25,48 +25,51 @@
     "uncontained"
   ],
   "themes": [
-    "observational",
-    "teleportation",
-    "humanoid"
+    "companionship-at-death",
+    "social-neglect",
+    "quiet-mercy"
   ],
   "effects": [
     {
       "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "activate",
+      "target": "one solitary human person",
+      "trigger": "the subject is conscious and alone",
+      "persistence": "article-defined",
+      "constraints": [
+        "the subject is conscious and alone",
+        "does not appear if the subject is comatose, asleep, unconscious, or directly observed by another person"
+      ],
       "evidence": {
         "revision": 71,
-        "section": "metadata.tags",
-        "locator": "tag:observational"
+        "section": "Description",
+        "locator": "SCP-4999 will manifest only in the presence of one solitary human person at a time."
       }
     },
     {
-      "domain": "space",
-      "operation": "transport",
-      "target": "entity",
-      "trigger": "activation",
-      "persistence": "transient",
+      "domain": "perception",
+      "operation": "other",
+      "target": "the subject",
+      "trigger": "manifestation",
+      "persistence": "until they have passed away",
       "constraints": [],
       "evidence": {
         "revision": 71,
-        "section": "metadata.tags",
-        "locator": "tag:teleportation"
+        "section": "Description",
+        "locator": "SCP-4999 will then remain with the subject, silent and unmoving, until they have passed away."
       }
     },
     {
-      "domain": "biology",
-      "operation": "sustain",
-      "target": "human",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "domain": "perception",
+      "operation": "disable",
+      "target": "its manifested presence",
+      "trigger": "the subject's death",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 71,
-        "section": "metadata.tags",
-        "locator": "tag:humanoid"
+        "section": "Description",
+        "locator": "SCP-4999 has not been seen to engage in any other activity or behavior, and demanifests immediately upon the subject's death."
       }
     }
   ],

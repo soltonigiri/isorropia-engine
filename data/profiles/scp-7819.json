@@ -28,48 +28,71 @@
     "uncontained"
   ],
   "themes": [
-    "predatory",
-    "location",
-    "phenomenon"
+    "liminal-hospitality",
+    "survival-through-ritual",
+    "uncanny-imitation"
   ],
   "effects": [
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "prey",
-      "trigger": "encounter",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "space",
+      "operation": "activate",
+      "target": "drivers meeting stated conditions",
+      "trigger": "driver meets all listed conditions",
+      "persistence": "article-defined",
+      "constraints": [
+        "time is between midnight and 4:00AM local time",
+        "driver has driven over five hours excluding small breaks",
+        "driver is a past or present Foundation employee",
+        "driver is alone"
+      ],
       "evidence": {
         "revision": 13,
-        "section": "metadata.tags",
-        "locator": "tag:predatory"
+        "section": "Description",
+        "locator": "SCP-7819 is a predatory location that manifests along exits of the United States Numbered Highway System in the contiguous United States."
       }
     },
     {
       "domain": "space",
-      "operation": "contain",
-      "target": "occupant",
-      "trigger": "entry",
-      "persistence": "persistent",
+      "operation": "transport",
+      "target": "SCP-7819 vicinity",
+      "trigger": "driver drives past SCP-7819",
+      "persistence": "continues",
       "constraints": [],
       "evidence": {
         "revision": 13,
-        "section": "metadata.tags",
-        "locator": "tag:location"
+        "section": "Description",
+        "locator": "Should the driver drive past SCP-7819, the sense of fatigue will remain; through unknown means, their vehicle will be seamlessly transported several miles backward, often without their realization."
       }
     },
     {
-      "domain": "containment",
-      "operation": "manifest",
-      "target": "environment",
-      "trigger": "event",
-      "persistence": "variable",
+      "domain": "space",
+      "operation": "other",
+      "target": "SCP-7819 phenomenon",
+      "trigger": "driver is under the phenomenon",
+      "persistence": "article-defined",
+      "constraints": [
+        "driver exits vehicle",
+        "driver enters SCP-7819",
+        "driver performs requisite activities",
+        "activities vary"
+      ],
+      "evidence": {
+        "revision": 13,
+        "section": "Description",
+        "locator": "The driver will not be able to escape this phenomenon until they exit their vehicle, enter SCP-7819, and perform several requisite activities."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "suppress",
+      "target": "objects and people entering the pool",
+      "trigger": "stepping into the water",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 13,
-        "section": "metadata.tags",
-        "locator": "tag:phenomenon"
+        "section": "Addendum 1: Pool",
+        "locator": "You will find that the surface tension of the water is much stronger — it has formed a thick, tight membrane that prevents objects from breaking through it."
       }
     }
   ],

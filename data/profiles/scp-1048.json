@@ -26,48 +26,54 @@
     "uncontained"
   ],
   "themes": [
-    "self-replicating",
-    "mind-affecting",
-    "hostile"
+    "deceptive-innocence",
+    "body-horror",
+    "containment-loss"
   ],
   "effects": [
     {
-      "domain": "replication",
-      "operation": "replicate",
-      "target": "self",
-      "trigger": "resource_access",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "other",
+      "operation": "transform",
+      "target": "crude replicas of itself using various materials",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "the process has not been observed directly"
+      ],
       "evidence": {
         "revision": 48,
-        "section": "metadata.tags",
-        "locator": "tag:self-replicating"
+        "section": "Description",
+        "locator": "It is hypothesized that the subject is able to construct crude replicas of itself using various materials, by a process that has yet to be observed directly by Foundation staff."
       }
     },
     {
-      "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "transform",
+      "target": "people within 5 meters",
+      "trigger": "SCP-1048-A emits a high-pitched shriek",
+      "persistence": "article-defined",
+      "constraints": [
+        "a person is within 5 meters of SCP-1048-A"
+      ],
       "evidence": {
         "revision": 48,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
+        "section": "SCP-1048-A",
+        "locator": "Ear-like growths immediately began growing on those within 5 meters of the subject, covering their bodies in less than 20 seconds."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "disable",
+      "target": "victims",
+      "trigger": "affliction with the growths",
+      "persistence": "article-defined",
+      "constraints": [
+        "ear-like growths manifest in mouths and tracheae"
+      ],
       "evidence": {
         "revision": 48,
-        "section": "metadata.tags",
-        "locator": "tag:hostile"
+        "section": "SCP-1048-A",
+        "locator": "Autopsies revealed the cause of death to be asphyxiation caused by an abundance of the ear-like growths manifesting in the mouths and tracheae of all victims."
       }
     }
   ],

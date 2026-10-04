@@ -27,48 +27,57 @@
     "the-old-man"
   ],
   "themes": [
-    "corrosive",
-    "extradimensional",
-    "hostile"
+    "predation",
+    "labyrinthine-imprisonment",
+    "institutional-desperation"
   ],
   "effects": [
     {
-      "domain": "matter",
-      "operation": "damage",
-      "target": "material",
-      "trigger": "contact",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "infrastructure",
+      "operation": "transform",
+      "target": "all solid matter it touches",
+      "trigger": "SCP-106 touches solid matter",
+      "persistence": "six hours after contact",
+      "constraints": [
+        "contact with solid matter",
+        "the effect appears to burn out after six hours"
+      ],
       "evidence": {
         "revision": 130,
-        "section": "metadata.tags",
-        "locator": "tag:corrosive"
+        "section": "Description",
+        "locator": "SCP-106 causes a “corrosion” effect in all solid matter it touches, engaging a physical breakdown in materials several seconds after contact."
       }
     },
     {
       "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transport",
+      "target": "solid matter",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "the nature of the pocket dimension is assumed rather than established"
+      ],
       "evidence": {
         "revision": 130,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "section": "Description",
+        "locator": "SCP-106 is capable of passing through solid matter, leaving behind a large patch of its corrosive mucus."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "space",
+      "operation": "transport",
+      "target": "the lure subject",
+      "trigger": "hearing the subject",
+      "persistence": "article-defined",
+      "constraints": [
+        "a lure subject is injured",
+        "the subject's sound is broadcast",
+        "additional trauma is prescribed if SCP-106 does not respond"
+      ],
       "evidence": {
         "revision": 130,
-        "section": "metadata.tags",
-        "locator": "tag:hostile"
+        "section": "Recall Protocol ██ -███ -█",
+        "locator": "SCP-106 will typically begin to gravitate toward the lure subject within ten to fifteen minutes after hearing the subject."
       }
     }
   ],

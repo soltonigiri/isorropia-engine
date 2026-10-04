@@ -2,12 +2,15 @@
 import path from 'node:path';
 import {
   createMaintenancePlan,
+  applyMaintenanceRun,
+  defaultPrivateDirectory,
   prepareMaintenanceCheckout,
   publishMaintenanceRun,
   runMaintenance,
   verifyMaintenanceRun,
+  writeLastRunStatus,
 } from './maintenance.js';
-import { writeWindowsTaskDefinition } from './windows-task.js';
+import { rotateMaintenanceLog, writeWindowsTaskDefinition } from './windows-task.js';
 
 type Parsed = {
   command: string;
@@ -48,6 +51,14 @@ async function main(): Promise<unknown> {
         checkSource: !parsed.options.has('--no-source-check'),
       });
     }
+    case 'apply': {
+      assertOptions(parsed, ['--data-dir', '--private-dir']);
+      const runId = requiredPositional(parsed, 0, 'run id');
+      return applyMaintenanceRun({
+        ...common,
+        runId,
+      });
+    }
     case 'publish': {
       assertOptions(parsed, ['--repository', '--data-dir', '--private-dir']);
       const runId = requiredPositional(parsed, 0, 'run id');
@@ -65,18 +76,51 @@ async function main(): Promise<unknown> {
       const repositoryDirectory = path.resolve(
         stringOption(parsed, '--repository') ?? '.',
       );
-      await prepareMaintenanceCheckout({ repositoryDirectory });
-      const run = await runMaintenance({
-        ...common,
-        dryRun: false,
-        limit: numberOption(parsed, '--limit'),
+      const privateDirectory = common.privateDirectory ?? defaultPrivateDirectory();
+      const startedAt = new Date().toISOString();
+      await writeLastRunStatus(privateDirectory, {
+        status: 'started',
+        started_at: startedAt,
+        updated_at: startedAt,
       });
-      const publish = await publishMaintenanceRun({
-        ...common,
-        runId: run.run_id,
-        repositoryDirectory,
-      });
-      return { run, publish };
+      let runId: string | undefined;
+      try {
+        await prepareMaintenanceCheckout({ repositoryDirectory });
+        const run = await runMaintenance({
+          ...common,
+          dryRun: false,
+          limit: numberOption(parsed, '--limit'),
+        });
+        runId = run.run_id;
+        await writeLastRunStatus(privateDirectory, {
+          status: 'running',
+          started_at: startedAt,
+          updated_at: new Date().toISOString(),
+          run_id: runId,
+        });
+        const publish = await publishMaintenanceRun({
+          ...common,
+          runId,
+          repositoryDirectory,
+        });
+        await writeLastRunStatus(privateDirectory, {
+          status: 'success',
+          started_at: startedAt,
+          updated_at: new Date().toISOString(),
+          run_id: runId,
+          ...(publish.pr_url ? { pr_url: publish.pr_url } : {}),
+        });
+        return { run, publish };
+      } catch (error) {
+        await writeLastRunStatus(privateDirectory, {
+          status: 'failure',
+          started_at: startedAt,
+          updated_at: new Date().toISOString(),
+          ...(runId ? { run_id: runId } : {}),
+          error: error instanceof Error ? error.message : String(error),
+        });
+        throw error;
+      }
     }
     case 'task-definition': {
       assertOptions(parsed, [
@@ -98,9 +142,15 @@ async function main(): Promise<unknown> {
         } : {}),
       });
     }
+    case 'rotate-log': {
+      assertOptions(parsed, ['--log']);
+      const logPath = stringOption(parsed, '--log');
+      if (!logPath) throw new Error('--log is required');
+      return { rotated: await rotateMaintenanceLog(path.resolve(logPath)) };
+    }
     default:
       throw new Error(
-        'Usage: maintenance <plan|run|verify|publish|scheduled|task-definition> [options]',
+        'Usage: maintenance <plan|run|verify|apply|publish|scheduled|task-definition> [options]',
       );
   }
 }

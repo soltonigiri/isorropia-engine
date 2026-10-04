@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "setting_thresholds": {
+    "rough": 0,
+    "coarse": 0.25,
+    "1:1": 0.5,
+    "fine": 0.7,
+    "very-fine": 0.85
+  },
+  "rubric_points": {
+    "mode_fit": {
+      "core": 35,
+      "strong": 30,
+      "partial": 20
+    },
+    "coherence": {
+      "complete": 30,
+      "conditional": 20,
+      "thematic": 10
+    },
+    "specificity": {
+      "article-specific": 20,
+      "domain-specific": 12,
+      "generic": 5
+    },
+    "discovery_value": {
+      "high": 15,
+      "medium": 10,
+      "low": 5
+    }
+  },
+  "support_confidence": {
+    "A": 0.9,
+    "B": 0.75,
+    "C": 0.45
+  },
+  "fallback": {
+    "article_both": {
+      "score_cap": 100,
+      "confidence": 0.45
+    },
+    "article_one": {
+      "score_cap": 60,
+      "confidence": 0.35
+    },
+    "metadata_only": {
+      "score_cap": 35,
+      "confidence": 0.2
+    }
+  },
+  "tie_break": [
+    "score-desc",
+    "confidence-desc",
+    "page-id-asc"
+  ]
+}

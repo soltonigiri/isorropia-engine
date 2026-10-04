@@ -1,37 +1,30 @@
+import { randomUUID } from 'node:crypto';
 import { mkdir, readFile, readdir, rename, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { defaultDataDirectory } from './data.js';
 import {
   fetchItemsIndex,
-  SCP_DATA_API_INDEX_URL,
+  normalizedSourceKey,
+  sourceRevision,
   type SourceIndexEntry,
 } from './source-api.js';
-import type {
-  DatasetManifest,
-  Edge,
-  Effect,
-  PairInteraction,
-  Profile,
-} from './types.js';
-import { calculateDatabaseVersion } from './version.js';
-
-type ManualEffect = Omit<Effect, 'evidence'> & {
-  section: string;
-  locator: string;
-};
+import type { PairInteraction, Profile } from './types.js';
 
 type CurationEntry = {
   page_id: string;
-  focus_tags: string[];
   known_not?: string[];
-  manual_effects?: ManualEffect[];
 };
 
-type TagEffect = Omit<Effect, 'constraints' | 'evidence'> & {
-  constraints?: string[];
+export type RefreshCandidate = {
+  page_id: string;
+  source_revision: number;
+  wikidot_page_id: string;
+  title: string;
+  url: string;
+  series?: string;
+  tags: string[];
+  references: string[];
 };
-
-type CandidateProfile = Omit<Profile, 'curated'> & { curated: false };
 
 export type RefreshSummary = {
   checked: number;
@@ -43,61 +36,33 @@ export type RefreshSummary = {
 };
 
 export async function refreshData(options: {
-  bootstrap?: boolean;
   check?: boolean;
   dataDirectory?: string;
   fetchImpl?: typeof fetch;
 } = {}): Promise<RefreshSummary> {
   const dataDirectory = options.dataDirectory ?? defaultDataDirectory();
-  const curation = await readJson<CurationEntry[]>(
-    path.join(dataDirectory, 'curation.json'),
-  );
-  const tagEffects = await readJson<Record<string, TagEffect>>(
-    path.join(dataDirectory, 'tag-effects.json'),
-  );
+  const curation = await readJson<CurationEntry[]>(path.join(dataDirectory, 'curation.json'));
   const interactions = await readJsonIfPresent<PairInteraction[]>(
     path.join(dataDirectory, 'interactions.json'),
     [],
   );
   const index = await fetchItemsIndex(options.fetchImpl);
-  const built = curation.map((entry) =>
-    buildProfile({ entry, source: sourceEntry(index, entry.page_id), tagEffects }),
-  );
-
-  if (options.bootstrap) {
-    if (options.check) throw new Error('--bootstrap and --check cannot be combined');
-    await bootstrapDataset(dataDirectory, built, curation, index);
-    return {
-      checked: built.length,
-      changed: built.map((profile) => profile.page_id),
-      unchanged: 0,
-      written: true,
-      semantic_refresh_required: built.map((profile) => profile.page_id),
-      invalidated_interactions: interactions.map((interaction) => interaction.id),
-    };
-  }
-
+  const candidates = curation.map((entry) =>
+    sourceCandidate(entry.page_id, sourceEntry(index, entry.page_id)));
   const existing = await loadExistingProfiles(path.join(dataDirectory, 'profiles'));
-  const changed = built.filter((profile) => {
-    const previous = existing.get(profile.page_id);
-    return (
-      !previous ||
-      previous.source_revision !== profile.source_revision ||
-      JSON.stringify(previous.tags) !== JSON.stringify(profile.tags)
-    );
+  const changed = candidates.filter((candidate) => {
+    const previous = existing.get(candidate.page_id);
+    return !previous || sourceMetadataChanged(previous, candidate);
   });
+  const changedIds = new Set(changed.map((candidate) => candidate.page_id));
   const summary: RefreshSummary = {
-    checked: built.length,
-    changed: changed.map((profile) => profile.page_id),
-    unchanged: built.length - changed.length,
+    checked: candidates.length,
+    changed: [...changedIds].sort(),
+    unchanged: candidates.length - changed.length,
     written: !options.check && changed.length > 0,
-    semantic_refresh_required: changed.map((profile) => profile.page_id),
+    semantic_refresh_required: [...changedIds].sort(),
     invalidated_interactions: interactions
-      .filter((interaction) =>
-        interaction.pages.some((pageId) =>
-          changed.some((profile) => profile.page_id === pageId),
-        ),
-      )
+      .filter((interaction) => interaction.pages.some((pageId) => changedIds.has(pageId)))
       .map((interaction) => interaction.id)
       .sort(),
   };
@@ -105,10 +70,9 @@ export async function refreshData(options: {
 
   const candidatesDirectory = path.join(dataDirectory, 'candidates');
   await mkdir(candidatesDirectory, { recursive: true });
-  for (const profile of changed) {
-    const candidate: CandidateProfile = { ...profile, curated: false };
+  for (const candidate of changed) {
     await atomicWrite(
-      path.join(candidatesDirectory, `${profile.page_id}.json`),
+      path.join(candidatesDirectory, `${candidate.page_id}.json`),
       stableJson(candidate),
     );
   }
@@ -119,160 +83,33 @@ export async function refreshData(options: {
   return summary;
 }
 
-function buildProfile(params: {
-  entry: CurationEntry;
-  source: SourceIndexEntry;
-  tagEffects: Record<string, TagEffect>;
-}): Omit<Profile, 'curated'> {
-  const sourceTags = sortedStrings(params.source.tags ?? []);
-  for (const tag of params.entry.focus_tags) {
-    if (!sourceTags.includes(tag)) {
-      throw new Error(`${params.entry.page_id} no longer has curated tag: ${tag}`);
-    }
-  }
-  const revision = Math.max(0, (params.source.history?.length ?? 1) - 1);
-  const effects: Effect[] = params.entry.focus_tags.flatMap((tag) => {
-    const template = params.tagEffects[tag];
-    if (!template) {
-      throw new Error(`No effect mapping for curated tag: ${tag}`);
-    }
-    return [
-      {
-        ...template,
-        constraints: template.constraints ?? [],
-        evidence: {
-          revision,
-          section: 'metadata.tags',
-          locator: `tag:${tag}`,
-        },
-      },
-    ];
-  });
-  for (const manual of params.entry.manual_effects ?? []) {
-    const { section, locator, ...effect } = manual;
-    effects.push({
-      ...effect,
-      evidence: { revision, section, locator },
-    });
-  }
-  if (effects.length === 0) {
-    throw new Error(`${params.entry.page_id} has no mapped effects`);
-  }
-  const scpNumber = Number(params.entry.page_id.slice(4));
-  const creator = (params.source.creator ?? params.source.created_by ?? '').trim();
+function sourceCandidate(pageId: string, source: SourceIndexEntry): RefreshCandidate {
   return {
-    page_id: params.entry.page_id,
-    scp_number: scpNumber,
-    wikidot_page_id: String(params.source.page_id ?? ''),
-    title: params.source.title ?? params.entry.page_id.toUpperCase(),
-    url:
-      params.source.url ??
-      `https://scp-wiki.wikidot.com/${params.entry.page_id}`,
-    authors: creator ? [creator] : [],
-    language: 'en',
-    source_revision: revision,
-    ...(params.source.series ? { series: params.source.series } : {}),
-    tags: sourceTags,
-    themes: [...params.entry.focus_tags],
-    effects,
-    ...(params.entry.known_not ? { known_not: params.entry.known_not } : {}),
+    page_id: pageId,
+    source_revision: sourceRevision(source),
+    wikidot_page_id: String(source.page_id ?? ''),
+    title: source.title ?? pageId.toUpperCase(),
+    url: source.url ?? `https://scp-wiki.wikidot.com/${pageId}`,
+    ...(source.series ? { series: source.series } : {}),
+    tags: sortedStrings(source.tags ?? []),
+    references: sortedStrings(source.references ?? []),
   };
 }
 
-async function bootstrapDataset(
-  dataDirectory: string,
-  profiles: Array<Omit<Profile, 'curated'>>,
-  curation: CurationEntry[],
-  index: Record<string, SourceIndexEntry>,
-): Promise<void> {
-  const profilesDirectory = path.join(dataDirectory, 'profiles');
-  await mkdir(profilesDirectory, { recursive: true });
-  const existing = (await readdir(profilesDirectory)).filter((name) =>
-    name.endsWith('.json'),
-  );
-  if (existing.length > 0) {
-    throw new Error('Bootstrap refused: data/profiles already contains JSON files');
-  }
-
-  const curatedProfiles: Profile[] = profiles.map((profile) => ({
-    ...profile,
-    curated: true,
-  }));
-  for (const profile of curatedProfiles) {
-    await atomicWrite(
-      path.join(profilesDirectory, `${profile.page_id}.json`),
-      stableJson(profile),
-    );
-  }
-
-  const edges = buildEdges(curation, index, curatedProfiles);
-  const manifest = buildManifest(curatedProfiles, edges);
-  await atomicWrite(path.join(dataDirectory, 'manifest.json'), stableJson(manifest));
-  await atomicWrite(
-    path.join(dataDirectory, 'edges.jsonl'),
-    `${edges.map((edge) => JSON.stringify(edge)).join('\n')}\n`,
-  );
-}
-
-function buildManifest(profiles: Profile[], edges: Edge[]): DatasetManifest {
-  return {
-    database_version: calculateDatabaseVersion(profiles, edges),
-    generated_at: new Date().toISOString(),
-    source: SCP_DATA_API_INDEX_URL,
-    profile_count: profiles.length,
-    attributions: profiles.map((profile) => ({
-      page_id: profile.page_id,
-      title: profile.title,
-      url: profile.url,
-      authors: profile.authors,
-      revision: profile.source_revision,
-      license: 'CC BY-SA 3.0',
-    })),
-  };
-}
-
-function buildEdges(
-  curation: CurationEntry[],
-  index: Record<string, SourceIndexEntry>,
-  profiles: Profile[],
-): Edge[] {
-  const selected = new Set(curation.map((entry) => entry.page_id));
-  const revisionById = new Map(
-    profiles.map((profile) => [profile.page_id, profile.source_revision]),
-  );
-  const edges: Edge[] = [];
-  for (const entry of curation) {
-    const source = sourceEntry(index, entry.page_id);
-    for (const reference of source.references ?? []) {
-      const target = reference.trim().toLowerCase().replace(/^\//, '');
-      if (!selected.has(target) || target === entry.page_id) continue;
-      if (Math.abs(Number(target.slice(4)) - Number(entry.page_id.slice(4))) === 1) {
-        continue;
-      }
-      edges.push({
-        from: entry.page_id,
-        to: target,
-        type: 'explicit_link',
-        evidence: {
-          revision: revisionById.get(entry.page_id) ?? 0,
-          section: 'metadata.references',
-          locator: `link:${target}`,
-        },
-      });
-    }
-  }
-  return edges.sort(
-    (left, right) =>
-      left.from.localeCompare(right.from) || left.to.localeCompare(right.to),
-  );
+function sourceMetadataChanged(profile: Profile, candidate: RefreshCandidate): boolean {
+  return profile.source_revision !== candidate.source_revision ||
+    profile.wikidot_page_id !== candidate.wikidot_page_id ||
+    profile.title !== candidate.title ||
+    profile.url !== candidate.url ||
+    profile.series !== candidate.series ||
+    JSON.stringify(profile.tags) !== JSON.stringify(candidate.tags);
 }
 
 function sourceEntry(
   index: Record<string, SourceIndexEntry>,
   pageId: string,
 ): SourceIndexEntry {
-  const key = `SCP-${pageId.slice(4).padStart(3, '0')}`;
-  const entry = index[key];
+  const entry = index[normalizedSourceKey(pageId)];
   if (!entry) throw new Error(`SCP Data API has no entry for ${pageId}`);
   return entry;
 }
@@ -291,10 +128,7 @@ async function readJson<T>(filePath: string): Promise<T> {
   return JSON.parse(await readFile(filePath, 'utf8')) as T;
 }
 
-async function readJsonIfPresent<T>(
-  filePath: string,
-  fallback: T,
-): Promise<T> {
+async function readJsonIfPresent<T>(filePath: string, fallback: T): Promise<T> {
   try {
     return await readJson<T>(filePath);
   } catch (error) {
@@ -304,7 +138,7 @@ async function readJsonIfPresent<T>(
 }
 
 async function atomicWrite(filePath: string, content: string): Promise<void> {
-  const temporaryPath = `${filePath}.tmp`;
+  const temporaryPath = `${filePath}.${process.pid}.${randomUUID()}.tmp`;
   await writeFile(temporaryPath, content, 'utf8');
   await rename(temporaryPath, filePath);
 }
@@ -314,5 +148,5 @@ function stableJson(value: unknown): string {
 }
 
 function sortedStrings(values: string[]): string[] {
-  return Array.from(new Set(values.filter((value) => typeof value === 'string'))).sort();
+  return [...new Set(values.filter((value) => typeof value === 'string'))].sort();
 }

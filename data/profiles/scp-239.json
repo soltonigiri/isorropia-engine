@@ -25,48 +25,50 @@
     "transfiguration"
   ],
   "themes": [
-    "reality-bending",
-    "telekinetic",
-    "child"
+    "childhood",
+    "unbounded-power",
+    "containment-anxiety"
   ],
   "effects": [
     {
-      "domain": "reality",
-      "operation": "alter",
-      "target": "baseline_reality",
-      "trigger": "intent",
-      "persistence": "variable",
+      "domain": "other",
+      "operation": "transform",
+      "target": "herself and her immediate surroundings",
+      "trigger": "as long as she is conscious",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 79,
-        "section": "metadata.tags",
-        "locator": "tag:reality-bending"
-      }
-    },
-    {
-      "domain": "motion",
-      "operation": "move",
-      "target": "matter",
-      "trigger": "intent",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 79,
-        "section": "metadata.tags",
-        "locator": "tag:telekinetic"
+        "section": "Description",
+        "locator": "Put simply, the subject can do anything that she truly wants to do on a basal psychological level as long as she is conscious."
       }
     },
     {
       "domain": "biology",
-      "operation": "sustain",
-      "target": "human",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "operation": "transform",
+      "target": "D-class personnel",
+      "trigger": "when made to feel guilty",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 79,
-        "section": "metadata.tags",
-        "locator": "tag:child"
+        "section": "Description",
+        "locator": "She seems to be able to create and affect living matter; for example, when a D-class personnel accidentally caused her harm, she simply wished him away."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "suppress",
+      "target": "SCP-239",
+      "trigger": "while she is asleep",
+      "persistence": "article-defined",
+      "constraints": [
+        "stated in Dr. A. Clef's proposal"
+      ],
+      "evidence": {
+        "revision": 79,
+        "section": "Dr. A. Clef's Report",
+        "locator": "This tool will be used to kill SCP-239 while she is asleep and her powers are neutralized."
       }
     }
   ],

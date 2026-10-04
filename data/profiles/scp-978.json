@@ -21,48 +21,64 @@
     "visual"
   ],
   "themes": [
-    "photographic",
-    "telepathic",
-    "visual"
+    "desire-and-self-revelation",
+    "institutional-control"
   ],
   "effects": [
     {
       "domain": "information",
-      "operation": "record",
-      "target": "image",
-      "trigger": "photography",
-      "persistence": "persistent",
+      "operation": "transform",
+      "target": "a pictured subject",
+      "trigger": "a subject is pictured with SCP-978",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 31,
-        "section": "metadata.tags",
-        "locator": "tag:photographic"
+        "section": "Description",
+        "locator": "When a subject is pictured with SCP-978, the photograph that develops shows not what the subject was doing at the time of the photo, but rather what the subject wanted to be doing."
       }
     },
     {
-      "domain": "cognition",
-      "operation": "communicate",
-      "target": "mind",
-      "trigger": "proximity",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "information",
+      "operation": "transform",
+      "target": "the subject or their surroundings",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "The effect appears to be, for the most part, random."
+      ],
       "evidence": {
         "revision": 31,
-        "section": "metadata.tags",
-        "locator": "tag:telepathic"
+        "section": "Description",
+        "locator": "This effect appears to be, for the most part, random, sometimes showing drastic changes and deeply suppressed desires, or simple changes and alterations to the subject or their surroundings."
       }
     },
     {
-      "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
+      "domain": "information",
+      "operation": "transform",
+      "target": "the photograph",
+      "trigger": "two subjects with contrasting desires are photographed together",
+      "persistence": "article-defined",
+      "constraints": [
+        "Two subjects have contrasting desires."
+      ],
+      "evidence": {
+        "revision": 31,
+        "section": "Description",
+        "locator": "Should two subjects with contrasting desires both be photographed together, the subjects' desires appear to 'mix' (see testing log for additional information)."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "other",
+      "target": "full testing description",
+      "trigger": "a photograph is produced by SCP-978",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 31,
-        "section": "metadata.tags",
-        "locator": "tag:visual"
+        "section": "Special Containment Procedures",
+        "locator": "All photographs produced by SCP-978 are to be cataloged along with full testing description."
       }
     }
   ],

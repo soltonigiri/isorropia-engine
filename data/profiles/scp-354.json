@@ -24,48 +24,50 @@
     "spatial"
   ],
   "themes": [
-    "portal",
-    "spatial",
-    "location"
+    "containment-failure",
+    "escalating-institutional-dread",
+    "hostile-emergence"
   ],
   "effects": [
     {
       "domain": "space",
       "operation": "transport",
-      "target": "traveler",
-      "trigger": "threshold_crossing",
-      "persistence": "transient",
-      "constraints": [],
+      "target": "enclosure",
+      "trigger": "periodically",
+      "persistence": "article-defined",
+      "constraints": [
+        "nearly all creatures"
+      ],
       "evidence": {
         "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:portal"
+        "section": "Description",
+        "locator": "Periodically, entities emerge from the pool and attempt to escape from the enclosure."
       }
     },
     {
-      "domain": "space",
-      "operation": "distort",
-      "target": "space",
-      "trigger": "proximity",
-      "persistence": "persistent",
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "area at large",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:spatial"
+        "section": "Special Containment Procedures",
+        "locator": "At the heart of Area-354, a twenty (20) foot wall of concrete reinforced with [DATA EXPUNGED] has been constructed around SCP-354 to prevent emerging entities from escaping into the area at large."
       }
     },
     {
-      "domain": "space",
-      "operation": "contain",
-      "target": "occupant",
-      "trigger": "entry",
-      "persistence": "persistent",
+      "domain": "cognition",
+      "operation": "activate",
+      "target": "everyone present",
+      "trigger": "hose insertion to try to drain the pool",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:location"
+        "section": "Document 354-6",
+        "locator": "Yes you have, we all have. That's what it felt like when they put the hose in to try to drain it."
       }
     }
   ],

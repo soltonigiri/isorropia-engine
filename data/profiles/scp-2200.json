@@ -24,48 +24,48 @@
     "weapon"
   ],
   "themes": [
-    "transfiguration",
-    "teleportation",
-    "weapon"
+    "fear-of-death",
+    "immortality",
+    "moral-rationalization"
   ],
   "effects": [
     {
       "domain": "biology",
-      "operation": "transform",
-      "target": "body",
-      "trigger": "exposure",
-      "persistence": "persistent",
+      "operation": "other",
+      "target": "SCP-2200-1",
+      "trigger": "bonding",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 38,
-        "section": "metadata.tags",
-        "locator": "tag:transfiguration"
+        "section": "Description",
+        "locator": "SCP-2200-2 subjects cannot separate themselves from SCP-2200-1 and any attempt to forcefully remove it from the subject's grasp will result in the immediate death of the subject."
       }
     },
     {
       "domain": "space",
       "operation": "transport",
-      "target": "entity",
-      "trigger": "activation",
-      "persistence": "transient",
+      "target": "another individual",
+      "trigger": "When an SCP-2200-2 instance dies",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 38,
-        "section": "metadata.tags",
-        "locator": "tag:teleportation"
+        "section": "Description",
+        "locator": "When an SCP-2200-2 instance dies, SCP-2200-1 anomalously relocates into the hand of another individual and instantly bonds with them."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "activation",
-      "persistence": "transient",
+      "domain": "biology",
+      "operation": "transform",
+      "target": "person killed by SCP-2200-1",
+      "trigger": "Whenever a person is killed by SCP-2200-1",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 38,
-        "section": "metadata.tags",
-        "locator": "tag:weapon"
+        "section": "Description",
+        "locator": "Whenever a person is killed by SCP-2200-1, a likeness of the individual formed out of an anomalous, silver-based alloy (SCP-2200-4) will appear in SCP-2200-3."
       }
     }
   ],

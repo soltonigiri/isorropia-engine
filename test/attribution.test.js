@@ -42,6 +42,7 @@ test('official attribution metadata overrides creator fallback', async (t) => {
           authors: profile.authors,
           revision: 1,
           license: 'CC BY-SA 3.0',
+          status: 'verified',
         },
       ],
     }, null, 2)}\n`,
@@ -58,6 +59,7 @@ test('official attribution metadata overrides creator fallback', async (t) => {
     fetchImpl: async () => new Response(html),
   });
   assert.deepEqual(summary, {
+    status: 'checked',
     checked: 1,
     changed: ['scp-055'],
     applied: true,
@@ -73,4 +75,23 @@ test('official attribution metadata overrides creator fallback', async (t) => {
     'CptBellman',
     'qntm',
   ]);
+  assert.equal(updatedManifest.attributions[0].status, 'verified');
+});
+
+test('unavailable official metadata never applies fallback values', async (t) => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'isorropia-attribution-unavailable-'));
+  t.after(() => rm(directory, { recursive: true, force: true }));
+  await mkdir(path.join(directory, 'profiles'));
+  await writeFile(path.join(directory, 'profiles', 'scp-002.json'), JSON.stringify({
+    page_id: 'scp-002', authors: ['Unknown Author'],
+  }));
+  await writeFile(path.join(directory, 'manifest.json'), JSON.stringify({ attributions: [] }));
+  const summary = await synchronizeAttribution({
+    apply: true,
+    dataDirectory: directory,
+    fetchImpl: async () => new Response('', { status: 503 }),
+  });
+  assert.deepEqual(summary, {
+    status: 'unavailable', checked: 0, changed: [], applied: false,
+  });
 });

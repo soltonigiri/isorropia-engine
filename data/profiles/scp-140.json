@@ -26,48 +26,67 @@
     "scp"
   ],
   "themes": [
-    "alternate-history",
-    "document",
-    "k-class-scenario"
+    "history-as-threat",
+    "obsession",
+    "retroactive-alteration"
   ],
   "effects": [
     {
-      "domain": "time",
-      "operation": "rewrite_history",
-      "target": "history",
-      "trigger": "record_change",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "information",
+      "operation": "propagate",
+      "target": "the account of the Daevite civilization’s history",
+      "trigger": "If SCP-140 comes into contact with any fluid suitable for writing, including human blood",
+      "persistence": "article-defined",
+      "constraints": [
+        "contact with fluid suitable for writing"
+      ],
       "evidence": {
         "revision": 47,
-        "section": "metadata.tags",
-        "locator": "tag:alternate-history"
+        "section": "Description",
+        "locator": "If SCP-140 comes into contact with any fluid suitable for writing, including human blood, the account of the Daevite civilization’s history expands."
       }
     },
     {
       "domain": "information",
-      "operation": "record",
-      "target": "knowledge",
-      "trigger": "reading",
-      "persistence": "persistent",
-      "constraints": [],
+      "operation": "propagate",
+      "target": "new artifacts and traces of the Daevite civilization",
+      "trigger": "Although these new segments sometimes include new descriptions of rituals or cultural traits or illustrations of previously covered material",
+      "persistence": "article-defined",
+      "constraints": [
+        "new segments have been added to SCP-140"
+      ],
       "evidence": {
         "revision": 47,
-        "section": "metadata.tags",
-        "locator": "tag:document"
+        "section": "Description",
+        "locator": "Foundation archaeologists have discovered corresponding new artifacts and traces of the Daevite civilization in applicable locations and strata, in some cases found in dig sites that had already been thoroughly explored."
       }
     },
     {
-      "domain": "civilization",
-      "operation": "destabilize",
-      "target": "baseline_reality",
-      "trigger": "event",
-      "persistence": "persistent",
+      "domain": "information",
+      "operation": "suppress",
+      "target": "sources of standard ink, human blood, or other fluids suitable for writing",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 47,
-        "section": "metadata.tags",
-        "locator": "tag:k-class-scenario"
+        "section": "Special Containment Procedures",
+        "locator": "SCP-140 must never be brought closer than 15 m to any source of standard ink, human blood, or other fluids suitable for writing."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "suppress",
+      "target": "possible memetic contamination",
+      "trigger": "Should any personnel begin displaying obsession with SCP-140 or signs of possible memetic contamination",
+      "persistence": "article-defined",
+      "constraints": [
+        "personnel display obsession with SCP-140 or signs of possible memetic contamination"
+      ],
+      "evidence": {
+        "revision": 47,
+        "section": "Special Containment Procedures",
+        "locator": "Should any personnel begin displaying obsession with SCP-140 or signs of possible memetic contamination, they are to be issued a Class A Amnestic, false memories implanted as necessary, and transferred to another project."
       }
     }
   ],

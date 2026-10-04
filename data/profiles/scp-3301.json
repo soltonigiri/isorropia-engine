@@ -26,48 +26,61 @@
     "ten-dots"
   ],
   "themes": [
-    "game",
-    "reality-bending",
-    "spatial"
+    "gamified-containment",
+    "institutional-compromise",
+    "play-as-coercion"
   ],
   "effects": [
     {
-      "domain": "concept",
-      "operation": "impose_rules",
-      "target": "participant",
-      "trigger": "participation",
-      "persistence": "transient",
+      "domain": "space",
+      "operation": "activate",
+      "target": "SCP-3301",
+      "trigger": "pressing the WonderButton",
+      "persistence": "for the game",
       "constraints": [],
       "evidence": {
         "revision": 109,
-        "section": "metadata.tags",
-        "locator": "tag:game"
-      }
-    },
-    {
-      "domain": "reality",
-      "operation": "alter",
-      "target": "baseline_reality",
-      "trigger": "intent",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 109,
-        "section": "metadata.tags",
-        "locator": "tag:reality-bending"
+        "section": "Description",
+        "locator": "Pressing this button, labeled within the manual as the “WonderButton”, activates the primary anomalous features of SCP-3301, and begins a game of “THE FOUNDATION”."
       }
     },
     {
       "domain": "space",
-      "operation": "distort",
-      "target": "space",
-      "trigger": "proximity",
-      "persistence": "persistent",
+      "operation": "transform",
+      "target": "game board arena",
+      "trigger": "the game board is unfolded and the silver card box is placed",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 109,
-        "section": "metadata.tags",
-        "locator": "tag:spatial"
+        "section": "Addendum 3301.2: Gameplay — Setup",
+        "locator": "Once the game board is unfolded, and the silver card box placed in the middle of the board in the appropriate space, the surrounding area (a space roughly 300m in diameter) will undergo dramatic anomalous spatial changes."
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "outside of the distortion",
+      "trigger": "secondary player is killed or dies in-game",
+      "persistence": "shortly after death",
+      "constraints": [],
+      "evidence": {
+        "revision": 109,
+        "section": "Addendum 3301.2: Gameplay — Setup",
+        "locator": "Secondary players who are killed or die in-game will appear outside of the distortion shortly after their death, unharmed."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "game production",
+      "trigger": "play stops for more than a few days",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 109,
+        "section": "Addendum 3301.1: Discovery",
+        "locator": "If at any point you stop playing for more than a few days, we'll know that you're done testing it and we'll go ahead and put it on the shelves!"
       }
     }
   ],

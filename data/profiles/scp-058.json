@@ -23,48 +23,36 @@
     "surrealism"
   ],
   "themes": [
-    "hostile",
-    "auditory",
-    "alive"
+    "catastrophic-containment",
+    "hostility"
   ],
   "effects": [
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
+      "domain": "other",
+      "operation": "propagate",
+      "target": "people and structures",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 60,
-        "section": "metadata.tags",
-        "locator": "tag:hostile"
+        "section": "Notes",
+        "locator": "Post-Breach analysis determined a majority of the deaths are attributable to fire and fire-related injuries, resulting from a wide spread of \"stinger fluid\" by SCP-058 from a large structure."
       }
     },
     {
-      "domain": "perception",
-      "operation": "auditory_trigger",
-      "target": "observer",
-      "trigger": "audition",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "infrastructure",
+      "operation": "activate",
+      "target": "facility",
+      "trigger": "In case of escape",
+      "persistence": "article-defined",
+      "constraints": [
+        "SCP-058 escape"
+      ],
       "evidence": {
         "revision": 60,
-        "section": "metadata.tags",
-        "locator": "tag:auditory"
-      }
-    },
-    {
-      "domain": "biology",
-      "operation": "sustain",
-      "target": "organism",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 60,
-        "section": "metadata.tags",
-        "locator": "tag:alive"
+        "section": "Special Containment Procedures",
+        "locator": "In case of escape, facility is to be considered compromised and detonation of on-site nuclear weaponry is to commence."
       }
     }
   ],

@@ -8,7 +8,7 @@
     "PlaguePJP"
   ],
   "language": "en",
-  "source_revision": 89,
+  "source_revision": 90,
   "series": "series-9",
   "tags": [
     "8000",
@@ -17,6 +17,7 @@
     "_listpages",
     "alive",
     "animal",
+    "director-house",
     "director-lague",
     "doctor-asheworth",
     "doctor-blank",
@@ -35,48 +36,62 @@
     "uncontained"
   ],
   "themes": [
-    "extradimensional",
-    "alive",
-    "animal"
+    "insecurity",
+    "ambition",
+    "self-worth",
+    "second-chances"
   ],
   "effects": [
     {
       "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
+      "operation": "other",
+      "target": "solid objects and future events",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
-        "revision": 89,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "revision": 90,
+        "section": "Description",
+        "locator": "Instead of bounding, sliding, or swimming, SCP-8000 is capable of self-propelled flight along with phasing through solid objects, and precognition."
       }
     },
     {
-      "domain": "biology",
-      "operation": "sustain",
-      "target": "organism",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "domain": "space",
+      "operation": "transport",
+      "target": "dimensional gateways",
+      "trigger": "at will",
+      "persistence": "temporary",
       "constraints": [],
       "evidence": {
-        "revision": 89,
-        "section": "metadata.tags",
-        "locator": "tag:alive"
+        "revision": 90,
+        "section": "Description",
+        "locator": "Additionally, SCP-8000 can create temporary dimensional gateways at will."
       }
     },
     {
-      "domain": "biology",
-      "operation": "sustain",
-      "target": "animal",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "domain": "information",
+      "operation": "transform",
+      "target": "finalized anomaly profile",
+      "trigger": "SEEKER is triggered",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
-        "revision": 89,
-        "section": "metadata.tags",
-        "locator": "tag:animal"
+        "revision": 90,
+        "section": "PROJECT SEEKER",
+        "locator": "When triggered, the LWS will survey the sample set and extract data from its multiversal sources."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "other",
+      "target": "Site-322 personnel and site",
+      "trigger": "parameters that did not exist in any known universe",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 90,
+        "section": "Memory of future outcome",
+        "locator": "The Seeker machine had a meltdown, Mr. Paul. It collapsed in on itself."
       }
     }
   ],

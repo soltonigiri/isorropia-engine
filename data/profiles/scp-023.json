@@ -25,48 +25,35 @@
     "visual"
   ],
   "themes": [
-    "visual",
-    "teleportation",
-    "fire"
+    "fatal-observation",
+    "ritualized-containment",
+    "inevitable-consequence"
   ],
   "effects": [
     {
       "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
+      "operation": "transform",
+      "target": "that person or a member of their immediate family",
+      "trigger": "makes eye contact with SCP-023",
+      "persistence": "one (1) year after eye contact is broken",
       "constraints": [],
       "evidence": {
         "revision": 67,
-        "section": "metadata.tags",
-        "locator": "tag:visual"
+        "section": "Description",
+        "locator": "Any time an individual makes eye contact with SCP-023, either that person or a member of their immediate family will die exactly one (1) year after eye contact is broken."
       }
     },
     {
       "domain": "space",
       "operation": "transport",
-      "target": "entity",
-      "trigger": "activation",
-      "persistence": "transient",
+      "target": "the nearest suitable location",
+      "trigger": "not contained in a setting that at least superficially resembles a \"crossroads\"",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 67,
-        "section": "metadata.tags",
-        "locator": "tag:teleportation"
-      }
-    },
-    {
-      "domain": "energy",
-      "operation": "damage",
-      "target": "material",
-      "trigger": "exposure",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 67,
-        "section": "metadata.tags",
-        "locator": "tag:fire"
+        "section": "Description",
+        "locator": "If not contained in a setting that at least superficially resembles a \"crossroads\", SCP-023 will phase through walls to get to the nearest suitable location, incinerating all materials it passes through."
       }
     }
   ],

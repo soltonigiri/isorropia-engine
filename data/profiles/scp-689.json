@@ -24,48 +24,52 @@
     "visual"
   ],
   "themes": [
-    "observational",
-    "teleportation",
-    "murder-monster"
+    "observation-as-danger",
+    "containment-ethics",
+    "inescapable-exposure"
   ],
   "effects": [
     {
       "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "suppress",
+      "target": "SCP-689 activity",
+      "trigger": "at least one human being watches it",
+      "persistence": "for as long as watched",
+      "constraints": [
+        "Blinking does not interrupt watching."
+      ],
       "evidence": {
         "revision": 27,
-        "section": "metadata.tags",
-        "locator": "tag:observational"
+        "section": "Description",
+        "locator": "SCP-689 is completely inert for as long as it is being watched by at least one human being."
       }
     },
     {
-      "domain": "space",
+      "domain": "perception",
       "operation": "transport",
-      "target": "entity",
-      "trigger": "activation",
-      "persistence": "transient",
-      "constraints": [],
+      "target": "a previous viewer",
+      "trigger": "SCP-689 is unobserved",
+      "persistence": "article-defined",
+      "constraints": [
+        "The victim previously viewed SCP-689."
+      ],
       "evidence": {
         "revision": 27,
-        "section": "metadata.tags",
-        "locator": "tag:teleportation"
+        "section": "Description",
+        "locator": "As soon as SCP-689 is unobserved it vanishes from its current location. Within 15-20 seconds one person who has previously viewed SCP-689 dies instantaneously, SCP-689 reappearing on top of their remains."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
+      "domain": "perception",
+      "operation": "propagate",
+      "target": "personnel who have seen the object",
+      "trigger": "a lapse in observation",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 27,
-        "section": "metadata.tags",
-        "locator": "tag:murder-monster"
+        "section": "Description",
+        "locator": "Due to the potential for a \"chain reaction\" once SCP-689 is allowed to leave the chamber it is considered absolutely critical that all personnel who have seen the object be terminated immediately on any lapse in observation."
       }
     }
   ],

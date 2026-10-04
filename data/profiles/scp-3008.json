@@ -8,7 +8,7 @@
     "Mortos"
   ],
   "language": "en",
-  "source_revision": 30,
+  "source_revision": 31,
   "series": "series-4",
   "tags": [
     "_licensebox",
@@ -19,53 +19,74 @@
     "horror",
     "hostile",
     "humanoid",
+    "infinite-furniture-store",
     "otherworldly",
     "portal",
     "scp"
   ],
   "themes": [
-    "portal",
-    "extradimensional",
-    "hostile"
+    "collective-survival",
+    "disorientation",
+    "ordinary-consumerism-made-hostile",
+    "hope-amid-entrapment"
   ],
   "effects": [
     {
       "domain": "space",
       "operation": "transport",
-      "target": "traveler",
-      "trigger": "threshold_crossing",
-      "persistence": "transient",
-      "constraints": [],
+      "target": "SCP-3008-1",
+      "trigger": "passing out of sight of the doors",
+      "persistence": "article-defined",
+      "constraints": [
+        "the person enters through the main entrance"
+      ],
       "evidence": {
-        "revision": 30,
-        "section": "metadata.tags",
-        "locator": "tag:portal"
+        "revision": 31,
+        "section": "Description",
+        "locator": "A person entering SCP-3008 through the main entrance and then passing out of sight of the doors will find themselves translocated to SCP-3008-1."
       }
     },
     {
       "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transform",
+      "target": "the original retail unit dimensions",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "measurements are inconclusive as to whether the space is infinite"
+      ],
       "evidence": {
-        "revision": 30,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "revision": 31,
+        "section": "Description",
+        "locator": "SCP-3008-1 is a space resembling the inside of an IKEA furniture store, extending far beyond the limits of what could physically be contained within the dimensions of the retail unit."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "transform",
+      "target": "all other lifeforms within SCP-3008-1",
+      "trigger": "During the \"night\"",
+      "persistence": "until \"day\" begins",
+      "constraints": [
+        "during day they react violently if attacked"
+      ],
+      "evidence": {
+        "revision": 31,
+        "section": "Description",
+        "locator": "During the \"night\" instances of SCP-3008-2 will become violent towards all other lifeforms within SCP-3008-1."
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "people attempting to leave SCP-3008-1",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
-        "revision": 30,
-        "section": "metadata.tags",
-        "locator": "tag:hostile"
+        "revision": 31,
+        "section": "Description",
+        "locator": "SCP-3008-1 is known to have one or more exits located within, though these exits do not appear to have a fixed position, making it difficult to leave SCP-3008-1 once inside."
       }
     }
   ],

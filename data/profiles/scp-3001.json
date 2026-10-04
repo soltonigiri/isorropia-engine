@@ -27,48 +27,53 @@
     "temporal"
   ],
   "themes": [
-    "extradimensional",
-    "neurological",
-    "paradox"
+    "isolation",
+    "physical-dissolution",
+    "endurance",
+    "love-and-memory"
   ],
   "effects": [
     {
       "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transport",
+      "target": "matter entering the wormhole",
+      "trigger": "creation of a momentary Class-C \"Broken Entry\" Wormhole",
+      "persistence": "article-defined",
+      "constraints": [
+        "a Class-C Broken Entry Wormhole is created"
+      ],
       "evidence": {
         "revision": 30,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "section": "Description",
+        "locator": "SCP-3001 is a hypothesized paradoxical parallel/pocket \"non-dimension\" accessible through the creation of a momentary Class-C \"Broken Entry\" Wormhole."
       }
     },
     {
       "domain": "biology",
-      "operation": "alter",
-      "target": "nervous_system",
-      "trigger": "exposure",
-      "persistence": "persistent",
-      "constraints": [],
+      "operation": "transform",
+      "target": "matter inside it",
+      "trigger": "prolonged exposure",
+      "persistence": "prolonged exposure",
+      "constraints": [
+        "at least 40% of an organism's brain remains for the simulated continued operation"
+      ],
       "evidence": {
         "revision": 30,
-        "section": "metadata.tags",
-        "locator": "tag:neurological"
+        "section": "Description",
+        "locator": "This phenomenon causes matter inside it to decay at an extremely low rate, and damage that would otherwise prove fatal does not impede any biological/electronic function; simulations suggest an organism can lose more than 70% of their body's tissue and still operate normally, as long as at least 40% of the brain remains."
       }
     },
     {
-      "domain": "time",
-      "operation": "distort",
-      "target": "causality",
-      "trigger": "exposure",
-      "persistence": "persistent",
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "Class-C \"Broken Entry\" Wormhole creation",
+      "trigger": "To prevent further accidental entries into SCP-3001",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 30,
-        "section": "metadata.tags",
-        "locator": "tag:paradox"
+        "section": "Special Containment Procedures",
+        "locator": "To prevent further accidental entries into SCP-3001, all Foundation reality-bending technology will be upgraded/modified with multiple newly developed safeguards to prevent Class-C \"Broken Entry\" Wormhole creation."
       }
     }
   ],

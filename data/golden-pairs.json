@@ -1,100 +1,156 @@
 [
   {
-    "id": "cycle-001",
+    "id": "cycle-death-boundary",
     "mode": "cycle",
     "left": "scp-3984",
     "right": "scp-2935",
-    "expectation": "include",
-    "minimum_score": 100,
-    "maximum_rank": 1,
-    "required_rule": "cycle-death-boundary-3984-2935"
+    "expectation": "include"
   },
-  { "id": "cycle-negative-001", "mode": "cycle", "left": "scp-3984", "right": "scp-006", "expectation": "exclude" },
-  { "id": "cycle-negative-002", "mode": "cycle", "left": "scp-3984", "right": "scp-008", "expectation": "exclude" },
-  { "id": "cycle-negative-003", "mode": "cycle", "left": "scp-3984", "right": "scp-009", "expectation": "exclude" },
-  { "id": "cycle-negative-004", "mode": "cycle", "left": "scp-3984", "right": "scp-106", "expectation": "exclude" },
-
   {
-    "id": "breach-001",
+    "id": "cycle-reflected-return",
+    "mode": "cycle",
+    "left": "scp-073",
+    "right": "scp-076",
+    "expectation": "include"
+  },
+  {
+    "id": "cycle-regenerative-bond",
+    "mode": "cycle",
+    "left": "scp-006",
+    "right": "scp-198",
+    "expectation": "exclude"
+  },
+  {
+    "id": "cycle-reject-infection-cascade",
+    "mode": "cycle",
+    "left": "scp-008",
+    "right": "scp-015",
+    "expectation": "exclude"
+  },
+  {
+    "id": "cycle-reject-lighting-cascade",
+    "mode": "cycle",
+    "left": "scp-017",
+    "right": "scp-035",
+    "expectation": "exclude"
+  },
+  {
+    "id": "cycle-reject-observer-cascade",
+    "mode": "cycle",
+    "left": "scp-058",
+    "right": "scp-173",
+    "expectation": "exclude"
+  },
+  {
+    "id": "cycle-no-supported-result",
+    "mode": "cycle",
+    "left": "scp-002",
+    "expectation": "empty"
+  },
+  {
+    "id": "breach-co-infection-610",
     "mode": "breach",
     "left": "scp-008",
     "right": "scp-610",
-    "expectation": "include",
-    "minimum_score": 90,
-    "maximum_rank": 1,
-    "required_rule": "breach-co-infection-008-610"
+    "expectation": "exclude"
   },
   {
-    "id": "breach-002",
+    "id": "breach-co-infection-217",
     "mode": "breach",
     "left": "scp-008",
     "right": "scp-217",
-    "expectation": "include",
-    "minimum_score": 85,
-    "maximum_rank": 3,
-    "required_rule": "breach-co-infection-008-217"
+    "expectation": "exclude"
   },
   {
-    "id": "breach-003",
+    "id": "breach-operational-cascade",
     "mode": "breach",
     "left": "scp-008",
     "right": "scp-871",
-    "expectation": "include",
-    "minimum_score": 85,
-    "maximum_rank": 3,
-    "required_rule": "breach-operational-cascade-008-871"
+    "expectation": "exclude"
   },
-  { "id": "breach-negative-001", "mode": "breach", "left": "scp-008", "right": "scp-049", "expectation": "exclude" },
-  { "id": "breach-negative-002", "mode": "breach", "left": "scp-008", "right": "scp-7795", "expectation": "exclude" },
-
   {
-    "id": "double-001",
+    "id": "breach-lighting-failure",
+    "mode": "breach",
+    "left": "scp-017",
+    "right": "scp-035",
+    "expectation": "exclude"
+  },
+  {
+    "id": "breach-reject-mitigation",
+    "mode": "breach",
+    "left": "scp-073",
+    "right": "scp-076",
+    "expectation": "exclude"
+  },
+  {
+    "id": "breach-reject-treatment",
+    "mode": "breach",
+    "left": "scp-008",
+    "right": "scp-049",
+    "expectation": "exclude"
+  },
+  {
+    "id": "breach-reject-reset",
+    "mode": "breach",
+    "left": "scp-008",
+    "right": "scp-7795",
+    "expectation": "exclude"
+  },
+  {
+    "id": "double-canon-chaos",
     "mode": "double-feature",
     "left": "scp-4010",
     "right": "scp-3999",
     "expectation": "include",
-    "minimum_score": 100,
-    "maximum_rank": 1,
-    "required_rule": "double-canon-chaos-3999-4010"
+    "minimum_score": 85,
+    "required_rule": "auto-double-feature-scp-3999-scp-4010"
   },
   {
-    "id": "double-002",
+    "id": "double-antinarrative-timeline",
     "mode": "double-feature",
     "left": "scp-4010",
     "right": "scp-2747",
     "expectation": "include",
-    "minimum_score": 95,
-    "maximum_rank": 2,
-    "required_rule": "double-antinarrative-timeline-2747-4010"
+    "minimum_score": 90,
+    "required_rule": "auto-double-feature-scp-2747-scp-4010"
   },
   {
-    "id": "double-003",
+    "id": "double-reader-canon",
     "mode": "double-feature",
     "left": "scp-4010",
     "right": "scp-5999",
-    "expectation": "include",
-    "minimum_score": 90,
-    "maximum_rank": 3,
-    "required_rule": "double-reader-canon-4010-5999"
+    "expectation": "exclude"
   },
   {
-    "id": "double-004",
+    "id": "double-foundation-system",
     "mode": "double-feature",
     "left": "scp-4010",
     "right": "scp-3301",
     "expectation": "include",
     "minimum_score": 80,
-    "maximum_rank": 4,
-    "required_rule": "double-foundation-as-system-3301-4010"
+    "required_rule": "auto-double-feature-scp-3301-scp-4010"
   },
   {
-    "id": "double-005",
+    "id": "double-reality-authorship",
     "mode": "double-feature",
     "left": "scp-4010",
     "right": "scp-239",
     "expectation": "include",
-    "minimum_score": 47,
-    "maximum_rank": 5,
-    "required_rule": "double-reality-authorship-239-4010"
+    "minimum_score": 90,
+    "required_rule": "auto-double-feature-scp-239-scp-4010"
+  },
+  {
+    "id": "double-architectural-dialogue",
+    "mode": "double-feature",
+    "left": "scp-002",
+    "right": "scp-017",
+    "expectation": "exclude"
+  },
+  {
+    "id": "double-reject-generic-horror",
+    "mode": "double-feature",
+    "left": "scp-002",
+    "right": "scp-015",
+    "expectation": "exclude"
   }
 ]

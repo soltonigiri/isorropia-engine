@@ -20,48 +20,52 @@
     "scp"
   ],
   "themes": [
-    "knowledge",
-    "mind-affecting",
-    "location"
+    "unpredictable-knowledge",
+    "the-cost-of-revelation",
+    "institutional-secrecy"
   ],
   "effects": [
     {
-      "domain": "information",
-      "operation": "reveal",
-      "target": "subject",
-      "trigger": "contact",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 47,
-        "section": "metadata.tags",
-        "locator": "tag:knowledge"
-      }
-    },
-    {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transform",
+      "target": "subjects' cognitive state",
+      "trigger": "within three (3) to six (6) seconds",
+      "persistence": "sometimes goes unnoticed for extended periods of time",
+      "constraints": [
+        "knowledge is random in size and usefulness"
+      ],
       "evidence": {
         "revision": 47,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
+        "section": "Description",
+        "locator": "Subjects “entering” SCP-028 are, within three (3) to six (6) seconds, struck by total and complete knowledge of a subject."
       }
     },
     {
-      "domain": "space",
-      "operation": "contain",
-      "target": "occupant",
-      "trigger": "entry",
-      "persistence": "persistent",
+      "domain": "biology",
+      "operation": "transform",
+      "target": "subjects",
+      "trigger": "after two (2) exposures",
+      "persistence": "article-defined",
+      "constraints": [
+        "the Effect has been experienced multiple times"
+      ],
+      "evidence": {
+        "revision": 47,
+        "section": "Description",
+        "locator": "This Effect can be experienced multiple times by exiting and re-entering SCP-028, but can result in increasingly strong migraines and dizziness after two (2) exposures."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "access",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 47,
-        "section": "metadata.tags",
-        "locator": "tag:location"
+        "section": "Special Containment Procedures",
+        "locator": "No special means are needed to contain at this time, as SCP-028 has not shown any change in size, position or shape during the entire period of its containment, but access must be restricted."
       }
     }
   ],

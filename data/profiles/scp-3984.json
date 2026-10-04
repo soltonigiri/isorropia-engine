@@ -25,63 +25,52 @@
     "uncontained"
   ],
   "themes": [
-    "end-of-death",
-    "intangible",
-    "k-class-scenario"
+    "immortality-as-suffering",
+    "bureaucratic-denial",
+    "body-horror"
   ],
   "effects": [
     {
-      "domain": "death",
-      "operation": "prevent_death",
-      "target": "life",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 46,
-        "section": "metadata.tags",
-        "locator": "tag:end-of-death"
-      }
-    },
-    {
-      "domain": "matter",
-      "operation": "phase",
-      "target": "material",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 46,
-        "section": "metadata.tags",
-        "locator": "tag:intangible"
-      }
-    },
-    {
-      "domain": "civilization",
-      "operation": "destabilize",
-      "target": "baseline_reality",
-      "trigger": "event",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 46,
-        "section": "metadata.tags",
-        "locator": "tag:k-class-scenario"
-      }
-    },
-    {
-      "domain": "death",
-      "operation": "prevent_death",
-      "target": "animal_life",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "domain": "biology",
+      "operation": "suppress",
+      "target": "death",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [
-        "kingdom_animalia"
+        "does not include bacteria, fungi, algae or plants"
       ],
       "evidence": {
         "revision": 46,
         "section": "Description",
-        "locator": "no member of the kingdom Animalia ... is capable of dying"
+        "locator": "SCP-3984 refers to a phenomenon in which any living organisms in the kingdom Animalia under Cavalier-Smith taxonomy, including humans, are unable to die."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "other",
+      "target": "affected subjects",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 46,
+        "section": "Description",
+        "locator": "SCP-3984 does not grant a healing effect, does not prevent aging, does not prevent conception or pregnancy, and does not prevent subjects from sustaining injury."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "restore",
+      "target": "affected animals",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "inducing death is not currently possible"
+      ],
+      "evidence": {
+        "revision": 46,
+        "section": "Special Containment Procedures",
+        "locator": "Containment of SCP-3984 revolves around inducing death in affected animals."
       }
     }
   ],

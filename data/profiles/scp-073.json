@@ -25,48 +25,34 @@
     "scp"
   ],
   "themes": [
-    "indestructible",
-    "mechanical",
-    "alive"
+    "curse",
+    "burdened-benevolence"
   ],
   "effects": [
     {
-      "domain": "durability",
-      "operation": "resist",
-      "target": "destruction",
-      "trigger": "damage",
-      "persistence": "persistent",
+      "domain": "biology",
+      "operation": "disable",
+      "target": "life grown in soil",
+      "trigger": "SCP-073's presence",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 35,
-        "section": "metadata.tags",
-        "locator": "tag:indestructible"
-      }
-    },
-    {
-      "domain": "technology",
-      "operation": "construct",
-      "target": "mechanism",
-      "trigger": "operation",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 35,
-        "section": "metadata.tags",
-        "locator": "tag:mechanical"
+        "section": "Description",
+        "locator": "SCP-073's presence is inimical to any and all life grown in soil, causing death to any such life within a twenty (20) meter radius."
       }
     },
     {
       "domain": "biology",
-      "operation": "sustain",
-      "target": "organism",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "operation": "transform",
+      "target": "the attacker",
+      "trigger": "Violence directed towards SCP-073",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 35,
-        "section": "metadata.tags",
-        "locator": "tag:alive"
+        "section": "Description",
+        "locator": "Violence directed towards SCP-073 reflects any damage inflicted on SCP-073 directly back onto the attacker, although SCP-073 visibly remains unharmed."
       }
     }
   ],

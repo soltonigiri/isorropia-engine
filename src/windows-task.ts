@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, rename, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { defaultPrivateDirectory } from './maintenance.js';
 
@@ -24,6 +24,7 @@ export async function writeWindowsTaskDefinition(options: {
   const shellCommand = [
     'set -o pipefail',
     `cd ${shellQuote(options.repositoryDirectory)}`,
+    `npm run maintenance -- rotate-log --log ${shellQuote(logPath)}`,
     `npm run maintenance -- scheduled --limit 100 >> ${shellQuote(logPath)} 2>&1`,
   ].join('; ');
   const startBoundary = nextMondayAtNoon(options.now ?? new Date());
@@ -45,6 +46,32 @@ export async function writeWindowsTaskDefinition(options: {
   await mkdir(path.dirname(xmlPath), { recursive: true });
   await writeFile(xmlPath, xml, 'utf8');
   return { config_path: configPath, xml_path: xmlPath };
+}
+
+export async function rotateMaintenanceLog(
+  logPath: string,
+  maxBytes = 5 * 1024 * 1024,
+  keep = 5,
+): Promise<boolean> {
+  if (!path.isAbsolute(logPath)) throw new Error('Log path must be absolute');
+  let size: number;
+  try {
+    size = (await stat(logPath)).size;
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') return false;
+    throw error;
+  }
+  if (size < maxBytes) return false;
+  await rm(`${logPath}.${keep}`, { force: true });
+  for (let index = keep - 1; index >= 1; index -= 1) {
+    try {
+      await rename(`${logPath}.${index}`, `${logPath}.${index + 1}`);
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
+    }
+  }
+  await rename(logPath, `${logPath}.1`);
+  return true;
 }
 
 function windowsTaskXml(options: {

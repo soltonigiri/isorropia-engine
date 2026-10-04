@@ -27,48 +27,53 @@
     "species"
   ],
   "themes": [
-    "sensory",
-    "sleep",
-    "predatory"
+    "sleep-deprivation",
+    "predation",
+    "invisible-threat",
+    "attrition"
   ],
   "effects": [
     {
+      "domain": "biology",
+      "operation": "disable",
+      "target": "the affected creature",
+      "trigger": "emitting a single burst",
+      "persistence": "permanently",
+      "constraints": [
+        "they can be blocked by post-transition metals, particularly lead"
+      ],
+      "evidence": {
+        "revision": 69,
+        "section": "Description",
+        "locator": "Their hunting methods consist of emitting a single burst of a previously unknown type of wave (dubbed ██████ waves, in honor of the late Doctor ██████), which permanently inhibits the ability of the affected creature to enter any of the NREM and REM sleep stages."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "disable",
+      "target": "their prey",
+      "trigger": "After depriving their victims of sleep",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 69,
+        "section": "Description",
+        "locator": "After depriving their victims of sleep, SCP-966 will stalk their prey until the lack of rest incapacitates it."
+      }
+    },
+    {
       "domain": "perception",
-      "operation": "conceal",
-      "target": "observer",
-      "trigger": "perception",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "other",
+      "target": "the containment room",
+      "trigger": "SCP-966 are visible only at wavelengths ranging from 700 nm to about 900 nm",
+      "persistence": "article-defined",
+      "constraints": [
+        "SCP-966 are visible only at wavelengths ranging from 700 nm to about 900 nm"
+      ],
       "evidence": {
         "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:sensory"
-      }
-    },
-    {
-      "domain": "cognition",
-      "operation": "induce_sleep",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:sleep"
-      }
-    },
-    {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "prey",
-      "trigger": "encounter",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:predatory"
+        "section": "Special Containment Procedures",
+        "locator": "Two security cameras with infrared filters and infrared-sensitive film are to be installed inside the room."
       }
     }
   ],

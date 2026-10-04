@@ -23,48 +23,65 @@
     "transfiguration"
   ],
   "themes": [
-    "transfiguration",
-    "alive",
-    "sapient"
+    "childhood-under-institutional-control",
+    "creation-and-care",
+    "the-limits-of-power"
   ],
   "effects": [
     {
       "domain": "biology",
       "operation": "transform",
-      "target": "body",
-      "trigger": "exposure",
-      "persistence": "persistent",
+      "target": "living organisms",
+      "trigger": "at will",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:transfiguration"
-      }
-    },
-    {
-      "domain": "biology",
-      "operation": "sustain",
-      "target": "organism",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:alive"
+        "section": "Description",
+        "locator": "SCP-040 is a human child capable of at-will manipulation of the physical characteristics of living organisms."
       }
     },
     {
       "domain": "cognition",
-      "operation": "communicate",
-      "target": "observer",
-      "trigger": "interaction",
-      "persistence": "transient",
+      "operation": "transform",
+      "target": "modified organisms",
+      "trigger": "as part of the modification process",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 69,
-        "section": "metadata.tags",
-        "locator": "tag:sapient"
+        "section": "Description",
+        "locator": "SCP-040-1 undergo behavior shifts as part of the modification process, acting with extreme loyalty to SCP-040 regardless of prior association."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "other",
+      "target": "SCP-040",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "the effect becomes increasingly unreliable and inaccurate with smaller or more complex changes"
+      ],
+      "evidence": {
+        "revision": 69,
+        "section": "Description",
+        "locator": "SCP-040’s anomalous property requires significant focus and time to enact and causes intense headaches and nausea when performed for more than a few minutes at a time."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "restore",
+      "target": "a deceased human body",
+      "trigger": "during testing",
+      "persistence": "article-defined",
+      "constraints": [
+        "three specimens of brown rat were used as the required living component"
+      ],
+      "evidence": {
+        "revision": 69,
+        "section": "Addendum-03",
+        "locator": "SCP-040 successfully reanimated a deceased human body during testing, using three specimens of brown rat (//Rattus norvegicus//) as the required living component."
       }
     }
   ],

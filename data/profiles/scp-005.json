@@ -20,34 +20,37 @@
     "tool"
   ],
   "themes": [
-    "tool",
-    "adaptive"
+    "access-control",
+    "anomalous-utility",
+    "uncertain-agency"
   ],
   "effects": [
     {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "user",
-      "trigger": "operation",
-      "persistence": "transient",
+      "domain": "infrastructure",
+      "operation": "disable",
+      "target": "mechanical or digital locks",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 44,
-        "section": "metadata.tags",
-        "locator": "tag:tool"
+        "section": "Description",
+        "locator": "SCP-005 seems to have the unique ability to open any and all forms of lock (See Appendix A), be they mechanical or digital, with relative ease."
       }
     },
     {
-      "domain": "containment",
-      "operation": "adapt",
-      "target": "containment_method",
-      "trigger": "exposure",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "cognition",
+      "operation": "suppress",
+      "target": "SCP-005's ability",
+      "trigger": "a volunteer was not able to identify a locking device as such",
+      "persistence": "article-defined",
+      "constraints": [
+        "the locking device's purpose or identity is disguised"
+      ],
       "evidence": {
         "revision": 44,
-        "section": "metadata.tags",
-        "locator": "tag:adaptive"
+        "section": "Appendix A",
+        "locator": "In approximately 50% of cases where a volunteer was not able to identify a locking device as such, SCP-005 was not successful in deactivating the device."
       }
     }
   ],

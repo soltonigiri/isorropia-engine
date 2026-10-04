@@ -1,3 +1,4 @@
+import { randomUUID } from 'node:crypto';
 import { readFile, readdir, rename, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { defaultDataDirectory } from './data.js';
@@ -10,7 +11,12 @@ export async function synchronizeAttribution(options: {
   apply?: boolean;
   dataDirectory?: string;
   fetchImpl?: typeof fetch;
-} = {}): Promise<{ checked: number; changed: string[]; applied: boolean }> {
+} = {}): Promise<{
+  status: 'checked' | 'unavailable';
+  checked: number;
+  changed: string[];
+  applied: boolean;
+}> {
   const dataDirectory = options.dataDirectory ?? defaultDataDirectory();
   const profilesDirectory = path.join(dataDirectory, 'profiles');
   const names = (await readdir(profilesDirectory))
@@ -22,6 +28,9 @@ export async function synchronizeAttribution(options: {
   const overrides = await fetchOfficialAttributions(
     options.fetchImpl ?? globalThis.fetch,
   );
+  if (!overrides) {
+    return { status: 'unavailable', checked: 0, changed: [], applied: false };
+  }
   const resolved = profiles.map((profile) => ({
     profile,
     authors: overrides.get(profile.page_id) ?? profile.authors,
@@ -32,6 +41,7 @@ export async function synchronizeAttribution(options: {
   );
   if (!options.apply || changed.length === 0) {
     return {
+      status: 'checked',
       checked: profiles.length,
       changed: changed.map(({ profile }) => profile.page_id),
       applied: false,
@@ -56,9 +66,13 @@ export async function synchronizeAttribution(options: {
   manifest.attributions = manifest.attributions.map((entry) => ({
     ...entry,
     authors: authorsById.get(entry.page_id) ?? entry.authors,
+    status: (authorsById.get(entry.page_id) ?? entry.authors).includes('Unknown Author')
+      ? 'unresolved'
+      : 'verified',
   }));
   await atomicWrite(manifestPath, stableJson(manifest));
   return {
+    status: 'checked',
     checked: profiles.length,
     changed: changed.map(({ profile }) => profile.page_id),
     applied: true,
@@ -67,16 +81,17 @@ export async function synchronizeAttribution(options: {
 
 async function fetchOfficialAttributions(
   fetchImpl: typeof fetch,
-): Promise<Map<string, string[]>> {
+): Promise<Map<string, string[]> | undefined> {
   try {
     const response = await fetchImpl(ATTRIBUTION_METADATA_URL, {
       redirect: 'error',
       signal: AbortSignal.timeout(15_000),
     });
-    if (!response.ok) return new Map();
-    return parseOfficialAttributions(await response.text());
+    if (!response.ok) return undefined;
+    const parsed = parseOfficialAttributions(await response.text());
+    return parsed.size > 0 ? parsed : undefined;
   } catch {
-    return new Map();
+    return undefined;
   }
 }
 
@@ -115,7 +130,7 @@ async function readJson<T>(filePath: string): Promise<T> {
 }
 
 async function atomicWrite(filePath: string, content: string): Promise<void> {
-  const temporaryPath = `${filePath}.tmp`;
+  const temporaryPath = `${filePath}.${process.pid}.${randomUUID()}.tmp`;
   await writeFile(temporaryPath, content, 'utf8');
   await rename(temporaryPath, filePath);
 }

@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
-import { writeWindowsTaskDefinition } from '../dist/index.js';
+import { rotateMaintenanceLog, writeWindowsTaskDefinition } from '../dist/index.js';
 
 test('Windows task definition is importable configuration and is not registered', async (t) => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'isorropia-task-'));
@@ -22,5 +22,19 @@ test('Windows task definition is importable configuration and is not registered'
   assert.match(xml, /<MultipleInstancesPolicy>IgnoreNew<\/MultipleInstancesPolicy>/);
   assert.match(xml, /<StartWhenAvailable>true<\/StartWhenAvailable>/);
   assert.match(xml, /<ExecutionTimeLimit>PT8H<\/ExecutionTimeLimit>/);
+  assert.match(xml, /rotate-log/);
   assert.equal(config.registration, 'not-registered');
+});
+
+test('scheduler logs rotate at the size boundary and retain the configured history', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'isorropia-log-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const log = path.join(root, 'scheduler.log');
+  await writeFile(log, 'current log exceeds limit');
+  await writeFile(`${log}.1`, 'previous log');
+  await writeFile(`${log}.2`, 'oldest log');
+  assert.equal(await rotateMaintenanceLog(log, 10, 2), true);
+  assert.equal(await readFile(`${log}.1`, 'utf8'), 'current log exceeds limit');
+  assert.equal(await readFile(`${log}.2`, 'utf8'), 'previous log');
+  assert.equal(await rotateMaintenanceLog(log, 10, 2), false);
 });

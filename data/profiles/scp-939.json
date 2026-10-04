@@ -26,48 +26,51 @@
     "xenofiction"
   ],
   "themes": [
-    "mimetic",
-    "auditory",
-    "predatory"
+    "predation",
+    "identity-uncertainty",
+    "memory-loss",
+    "containment-fragility"
   ],
   "effects": [
     {
       "domain": "perception",
-      "operation": "imitate",
-      "target": "observer",
-      "trigger": "encounter",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 38,
-        "section": "metadata.tags",
-        "locator": "tag:mimetic"
-      }
-    },
-    {
-      "domain": "perception",
-      "operation": "auditory_trigger",
-      "target": "observer",
-      "trigger": "audition",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 38,
-        "section": "metadata.tags",
-        "locator": "tag:auditory"
-      }
-    },
-    {
-      "domain": "harm",
-      "operation": "attack",
+      "operation": "other",
       "target": "prey",
-      "trigger": "encounter",
-      "persistence": "variable",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 38,
-        "section": "metadata.tags",
-        "locator": "tag:predatory"
+        "section": "Description",
+        "locator": "SCP-939's primary method of luring prey is the imitation of human speech in the voices of prior victims, though imitation of other species and active nocturnal hunts have been documented."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "suppress",
+      "target": "memory formation",
+      "trigger": "exposure",
+      "persistence": "for the duration of exposure, plus an average of thirty (30) minutes",
+      "constraints": [],
+      "evidence": {
+        "revision": 38,
+        "section": "Description",
+        "locator": "AMN-C227 causes temporary anterograde amnesia, inhibiting memory formation for the duration of exposure, plus an average of thirty (30) minutes."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "activate",
+      "target": "a wireless monitoring system independent of a facility's main power grid",
+      "trigger": "both an individual's pulse monitors flat-line or otherwise malfunction",
+      "persistence": "article-defined",
+      "constraints": [
+        "all non Class D personnel interacting with SCP-939 for any length of time"
+      ],
+      "evidence": {
+        "revision": 38,
+        "section": "Special Containment Procedures",
+        "locator": "Should both an individual's pulse monitors flat-line or otherwise malfunction, the wearer will be presumed dead, personnel instructed to disregard all the wearer's subsequent vocalizations, and a breach of containment declared automatically."
       }
     }
   ],

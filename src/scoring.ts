@@ -1,3 +1,4 @@
+import { SCORING_CONTRACT_VERSION } from './contracts.js';
 import type {
   Edge,
   Evidence,
@@ -9,6 +10,7 @@ import type {
   Profile,
   Rule,
   RuleMatcher,
+  ScoringPolicy,
   SemanticProfile,
 } from './types.js';
 
@@ -23,6 +25,8 @@ const IGNORED_SHARED_TAGS = new Set([
   'co-authored',
   'rewrite',
 ]);
+
+export { SCORING_CONTRACT_VERSION };
 
 function isSubstantiveTag(tag: string): boolean {
   return !tag.startsWith('_') && !IGNORED_SHARED_TAGS.has(tag);
@@ -42,6 +46,7 @@ export function scorePair(params: {
   edges: Edge[];
   interaction?: PairInteraction;
   semantics?: Map<string, SemanticProfile>;
+  scoringPolicy: ScoringPolicy;
 }): PairResult | undefined {
   const context: MatchContext = {
     left: params.query,
@@ -55,6 +60,7 @@ export function scorePair(params: {
       params.interaction,
       context,
       params.semantics ?? new Map(),
+      params.scoringPolicy,
     );
   }
 
@@ -81,13 +87,18 @@ export function scorePair(params: {
   const sourceEvidenceCount = [queryEvidence, candidateEvidence].filter(
     (item) => item.section !== 'metadata.tags',
   ).length;
-  const scoreCap = sourceEvidenceCount === 2 ? 100 : sourceEvidenceCount === 1 ? 60 : 35;
-  const score = Math.min(scoreCap, Math.min(100, Math.round(rawScore * 5)));
-  const confidence = sourceEvidenceCount === 2
-    ? 0.75
+  const evidenceGrade = sourceEvidenceCount === 2
+    ? 'article-both'
     : sourceEvidenceCount === 1
-      ? 0.45
-      : 0.3;
+      ? 'article-one'
+      : 'metadata-only';
+  const fallback = evidenceGrade === 'article-both'
+    ? params.scoringPolicy.fallback.article_both
+    : evidenceGrade === 'article-one'
+      ? params.scoringPolicy.fallback.article_one
+      : params.scoringPolicy.fallback.metadata_only;
+  const score = Math.min(fallback.score_cap, Math.min(100, Math.round(rawScore * 5)));
+  const confidence = fallback.confidence;
 
   return {
     page_id: params.candidate.page_id,
@@ -100,6 +111,7 @@ export function scorePair(params: {
       query: queryEvidence,
       candidate: candidateEvidence,
     },
+    basis: { kind: 'rule-fallback', evidence_grade: evidenceGrade },
   };
 }
 
@@ -107,12 +119,15 @@ function scoreAcceptedInteraction(
   interaction: AcceptedInteraction,
   context: MatchContext,
   semantics: Map<string, SemanticProfile>,
+  scoringPolicy: ScoringPolicy,
 ): PairResult {
-  const score =
-    rubricPoints.mode_fit[interaction.rubric.mode_fit] +
-    rubricPoints.coherence[interaction.rubric.coherence] +
-    rubricPoints.specificity[interaction.rubric.specificity] +
-    rubricPoints.discovery_value[interaction.rubric.discovery_value];
+  const scoreComponents = {
+    mode_fit: scoringPolicy.rubric_points.mode_fit[interaction.rubric.mode_fit],
+    coherence: scoringPolicy.rubric_points.coherence[interaction.rubric.coherence],
+    specificity: scoringPolicy.rubric_points.specificity[interaction.rubric.specificity],
+    discovery_value: scoringPolicy.rubric_points.discovery_value[interaction.rubric.discovery_value],
+  };
+  const score = Object.values(scoreComponents).reduce((sum, value) => sum + value, 0);
   const queryEvidence = evidenceForClaim(
     semantics,
     context.left.page_id,
@@ -128,7 +143,7 @@ function scoreAcceptedInteraction(
     title: context.right.title,
     url: context.right.url,
     score,
-    confidence: supportConfidence[interaction.support],
+    confidence: scoringPolicy.support_confidence[interaction.support],
     rules: [
       {
         id: interaction.id,
@@ -143,17 +158,13 @@ function scoreAcceptedInteraction(
     causal_chain: interaction.causal_chain,
     ...(interaction.assumption ? { assumption: interaction.assumption } : {}),
     ...(interaction.limitation ? { limitation: interaction.limitation } : {}),
+    basis: {
+      kind: 'reviewed-interaction',
+      support_grade: interaction.support,
+      score_components: scoreComponents,
+    },
   };
 }
-
-const rubricPoints = {
-  mode_fit: { core: 35, strong: 30, partial: 20 },
-  coherence: { complete: 30, conditional: 20, thematic: 10 },
-  specificity: { 'article-specific': 20, 'domain-specific': 12, generic: 5 },
-  discovery_value: { high: 15, medium: 10, low: 5 },
-} as const;
-
-const supportConfidence = { A: 0.9, B: 0.75, C: 0.55, D: 0.3 } as const;
 
 function isCurrentInteraction(
   interaction: PairInteraction,

@@ -23,48 +23,54 @@
     "scp"
   ],
   "themes": [
-    "extradimensional",
-    "humanoid",
-    "sapient"
+    "displacement",
+    "institutional-accommodation",
+    "uncertain-testimony"
   ],
   "effects": [
     {
       "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transport",
+      "target": "SCP-507",
+      "trigger": "uncontrolled shifts",
+      "persistence": "temporary until shifting back",
+      "constraints": [
+        "SCP-507 insists that it has no control over the time and duration of these shifts"
+      ],
       "evidence": {
         "revision": 44,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "section": "Description",
+        "locator": "SCP-507 holds that during its periods of “disappearance” it is actually displaced into a random alternate reality; the landscape generally stays the same, but the inhabitants and climate of the parallel world often do not."
       }
     },
     {
-      "domain": "biology",
-      "operation": "sustain",
-      "target": "human",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "space",
+      "operation": "transport",
+      "target": "SCP-507",
+      "trigger": "the eventual shift back",
+      "persistence": "at return",
+      "constraints": [
+        "SCP-507 moves about in the alternate world"
+      ],
       "evidence": {
         "revision": 44,
-        "section": "metadata.tags",
-        "locator": "tag:humanoid"
+        "section": "Description",
+        "locator": "If SCP-507 moves about in the alternate world, the eventual shift back will then place it at the corresponding area in our reality."
       }
     },
     {
-      "domain": "cognition",
-      "operation": "communicate",
-      "target": "observer",
-      "trigger": "interaction",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "space",
+      "operation": "transport",
+      "target": "Agent ████",
+      "trigger": "SCP-507 shifted",
+      "persistence": "until SCP-507 shifted back",
+      "constraints": [
+        "The agent was holding onto SCP-507's shoulder when it shifted"
+      ],
       "evidence": {
         "revision": 44,
-        "section": "metadata.tags",
-        "locator": "tag:sapient"
+        "section": "Addendum 507-00",
+        "locator": "When questioned, it said that ████ was holding onto its shoulder when it shifted, leading to both of them to appear in an alternate dimension where [EXPUNGED]."
       }
     }
   ],

@@ -63,48 +63,169 @@
     "wilsons-wildlife"
   ],
   "themes": [
-    "biological",
-    "daevite",
-    "audio"
+    "entropy-and-loss-of-the-anomalous",
+    "containment-reversed-into-preservation",
+    "institutional-duty-versus-ideological-tradition",
+    "stories-and-magic-as-endangered-forms",
+    "heroism-under-pressure",
+    "storytelling-as-power",
+    "self-determination"
   ],
   "effects": [
     {
-      "domain": "biology",
-      "operation": "alter",
-      "target": "organism",
-      "trigger": "exposure",
-      "persistence": "variable",
+      "domain": "other",
+      "operation": "transform",
+      "target": "anomalous persons, items, areas, and phenomena",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 74,
-        "section": "metadata.tags",
-        "locator": "tag:biological"
+        "section": "DESCRIPTION",
+        "locator": "SCP-6500 is a process of entropy exclusively targeting the anomalous."
       }
     },
     {
-      "domain": "time",
-      "operation": "rewrite_history",
-      "target": "history",
-      "trigger": "record_change",
-      "persistence": "persistent",
+      "domain": "biology",
+      "operation": "transform",
+      "target": "organic anomalies, including those heretofore considered immortal",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 74,
-        "section": "metadata.tags",
-        "locator": "tag:daevite"
+        "section": "DESCRIPTION",
+        "locator": "SCP-6500 takes many forms; for example, a process of accelerated senescence in organic anomalies, including those heretofore considered immortal."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "propagate",
+      "target": "containment efforts",
+      "trigger": "containment efforts",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "DESCRIPTION",
+        "locator": "Since its formal recognition and study, it has been determined that SCP-6500 is hastened by containment efforts."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "SCP-6500's process",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "SPECIAL CONTAINMENT PROCEDURES",
+        "locator": "It should be noted that the above actions have thus far been insufficient at reversing the effects of SCP-6500, but have somewhat slowed its process."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "suppress",
+      "target": "the integrity of SCP-6500-α",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "PROTOCOL SIXTH SUN",
+        "locator": "All special missions (Paths) undertaken in the pursuit of counteracting or neutralizing SCP-6500 are to incorporate ritualistic aspects as to not upset the integrity of the sought items (SCP-6500-α), or risk said items' corruption due to SCP-6500's influence."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "restore",
+      "target": "the effects of SCP-6500",
+      "trigger": "using the Codex",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "Choose Your Path — MAGE",
+        "locator": "Thaumic workings using the Codex would be capable of halting and reversing the effects of SCP-6500 altogether."
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "activate",
+      "target": "the Ways",
+      "trigger": "The old magic is dying",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "The Grand Hall",
+        "locator": "The old magic is dying. The Ways are open, and we cannot shut them. Things are coming through; things we don't want."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "transform",
+      "target": "fire",
+      "trigger": "Ibanez swings the sword near a belch of flame",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "The Grand Hall",
+        "locator": "…and a rush of force expanded from the leading edge, catching the fire and incorporating it."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "transform",
+      "target": "Ibanez's heroism",
+      "trigger": "Ibanez answers Kayaköy's call for a hero",
+      "persistence": "gradual",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "The Black Vaults",
+        "locator": "It's matching the strength of your heroism, the way Kayaköy mirrors the contentment of the tourists."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "transport",
+      "target": "Ibanez, Okorie, and Placeholder",
+      "trigger": "the Archivist's chant",
+      "persistence": "until the group reaches the vault door",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "The Grand Hall",
+        "locator": "I need only curse you to find it yourselves."
       }
     },
     {
       "domain": "perception",
-      "operation": "auditory_trigger",
-      "target": "listener",
-      "trigger": "audition",
-      "persistence": "transient",
+      "operation": "transform",
+      "target": "Ibanez",
+      "trigger": "Ibanez reads the sword inscription at the source",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 74,
-        "section": "metadata.tags",
-        "locator": "tag:audio"
+        "section": "The Black Vaults",
+        "locator": "WE'LL SEE ABOUT THAT, her third companion spat, and in the instant before she realized she didn't have a third companion, it fell upon her."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "the authors",
+      "trigger": "the narrative detector tops out",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 74,
+        "section": "The Black Vaults",
+        "locator": "It means we need to start winding this thing down, or we're going to draw the authors down to our level and get trapped in an eternally-escalating narrative."
       }
     }
   ],

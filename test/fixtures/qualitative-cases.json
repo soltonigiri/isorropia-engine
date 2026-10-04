@@ -1,0 +1,1215 @@
+[
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-002",
+      "scp-015"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-002": 78,
+      "scp-015": 55
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-002",
+      "scp-966"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-002": 78,
+      "scp-966": 69
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-005",
+      "scp-860"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-005": 44,
+      "scp-860": 35
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-008",
+      "scp-610"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-008": 66,
+      "scp-610": 65
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-008",
+      "scp-871"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-008": 66,
+      "scp-871": 28
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-009",
+      "scp-300"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-009": 139,
+      "scp-300": 27
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-009",
+      "scp-458"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-009": 139,
+      "scp-458": 125
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-009",
+      "scp-7000"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-009": 139,
+      "scp-7000": 119
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-012",
+      "scp-140"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-012": 48,
+      "scp-140": 47
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-015",
+      "scp-2000"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-015": 55,
+      "scp-2000": 68
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-017",
+      "scp-035"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-017": 46,
+      "scp-035": 72
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-018",
+      "scp-2845"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-018": 52,
+      "scp-2845": 45
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-023",
+      "scp-3008"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-023": 67,
+      "scp-3008": 30
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-028",
+      "scp-3125"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-028": 47,
+      "scp-3125": 47
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-035",
+      "scp-096"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-035": 72,
+      "scp-096": 58
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-049",
+      "scp-3008"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-049": 121,
+      "scp-3008": 30
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-055",
+      "scp-2747"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-055": 51,
+      "scp-2747": 37
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-058",
+      "scp-106"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-058": 60,
+      "scp-106": 130
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-079",
+      "scp-5000"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-079": 40,
+      "scp-5000": 32
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-087",
+      "scp-184"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-087": 54,
+      "scp-184": 54
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-093",
+      "scp-507"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-093": 39,
+      "scp-507": 44
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-1000",
+      "scp-6000"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-1000": 88,
+      "scp-6000": 59
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-1048",
+      "scp-689"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1048": 48,
+      "scp-689": 27
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-1123",
+      "scp-2316"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-1123": 32,
+      "scp-2316": 80
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-1230",
+      "scp-714"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-1230": 52,
+      "scp-714": 36
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-1295",
+      "scp-5167"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1295": 21,
+      "scp-5167": 11
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-1678",
+      "scp-184"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1678": 87,
+      "scp-184": 54
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-173",
+      "scp-447"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-173": 57,
+      "scp-447": 28
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-173",
+      "scp-4666"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-173": 57,
+      "scp-4666": 42
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-1730",
+      "scp-701"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-1730": 192,
+      "scp-701": 60
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-1762",
+      "scp-8000"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-1762": 51,
+      "scp-8000": 89
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-178",
+      "scp-7000"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-178": 26,
+      "scp-7000": 119
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-1981",
+      "scp-8980"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-1981": 67,
+      "scp-8980": 28
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-217",
+      "scp-2200"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-217": 41,
+      "scp-2200": 38
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-239",
+      "scp-7450"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-239": 79,
+      "scp-7450": 23
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-2719",
+      "scp-7004"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-2719": 18,
+      "scp-7004": 36
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-2845",
+      "scp-914"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-2845": 45,
+      "scp-914": 52
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-294",
+      "scp-882"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-294": 116,
+      "scp-882": 33
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-3000",
+      "scp-513"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-3000": 104,
+      "scp-513": 34
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-3125",
+      "scp-978"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-3125": 47,
+      "scp-978": 31
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-354",
+      "scp-714"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-354": 69,
+      "scp-714": 36
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-426",
+      "scp-8999"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-426": 49,
+      "scp-8999": 16
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-5031",
+      "scp-7450"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-5031": 77,
+      "scp-7450": 23
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-7819",
+      "scp-939"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-7819": 13,
+      "scp-939": 38
+    }
+  },
+  {
+    "mode": "breach",
+    "pages": [
+      "scp-939",
+      "scp-999"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-939": 38,
+      "scp-999": 40
+    }
+  },
+  {
+    "mode": "cycle",
+    "pages": [
+      "scp-006",
+      "scp-198"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-006": 62,
+      "scp-198": 23
+    }
+  },
+  {
+    "mode": "cycle",
+    "pages": [
+      "scp-040",
+      "scp-076"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-040": 69,
+      "scp-076": 81
+    }
+  },
+  {
+    "mode": "cycle",
+    "pages": [
+      "scp-055",
+      "scp-1471"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-055": 51,
+      "scp-1471": 36
+    }
+  },
+  {
+    "mode": "cycle",
+    "pages": [
+      "scp-073",
+      "scp-076"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-073": 35,
+      "scp-076": 81
+    }
+  },
+  {
+    "mode": "cycle",
+    "pages": [
+      "scp-073",
+      "scp-682"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-073": 35,
+      "scp-682": 69
+    }
+  },
+  {
+    "mode": "cycle",
+    "pages": [
+      "scp-1879",
+      "scp-303"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-1879": 17,
+      "scp-303": 36
+    }
+  },
+  {
+    "mode": "cycle",
+    "pages": [
+      "scp-2935",
+      "scp-3984"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-2935": 93,
+      "scp-3984": 46
+    }
+  },
+  {
+    "mode": "cycle",
+    "pages": [
+      "scp-5555",
+      "scp-6500"
+    ],
+    "decision": "reject",
+    "source_revisions": {
+      "scp-5555": 73,
+      "scp-6500": 74
+    }
+  },
+  {
+    "mode": "cycle",
+    "pages": [
+      "scp-6500",
+      "scp-682"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-6500": 74,
+      "scp-682": 69
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-002",
+      "scp-1678"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-002": 78,
+      "scp-1678": 87
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-005",
+      "scp-7179"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-005": 44,
+      "scp-7179": 40
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-005",
+      "scp-860"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-005": 44,
+      "scp-860": 35
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-006",
+      "scp-198"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-006": 62,
+      "scp-198": 23
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-006",
+      "scp-500"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-006": 62,
+      "scp-500": 51
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-012",
+      "scp-1230"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-012": 48,
+      "scp-1230": 52
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-017",
+      "scp-4999"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-017": 46,
+      "scp-4999": 71
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-017",
+      "scp-999"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-017": 46,
+      "scp-999": 40
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-018",
+      "scp-7004"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-018": 52,
+      "scp-7004": 36
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-018",
+      "scp-871"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-018": 52,
+      "scp-871": 28
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-023",
+      "scp-096"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-023": 67,
+      "scp-096": 58
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-023",
+      "scp-513"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-023": 67,
+      "scp-513": 34
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-028",
+      "scp-1123"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-028": 47,
+      "scp-1123": 32
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-035",
+      "scp-354"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-035": 72,
+      "scp-354": 69
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-040",
+      "scp-049"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-040": 69,
+      "scp-049": 121
+    },
+    "maximum_support": "B"
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-040",
+      "scp-882"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-040": 69,
+      "scp-882": 33
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-049",
+      "scp-500"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-049": 121,
+      "scp-500": 51
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-058",
+      "scp-8999"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-058": 60,
+      "scp-8999": 16
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-076",
+      "scp-8000"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-076": 81,
+      "scp-8000": 89
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-079",
+      "scp-140"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-079": 40,
+      "scp-140": 47
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-087",
+      "scp-1171"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-087": 54,
+      "scp-1171": 19
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-093",
+      "scp-1762"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-093": 39,
+      "scp-1762": 51
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-1000",
+      "scp-1171"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1000": 88,
+      "scp-1171": 19
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-1048",
+      "scp-2200"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1048": 48,
+      "scp-2200": 38
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-1048",
+      "scp-610"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1048": 48,
+      "scp-610": 65
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-106",
+      "scp-1295"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-106": 130,
+      "scp-1295": 21
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-106",
+      "scp-4999"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-106": 130,
+      "scp-4999": 71
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-1123",
+      "scp-458"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1123": 32,
+      "scp-458": 125
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-1471",
+      "scp-178"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1471": 36,
+      "scp-178": 26
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-1730",
+      "scp-2000"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1730": 192,
+      "scp-2000": 68
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-1879",
+      "scp-303"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1879": 17,
+      "scp-303": 36
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-1981",
+      "scp-300"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-1981": 67,
+      "scp-300": 27
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-2316",
+      "scp-294"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-2316": 80,
+      "scp-294": 116
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-2521",
+      "scp-5999"
+    ],
+    "decision": "defer",
+    "source_revisions": {
+      "scp-2521": 33,
+      "scp-5999": 84
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-2747",
+      "scp-4010"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-2747": 37,
+      "scp-4010": 25
+    },
+    "maximum_support": "B"
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-2935",
+      "scp-6000"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-2935": 93,
+      "scp-6000": 59
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-3000",
+      "scp-3001"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-3000": 104,
+      "scp-3001": 30
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-3001",
+      "scp-7179"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-3001": 30,
+      "scp-7179": 40
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-3301",
+      "scp-5555"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-3301": 109,
+      "scp-5555": 73
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-3999",
+      "scp-4010"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-3999": 119,
+      "scp-4010": 25
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-426",
+      "scp-701"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-426": 49,
+      "scp-701": 60
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-447",
+      "scp-8980"
+    ],
+    "decision": "revise",
+    "source_revisions": {
+      "scp-447": 28,
+      "scp-8980": 28
+    },
+    "maximum_support": "C"
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-4666",
+      "scp-966"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-4666": 42,
+      "scp-966": 69
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-5000",
+      "scp-5999"
+    ],
+    "decision": "defer",
+    "source_revisions": {
+      "scp-5000": 32,
+      "scp-5999": 84
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-5031",
+      "scp-529"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-5031": 77,
+      "scp-529": 32
+    }
+  },
+  {
+    "mode": "double-feature",
+    "pages": [
+      "scp-507",
+      "scp-529"
+    ],
+    "decision": "keep",
+    "source_revisions": {
+      "scp-507": 44,
+      "scp-529": 32
+    }
+  }
+]

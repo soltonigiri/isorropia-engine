@@ -26,48 +26,39 @@
     "the-sculpture"
   ],
   "themes": [
-    "temporal",
-    "metafiction",
-    "reality-bending"
+    "knowledge-as-danger",
+    "order-and-chaos",
+    "isolation",
+    "metafictional-creation"
   ],
   "effects": [
     {
-      "domain": "time",
-      "operation": "alter",
-      "target": "timeline",
-      "trigger": "event",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "space",
+      "operation": "transform",
+      "target": "global reality",
+      "trigger": "If enacted",
+      "persistence": "article-defined",
+      "constraints": [
+        "The act accounts for every documented reality shift and temporal change.",
+        "The full extent is unknown."
+      ],
       "evidence": {
         "revision": 25,
-        "section": "metadata.tags",
-        "locator": "tag:temporal"
+        "section": "Description",
+        "locator": "If enacted, SCP-4010 will cause major changes to global reality."
       }
     },
     {
-      "domain": "narrative",
-      "operation": "alter",
-      "target": "narrative",
-      "trigger": "representation",
-      "persistence": "persistent",
+      "domain": "information",
+      "operation": "disable",
+      "target": "Project Kronos results",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 25,
-        "section": "metadata.tags",
-        "locator": "tag:metafiction"
-      }
-    },
-    {
-      "domain": "reality",
-      "operation": "alter",
-      "target": "baseline_reality",
-      "trigger": "intent",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 25,
-        "section": "metadata.tags",
-        "locator": "tag:reality-bending"
+        "section": "Special Containment Procedures",
+        "locator": "Any information regarding the results of Project Kronos is to be destroyed by means deemed necessary."
       }
     }
   ],

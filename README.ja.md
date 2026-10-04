@@ -2,93 +2,43 @@
 
 [English](README.md)
 
-相性のよさそうなSCP記事を探すコマンドラインツールです。
+Isorropía Engineは、キュレーション済みのSCP EN記事から組み合わせを探す、決定論的なCLIです。次の3モードがあります。
 
-SCPを1つ指定すると、次の観点から組み合わせを提案します。
+- `cycle`：互いの効果が打ち消し、制限、均衡につながるか
+- `breach`：一方が他方の収容違反を悪化させるか
+- `double-feature`：続けて読む価値があるか
 
-- 互いを封じたり、均衡したりする可能性
-- 収容違反をさらに悪化させる可能性
-- 2本続けて読むと面白そうな記事
+結果は本文根拠に基づく仮説であり、SCPの公式設定ではありません。
 
-各候補にはスコア、信頼度、短い理由、記事内の根拠が付きます。提案はあくまで仮説であり、SCPの公式設定ではありません。
-
-<!-- ●●|●●●●●|●●|● -->
-
-## 試し方
+## 起動
 
 Node.js 24以降が必要です。
 
 ```sh
-git clone https://github.com/soltonigiri/isorropia-engine.git
-cd isorropia-engine
-npm install
+npm ci
 npm run build
 node dist/cli.js pair scp-3984 --mode cycle
 ```
 
-収録されているSCP記事は、次のコマンドで確認できます。
-
-```sh
-node dist/cli.js catalog
-```
-
-`--json`で同じ結果をJSONとして取得できます。
-
 主なコマンドは次のとおりです。
 
 ```sh
-node dist/cli.js pair scp-008 --mode breach --setting rough
-node dist/cli.js pair scp-4010 --mode double-feature
+node dist/cli.js catalog --query death
+node dist/cli.js pair scp-008 --mode breach --with scp-015
+node dist/cli.js pair scp-4010 --mode double-feature --explain
 node dist/cli.js pair scp-008 --mode breach --json
+node dist/cli.js validate
 ```
 
-## モード
+初期設定では、レビュー済みの候補を5件まで返します。`--setting rough`では、ルールから得た弱い手掛かりも確認できます。採点根拠と記事内の位置は`--explain`で表示します。`--json`で同じ結果をJSONとして取得できます。
 
-- `cycle`：互いを封じたり、均衡したりする組み合わせ
-- `breach`：収容違反をさらに悪化させる組み合わせ
-- `double-feature`：2本続けて読むと面白そうな組み合わせ
-
-## 結果の見方
-
-- **Score**：組み合わせそのものの強さ
-- **Confidence**：表示された説明を記事内の根拠がどの程度支えているか
-
-SCP-914設定で、表示する候補の厳しさを変えられます。初期設定は`1:1`です。
-
-- `rough`：弱い候補も表示
-- `coarse`、`1:1`、`fine`、`very-fine`：順に厳しくなる
-
-通常のターミナルでは整形された表示になり、パイプへの出力や狭い画面では簡素な表示になります。
-
-短縮した表示例：
-
-```text
-╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮
-┃  ISORROPÍA ENGINE                                                          ┃
-┃  CYCLE ANALYSIS                                           TARGET SCP-3984  ┃
-╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯
-
- 01  SCP-2935                                                        SCORE 100
-     CONFIDENCE  ██████████████████░░  0.90
-     ⇄  Universal death prevention and universal life termination form a
-        direct, article-specific containment-cycle hypothesis.
-     CONDITION   The SCP-2935 effect must cross into the reality affected by
-                 SCP-3984.
-     QUERY       rev.46 · Description › including humans, are unable to die
-     MATCH       rev.93 · Description › all life ... within SCP-2935 ended
-
-Containment hypothesis — not canonical.
-```
+データの範囲と採点は[DATASET.md](DATASET.md)、コードやデータの修正方法は[CONTRIBUTING.md](CONTRIBUTING.md)を参照してください。
 
 ## 開発
-
-テストと同梱データの検証をまとめて実行できます。
 
 ```sh
 npm run check
 ```
-
-初期データには、レビュー済みのSCP EN記事が100件含まれます。
 
 ## ライセンス
 

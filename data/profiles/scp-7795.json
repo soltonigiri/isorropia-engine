@@ -24,48 +24,61 @@
     "temporal"
   ],
   "themes": [
-    "reanimation",
-    "temporal",
-    "humanoid"
+    "cyclical-trauma",
+    "institutional-ethics",
+    "failed-rescue"
   ],
   "effects": [
     {
-      "domain": "death",
-      "operation": "reanimate",
-      "target": "corpse",
-      "trigger": "death",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 18,
-        "section": "metadata.tags",
-        "locator": "tag:reanimation"
-      }
-    },
-    {
-      "domain": "time",
-      "operation": "alter",
-      "target": "timeline",
-      "trigger": "event",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 18,
-        "section": "metadata.tags",
-        "locator": "tag:temporal"
-      }
-    },
-    {
       "domain": "biology",
-      "operation": "sustain",
-      "target": "human",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "operation": "restore",
+      "target": "SCP-7795",
+      "trigger": "SCP-7795's thirteenth birthday",
+      "persistence": "annual",
       "constraints": [],
       "evidence": {
         "revision": 18,
-        "section": "metadata.tags",
-        "locator": "tag:humanoid"
+        "section": "Description",
+        "locator": "SCP-7795-A is a phenomenon which invariably results in the death of SCP-7795 on its thirteenth birthday."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "suppress",
+      "target": "SCP-7795-A and SCP-7795's memories",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 18,
+        "section": "Description",
+        "locator": "All attempts to impede or mitigate SCP-7795-A have resulted in failure, and efforts to suppress SCP-7795's memories thereof have similarly proven futile."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "other",
+      "target": "SCP-7795",
+      "trigger": "occurrences of SCP-7795-A",
+      "persistence": "continues",
+      "constraints": [],
+      "evidence": {
+        "revision": 18,
+        "section": "Description",
+        "locator": "Despite this, SCP-7795's mental health continues to deteriorate as occurrences of SCP-7795-A become increasingly traumatic."
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "SCP-7795-A recurrence",
+      "trigger": "Incident 7795-20",
+      "persistence": "has yet to occur",
+      "constraints": [],
+      "evidence": {
+        "revision": 18,
+        "section": "Incident 7795-20",
+        "locator": "Through the use of a modified Scranton Reality Anchor, Mia is sent into a non-dimension, at which point the device is deactivated and destroyed."
       }
     }
   ],

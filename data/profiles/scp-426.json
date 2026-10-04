@@ -22,48 +22,53 @@
     "surrealism"
   ],
   "themes": [
-    "infohazard",
-    "mind-affecting",
-    "appliance"
+    "identity-loss",
+    "linguistic-contagion",
+    "mundane-object-horror"
   ],
   "effects": [
     {
       "domain": "information",
-      "operation": "propagate",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
+      "operation": "transform",
+      "target": "references to SCP-426",
+      "trigger": "when any human being mentions SCP-426",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 49,
-        "section": "metadata.tags",
-        "locator": "tag:infohazard"
+        "section": "Description",
+        "locator": "However, when any human being mentions me, they inadvertently refer to me in the first person."
       }
     },
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transform",
+      "target": "themselves",
+      "trigger": "When in my continuous presence for over two months",
+      "persistence": "article-defined",
+      "constraints": [
+        "Continuous presence for over two months.",
+        "Self-harm occurs unless the people are forcibly restrained."
+      ],
       "evidence": {
         "revision": 49,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
+        "section": "Description",
+        "locator": "When in my continuous presence for over two months, individuals begin to identify themselves as a toaster."
       }
     },
     {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "user_request",
-      "trigger": "operation",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "information",
+      "operation": "propagate",
+      "target": "SCP-426 remains",
+      "trigger": "if SCP-426 were destroyed",
+      "persistence": "article-defined",
+      "constraints": [
+        "The conclusion is theorized."
+      ],
       "evidence": {
         "revision": 49,
-        "section": "metadata.tags",
-        "locator": "tag:appliance"
+        "section": "Experiment Log 426-3",
+        "locator": "This suggests that, even if I were destroyed, my effects would still be inherent in my remains."
       }
     }
   ],

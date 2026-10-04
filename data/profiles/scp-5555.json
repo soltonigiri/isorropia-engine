@@ -52,48 +52,54 @@
     "vincent-anderson"
   ],
   "themes": [
-    "broken-god",
-    "cadaver",
-    "co-authored"
+    "power-as-play",
+    "institutional-recurrence",
+    "manipulation-and-moral-collapse",
+    "revenge"
   ],
   "effects": [
     {
-      "domain": "technology",
-      "operation": "construct",
-      "target": "mechanism",
-      "trigger": "assembly",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "other",
+      "operation": "transform",
+      "target": "a new instance",
+      "trigger": "a cataloged SCP willingly enters SCP-5555",
+      "persistence": "instantaneous manifestation of the new instance",
+      "constraints": [
+        "A cataloged SCP willingly enters SCP-5555"
+      ],
       "evidence": {
         "revision": 73,
-        "section": "metadata.tags",
-        "locator": "tag:broken-god"
+        "section": "Part 3 — Description",
+        "locator": "When a cataloged SCP --willingly-- enters SCP-5555, it will die."
       }
     },
     {
-      "domain": "death",
-      "operation": "preserve_after_death",
-      "target": "corpse",
-      "trigger": "death",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "SCP-5555",
+      "trigger": "completion of the turnover and re-establishment of the façade",
+      "persistence": "article-defined",
+      "constraints": [
+        "Completion of the turnover",
+        "Re-establishment of the façade"
+      ],
       "evidence": {
         "revision": 73,
-        "section": "metadata.tags",
-        "locator": "tag:cadaver"
+        "section": "Part 3 — Special Containment Procedures",
+        "locator": "Upon completion of the turnover and the re-establishment of the façade, SCP-5555 is to be sealed over with concrete."
       }
     },
     {
-      "domain": "narrative",
-      "operation": "combine",
-      "target": "narrative",
-      "trigger": "authorship",
-      "persistence": "persistent",
+      "domain": "biology",
+      "operation": "transform",
+      "target": "Everett Mann",
+      "trigger": "induction into the game",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 73,
-        "section": "metadata.tags",
-        "locator": "tag:co-authored"
+        "section": "Epilogue",
+        "locator": "I'm immortal now. Not long-lived, not slow to age. Un-aging."
       }
     }
   ],

@@ -38,34 +38,63 @@
     "the-engineer"
   ],
   "themes": [
-    "concept",
-    "ettra"
+    "agency-and-self-worth",
+    "luck-and-responsibility",
+    "bureaucracy-under-absurd-pressure"
   ],
   "effects": [
     {
-      "domain": "concept",
-      "operation": "alter",
-      "target": "concept",
-      "trigger": "cognition",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "other",
+      "operation": "transform",
+      "target": "the planet Earth",
+      "trigger": "article-defined-condition",
+      "persistence": "progressive",
+      "constraints": [
+        "The effect is not total."
+      ],
       "evidence": {
         "revision": 119,
-        "section": "metadata.tags",
-        "locator": "tag:concept"
+        "section": "Description",
+        "locator": "SCP-7000 is a progressive randomization of probability factors and anomalous fortuity on the planet Earth, and potentially beyond."
       }
     },
     {
-      "domain": "containment",
-      "operation": "analyze",
-      "target": "anomaly",
-      "trigger": "procedure",
-      "persistence": "transient",
+      "domain": "other",
+      "operation": "transform",
+      "target": "his actions",
+      "trigger": "article-defined-condition",
+      "persistence": "since an unknown time",
       "constraints": [],
       "evidence": {
         "revision": 119,
-        "section": "metadata.tags",
-        "locator": "tag:ettra"
+        "section": "Addendum 7000-1, Phenomenological Overview",
+        "locator": "I'm a negative probability sink."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "suppress",
+      "target": "the Theta-7000 operation",
+      "trigger": "his presence during the operation",
+      "persistence": "over the course of the operation",
+      "constraints": [],
+      "evidence": {
+        "revision": 119,
+        "section": "Aftermath",
+        "locator": "Analytics Department review of shoulder camera footage reveals the near-absence of anomalous probability factors in the atrium firefight, suggesting Dr. Wettle did in fact absorb all SCP-7000 effects over the course of the operation."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "restore",
+      "target": "probabilistic anomalies",
+      "trigger": "after Wettle's debriefing",
+      "persistence": "over the course of a day",
+      "constraints": [],
+      "evidence": {
+        "revision": 119,
+        "section": "Pending Updates",
+        "locator": "As Dr. Dan had predicted, following his debriefing of Dr. Wettle at Area-08-C, the SCP-7000 phenomenon gradually decreased in severity."
       }
     }
   ],

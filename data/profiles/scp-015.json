@@ -21,48 +21,34 @@
     "structure"
   ],
   "themes": [
-    "self-replicating",
-    "structure",
-    "autonomous"
+    "hostile-infrastructure",
+    "containment-through-restraint"
   ],
   "effects": [
     {
-      "domain": "replication",
-      "operation": "replicate",
-      "target": "self",
-      "trigger": "resource_access",
-      "persistence": "persistent",
+      "domain": "infrastructure",
+      "operation": "propagate",
+      "target": "nearby structures",
+      "trigger": "not under observation",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 55,
-        "section": "metadata.tags",
-        "locator": "tag:self-replicating"
+        "section": "Description",
+        "locator": "The pipes appear to grow when not under observation, attempting to connect to nearby structures via sewer systems and underground plumbing."
       }
     },
     {
-      "domain": "space",
-      "operation": "contain",
-      "target": "interior_space",
-      "trigger": "entry",
-      "persistence": "persistent",
+      "domain": "infrastructure",
+      "operation": "activate",
+      "target": "the subject",
+      "trigger": "acting violently, carrying tools, or attempting to damage or repair SCP-015",
+      "persistence": "until death or retreat",
       "constraints": [],
       "evidence": {
         "revision": 55,
-        "section": "metadata.tags",
-        "locator": "tag:structure"
-      }
-    },
-    {
-      "domain": "containment",
-      "operation": "move",
-      "target": "self",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 55,
-        "section": "metadata.tags",
-        "locator": "tag:autonomous"
+        "section": "Description",
+        "locator": "Any personnel acting violently, carrying tools, or attempting to damage or repair SCP-015 in any way, will trigger a reaction."
       }
     }
   ],

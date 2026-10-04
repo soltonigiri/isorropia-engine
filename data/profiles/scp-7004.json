@@ -39,48 +39,163 @@
     "uncontained"
   ],
   "themes": [
-    "apocalyptic",
-    "alive",
-    "body-horror"
+    "information-contagion",
+    "institutional-collapse",
+    "catastrophic-misunderstanding",
+    "institutional-abandonment",
+    "duty-under-catastrophe",
+    "trauma-and-suppression",
+    "uncertain-personhood",
+    "misrecognition",
+    "survival",
+    "escalating-dread",
+    "personhood",
+    "guilt",
+    "mercy",
+    "second-chances"
   ],
   "effects": [
     {
-      "domain": "civilization",
-      "operation": "destroy",
-      "target": "civilization",
-      "trigger": "event",
-      "persistence": "persistent",
+      "domain": "information",
+      "operation": "transform",
+      "target": "the subject",
+      "trigger": "comprehension",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:apocalyptic"
+        "section": "Description",
+        "locator": "When a subject comprehends SCP-7004, they are immediately subject to a SCP-7004 BLOSSOM event."
       }
     },
     {
-      "domain": "biology",
-      "operation": "sustain",
-      "target": "organism",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "domain": "information",
+      "operation": "propagate",
+      "target": "listeners",
+      "trigger": "PETAL emergence",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:alive"
+        "section": "Description",
+        "locator": "The sudden onset of loud screaming from each of the emerged individuals (henceforth referred to as SCP-7004-1 PETAL instances), usually containing information that serves as vectors for SCP-7004 transmission6."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "viewers",
+      "trigger": "viewing the videos",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "Discovery Log",
+        "locator": "Containing SCP-7004-1 PETAL vocalizations, these videos provided potent SCP-7004 vectors, causing additional BLOSSOM events that would subsequently add to the cycle of transmission."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "SCP-7004 spread",
+      "trigger": "temporary restriction of the internet",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "Discovery Log",
+        "locator": "The leadership of both organizations then directed their efforts to the temporary restriction of the internet in several countries, which only served to fuel speculation regarding SCP-7004."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "suppress",
+      "target": "infohazards",
+      "trigger": "the application of the Sarkic practice of “brain twisting”",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "MTF Mu-7 mission",
+        "locator": "When compared to other mobile task forces, “brain twisting” allows the user to unconsciously resist infohazards with nearly 99 percent efficiency, allowing continued operation without the use of specialized equipment."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "suppress",
+      "target": "her memory and pain response",
+      "trigger": "Mullins begins to think about what SCP-7004-1 instances sound like",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "Exploration Log 7004.4",
+        "locator": "Y-yeah. Pain’s stopped. Can’t remember what I said, now."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "disable",
+      "target": "Mullins",
+      "trigger": "a male voice is heard on the radio",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "Exploration Log 7004.4",
+        "locator": "Immediately, Mullins instinctively begins to groan with pain."
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "suppress",
+      "target": "Mullins",
+      "trigger": "Navarra ushers Mullins into the driver’s seat and closes the door",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "Exploration Log 7004.4",
+        "locator": "At once, the screaming becomes muffled, allowing Mullins to come to her senses."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "transform",
+      "target": "the signpost forest and cities",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "Exploration Log 7004.3",
+        "locator": "They’re… building. No materials, not dragging anything up, just… building and building and building."
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "disable",
+      "target": "Mullins and Navarra",
+      "trigger": "hands slam into the glass",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 36,
+        "section": "Exploration Log 7004.6",
+        "locator": "As more hands hit the glass, the windshield breaks, causing the volume of the PETAL’s voices to increase into a deafening, omnipresent roar."
       }
     },
     {
       "domain": "biology",
       "operation": "transform",
-      "target": "body",
-      "trigger": "exposure",
-      "persistence": "persistent",
+      "target": "a newly emerged PETAL instance",
+      "trigger": "Mullins begins to scream in agony",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:body-horror"
+        "section": "Displayed Feed",
+        "locator": "[The PETAL instance’s voice is identical to that of Cassandra Mullins.]"
       }
     }
   ],

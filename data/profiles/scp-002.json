@@ -24,48 +24,51 @@
     "transfiguration"
   ],
   "themes": [
-    "structure",
-    "transfiguration",
-    "alive"
+    "containment-through-ritualized-procedure",
+    "bodily-transformation",
+    "institutional-secrecy"
   ],
   "effects": [
     {
-      "domain": "space",
-      "operation": "contain",
-      "target": "interior_space",
-      "trigger": "entry",
-      "persistence": "persistent",
+      "domain": "infrastructure",
+      "operation": "activate",
+      "target": "recharging mode",
+      "trigger": "article-defined-condition",
+      "persistence": "continuous",
       "constraints": [],
       "evidence": {
         "revision": 78,
-        "section": "metadata.tags",
-        "locator": "tag:structure"
+        "section": "Special Containment Procedures",
+        "locator": "SCP-002 is to remain connected to a suitable power supply at all times, to keep it in what appears to be a recharging mode."
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "transform",
+      "target": "personnel near SCP-002",
+      "trigger": "within 20 meters of SCP-002 or its containment area",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 78,
+        "section": "Special Containment Procedures",
+        "locator": "Personnel should maintain physical contact with one another at all times to confirm there is another person present, as perception may be dulled, skewed, or influenced by proximity to the object."
       }
     },
     {
       "domain": "biology",
       "operation": "transform",
-      "target": "body",
-      "trigger": "exposure",
-      "persistence": "persistent",
-      "constraints": [],
+      "target": "furnishings",
+      "trigger": "introduction of living humans",
+      "persistence": "article-defined",
+      "constraints": [
+        "living humans are introduced",
+        "lab animals and cadavers fail to produce any effect"
+      ],
       "evidence": {
         "revision": 78,
-        "section": "metadata.tags",
-        "locator": "tag:transfiguration"
-      }
-    },
-    {
-      "domain": "biology",
-      "operation": "sustain",
-      "target": "organism",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 78,
-        "section": "metadata.tags",
-        "locator": "tag:alive"
+        "section": "Reference",
+        "locator": "Whatever process the subject uses to convert organic matter into furnishings is apparently only facilitated by the introduction of living humans."
       }
     }
   ],

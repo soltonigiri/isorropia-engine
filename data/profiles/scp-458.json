@@ -23,48 +23,50 @@
     "telepathic"
   ],
   "themes": [
-    "food",
-    "ectoentropic",
-    "telepathic"
+    "benevolent-anomaly",
+    "institutional-normalcy",
+    "appetite"
   ],
   "effects": [
     {
-      "domain": "biology",
-      "operation": "nourish",
-      "target": "consumer",
-      "trigger": "consumption",
-      "persistence": "transient",
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "the holder's subconsciously preferred choice of pizza",
+      "trigger": "when it comes into contact with human hands",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 125,
-        "section": "metadata.tags",
-        "locator": "tag:food"
+        "section": "Description",
+        "locator": "What makes SCP-458 an oddity is that, while appearing to be an ordinary pizza box, when it comes into contact with human hands, it instantaneously replicates within it the holder's subconsciously preferred choice of pizza, down to the favorite sauce, cheese, crust, and topping."
       }
     },
     {
-      "domain": "energy",
-      "operation": "generate",
-      "target": "energy",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "other",
+      "operation": "other",
+      "target": "non-pizza items",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "Toppings must be edible by normal human standards."
+      ],
       "evidence": {
         "revision": 125,
-        "section": "metadata.tags",
-        "locator": "tag:ectoentropic"
+        "section": "Description",
+        "locator": "There seems to be no limit to its ability, except that it cannot make anything but pizza, and its toppings must be edible by normal human standards (see Addendum 1a)."
       }
     },
     {
       "domain": "cognition",
-      "operation": "communicate",
-      "target": "mind",
-      "trigger": "proximity",
-      "persistence": "transient",
+      "operation": "other",
+      "target": "personnel",
+      "trigger": "After its open usage has been allowed",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 125,
-        "section": "metadata.tags",
-        "locator": "tag:telepathic"
+        "section": "Description",
+        "locator": "After its open usage has been allowed, personnel morale has shown to have sharply increased."
       }
     }
   ],

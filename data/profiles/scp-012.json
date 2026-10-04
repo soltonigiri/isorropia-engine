@@ -23,48 +23,35 @@
     "visual"
   ],
   "themes": [
-    "cognitohazard",
-    "musical",
-    "visual"
+    "creative-compulsion",
+    "self-destruction",
+    "the-impossibility-of-completion"
   ],
   "effects": [
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
+      "operation": "transform",
+      "target": "the piece",
+      "trigger": "allowed access to the score",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 48,
-        "section": "metadata.tags",
-        "locator": "tag:cognitohazard"
+        "section": "Description",
+        "locator": "In every case, the subjects mutilated themselves in order to use their own blood to finish the piece, resulting in subsequent symptoms of psychosis and massive trauma."
       }
     },
     {
-      "domain": "perception",
-      "operation": "auditory_trigger",
-      "target": "listener",
-      "trigger": "audition",
-      "persistence": "transient",
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "themselves",
+      "trigger": "managed to finish a section of the piece",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 48,
-        "section": "metadata.tags",
-        "locator": "tag:musical"
-      }
-    },
-    {
-      "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 48,
-        "section": "metadata.tags",
-        "locator": "tag:visual"
+        "section": "Description",
+        "locator": "Those subjects who managed to finish a section of the piece immediately committed suicide, declaring the piece to be \"impossible to complete\"."
       }
     }
   ],

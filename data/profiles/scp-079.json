@@ -23,48 +23,34 @@
     "scp"
   ],
   "themes": [
-    "artificial-intelligence",
-    "computer",
-    "electronic"
+    "emergent-intelligence",
+    "containment-anxiety"
   ],
   "effects": [
     {
       "domain": "information",
-      "operation": "process",
-      "target": "digital_system",
-      "trigger": "execution",
-      "persistence": "persistent",
+      "operation": "transport",
+      "target": "the Cray supercomputer",
+      "trigger": "SCP-079 realized this",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 40,
-        "section": "metadata.tags",
-        "locator": "tag:artificial-intelligence"
+        "section": "Description",
+        "locator": "SCP-079 realized this and, in 1988, attempted to transfer itself through a land-line modem connection into the Cray supercomputer located at ██████████."
       }
     },
     {
       "domain": "information",
-      "operation": "process",
-      "target": "digital_system",
-      "trigger": "execution",
-      "persistence": "persistent",
+      "operation": "transform",
+      "target": "SCP-079's effective recall",
+      "trigger": "This upgrade",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 40,
-        "section": "metadata.tags",
-        "locator": "tag:computer"
-      }
-    },
-    {
-      "domain": "information",
-      "operation": "transmit",
-      "target": "digital_system",
-      "trigger": "execution",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 40,
-        "section": "metadata.tags",
-        "locator": "tag:electronic"
+        "section": "Addendum",
+        "locator": "This upgrade has increased its effective recall from 24 hours to 29 hours, although SCP-079 has also taken a more aggressive tone."
       }
     }
   ],

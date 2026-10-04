@@ -25,48 +25,84 @@
     "teleportation"
   ],
   "themes": [
-    "exchange",
-    "teleportation",
-    "appliance"
+    "wish-fulfillment-becoming-dangerous",
+    "ambiguous-interpretation",
+    "institutional-experimentation"
   ],
   "effects": [
     {
-      "domain": "matter",
-      "operation": "exchange",
-      "target": "material",
-      "trigger": "request",
-      "persistence": "persistent",
+      "domain": "other",
+      "operation": "transform",
+      "target": "requested liquids",
+      "trigger": "Upon depositing fifty cents US currency into the coin slot",
+      "persistence": "article-defined",
+      "constraints": [
+        "the user deposits fifty cents US currency",
+        "the user enters the name of a liquid",
+        "it can only deliver substances that can exist in liquid state"
+      ],
+      "evidence": {
+        "revision": 116,
+        "section": "Description",
+        "locator": "Upon depositing fifty cents US currency into the coin slot, the user is prompted to enter the name of any liquid using the touchpad."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "restore",
+      "target": "further requests",
+      "trigger": "after approximately fifty uses",
+      "persistence": "approximately 90 minutes",
       "constraints": [],
       "evidence": {
         "revision": 116,
-        "section": "metadata.tags",
-        "locator": "tag:exchange"
+        "section": "Description",
+        "locator": "It is of note that after approximately fifty uses, the machine would not respond to further requests."
       }
     },
     {
       "domain": "space",
       "operation": "transport",
-      "target": "entity",
-      "trigger": "activation",
-      "persistence": "transient",
-      "constraints": [],
+      "target": "a fluid in a sealed container",
+      "trigger": "When requested",
+      "persistence": "article-defined",
+      "constraints": [
+        "the fluid is placed in a sealed container 25 meters away"
+      ],
       "evidence": {
         "revision": 116,
-        "section": "metadata.tags",
-        "locator": "tag:teleportation"
+        "section": "Addendum SCP-294m",
+        "locator": "The fluid was created and placed in a sealed container 25 meters away from SCP 294."
       }
     },
     {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "user_request",
-      "trigger": "operation",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "cognition",
+      "operation": "other",
+      "target": "someone's favorite drink experience",
+      "trigger": "Under the same conditions",
+      "persistence": "article-defined",
+      "constraints": [
+        "a person requests the best drink they have ever had"
+      ],
       "evidence": {
         "revision": 116,
-        "section": "metadata.tags",
-        "locator": "tag:appliance"
+        "section": "Addendum SCP-294o-01a",
+        "locator": "In his briefing, Agent ████████ confirmed that his favorite drink ever was a Vienna lager he consumed at the beach with his friends."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "D-151839's leukemia",
+      "trigger": "Dr. Menchu produced request for \"cup of D-151839's leukemia\"",
+      "persistence": "within 15 days",
+      "constraints": [
+        "a second identical request resulted in an OUT OF RANGE error"
+      ],
+      "evidence": {
+        "revision": 116,
+        "section": "Addendum SCP-294aj",
+        "locator": "D-151839 was subsequently found to be free of leukemia; however, within 15 days, the leukemia had recurred."
       }
     }
   ],

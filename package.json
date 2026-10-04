@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Explainable SCP anomaly pairing for containment cycles, breaches, and double features",
   "type": "module",
-  "main": "dist/index.js",
+  "exports": {
+    "./package.json": "./package.json"
+  },
   "bin": {
     "isorropia": "dist/cli.js"
   },
@@ -11,6 +13,9 @@
     "dist",
     "data",
     "README.md",
+    "README.ja.md",
+    "DATASET.md",
+    "CONTRIBUTING.md",
     "LICENSE",
     "LICENSE.content.md"
   ],
@@ -22,6 +27,8 @@
     "artifacts": "npm run build --silent && node dist/artifacts-cli.js",
     "attribution": "npm run build --silent && node dist/attribution-cli.js",
     "maintenance": "npm run build --silent && node dist/maintenance-cli.js",
+    "report": "npm run build --silent && node dist/report-cli.js",
+    "evaluate": "npm run build --silent && node dist/evaluation-cli.js",
     "check": "npm run test && npm run validate",
     "prepack": "npm run check"
   },

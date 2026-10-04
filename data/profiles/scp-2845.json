@@ -31,48 +31,79 @@
     "transfiguration"
   ],
   "themes": [
-    "deity",
-    "ectoentropic",
-    "indestructible"
+    "ritualized-containment",
+    "bureaucratic-horror",
+    "cosmic-inevitability"
   ],
   "effects": [
     {
-      "domain": "belief",
-      "operation": "influence",
-      "target": "worshipper",
-      "trigger": "ritual",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "other",
+      "operation": "other",
+      "target": "ritual castration of a man and the cannibalization of an infant",
+      "trigger": "article-defined-condition",
+      "persistence": "each containment cycle",
+      "constraints": [
+        "The statement is made by a containment consultant."
+      ],
       "evidence": {
         "revision": 45,
-        "section": "metadata.tags",
-        "locator": "tag:deity"
+        "section": "Statement from containment consultant",
+        "locator": "The briefing you have been provided is correct: the containment procedure requires the ritual castration of a man and the cannibalization of an infant."
       }
     },
     {
-      "domain": "energy",
-      "operation": "generate",
-      "target": "energy",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "other",
+      "operation": "disable",
+      "target": "a ritual of this sort",
+      "trigger": "removals or substitutions",
+      "persistence": "article-defined",
+      "constraints": [
+        "A ritual has been set in place.",
+        "The statement is made by a containment consultant."
+      ],
       "evidence": {
         "revision": 45,
-        "section": "metadata.tags",
-        "locator": "tag:ectoentropic"
+        "section": "Statement from containment consultant",
+        "locator": "But, this means that once a ritual of this sort has been set in place, there cannot be any removals or substitutions."
       }
     },
     {
-      "domain": "durability",
-      "operation": "resist",
-      "target": "destruction",
-      "trigger": "damage",
-      "persistence": "persistent",
+      "domain": "other",
+      "operation": "transform",
+      "target": "matter",
+      "trigger": "article-defined-condition",
+      "persistence": "Transmuted matter remains stable regardless of external conditions.",
       "constraints": [],
       "evidence": {
         "revision": 45,
-        "section": "metadata.tags",
-        "locator": "tag:indestructible"
+        "section": "Description",
+        "locator": "SCP-2845 is capable of instantaneous transmutation and reconstruction of matter."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "transform",
+      "target": "attackers or obstacles",
+      "trigger": "attackers or obstacles",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 45,
+        "section": "Description",
+        "locator": "SCP-2845 will use directed transmutations against attackers or obstacles."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "organisms",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 45,
+        "section": "Description",
+        "locator": "SCP-2845-1 designates organisms that have been modified by SCP-2845."
       }
     }
   ],

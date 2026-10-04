@@ -24,48 +24,66 @@
     "transfiguration"
   ],
   "themes": [
-    "contagion",
-    "reanimation",
-    "transfiguration"
+    "pandemic-catastrophe",
+    "biohazard-containment",
+    "dehumanization"
   ],
   "effects": [
     {
       "domain": "biology",
-      "operation": "infect",
-      "target": "organism",
+      "operation": "propagate",
+      "target": "exposed hosts",
       "trigger": "exposure",
-      "persistence": "persistent",
-      "constraints": [],
+      "persistence": "article-defined",
+      "constraints": [
+        "not airborne or waterborne"
+      ],
       "evidence": {
         "revision": 66,
-        "section": "metadata.tags",
-        "locator": "tag:contagion"
+        "section": "Description",
+        "locator": "Transmission through exposed mucous membranes and all bodily fluids."
       }
     },
     {
-      "domain": "death",
-      "operation": "reanimate",
-      "target": "corpse",
-      "trigger": "death",
-      "persistence": "persistent",
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "cognitive abilities",
+      "trigger": "infection with SCP-008",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 66,
-        "section": "metadata.tags",
-        "locator": "tag:reanimation"
+        "section": "Description",
+        "locator": "Conditioned behavior, motor controls, and instinctive behavioral mechanisms are damaged, and cognitive abilities are severely retarded and erratic."
       }
     },
     {
       "domain": "biology",
-      "operation": "transform",
-      "target": "body",
-      "trigger": "exposure",
-      "persistence": "persistent",
+      "operation": "other",
+      "target": "living humans",
+      "trigger": "physical contact is made",
+      "persistence": "article-defined",
+      "constraints": [
+        "the subject moves toward cues it associates with living humans",
+        "physical contact is made"
+      ],
+      "evidence": {
+        "revision": 66,
+        "section": "Description",
+        "locator": "Subject will attempt to ingest living humans if physical contact is made."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "restore",
+      "target": "SCP-008",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 66,
-        "section": "metadata.tags",
-        "locator": "tag:transfiguration"
+        "section": "Addendum 008-1",
+        "locator": "SCP-500 has been found to be able to completely cure SCP-008 even in the advanced stages of the disease."
       }
     }
   ],

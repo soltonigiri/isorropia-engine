@@ -1,0 +1,32 @@
+name: Pairing report
+description: Report a pairing that should be accepted, rejected, or explained differently.
+title: "pair: "
+body:
+  - type: input
+    id: pages
+    attributes:
+      label: SCP pair
+      placeholder: scp-000 / scp-000
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options: [cycle, breach, double-feature]
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Current result
+      description: Include the command and relevant output.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Article evidence
+      description: Give revision IDs, sections, and source passages for both articles.
+    validations:
+      required: true
