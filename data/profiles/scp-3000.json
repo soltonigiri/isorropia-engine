@@ -37,48 +37,72 @@
     "visual"
   ],
   "themes": [
-    "cognitohazard",
-    "deity",
-    "aquatic"
+    "erosion-of-identity",
+    "institutional-complicity",
+    "mortality",
+    "cosmic-dread"
   ],
   "effects": [
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transform",
+      "target": "direct observers and individuals within an uncertain distance",
+      "trigger": "direct observation of SCP-3000",
+      "persistence": "article-defined",
+      "constraints": [
+        "the proximity distance is uncertain"
+      ],
       "evidence": {
         "revision": 104,
-        "section": "metadata.tags",
-        "locator": "tag:cognitohazard"
-      }
-    },
-    {
-      "domain": "belief",
-      "operation": "influence",
-      "target": "worshipper",
-      "trigger": "ritual",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 104,
-        "section": "metadata.tags",
-        "locator": "tag:deity"
+        "section": "Description",
+        "locator": "SCP-3000 is a Class VIII cognitohazardous entity; direct observation of SCP-3000 may cause severe mental alterations in viewers."
       }
     },
     {
       "domain": "biology",
-      "operation": "sustain",
-      "target": "aquatic_organism",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
+      "operation": "transform",
+      "target": "Y-909",
+      "trigger": "after the total consumption of prey",
+      "persistence": "during its digestive period",
+      "constraints": [
+        "SCP-3000 consumes prey"
+      ],
       "evidence": {
         "revision": 104,
-        "section": "metadata.tags",
-        "locator": "tag:aquatic"
+        "section": "Atzak Protocol",
+        "locator": "At a point after the total consumption of prey, SCP-3000 will begin to excrete Y-909 near the foremost section of its body."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "restore",
+      "target": "modern Foundation amnestic application",
+      "trigger": "amnestics utilizing Y-909",
+      "persistence": "long-term",
+      "constraints": [
+        "Y-909 is refined and included in amnestics",
+        "a synthetic version of the compound has not yet been discovered"
+      ],
+      "evidence": {
+        "revision": 104,
+        "section": "Atzak Protocol",
+        "locator": "The inclusion of the Y-909 compound has shown a marked increase in the stability and long-term effectiveness of the aforementioned amnestics."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "further evaluation",
+      "trigger": "There is currently no known cure for exposure to SCP-3000",
+      "persistence": "indefinitely",
+      "constraints": [
+        "an individual is affected by SCP-3000",
+        "there is no known cure"
+      ],
+      "evidence": {
+        "revision": 104,
+        "section": "Special Containment Procedures",
+        "locator": "There is currently no known cure for exposure to SCP-3000; as such, affected individuals should be contained and quarantined for further evaluation."
       }
     }
   ],

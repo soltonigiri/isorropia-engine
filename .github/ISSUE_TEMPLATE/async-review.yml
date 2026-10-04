@@ -1,0 +1,23 @@
+name: Review request
+description: Request a source-based review that can be completed in the issue.
+title: "review: "
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Review scope
+      description: Identify the files, profiles, or pairings in scope.
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision needed
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and links
+    validations:
+      required: true

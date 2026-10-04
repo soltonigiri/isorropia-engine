@@ -20,48 +20,49 @@
     "visual"
   ],
   "themes": [
-    "visual",
-    "intangible",
-    "clothing"
+    "perception-and-danger",
+    "containment-through-restraint"
   ],
   "effects": [
     {
       "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
+      "operation": "activate",
+      "target": "large bipedal entities",
+      "trigger": "When worn",
+      "persistence": "while worn; no lasting effects reported after exposure",
       "constraints": [],
       "evidence": {
         "revision": 26,
-        "section": "metadata.tags",
-        "locator": "tag:visual"
+        "section": "Description",
+        "locator": "When worn, the wearer begins perceiving large bipedal entities in addition to its ordinary surroundings."
       }
     },
     {
-      "domain": "matter",
-      "operation": "phase",
-      "target": "material",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "transform",
+      "target": "persons involved",
+      "trigger": "Any attempt to directly interact with the entities",
+      "persistence": "continues until the wearer expires",
+      "constraints": [
+        "The entities are perceived through SCP-178."
+      ],
       "evidence": {
         "revision": 26,
-        "section": "metadata.tags",
-        "locator": "tag:intangible"
+        "section": "Description",
+        "locator": "Any attempt by the wearer or any other personnel (see Incident Report #178-14-Alpha) to directly interact with the entities results in severe lacerations suddenly appearing on persons involved."
       }
     },
     {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "wearer",
-      "trigger": "wearing",
-      "persistence": "transient",
+      "domain": "infrastructure",
+      "operation": "transport",
+      "target": "testing area personnel",
+      "trigger": "Following Incident #178-14-Alpha",
+      "persistence": "during experimentation",
       "constraints": [],
       "evidence": {
         "revision": 26,
-        "section": "metadata.tags",
-        "locator": "tag:clothing"
+        "section": "Special Containment Procedures",
+        "locator": "Following Incident #178-14-Alpha all tests are to be monitored remotely and the presence of all personnel apart from test subjects in the testing area during experimentation is expressly prohibited."
       }
     }
   ],

@@ -26,48 +26,50 @@
     "scp"
   ],
   "themes": [
-    "antimemetic",
-    "memory-affecting",
-    "infohazard"
+    "absence",
+    "epistemic-uncertainty",
+    "institutional-helplessness"
   ],
   "effects": [
     {
       "domain": "information",
-      "operation": "suppress",
-      "target": "knowledge",
-      "trigger": "cognition",
-      "persistence": "persistent",
-      "constraints": [],
+      "operation": "disable",
+      "target": "human memory",
+      "trigger": "soon after such an observation",
+      "persistence": "article-defined",
+      "constraints": [
+        "observers can take mental or written notes, sketches, photographs, and recordings during observation"
+      ],
       "evidence": {
         "revision": 51,
-        "section": "metadata.tags",
-        "locator": "tag:antimemetic"
+        "section": "Description",
+        "locator": "However, information about SCP-055's physical appearance \"leaks\" out of a human mind soon after such an observation."
       }
     },
     {
-      "domain": "memory",
-      "operation": "alter",
-      "target": "memory",
-      "trigger": "exposure",
-      "persistence": "variable",
+      "domain": "cognition",
+      "operation": "disable",
+      "target": "their awareness",
+      "trigger": "minutes after rediscovery",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 51,
-        "section": "metadata.tags",
-        "locator": "tag:memory-affecting"
+        "section": "Description",
+        "locator": "This state of concern lasts minutes at most, before the matter is simply forgotten about."
       }
     },
     {
       "domain": "information",
-      "operation": "propagate",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
+      "operation": "restore",
+      "target": "knowledge of SCP-055's existence",
+      "trigger": "article-defined-condition",
+      "persistence": "repeatedly",
       "constraints": [],
       "evidence": {
         "revision": 51,
-        "section": "metadata.tags",
-        "locator": "tag:infohazard"
+        "section": "Document #055-2: Report of Dr. John Marachek",
+        "locator": "It appears to be possible to remember what SCP-055 is not (negations of fact), and to repeatedly deduce its existence from these memories."
       }
     }
   ],

@@ -31,48 +31,51 @@
     "surrealism"
   ],
   "themes": [
-    "concept",
-    "metafiction",
-    "k-class-scenario"
+    "order-versus-chaos",
+    "endurance",
+    "self-confrontation",
+    "authorship"
   ],
   "effects": [
     {
-      "domain": "concept",
-      "operation": "alter",
-      "target": "concept",
-      "trigger": "cognition",
-      "persistence": "persistent",
+      "domain": "space",
+      "operation": "other",
+      "target": "normal reality",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 119,
-        "section": "metadata.tags",
-        "locator": "tag:concept"
+        "section": "Special Containment Procedures",
+        "locator": "SCP-3999 cannot be contained at the present moment, and currently poses a ZK Class End-of-reality scenario."
       }
     },
     {
-      "domain": "narrative",
-      "operation": "alter",
-      "target": "narrative",
-      "trigger": "representation",
-      "persistence": "persistent",
+      "domain": "other",
+      "operation": "other",
+      "target": "SCP-3999",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 119,
-        "section": "metadata.tags",
-        "locator": "tag:metafiction"
+        "section": "Special Containment Procedures",
+        "locator": "Researcher Talloran is deeply connected with SCP-3999."
       }
     },
     {
-      "domain": "civilization",
-      "operation": "destabilize",
-      "target": "baseline_reality",
-      "trigger": "event",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "space",
+      "operation": "restore",
+      "target": "CK-class reality-restructuring event or ZK-class end-of-reality event",
+      "trigger": "Researcher Talloran's termination of SCP-3999",
+      "persistence": "article-defined",
+      "constraints": [
+        "The account is presented as a determination based on recovered documentation."
+      ],
       "evidence": {
         "revision": 119,
-        "section": "metadata.tags",
-        "locator": "tag:k-class-scenario"
+        "section": "Recovered documentation",
+        "locator": "From it, it has been determined that Researcher Talloran was assigned to SCP-3999, SCP-3999 had significant reality warping properties, it breached containment at some point and caused either a CK-class reality-restructuring event or a ZK-class end-of-reality event, and it was successfully terminated by Researcher Talloran at the cost of his own life, reversing said event."
       }
     }
   ],

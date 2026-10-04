@@ -30,48 +30,48 @@
     "uncontained"
   ],
   "themes": [
-    "antimemetic",
-    "cognitohazard",
-    "concept"
+    "information-containment",
+    "memory-loss",
+    "withheld-knowledge"
   ],
   "effects": [
     {
       "domain": "information",
       "operation": "suppress",
-      "target": "knowledge",
-      "trigger": "cognition",
-      "persistence": "persistent",
+      "target": "containment unit",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 47,
-        "section": "metadata.tags",
-        "locator": "tag:antimemetic"
+        "section": "Special Containment Procedures",
+        "locator": "Under no circumstances may any coherent information be allowed to leave the containment unit."
       }
     },
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
+      "operation": "suppress",
+      "target": "occupant's memory",
+      "trigger": "during the exit cycle",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 47,
-        "section": "metadata.tags",
-        "locator": "tag:cognitohazard"
+        "section": "Special Containment Procedures",
+        "locator": "During the exit cycle, a purge system rigged to the airlock flushes the occupant's memory by flooding the airlock with amnestic gas for three minutes."
       }
     },
     {
-      "domain": "concept",
-      "operation": "alter",
-      "target": "concept",
-      "trigger": "cognition",
-      "persistence": "persistent",
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "containment unit",
+      "trigger": "entry attempt",
+      "persistence": "until the current person exits",
       "constraints": [],
       "evidence": {
         "revision": 47,
-        "section": "metadata.tags",
-        "locator": "tag:concept"
+        "section": "Special Containment Procedures",
+        "locator": "This airlock is programmed to allow only one person to enter the containment unit at a time, and to remain locked until this person exits before allowing another person to enter."
       }
     }
   ],

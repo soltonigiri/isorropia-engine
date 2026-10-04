@@ -26,48 +26,36 @@
     "scp"
   ],
   "themes": [
-    "memetic",
-    "performance",
-    "mind-affecting"
+    "art-as-contagion",
+    "loss-of-control"
   ],
   "effects": [
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
+      "operation": "propagate",
+      "target": "observers and participants",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 60,
-        "section": "metadata.tags",
-        "locator": "tag:memetic"
+        "section": "Description",
+        "locator": "Performances of the play are associated with sudden psychotic and suicidal behavior among both observers and participants, as well as the manifestation of a mysterious figure, classified as SCP-701-1."
       }
     },
     {
-      "domain": "cognition",
-      "operation": "influence",
-      "target": "audience",
-      "trigger": "performance",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "information",
+      "operation": "propagate",
+      "target": "memetic virus",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "The means of transmission are unknown."
+      ],
       "evidence": {
         "revision": 60,
-        "section": "metadata.tags",
-        "locator": "tag:performance"
-      }
-    },
-    {
-      "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 60,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
+        "section": "Description",
+        "locator": "In short, SCP-701 is a self-evolving memetic virus, transmitted through unknown means through the text of the play."
       }
     }
   ],

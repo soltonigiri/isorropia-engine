@@ -29,48 +29,57 @@
     "scp"
   ],
   "themes": [
-    "extradimensional",
-    "autonomous",
-    "artifact"
+    "regret",
+    "threshold-crossing",
+    "procedural-discovery"
   ],
   "effects": [
     {
+      "domain": "perception",
+      "operation": "transform",
+      "target": "its coloration",
+      "trigger": "held by a living individual",
+      "persistence": "article-defined",
+      "constraints": [
+        "a living individual holds SCP-093",
+        "the link between colors and holder traits is still being researched"
+      ],
+      "evidence": {
+        "revision": 39,
+        "section": "Description",
+        "locator": "SCP-093 will change hue when held by a living individual."
+      }
+    },
+    {
       "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transport",
+      "target": "nearest mirror-like surface",
+      "trigger": "removed from a mirror and not held by a person",
+      "persistence": "article-defined",
+      "constraints": [
+        "SCP-093 is removed from a mirror",
+        "SCP-093 is not held by a person"
+      ],
       "evidence": {
         "revision": 39,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "section": "Description",
+        "locator": "If SCP-093 is removed from a mirror and not held by a person, it will seek out the nearest mirror-like surface."
       }
     },
     {
-      "domain": "containment",
-      "operation": "move",
-      "target": "self",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "space",
+      "operation": "transport",
+      "target": "a mirror",
+      "trigger": "the holder places SCP-093 against a mirror",
+      "persistence": "article-defined",
+      "constraints": [
+        "a person holds SCP-093",
+        "SCP-093 is placed against a mirror"
+      ],
       "evidence": {
         "revision": 39,
-        "section": "metadata.tags",
-        "locator": "tag:autonomous"
-      }
-    },
-    {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "user",
-      "trigger": "contact",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 39,
-        "section": "metadata.tags",
-        "locator": "tag:artifact"
+        "section": "SCP-093-T1: Containment Test",
+        "locator": "As a result of the behavior of the researchers, it was discovered that a person holding SCP-093 and placing it against a mirror will in fact move into the mirror."
       }
     }
   ],

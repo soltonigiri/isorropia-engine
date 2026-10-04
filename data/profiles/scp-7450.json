@@ -37,48 +37,36 @@
     "weapon"
   ],
   "themes": [
-    "cognitohazard",
-    "compulsion",
-    "auditory"
+    "apocalypse",
+    "faith",
+    "attrition",
+    "isolation"
   ],
   "effects": [
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
+      "operation": "propagate",
+      "target": "the instance's transit of the planet",
+      "trigger": "exposure to the visage or voice",
+      "persistence": "affected individuals are unrecoverable",
       "constraints": [],
       "evidence": {
         "revision": 23,
-        "section": "metadata.tags",
-        "locator": "tag:cognitohazard"
-      }
-    },
-    {
-      "domain": "cognition",
-      "operation": "compel",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 23,
-        "section": "metadata.tags",
-        "locator": "tag:compulsion"
+        "section": "Description",
+        "locator": "Sentient creatures exposed to the visage or voice of any instance of SCP-7450 will immediately become compelled to follow it in its transit of the planet."
       }
     },
     {
       "domain": "perception",
-      "operation": "auditory_trigger",
-      "target": "observer",
-      "trigger": "audition",
-      "persistence": "transient",
+      "operation": "suppress",
+      "target": "Foundation personnel",
+      "trigger": "a transience of SCP-7450",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 23,
-        "section": "metadata.tags",
-        "locator": "tag:auditory"
+        "section": "Special Containment Procedures",
+        "locator": "Under no circumstances are any personnel permitted to look at or listen to SCP-7450."
       }
     }
   ],

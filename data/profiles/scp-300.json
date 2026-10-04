@@ -21,48 +21,55 @@
     "visual"
   ],
   "themes": [
-    "visual",
-    "liquid",
-    "artifact"
+    "memory-and-grief",
+    "unreliable-observation",
+    "nostalgia"
   ],
   "effects": [
     {
       "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "transform",
+      "target": "a single extracted drop",
+      "trigger": "When a single drop of SCP-300-2 is extracted from SCP-300-1 and the drop is viewed through a standard optical microscope",
+      "persistence": "article-defined",
+      "constraints": [
+        "a single drop is extracted",
+        "the drop is viewed through a standard optical microscope",
+        "no two drops have shown precisely the same scene"
+      ],
       "evidence": {
         "revision": 27,
-        "section": "metadata.tags",
-        "locator": "tag:visual"
+        "section": "Description",
+        "locator": "When a single drop of SCP-300-2 is extracted from SCP-300-1 and the drop is viewed through a standard optical microscope, an animated scene becomes visible."
       }
     },
     {
-      "domain": "matter",
-      "operation": "flow",
-      "target": "material",
-      "trigger": "contact",
-      "persistence": "variable",
+      "domain": "information",
+      "operation": "disable",
+      "target": "replication",
+      "trigger": "attempts to analyze the exact chemical components",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 27,
-        "section": "metadata.tags",
-        "locator": "tag:liquid"
+        "section": "Description",
+        "locator": "So far, attempts to analyze the exact chemical components of SCP-300-2 have inexplicably failed, with spectrometers reporting wildly variant or false data, thus making attempts at replicating it impossible."
       }
     },
     {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "user",
-      "trigger": "contact",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "other",
+      "operation": "transform",
+      "target": "an extracted sample",
+      "trigger": "being drawn outside of SCP-300-1",
+      "persistence": "within 2-8 hours",
+      "constraints": [
+        "the substance is drawn outside SCP-300-1",
+        "stabilization and laboratory-condition controls do not prevent evaporation"
+      ],
       "evidence": {
         "revision": 27,
-        "section": "metadata.tags",
-        "locator": "tag:artifact"
+        "section": "Description",
+        "locator": "SCP-300-2 also invariably evaporates within 2-8 hours of being drawn outside of SCP-300-1, despite all attempts at stabilizing the substance or controlling laboratory conditions."
       }
     }
   ],

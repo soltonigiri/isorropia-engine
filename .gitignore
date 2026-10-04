@@ -13,6 +13,7 @@ npm-debug.log*
 !.env.example
 .private/
 AGENTS.md
+.agents/skills/
 .vscode/
 .idea/
 .DS_Store

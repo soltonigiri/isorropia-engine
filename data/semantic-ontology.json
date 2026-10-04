@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "claim_roles": [
+    "anomalous-effect",
+    "containment-dependency",
+    "failure-trigger",
+    "propagation",
+    "countermeasure",
+    "narrative-turn",
+    "other"
+  ],
+  "directions": [
+    "increase",
+    "decrease",
+    "enable",
+    "disable",
+    "require",
+    "restore",
+    "preserve",
+    "transform",
+    "none"
+  ],
+  "reading_moves": ["premise", "escalation", "reversal", "reframing", "ending"],
+  "domains": {
+    "biology": ["biological", "biological-transformation"],
+    "cognition": ["cognitive", "psychological"],
+    "information": ["informational", "memetic"],
+    "infrastructure": ["containment maintenance", "facility"],
+    "perception": ["visual", "auditory"],
+    "space": ["spatial-anomaly", "spatial-transit"],
+    "other": []
+  },
+  "operations": {
+    "activate": ["trigger"],
+    "disable": ["break", "destroy"],
+    "propagate": ["infect", "replicate", "transmit"],
+    "restore": ["regenerate", "repair"],
+    "suppress": ["constrain", "inhibit", "neutralize"],
+    "transform": ["convert", "converts"],
+    "transport": ["move", "open", "transit"],
+    "other": []
+  },
+  "affected_states": {
+    "biological-integrity": ["body", "living-tissue", "organism"],
+    "cognitive-state": ["memory", "identity", "awareness"],
+    "containment-integrity": ["barrier", "facility", "procedure", "resource"],
+    "information-state": ["record", "knowledge", "signal"],
+    "population": ["host", "instance", "personnel"],
+    "reach": ["range", "location", "access"],
+    "other": []
+  }
+}

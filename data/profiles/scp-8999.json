@@ -22,48 +22,53 @@
     "subterranean"
   ],
   "themes": [
-    "geological",
-    "sapient",
-    "subterranean"
+    "miscommunication",
+    "caretaking",
+    "appetite",
+    "bureaucratic-improvisation"
   ],
   "effects": [
     {
-      "domain": "matter",
-      "operation": "reshape",
-      "target": "terrain",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "domain": "infrastructure",
+      "operation": "other",
+      "target": "seismic activity in the surrounding area",
+      "trigger": "dissatisfaction with communication between SCP-8999 and the Foundation",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 16,
-        "section": "metadata.tags",
-        "locator": "tag:geological"
+        "section": "Description",
+        "locator": "SCP-8999 possesses a degree of control over seismic activity in the surrounding area through unknown means, and have been responsible for tremors reaching magnitudes of up to 7.0 on the Richter Scale."
       }
     },
     {
-      "domain": "cognition",
-      "operation": "communicate",
-      "target": "observer",
-      "trigger": "interaction",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "information",
+      "operation": "transport",
+      "target": "a modified dumbwaiter lift system",
+      "trigger": "a modified dumbwaiter lift system constructed in the parish basement",
+      "persistence": "article-defined",
+      "constraints": [
+        "a modified dumbwaiter lift system constructed in the parish basement"
+      ],
       "evidence": {
         "revision": 16,
-        "section": "metadata.tags",
-        "locator": "tag:sapient"
+        "section": "Description",
+        "locator": "This communication has occurred exclusively through a modified dumbwaiter lift system constructed in the parish basement."
       }
     },
     {
-      "domain": "space",
-      "operation": "contain",
-      "target": "occupant",
-      "trigger": "entry",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "perception",
+      "operation": "suppress",
+      "target": "SCP-8999",
+      "trigger": "attaching a camera or surveillance drone to the lift",
+      "persistence": "article-defined",
+      "constraints": [
+        "the entities possess a desire to remain unseen"
+      ],
       "evidence": {
         "revision": 16,
-        "section": "metadata.tags",
-        "locator": "tag:subterranean"
+        "section": "Description",
+        "locator": "Attempts to record footage of SCP-8999 by attaching a camera or surveillance drone to the lift have been unsuccessful."
       }
     }
   ],

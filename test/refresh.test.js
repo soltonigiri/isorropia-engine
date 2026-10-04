@@ -11,17 +11,8 @@ test('refresh writes a candidate without overwriting curated data', async (t) =>
   await mkdir(path.join(directory, 'profiles'));
   await mkdir(path.join(directory, 'candidates'));
   await writeJson(path.join(directory, 'curation.json'), [
-    { page_id: 'scp-500', focus_tags: ['medical'] },
+    { page_id: 'scp-500' },
   ]);
-  await writeJson(path.join(directory, 'tag-effects.json'), {
-    medical: {
-      domain: 'biology',
-      operation: 'restore',
-      target: 'organism',
-      trigger: 'administration',
-      persistence: 'persistent',
-    },
-  });
   const curated = {
     page_id: 'scp-500',
     scp_number: 500,
@@ -79,9 +70,12 @@ test('refresh writes a candidate without overwriting curated data', async (t) =>
   const candidate = JSON.parse(
     await readFile(path.join(directory, 'candidates', 'scp-500.json'), 'utf8'),
   );
-  assert.equal(candidate.curated, false);
+  assert.deepEqual(Object.keys(candidate).sort(), [
+    'page_id', 'references', 'series', 'source_revision', 'tags', 'title', 'url',
+    'wikidot_page_id',
+  ]);
   assert.equal(candidate.source_revision, 2);
-  assert.deepEqual(candidate.effects[0].constraints, []);
+  assert.equal(candidate.effects, undefined);
 });
 
 async function writeJson(filePath, value) {

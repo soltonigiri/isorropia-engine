@@ -37,48 +37,460 @@
     "spook-nico-2024-unofficial"
   ],
   "themes": [
-    "computer",
-    "electrical",
-    "bureaucracy"
+    "institutional-abuse",
+    "gaslighting-and-documentary-unreliability",
+    "trauma-and-coerced-compliance",
+    "failed-accountability",
+    "loss-of-autonomy",
+    "bureaucratic-complicity",
+    "psychological-trauma",
+    "coercion",
+    "trauma",
+    "accountability",
+    "memory-loss",
+    "bureaucratic-impunity",
+    "trauma-and-rehabilitation",
+    "coercion-and-loss-of-autonomy",
+    "ethical-failure",
+    "bureaucratic-obfuscation",
+    "rehabilitation",
+    "bureaucratic-accountability"
   ],
   "effects": [
     {
       "domain": "information",
-      "operation": "process",
-      "target": "digital_system",
-      "trigger": "execution",
-      "persistence": "persistent",
+      "operation": "transform",
+      "target": "digital information and SCP-8980",
+      "trigger": "SCP-8980 produces, edits, deletes, or otherwise interacts with digital information",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 28,
-        "section": "metadata.tags",
-        "locator": "tag:computer"
+        "section": "Description",
+        "locator": "Whenever SCP-8980 produces, edits, deletes, or otherwise interacts (even indirectly) with digital information, the information is modified in some manner that negatively affects SCP-8980, whether socially, financially, psychologically, etc."
       }
     },
     {
-      "domain": "energy",
-      "operation": "generate",
-      "target": "electricity",
-      "trigger": "operation",
-      "persistence": "transient",
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "SCP-8980's effects",
+      "trigger": "SCP-8980 is isolated with electronic equipment",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 28,
-        "section": "metadata.tags",
-        "locator": "tag:electrical"
+        "section": "Addendum 4: Secondary Experimentation Log",
+        "locator": "Isolation isn't able to fully prevent its effects, though it isolates any corruption to the device itself."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "activate",
+      "target": "electronic devices",
+      "trigger": "SCP-8980 is near an electronic device",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 7: Tertiary Experimentation Log",
+        "locator": "Interaction does not seem to be a prerequisite for the anomaly's activation, only SCP-8980's general proximity."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "other",
+      "target": "SCP-8980's work and responses",
+      "trigger": "Following SCP-8980's amnesticization",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 9: Post-Amnesticization Depression",
+        "locator": "Following SCP-8980's amnesticization, its mental state significantly deteriorated to the point of it not fulfilling any of its quotas, nor responding to any work inquiries."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "propagate",
+      "target": "the isolated device",
+      "trigger": "SCP-8980 sets up the laptop",
+      "persistence": "during the experiment",
+      "constraints": [
+        "a remote location with no connection to the electrical grid or Internet",
+        "isolation confines corruption to the device itself"
+      ],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 4: Secondary Experimentation Log, ID 8980-B-2",
+        "locator": "Isolation isn't able to fully prevent its effects, though it isolates any corruption to the device itself."
       }
     },
     {
       "domain": "information",
-      "operation": "constrain",
-      "target": "institution",
-      "trigger": "procedure",
-      "persistence": "persistent",
+      "operation": "suppress",
+      "target": "the paper-based programming process",
+      "trigger": "SCP-8980 performs the paper-based programming task",
+      "persistence": "for the ten-hour experiment",
+      "constraints": [
+        "programs are written on paper",
+        "a remote system interprets the paper and returns printed output"
+      ],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 4: Secondary Experimentation Log, ID 8980-B-6",
+        "locator": "No noted effects of SCP-8980's anomaly were observed during this process."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "other",
+      "target": "active employment",
+      "trigger": "SCP-8980 resumes active employment",
+      "persistence": "after April 18th, 2005",
+      "constraints": [
+        "potential risk to nearby electronic equipment"
+      ],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 4: Secondary Experimentation Log",
+        "locator": "SCP-8980's designation was not lifted, however, due to its potential risk to nearby electronic equipment."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "activate",
+      "target": "SCP-8980",
+      "trigger": "the desktop is placed in SCP-8980's containment chamber without interaction",
+      "persistence": "repeatedly over fifteen hours",
+      "constraints": [
+        "SCP-8980 does not use or interact with the device",
+        "interaction does not appear to be a prerequisite"
+      ],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 7: Tertiary Experimentation Log, ID 8980-C-31",
+        "locator": "Interaction does not seem to be a prerequisite for the anomaly's activation, only SCP-8980's general proximity."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "restore",
+      "target": "SCP-8980's former SCiPNet account",
+      "trigger": "SCP-8980 exploits the ACE",
+      "persistence": "throughout the latter half of December",
+      "constraints": [
+        "SCP-8980 locates an ACE in its remote work apparatus"
+      ],
+      "evidence": {
+        "revision": 28,
+        "section": "Incident 2: ACE Exploit & Aftermath",
+        "locator": "This granted it full access to its former SCiPNet account, which granted it access to:"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "work fulfillment and responsiveness",
+      "trigger": "following SCP-8980's amnesticization",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 28,
-        "section": "metadata.tags",
-        "locator": "tag:bureaucracy"
+        "section": "Addendum 9: Post-Amnesticization Depression",
+        "locator": "Following SCP-8980's amnesticization, its mental state significantly deteriorated to the point of it not fulfilling any of its quotas, nor responding to any work inquiries."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "free-roam time and movement at the site",
+      "trigger": "the incident",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Incident 1: Post-Medical Instability",
+        "locator": "SCP-8980's free-roam time was reduced, with further restrictions to its movement at the site to minimize future incidents."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "activate",
+      "target": "its former SCiPNet account",
+      "trigger": "over the course of several weeks",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Incident 2: ACE Exploit & Aftermath",
+        "locator": "This granted it full access to its former SCiPNet account, which granted it access to:"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "quotas and work inquiries",
+      "trigger": "Following SCP-8980's amnesticization",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 9: Post-Amnesticization Depression",
+        "locator": "Following SCP-8980's amnesticization, its mental state significantly deteriorated to the point of it not fulfilling any of its quotas, nor responding to any work inquiries."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "disable",
+      "target": "its anomalous properties",
+      "trigger": "After several rounds of testing",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 10: Neutralization",
+        "locator": "After several rounds of testing, Dr. McPharrell discovered that SCP-8980 possessed none of its stated anomalous properties."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "SCP-8980's mental state and work responsiveness",
+      "trigger": "Following SCP-8980's amnesticization",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 9: Post-Amnesticization Depression",
+        "locator": "Following SCP-8980's amnesticization, its mental state significantly deteriorated to the point of it not fulfilling any of its quotas, nor responding to any work inquiries."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "suppress",
+      "target": "SCP-8980's consciousness",
+      "trigger": "As the amnestic activates",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Amnesticization of SCP-8980",
+        "locator": "As the amnestic activates, SCP-8980's consciousness slowly fades, causing its eyes to completely unfocus and its head to fall limp."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "disable",
+      "target": "actions taken prior to major amnesticization",
+      "trigger": "Due to the Ethical Post-Amnesticization Punishment Ruling by the O5 Council in 1995",
+      "persistence": "article-defined",
+      "constraints": [
+        "He would not be able to remember committing the actions"
+      ],
+      "evidence": {
+        "revision": 28,
+        "section": "SCP-8980 Investigation Summary | May 5th, 2015",
+        "locator": "Due to the Ethical Post-Amnesticization Punishment Ruling by the O5 Council in 1995, Dr. Byrnes cannot be punished for actions taken prior to major amnesticization, as he would not be able to remember committing them."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "nearby software",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 1: Initial Interviews",
+        "locator": "I began to experience repeated instances of malfunctions in software I was nearby, including important files getting deleted, e-mails being sent to the wrong addresses, and my coworkers' computers shutting down randomly."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "transform",
+      "target": "SCP-8980",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 2: Test Results",
+        "locator": "Every instance of 8980 changing text has been to your social detriment; every document it's deleted has been when you absolutely needed it for work; and every email that's been sent to the wrong address has caused some breach of sensitive information, calling into question your cognitive stability; and every device that shut down was in the middle of a critical operation while you were nearby."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "suppress",
+      "target": "paper-based programming workflow",
+      "trigger": "SCP-8980 writes programs on paper",
+      "persistence": "article-defined",
+      "constraints": [
+        "SCP-8980 writes programs on paper",
+        "a remote system interprets the paper and returns output"
+      ],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 4: Secondary Experimentation Log",
+        "locator": "No noted effects of SCP-8980's anomaly were observed during this process."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "activate",
+      "target": "an inactive desktop computer",
+      "trigger": "SCP-8980's general proximity",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 7: Tertiary Experimentation Log",
+        "locator": "Interaction does not seem to be a prerequisite for the anomaly's activation, only SCP-8980's general proximity."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "SCP-8980's work participation and symptoms",
+      "trigger": "Following SCP-8980's amnesticization",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 9: Post-Amnesticization Depression",
+        "locator": "Following SCP-8980's amnesticization, its mental state significantly deteriorated to the point of it not fulfilling any of its quotas, nor responding to any work inquiries."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "activate",
+      "target": "electronic circuitry",
+      "trigger": "SCP-8980's general proximity",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 7: Tertiary Experimentation Log",
+        "locator": "Interaction does not seem to be a prerequisite for the anomaly's activation, only SCP-8980's general proximity."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "activate",
+      "target": "an inactive DELL desktop computer",
+      "trigger": "SCP-8980 did not interact with the desktop",
+      "persistence": "repeatedly during the experiment",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 7: Tertiary Experimentation Log",
+        "locator": "Despite not interacting with the desktop, the device repeatedly activated."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "SCP-8980",
+      "trigger": "the twenty-third activation",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 7: Tertiary Experimentation Log",
+        "locator": "After the twenty-third activation at approximately fifteen hours into the experiment, SCP-8980 began sobbing uncontrollably, terminating the test."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "restore",
+      "target": "SCP-8980's former SCiPNet account",
+      "trigger": "SCP-8980 had located and exploited an Arbitrary Code Execution (ACE)",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Incident 2: ACE Exploit & Aftermath",
+        "locator": "This granted it full access to its former SCiPNet account, which granted it access to:"
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "SCP-8980",
+      "trigger": "Following SCP-8980's amnesticization",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 9: Post-Amnesticization Depression",
+        "locator": "Following SCP-8980's amnesticization, its mental state significantly deteriorated to the point of it not fulfilling any of its quotas, nor responding to any work inquiries."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "disable",
+      "target": "its stated anomalous properties",
+      "trigger": "After several rounds of testing",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 10: Neutralization",
+        "locator": "After several rounds of testing, Dr. McPharrell discovered that SCP-8980 possessed none of its stated anomalous properties."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "restore",
+      "target": "its former SCiPNet account",
+      "trigger": "over the course of several weeks",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Incident 2: ACE Exploit & Aftermath",
+        "locator": "After a careful two-day audit of all its belongings, investigative staff discovered that SCP-8980 had located and exploited an Arbitrary Code Execution (ACE) in its remote work apparatus over the course of several weeks."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "SCP-8980's mental state",
+      "trigger": "Following SCP-8980's amnesticization",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 9: Post-Amnesticization Depression",
+        "locator": "Following SCP-8980's amnesticization, its mental state significantly deteriorated to the point of it not fulfilling any of its quotas, nor responding to any work inquiries."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "other",
+      "target": "SCP-8980",
+      "trigger": "persistent depressive symptoms",
+      "persistence": "article-defined",
+      "constraints": [
+        "persistent depressive symptoms"
+      ],
+      "evidence": {
+        "revision": 28,
+        "section": "Incident 2: ACE Exploit & Aftermath",
+        "locator": "SCP-8980's parapsychological counseling sessions have been deemed necessary for it to continue due to its persistent depressive symptoms."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "disable",
+      "target": "its stated anomalous properties",
+      "trigger": "After several rounds of testing",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 28,
+        "section": "Addendum 10: Neutralization",
+        "locator": "After several rounds of testing, Dr. McPharrell discovered that SCP-8980 possessed none of its stated anomalous properties."
       }
     }
   ],

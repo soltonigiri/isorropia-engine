@@ -1,0 +1,77 @@
+name: Draft release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: refs/tags/${{ inputs.tag }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Check
+        run: npm run check
+
+      - name: Build data artifacts
+        run: |
+          SOURCE_REVISION=$(git rev-parse HEAD)
+          export SOURCE_REVISION
+          npm run artifacts
+
+      - name: Pack and smoke test
+        shell: bash
+        run: |
+          mkdir -p release/package-smoke
+          package_path=$(npm pack --pack-destination release | tail -n 1)
+          package_name=$(basename "$package_path")
+          npm install --prefix release/package-smoke --offline --ignore-scripts "./release/$package_name"
+          release/package-smoke/node_modules/.bin/isorropia --version
+          release/package-smoke/node_modules/.bin/isorropia pair SCP-173 --mode cycle --json > release/package-smoke/result.json
+
+      - name: Build manifest
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          SOURCE_REVISION=$(git rev-parse HEAD)
+          export SOURCE_REVISION
+          cd release
+          sha256sum isorropia-data.json.gz isorropia.sqlite isorropia-engine-*.tgz > SHA256SUMS
+          node --input-type=module -e 'console.log(JSON.stringify({tag: process.env.RELEASE_TAG, revision: process.env.SOURCE_REVISION, workflow_run: process.env.GITHUB_RUN_ID}))' > MANIFEST.json
+
+      - name: Create draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: >-
+          gh release create "$RELEASE_TAG"
+          release/isorropia-data.json.gz
+          release/isorropia.sqlite
+          release/isorropia-engine-*.tgz
+          release/SHA256SUMS
+          release/MANIFEST.json
+          --draft
+          --verify-tag
+          --title "$RELEASE_TAG"
+          --notes-file docs/release-notes-template.md

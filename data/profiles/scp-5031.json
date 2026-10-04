@@ -27,48 +27,53 @@
     "scp"
   ],
   "themes": [
-    "predatory",
-    "sapient",
-    "observational"
+    "care-over-punishment",
+    "misclassification",
+    "personhood-through-learning"
   ],
   "effects": [
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "prey",
-      "trigger": "encounter",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "perception",
+      "operation": "disable",
+      "target": "SCP-5031",
+      "trigger": "directly observed",
+      "persistence": "until the viewer stops observing the space that SCP-5031 formerly occupied",
+      "constraints": [
+        "traces of its existence continue to exist",
+        "observing its shadow does not cause cessation of existence"
+      ],
       "evidence": {
         "revision": 77,
-        "section": "metadata.tags",
-        "locator": "tag:predatory"
+        "section": "Description",
+        "locator": "When directly observed, SCP-5031 will temporarily cease to exist until the viewer stops observing the space that SCP-5031 formerly occupied."
       }
     },
     {
       "domain": "cognition",
-      "operation": "communicate",
-      "target": "observer",
-      "trigger": "interaction",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "suppress",
+      "target": "SCP-5031's average stress levels",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "stress reduction seems to scale proportionally with food quality"
+      ],
       "evidence": {
         "revision": 77,
-        "section": "metadata.tags",
-        "locator": "tag:sapient"
+        "section": "Round 3 Tests (Food) - Summary",
+        "locator": "While it's true that SCP-5031 doesn't necessarily need to eat, feeding it regularly has caused a marked decrease in average stress levels."
       }
     },
     {
-      "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "language",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 77,
-        "section": "metadata.tags",
-        "locator": "tag:observational"
+        "section": "Round 5 Tests (Symbols) - Summary",
+        "locator": "It can learn language, Youssef."
       }
     }
   ],

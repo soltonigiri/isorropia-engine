@@ -21,48 +21,63 @@
     "self-replicating"
   ],
   "themes": [
-    "self-replicating",
-    "food",
-    "metamorphic"
+    "mundane-catastrophe",
+    "laborious-containment",
+    "escalation"
   ],
   "effects": [
     {
-      "domain": "replication",
-      "operation": "replicate",
-      "target": "self",
-      "trigger": "resource_access",
-      "persistence": "persistent",
+      "domain": "other",
+      "operation": "restore",
+      "target": "similar cake",
+      "trigger": "instance is consumed by a human or collection of humans",
+      "persistence": "approximately 24 hours afterward",
       "constraints": [],
       "evidence": {
         "revision": 28,
-        "section": "metadata.tags",
-        "locator": "tag:self-replicating"
+        "section": "Description",
+        "locator": "When any instance of SCP-871 is consumed by a human or a collection of humans, it is replaced approximately 24 hours afterward with a similar cake."
       }
     },
     {
-      "domain": "biology",
-      "operation": "nourish",
-      "target": "consumer",
-      "trigger": "consumption",
-      "persistence": "transient",
+      "domain": "other",
+      "operation": "restore",
+      "target": "replacement cake",
+      "trigger": "damage by means other than human consumption",
+      "persistence": "instantaneous",
       "constraints": [],
       "evidence": {
         "revision": 28,
-        "section": "metadata.tags",
-        "locator": "tag:food"
+        "section": "Description",
+        "locator": "If any of these cakes is substantially damaged through any means other than being eaten by a human, including being eaten by a non-human animal, it will be replaced instantaneously."
       }
     },
     {
-      "domain": "matter",
-      "operation": "transform",
-      "target": "material",
-      "trigger": "exposure",
-      "persistence": "persistent",
+      "domain": "other",
+      "operation": "propagate",
+      "target": "new cake in its vicinity",
+      "trigger": "more than 10% of an instance remains unconsumed",
+      "persistence": "every 24 hours",
       "constraints": [],
       "evidence": {
         "revision": 28,
-        "section": "metadata.tags",
-        "locator": "tag:metamorphic"
+        "section": "Description",
+        "locator": "Any instance of SCP-871 which is not consumed will cause a new cake to be created in its vicinity after 24 hours."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "suppress",
+      "target": "new SCP-871 instance",
+      "trigger": "creation of an instance of SCP-871",
+      "persistence": "article-defined",
+      "constraints": [
+        "task may take no more than one hour"
+      ],
+      "evidence": {
+        "revision": 28,
+        "section": "Special Containment Procedures",
+        "locator": "Upon creation of an instance of SCP-871, 3 Class D personnel are to be escorted by armed guards to its cell, where they are to be sealed with the instance and induced to consume it."
       }
     }
   ],

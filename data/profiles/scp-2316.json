@@ -28,48 +28,48 @@
     "visual"
   ],
   "themes": [
-    "cognitohazard",
-    "hive-mind",
-    "mind-affecting"
+    "memory",
+    "coercion",
+    "institutional-concealment"
   ],
   "effects": [
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
+      "operation": "transform",
+      "target": "exposed individuals",
+      "trigger": "viewing SCP-2316, awareness of certain parts of its nature, or enrollment",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 80,
-        "section": "metadata.tags",
-        "locator": "tag:cognitohazard"
+        "section": "Description",
+        "locator": "SCP-2316 hosts a powerful cognitohazardous effect, causing those who have viewed SCP-2316, are aware of certain parts of its nature, or who were enrolled in the [COGNITOHAZARD REMOVED] {{[Automated Message: INVALID]}} to believe that the individual instances of SCP-2316 are human beings they recognize, typically from their childhood[[footnote]]{{They're lying."
       }
     },
     {
       "domain": "cognition",
-      "operation": "link",
-      "target": "group",
-      "trigger": "proximity",
-      "persistence": "persistent",
+      "operation": "propagate",
+      "target": "the cognitohazard",
+      "trigger": "entering the lake or touching an instance",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 80,
-        "section": "metadata.tags",
-        "locator": "tag:hive-mind"
+        "section": "Description",
+        "locator": "The additional instances only serve to reinforce and add to the strength of the cognitohazard[[footnote]]{{How can you not recognize the bodies in the water?"
       }
     },
     {
-      "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
+      "domain": "space",
+      "operation": "transport",
+      "target": "individuals who enter the lake",
+      "trigger": "entering the lake in this way",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 80,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
+        "section": "Description",
+        "locator": "Individuals who enter the lake in this way are lost, and to date none have been recovered."
       }
     }
   ],

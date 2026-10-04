@@ -30,63 +30,63 @@
     "the-sculpture"
   ],
   "themes": [
-    "portal",
-    "anomalous-event",
-    "concept"
+    "total-extinction",
+    "isolation",
+    "contagious-culpability"
   ],
   "effects": [
     {
       "domain": "space",
-      "operation": "transport",
-      "target": "traveler",
-      "trigger": "threshold_crossing",
-      "persistence": "transient",
+      "operation": "suppress",
+      "target": "The entrance of SCP-2935",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 93,
-        "section": "metadata.tags",
-        "locator": "tag:portal"
+        "section": "Special Containment Procedures",
+        "locator": "The entrance of SCP-2935 has been sealed with concrete, and access to SCP-2935 is forbidden."
       }
     },
     {
-      "domain": "civilization",
-      "operation": "destabilize",
-      "target": "baseline_reality",
-      "trigger": "event",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "disable",
+      "target": "all life, including both biological and non-biological, as well as any sentient entities, machines, computers and other \"life-like\" phenomena",
+      "trigger": "April 20th, 2016",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 93,
-        "section": "metadata.tags",
-        "locator": "tag:anomalous-event"
+        "section": "Description",
+        "locator": "The SCP-2935 anomaly is a nearly exact replicate reality of modern Earth in the year 2016, with the primary exception being that all life, including both biological and non-biological, as well as any sentient entities, machines, computers and other \"life-like\" phenomena, within SCP-2935 ended on April 20th, 2016."
       }
     },
     {
-      "domain": "concept",
-      "operation": "alter",
-      "target": "concept",
-      "trigger": "cognition",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 93,
-        "section": "metadata.tags",
-        "locator": "tag:concept"
-      }
-    },
-    {
-      "domain": "death",
-      "operation": "terminate_life",
-      "target": "all_life",
-      "trigger": "threshold_crossing",
-      "persistence": "persistent",
+      "domain": "biology",
+      "operation": "disable",
+      "target": "all lifeforms within SCP-2935",
+      "trigger": "sometime between the hours of 0300-0400 EST",
+      "persistence": "article-defined",
       "constraints": [
-        "alternate_reality"
+        "The reason is currently uncertain."
       ],
       "evidence": {
         "revision": 93,
         "section": "Description",
-        "locator": "all life ... ended on April 20th, 2016"
+        "locator": "Information gathered by the mobile task force who initially entered SCP-2935 for reconnaissance purposes points to the conclusion that all lifeforms within SCP-2935 suddenly and without warning expired sometime between the hours of 0300-0400 EST."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "disable",
+      "target": "non-biological artifacts or entities",
+      "trigger": "within SCP-2935",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 93,
+        "section": "Exploratory Mission 2935.2",
+        "locator": "All biological anomalous entities are confirmed to have perished, while non-biological artifacts or entities had become inert."
       }
     }
   ],

@@ -19,34 +19,47 @@
     "scp"
   ],
   "themes": [
-    "concept",
-    "hard-to-destroy-reptile"
+    "abstract-logic",
+    "semantic-displacement"
   ],
   "effects": [
     {
-      "domain": "concept",
-      "operation": "alter",
-      "target": "concept",
-      "trigger": "cognition",
-      "persistence": "persistent",
+      "domain": "space",
+      "operation": "transport",
+      "target": "inside",
+      "trigger": "acted upon by SCP-2719",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 18,
-        "section": "metadata.tags",
-        "locator": "tag:concept"
+        "section": "Description",
+        "locator": "Concepts acted upon by SCP-2719 will either go or become inside."
       }
     },
     {
-      "domain": "durability",
-      "operation": "resist",
-      "target": "destruction",
-      "trigger": "damage",
-      "persistence": "persistent",
+      "domain": "information",
+      "operation": "suppress",
+      "target": "personnel who are both sapient and biological",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 18,
-        "section": "metadata.tags",
-        "locator": "tag:hard-to-destroy-reptile"
+        "section": "Description",
+        "locator": "Further information on SCP-2719 should not be provided to personnel who are both sapient and biological."
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "inside",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 18,
+        "section": "Experimental Data",
+        "locator": "Population of Uleåborg||Went inside. Successful use as evacuation procedure."
       }
     }
   ],

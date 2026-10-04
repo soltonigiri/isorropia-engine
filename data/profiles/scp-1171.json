@@ -24,48 +24,52 @@
     "slice-of-life"
   ],
   "themes": [
-    "alien",
-    "extradimensional",
-    "sapient"
+    "miscommunication",
+    "prejudice",
+    "otherness"
   ],
   "effects": [
     {
-      "domain": "space",
-      "operation": "bridge",
-      "target": "otherworldly_entity",
-      "trigger": "contact",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "infrastructure",
+      "operation": "other",
+      "target": "windowpanes",
+      "trigger": "Regardless of relative humidity",
+      "persistence": "continuously",
+      "constraints": [
+        "The source of this moisture is as yet unknown."
+      ],
       "evidence": {
         "revision": 19,
-        "section": "metadata.tags",
-        "locator": "tag:alien"
+        "section": "Description",
+        "locator": "Regardless of relative humidity, a layer of condensation is continuously formed on the windowpanes."
       }
     },
     {
-      "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "information",
+      "operation": "transport",
+      "target": "window condensation",
+      "trigger": "condensation is present on the window",
+      "persistence": "article-defined",
+      "constraints": [
+        "condensation is present on the window"
+      ],
       "evidence": {
         "revision": 19,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "section": "Description",
+        "locator": "An entity (hereby referred to as SCP-1171-1) communicates by writing in the condensation, as though it were running an appendage along the surface of the window."
       }
     },
     {
-      "domain": "cognition",
-      "operation": "communicate",
-      "target": "observer",
-      "trigger": "interaction",
-      "persistence": "transient",
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "public visibility",
+      "trigger": "For security",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 19,
-        "section": "metadata.tags",
-        "locator": "tag:sapient"
+        "section": "Special Containment Procedures",
+        "locator": "A tall wall has been erected around the backyard, and all anomalous windows visible from the front of the house have been fitted with shutters."
       }
     }
   ],

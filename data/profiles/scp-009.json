@@ -23,48 +23,50 @@
     "thermal"
   ],
   "themes": [
-    "self-replicating",
-    "thermal",
-    "liquid"
+    "runaway-contamination",
+    "environmental-catastrophe",
+    "fragile-containment"
   ],
   "effects": [
     {
-      "domain": "replication",
-      "operation": "replicate",
-      "target": "self",
-      "trigger": "resource_access",
-      "persistence": "persistent",
+      "domain": "biology",
+      "operation": "propagate",
+      "target": "other objects and creatures",
+      "trigger": "contact with any aqueous solution",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 139,
-        "section": "metadata.tags",
-        "locator": "tag:self-replicating"
+        "section": "Description",
+        "locator": "When in contact with any aqueous solution, SCP-009 will, through unknown mechanisms, transfer its anomalous properties to other objects and creatures."
       }
     },
     {
-      "domain": "energy",
-      "operation": "alter_temperature",
-      "target": "matter",
-      "trigger": "contact",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "transform",
+      "target": "exposed surface",
+      "trigger": "subject is exposed to SCP-009",
+      "persistence": "article-defined",
+      "constraints": [
+        "subject is exposed to SCP-009"
+      ],
       "evidence": {
         "revision": 139,
-        "section": "metadata.tags",
-        "locator": "tag:thermal"
+        "section": "Experiments on D-Class personnel",
+        "locator": "Subject is exposed to SCP-009, and it begins assimilating any moisture present on the exposed surface."
       }
     },
     {
-      "domain": "matter",
-      "operation": "flow",
-      "target": "material",
-      "trigger": "contact",
-      "persistence": "variable",
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "temperatures",
+      "trigger": "temperature in the containment area climbs above -5°C",
+      "persistence": "until temperatures return to safe levels (-30°C to -25°C)",
       "constraints": [],
       "evidence": {
         "revision": 139,
-        "section": "metadata.tags",
-        "locator": "tag:liquid"
+        "section": "Special Containment Procedures",
+        "locator": "If at any time the temperature in the containment area climbs above -5°C, the chamber is to be locked down and flooded with coolant until temperatures return to safe levels (-30°C to -25°C)."
       }
     }
   ],

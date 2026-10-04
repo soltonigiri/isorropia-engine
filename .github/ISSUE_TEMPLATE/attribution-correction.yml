@@ -1,0 +1,23 @@
+name: Attribution correction
+description: Correct page-level authorship metadata.
+title: "attribution: "
+body:
+  - type: input
+    id: page
+    attributes:
+      label: SCP page
+      placeholder: scp-000
+    validations:
+      required: true
+  - type: textarea
+    id: authors
+    attributes:
+      label: Correct author list
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official attribution source
+    validations:
+      required: true

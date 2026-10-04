@@ -25,48 +25,50 @@
     "visual"
   ],
   "themes": [
-    "media",
-    "visual",
-    "metamorphic"
+    "corrupted-media",
+    "unreliable-prophecy",
+    "spectacle-of-violence"
   ],
   "effects": [
     {
       "domain": "information",
-      "operation": "transmit",
-      "target": "audience",
-      "trigger": "playback",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 67,
-        "section": "metadata.tags",
-        "locator": "tag:media"
-      }
-    },
-    {
-      "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 67,
-        "section": "metadata.tags",
-        "locator": "tag:visual"
-      }
-    },
-    {
-      "domain": "matter",
       "operation": "transform",
-      "target": "material",
-      "trigger": "exposure",
-      "persistence": "persistent",
+      "target": "speech content",
+      "trigger": "Upon rewinding SCP-1981 and initiating playback",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 67,
-        "section": "metadata.tags",
-        "locator": "tag:metamorphic"
+        "section": "Description",
+        "locator": "Upon rewinding SCP-1981 and initiating playback, Reagan will deliver an entirely new speech, often radically different from the ones previously observed."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "Reagan recording",
+      "trigger": "Beginning at approximately 5 minutes",
+      "persistence": "until vocal cords are severed or tape degrades to static",
+      "constraints": [],
+      "evidence": {
+        "revision": 67,
+        "section": "Description",
+        "locator": "Beginning at approximately 5 minutes, multiple incisions, lacerations and penetration wounds can be seen being slowly inflicted, though no corresponding source of these wounds is visible."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "transport",
+      "target": "television broadcast",
+      "trigger": "observations performed on SCP-1981",
+      "persistence": "article-defined",
+      "constraints": [
+        "Direct replication onto a similar Betamax tape has failed."
+      ],
+      "evidence": {
+        "revision": 67,
+        "section": "Description",
+        "locator": "Attempts to replicate SCP-1981 onto a similar Betamax tape have met with failure, however, cameras used to record the television SCP-1981 is broadcasted on have succeeded in \"capturing\" individual playbacks."
       }
     }
   ],

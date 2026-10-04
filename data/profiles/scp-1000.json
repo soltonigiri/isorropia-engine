@@ -30,48 +30,42 @@
     "uncontained"
   ],
   "themes": [
-    "humanoid",
-    "k-class-scenario",
-    "sapient"
+    "historical-erasure",
+    "species-guilt",
+    "revenge",
+    "institutional-deception"
   ],
   "effects": [
     {
       "domain": "biology",
-      "operation": "sustain",
-      "target": "human",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
+      "operation": "disable",
+      "target": "a hominid",
+      "trigger": "a hominid observes an instance of SCP-1000",
+      "persistence": "permanent",
+      "constraints": [
+        "a non-immune hominid directly or indirectly observes an instance of SCP-1000",
+        "the claim is later described as a direct lie in Document Alpha-1596-1000"
+      ],
       "evidence": {
         "revision": 88,
-        "section": "metadata.tags",
-        "locator": "tag:humanoid"
+        "section": "Description",
+        "locator": "Any hominid (including humans, chimpanzees, bonobos, and non-immune instances of SCP-1000) that directly or indirectly observes any instance of SCP-1000 has a minimum 2% chance of being instantly killed through anomalous means via permanent cessation of brain function."
       }
     },
     {
-      "domain": "civilization",
-      "operation": "destabilize",
-      "target": "baseline_reality",
-      "trigger": "event",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "propagate",
+      "target": "chance of instantaneous death",
+      "trigger": "longer viewing duration",
+      "persistence": "article-defined",
+      "constraints": [
+        "a human views SCP-1000",
+        "the claim is later described as a direct lie in Document Alpha-1596-1000"
+      ],
       "evidence": {
         "revision": 88,
-        "section": "metadata.tags",
-        "locator": "tag:k-class-scenario"
-      }
-    },
-    {
-      "domain": "cognition",
-      "operation": "communicate",
-      "target": "observer",
-      "trigger": "interaction",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 88,
-        "section": "metadata.tags",
-        "locator": "tag:sapient"
+        "section": "Description",
+        "locator": "This percentage is cumulative, and the longer a human views SCP-1000, the higher the chance of instantaneous death increases, at a rate of +1% chance per 20 minutes of viewing."
       }
     }
   ],

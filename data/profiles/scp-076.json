@@ -28,48 +28,53 @@
     "scp"
   ],
   "themes": [
-    "hostile",
-    "extradimensional",
-    "military-fiction"
+    "institutional-guilt",
+    "recurring-violence"
   ],
   "effects": [
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "propagate",
+      "target": "living humans",
+      "trigger": "If successful",
+      "persistence": "article-defined",
+      "constraints": [
+        "SCP-076-2 awakens and leaves SCP-076-1"
+      ],
       "evidence": {
         "revision": 81,
-        "section": "metadata.tags",
-        "locator": "tag:hostile"
+        "section": "Description",
+        "locator": "If successful, subject will enter a trance state and seek out the nearest human being, ignoring all other living things in the process."
       }
     },
     {
-      "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "other",
+      "operation": "suppress",
+      "target": "rampages",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "Only the subject's death has been shown to be effective."
+      ],
       "evidence": {
         "revision": 81,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "section": "Description",
+        "locator": "To date, only the subject's death has been shown to be effective in ending these rampages."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "opponent",
-      "trigger": "conflict",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "restore",
+      "target": "SCP-076-2",
+      "trigger": "Upon death",
+      "persistence": "anywhere from six (6) hours to twenty-five (25) years",
+      "constraints": [
+        "SCP-076-2 dies"
+      ],
       "evidence": {
         "revision": 81,
-        "section": "metadata.tags",
-        "locator": "tag:military-fiction"
+        "section": "Description",
+        "locator": "SCP-076-2 will then reform within the coffin, a process taking anywhere from six (6) hours to twenty-five (25) years."
       }
     }
   ],

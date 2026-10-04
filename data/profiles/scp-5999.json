@@ -35,48 +35,115 @@
     "video"
   ],
   "themes": [
-    "infohazard",
-    "meta",
-    "audio"
+    "containment-failure",
+    "cyclical-violence",
+    "institutional-complicity",
+    "trauma-and-retribution",
+    "corrupted-media"
   ],
   "effects": [
     {
-      "domain": "information",
-      "operation": "propagate",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
+      "domain": "infrastructure",
+      "operation": "other",
+      "target": "seven civilians",
+      "trigger": "annual procurement",
+      "persistence": "annual",
       "constraints": [],
       "evidence": {
         "revision": 84,
-        "section": "metadata.tags",
-        "locator": "tag:infohazard"
-      }
-    },
-    {
-      "domain": "narrative",
-      "operation": "alter",
-      "target": "narrative",
-      "trigger": "representation",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 84,
-        "section": "metadata.tags",
-        "locator": "tag:meta"
+        "section": "Chapter 1: \"Manor House\"",
+        "locator": "The Department of Analytics has been tasked with the annual procurement of seven civilians to witness PROCEDURE SEVENFOLD."
       }
     },
     {
       "domain": "perception",
-      "operation": "auditory_trigger",
-      "target": "listener",
-      "trigger": "audition",
-      "persistence": "transient",
+      "operation": "propagate",
+      "target": "persons",
+      "trigger": "being in the vicinity or being privy to the crime",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 84,
-        "section": "metadata.tags",
-        "locator": "tag:audio"
+        "section": "Chapter 2: \"You Complete Me\"",
+        "locator": "Persons in the vicinity of any part of Ms. Holcroft's remains, or who are privy to the nature of the crime leading to her death, may become subject to its effects."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "other",
+      "target": "subject",
+      "trigger": "exposure to Ms. Holcroft's remains",
+      "persistence": "until the subject's death",
+      "constraints": [],
+      "evidence": {
+        "revision": 84,
+        "section": "Chapter 2: \"You Complete Me\"",
+        "locator": "Affectation by Ms. Holcroft's remains persist until the subject's death; typically, this is expedited via the development of secondary effects that manifest upon the bi-annual anniversary (six months) of the subject's exposure."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "transform",
+      "target": "all attendants to the service",
+      "trigger": "conclusion of funerary services",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 84,
+        "section": "Chapter 2: \"You Complete Me\"",
+        "locator": "Upon the conclusion of funerary services, all attendants to the service suffered spontaneous disembowelment."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "suppress",
+      "target": "anomalous phenomena",
+      "trigger": "Since this time",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 84,
+        "section": "Chapter 2: \"You Complete Me\"",
+        "locator": "Since this time, living subjects previously affected by Ms. Holcroft's remains have reported cessation of anomalous phenomena; however, each has proven to be sterile."
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "disable",
+      "target": "fog beyond naked-eye visibility",
+      "trigger": "use of imaging hardware",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 84,
+        "section": "Chapter 3: \"When the Man Comes Around\"",
+        "locator": "Both thermal-imaging hardware and a modified S.P.A.D visual asset are incapable of penetrating the fog beyond what can already be seen with the naked eye."
+      }
+    },
+    {
+      "domain": "information",
+      "operation": "propagate",
+      "target": "secure Foundation locations and civilian institutions",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 84,
+        "section": "Chapter 5: \"Digital Ash in a Digital Urn\"",
+        "locator": "The \"Game Over\" soundbite plays over the PA systems of seventy individual secure Foundation locations, as well as countless civilian institutions, recreation centers, and shopping districts nationwide."
+      }
+    },
+    {
+      "domain": "perception",
+      "operation": "other",
+      "target": "D-002",
+      "trigger": "D-002 backs away",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 84,
+        "section": "Chapter 6: \"Plaything\"",
+        "locator": "Despite the lack of any mechanical components, the object's eyes track D-002 as he backs away from it and into a corner."
       }
     }
   ],

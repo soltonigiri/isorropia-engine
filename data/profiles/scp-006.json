@@ -24,48 +24,52 @@
     "spy-fiction"
   ],
   "themes": [
-    "medical",
-    "self-repairing",
-    "liquid"
+    "secrecy-around-beneficial-power",
+    "institutional-cruelty",
+    "concealed-immortality"
   ],
   "effects": [
     {
       "domain": "biology",
       "operation": "restore",
-      "target": "organism",
-      "trigger": "administration",
-      "persistence": "persistent",
-      "constraints": [],
+      "target": "human beings",
+      "trigger": "ingesting the liquid",
+      "persistence": "article-defined",
+      "constraints": [
+        "the liquid is ingested"
+      ],
       "evidence": {
         "revision": 62,
-        "section": "metadata.tags",
-        "locator": "tag:medical"
+        "section": "Description",
+        "locator": "Ingesting the liquid produces the following properties in human beings: the ability to regenerate DNA damaged by sufficient duplication, heightened excitement of cellular duplication, vastly improved abilities in the repair of damaged tissue, and a frightening increase in the effectiveness of the human immune system."
       }
     },
     {
-      "domain": "durability",
-      "operation": "regenerate",
-      "target": "self",
-      "trigger": "damage",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "disable",
+      "target": "hostile bacteria and viral agents",
+      "trigger": "testing the liquid on animal subjects",
+      "persistence": "article-defined",
+      "constraints": [
+        "many reptiles and birds were unaffected"
+      ],
       "evidence": {
         "revision": 62,
-        "section": "metadata.tags",
-        "locator": "tag:self-repairing"
+        "section": "Description",
+        "locator": "Upon testing the liquid on animal subjects, hostile bacteria and viral agents were destroyed immediately."
       }
     },
     {
-      "domain": "matter",
-      "operation": "flow",
-      "target": "material",
-      "trigger": "contact",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "disable",
+      "target": "personnel",
+      "trigger": "personnel come into contact with SCP-006 or liquid from SCP-006",
+      "persistence": "after sufficient studies are done",
       "constraints": [],
       "evidence": {
         "revision": 62,
-        "section": "metadata.tags",
-        "locator": "tag:liquid"
+        "section": "Special Containment Procedures",
+        "locator": "If at any time personnel come into contact with SCP-006 or liquid from SCP-006, they are to be confined and terminated after sufficient studies are done."
       }
     }
   ],

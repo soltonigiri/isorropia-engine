@@ -8,7 +8,7 @@
     "Gabriel Jade"
   ],
   "language": "en",
-  "source_revision": 121,
+  "source_revision": 122,
   "series": "series-1",
   "tags": [
     "_cc",
@@ -18,6 +18,7 @@
     "chemical",
     "co-authored",
     "contagion",
+    "doctor-sherman",
     "euclid",
     "horror",
     "humanoid",
@@ -32,48 +33,69 @@
     "tactile"
   ],
   "themes": [
-    "contagion",
-    "biological",
-    "murder-monster"
+    "misguided-cure",
+    "medical-horror",
+    "unreliable-self-justification"
   ],
   "effects": [
     {
       "domain": "biology",
-      "operation": "infect",
-      "target": "organism",
-      "trigger": "exposure",
-      "persistence": "persistent",
-      "constraints": [],
+      "operation": "disable",
+      "target": "an organism",
+      "trigger": "direct skin contact",
+      "persistence": "article-defined",
+      "constraints": [
+        "how this occurs is unknown"
+      ],
       "evidence": {
-        "revision": 121,
-        "section": "metadata.tags",
-        "locator": "tag:contagion"
+        "revision": 122,
+        "section": "Description",
+        "locator": "SCP-049 is capable of causing all biological functions of an organism to cease through direct skin contact."
       }
     },
     {
       "domain": "biology",
-      "operation": "alter",
-      "target": "organism",
-      "trigger": "exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "restore",
+      "target": "corpses",
+      "trigger": "after killings",
+      "persistence": "article-defined",
+      "constraints": [
+        "the surgeries are not always successful"
+      ],
       "evidence": {
-        "revision": 121,
-        "section": "metadata.tags",
-        "locator": "tag:biological"
+        "revision": 122,
+        "section": "Description",
+        "locator": "While these surgeries are not always \"successful\", they often result in the creation of instances of SCP-049-2."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
-      "constraints": [],
+      "domain": "cognition",
+      "operation": "activate",
+      "target": "nearby others",
+      "trigger": "if provoked, or if directed to by SCP-049",
+      "persistence": "article-defined",
+      "constraints": [
+        "instances are generally inactive otherwise"
+      ],
       "evidence": {
-        "revision": 121,
-        "section": "metadata.tags",
-        "locator": "tag:murder-monster"
+        "revision": 122,
+        "section": "Description",
+        "locator": "While these instances are generally inactive, moving very little and in a generally ambulatory fashion, they can become extremely aggressive if provoked, or if directed to by SCP-049."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "suppress",
+      "target": "SCP-049",
+      "trigger": "when SCP-049 becomes aggressive",
+      "persistence": "article-defined",
+      "constraints": [
+        "SCP-049 becomes aggressive"
+      ],
+      "evidence": {
+        "revision": 122,
+        "section": "Special Containment Procedures",
+        "locator": "In the event SCP-049 becomes aggressive, the application of lavender (//L. multifida//) has been shown to produce a calming effect on the entity."
       }
     }
   ],

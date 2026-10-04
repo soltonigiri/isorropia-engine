@@ -1,25 +1,20 @@
-import { createHash } from 'node:crypto';
-import { scorePair } from './scoring.js';
+import { RANKING_CONTRACT_VERSION } from './contracts.js';
+import { stableDigest } from './analysis-policy.js';
+import { scorePair, SCORING_CONTRACT_VERSION } from './scoring.js';
 import {
   DISCLAIMER,
   type Dataset,
   type Mode,
   type PairInteraction,
+  type PairInspectionResponse,
   type PairResponse,
   type PairResult,
   type Profile,
   type SemanticProfile,
 } from './types.js';
 
-export const SETTING_THRESHOLDS = {
-  rough: 0,
-  coarse: 0.25,
-  '1:1': 0.5,
-  fine: 0.7,
-  'very-fine': 0.85,
-} as const;
-
-export type Setting = keyof typeof SETTING_THRESHOLDS;
+export const SETTING_NAMES = ['rough', 'coarse', '1:1', 'fine', 'very-fine'] as const;
+export type Setting = (typeof SETTING_NAMES)[number];
 
 export class IsorropiaEngine {
   private readonly profileMap: Map<string, Profile>;
@@ -40,10 +35,12 @@ export class IsorropiaEngine {
         interaction,
       ]),
     );
-    this.ruleVersion = createHash('sha256')
-      .update(JSON.stringify(dataset.rules))
-      .digest('hex')
-      .slice(0, 12);
+    this.ruleVersion = stableDigest({
+      rules: dataset.rules,
+      scoring_policy: dataset.scoringPolicy,
+      scoring_contract_version: SCORING_CONTRACT_VERSION,
+      ranking_contract_version: RANKING_CONTRACT_VERSION,
+    });
   }
 
   pair(params: {
@@ -56,9 +53,9 @@ export class IsorropiaEngine {
     const query = this.profileMap.get(pageId);
     if (!query) throw new Error(`Unknown SCP profile: ${pageId}`);
 
-    const threshold = params.setting
-      ? SETTING_THRESHOLDS[params.setting]
-      : SETTING_THRESHOLDS['1:1'];
+    const threshold = this.dataset.scoringPolicy.setting_thresholds[
+      params.setting ?? '1:1'
+    ];
     const limit = params.limit ?? 5;
     const results = this.dataset.profiles
       .filter((candidate) => candidate.page_id !== query.page_id)
@@ -74,9 +71,14 @@ export class IsorropiaEngine {
           edges: this.dataset.edges,
           interaction,
           semantics: this.semanticMap,
+          scoringPolicy: this.dataset.scoringPolicy,
         });
       })
       .filter((result): result is PairResult => result !== undefined)
+      .filter(
+        (result) =>
+          params.setting === 'rough' || result.basis.kind === 'reviewed-interaction',
+      )
       .filter((result) => result.confidence >= threshold)
       .sort(compareResults)
       .slice(0, limit);
@@ -94,6 +96,55 @@ export class IsorropiaEngine {
       ...(query.known_not ? { known_not: query.known_not } : {}),
       disclaimer: DISCLAIMER,
     };
+  }
+
+  inspect(params: {
+    pageId: string;
+    candidatePageId: string;
+    mode: Mode;
+  }): PairInspectionResponse {
+    const pageId = normalizePageId(params.pageId);
+    const candidatePageId = normalizePageId(params.candidatePageId);
+    const query = this.profileMap.get(pageId);
+    const candidate = this.profileMap.get(candidatePageId);
+    if (!query) throw new Error(`Unknown SCP profile: ${pageId}`);
+    if (!candidate) throw new Error(`Unknown SCP profile: ${candidatePageId}`);
+    if (query.page_id === candidate.page_id) {
+      throw new Error('A profile cannot be paired with itself');
+    }
+    const interaction = this.interactionMap.get(
+      interactionKey(params.mode, query.page_id, candidate.page_id),
+    );
+    const base = {
+      query: { page_id: query.page_id, title: query.title, url: query.url },
+      candidate: {
+        page_id: candidate.page_id,
+        title: candidate.title,
+        url: candidate.url,
+      },
+      mode: params.mode,
+      database_version: this.dataset.manifest.database_version,
+      rule_version: this.ruleVersion,
+      disclaimer: DISCLAIMER,
+    };
+    if (interaction?.verdict === 'rejected') {
+      return { ...base, status: 'rejected', reason: interaction.reason };
+    }
+    const result = scorePair({
+      query,
+      candidate,
+      mode: params.mode,
+      rules: this.dataset.rules,
+      edges: this.dataset.edges,
+      interaction,
+      semantics: this.semanticMap,
+      scoringPolicy: this.dataset.scoringPolicy,
+    });
+    if (interaction?.verdict === 'accepted' && result) {
+      return { ...base, status: 'accepted', result };
+    }
+    if (result) return { ...base, status: 'weak-signal', result };
+    return { ...base, status: 'unreviewed' };
   }
 
   coreCycle(): {
@@ -125,18 +176,21 @@ export class IsorropiaEngine {
       for (let j = i + 1; j < profiles.length; j += 1) {
         const left = profiles[i]!;
         const right = profiles[j]!;
+        const interaction = this.interactionMap.get(
+          interactionKey('cycle', left.page_id, right.page_id),
+        );
+        if (interaction?.verdict !== 'accepted') continue;
         const result = scorePair({
           query: left,
           candidate: right,
           mode: 'cycle',
           rules: this.dataset.rules,
           edges: this.dataset.edges,
-          interaction: this.interactionMap.get(
-            interactionKey('cycle', left.page_id, right.page_id),
-          ),
+          interaction,
           semantics: this.semanticMap,
+          scoringPolicy: this.dataset.scoringPolicy,
         });
-        if (!result || result.confidence < SETTING_THRESHOLDS['1:1']) continue;
+        if (!result) continue;
         const candidate = {
           cycle: [left.page_id, right.page_id],
           minimum: result.score,

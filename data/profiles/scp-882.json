@@ -25,48 +25,63 @@
     "scp"
   ],
   "themes": [
-    "compulsion",
-    "auditory",
-    "clockwork"
+    "containment-through-environmental-control",
+    "mechanized-assimilation",
+    "psychological-pressure"
   ],
   "effects": [
     {
-      "domain": "cognition",
-      "operation": "compel",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "SCP-882 motion",
+      "trigger": "not coated in rust",
+      "persistence": "while uncoated",
       "constraints": [],
       "evidence": {
         "revision": 33,
-        "section": "metadata.tags",
-        "locator": "tag:compulsion"
+        "section": "Description",
+        "locator": "No identifiable energy source has been found, but all components will begin to move if not coated in rust."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "transform",
+      "target": "SCP-882",
+      "trigger": "metal touching the object",
+      "persistence": "permanently",
+      "constraints": [
+        "Organic matter remains unaffected."
+      ],
+      "evidence": {
+        "revision": 33,
+        "section": "Description",
+        "locator": "Any metal touching the object will become permanently affixed to it, and over a period of a few days becomes a new part of the object."
       }
     },
     {
       "domain": "perception",
-      "operation": "auditory_trigger",
-      "target": "observer",
-      "trigger": "audition",
-      "persistence": "transient",
+      "operation": "other",
+      "target": "persons",
+      "trigger": "remaining in the vicinity of the object for prolonged periods",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 33,
-        "section": "metadata.tags",
-        "locator": "tag:auditory"
+        "section": "Description",
+        "locator": "Persons remaining in the vicinity of the object for prolonged periods have developed auditory hallucinations while near the object, mainly the sound of grinding and clicking."
       }
     },
     {
-      "domain": "technology",
-      "operation": "construct",
-      "target": "mechanism",
-      "trigger": "operation",
-      "persistence": "persistent",
+      "domain": "perception",
+      "operation": "suppress",
+      "target": "auditory hallucinations",
+      "trigger": "sound intensifies",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 33,
-        "section": "metadata.tags",
-        "locator": "tag:clockwork"
+        "section": "Description",
+        "locator": "The sound intensifies, and is abated only by throwing metal into the object."
       }
     }
   ],

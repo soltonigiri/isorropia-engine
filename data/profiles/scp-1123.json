@@ -20,48 +20,82 @@
     "tactile"
   ],
   "themes": [
-    "hallucination",
-    "mind-affecting",
-    "tactile"
+    "historical-trauma",
+    "memory",
+    "witnessing"
   ],
   "effects": [
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "perception",
-      "trigger": "exposure",
-      "persistence": "transient",
+      "operation": "transform",
+      "target": "subjects",
+      "trigger": "When subjects touch the surface of SCP-1123",
+      "persistence": "ninety minutes to six hours",
       "constraints": [],
       "evidence": {
         "revision": 32,
-        "section": "metadata.tags",
-        "locator": "tag:hallucination"
+        "section": "Description",
+        "locator": "When subjects touch the surface of SCP-1123, they will experience a dissociative fugue state."
       }
     },
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "disable",
+      "target": "prior identity memories",
+      "trigger": "During the fugue",
+      "persistence": "article-defined",
+      "constraints": [
+        "the subject is in the fugue state"
+      ],
       "evidence": {
         "revision": 32,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
+        "section": "Description",
+        "locator": "During the fugue the subject will lose all memories of their prior identity."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "restore",
+      "target": "prior identity memories",
+      "trigger": "As the fugue state subsides",
+      "persistence": "article-defined",
+      "constraints": [
+        "the fugue state subsides"
+      ],
+      "evidence": {
+        "revision": 32,
+        "section": "Description",
+        "locator": "As the fugue state subsides, the subject will regain memories of their prior identity, but will also retain memory of the new, imprinted identity and all the knowledge associated with it."
       }
     },
     {
       "domain": "perception",
-      "operation": "contact_trigger",
-      "target": "subject",
-      "trigger": "contact",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "transform",
+      "target": "subjects approaching SCP-1123",
+      "trigger": "when a subject approaches SCP-1123",
+      "persistence": "until less than 1 meter distance",
+      "constraints": [
+        "This effect is not reproducible with optical equipment."
+      ],
       "evidence": {
         "revision": 32,
-        "section": "metadata.tags",
-        "locator": "tag:tactile"
+        "section": "Description",
+        "locator": "However, when a subject approaches SCP-1123 they will report the script becoming progressively more visible until, at less than 1 meter, they will report it appearing as if freshly drawn."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "other",
+      "target": "psychological aftereffects",
+      "trigger": "in treatment of these aftereffects",
+      "persistence": "article-defined",
+      "constraints": [
+        "treatment of post-exposure aftereffects"
+      ],
+      "evidence": {
+        "revision": 32,
+        "section": "Description",
+        "locator": "It should be noted that in treatment of these aftereffects, use of amnestics has not shown any psychological benefit, and has often proved to be harmful."
       }
     }
   ],

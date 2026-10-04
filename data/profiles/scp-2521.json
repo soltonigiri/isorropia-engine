@@ -29,48 +29,23 @@
     "uncontained"
   ],
   "themes": [
-    "infohazard",
-    "sapient",
-    "humanoid"
+    "visual-redaction",
+    "withheld-information"
   ],
   "effects": [
     {
       "domain": "information",
-      "operation": "propagate",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "other",
+      "target": "SCP-2521 article",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "No anomaly mechanism or outcome is stated in readable text."
+      ],
       "evidence": {
         "revision": 33,
-        "section": "metadata.tags",
-        "locator": "tag:infohazard"
-      }
-    },
-    {
-      "domain": "cognition",
-      "operation": "communicate",
-      "target": "observer",
-      "trigger": "interaction",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 33,
-        "section": "metadata.tags",
-        "locator": "tag:sapient"
-      }
-    },
-    {
-      "domain": "biology",
-      "operation": "sustain",
-      "target": "human",
-      "trigger": "passive",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 33,
-        "section": "metadata.tags",
-        "locator": "tag:humanoid"
+        "section": "article body",
+        "locator": "[[=image info.png style=\"width:75px;\"]]"
       }
     }
   ],

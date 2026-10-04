@@ -29,48 +29,67 @@
     "visual"
   ],
   "themes": [
-    "possessive-mask",
-    "cognitohazard",
-    "mind-affecting"
+    "corruption",
+    "loss-of-self",
+    "containment-erosion"
   ],
   "effects": [
     {
-      "domain": "cognition",
-      "operation": "possess",
-      "target": "wearer",
-      "trigger": "wearing",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "transform",
+      "target": "contacted material",
+      "trigger": "article-defined-condition",
+      "persistence": "over a period of time",
+      "constraints": [
+        "rate depends on the material"
+      ],
       "evidence": {
         "revision": 72,
-        "section": "metadata.tags",
-        "locator": "tag:possessive-mask"
+        "section": "Description",
+        "locator": "Anything coming into contact with this substance slowly decays over a period of time, depending on the material, until it has decayed completely into a pool of the original contaminant."
       }
     },
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transform",
+      "target": "the original host",
+      "trigger": "when SCP-035 is placed on the face of an individual",
+      "persistence": "article-defined",
+      "constraints": [
+        "no effect is found when placed on an animal"
+      ],
       "evidence": {
         "revision": 72,
-        "section": "metadata.tags",
-        "locator": "tag:cognitohazard"
+        "section": "Description",
+        "locator": "When SCP-035 is placed on the face of an individual, an alternate brain wave pattern from SCP-035 overlaps that of the original host, effectively snuffing it out and causing brain death to the subject."
       }
     },
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
+      "operation": "transform",
+      "target": "interviewer's psychological state",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 72,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
+        "section": "Description",
+        "locator": "SCP-035 has proven to be highly sadistic, prompting some to commit suicide and transforming others into near-mindless servants with linguistic persuasion alone."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "restore",
+      "target": "personnel near SCP-035",
+      "trigger": "use of SCP-148",
+      "persistence": "article-defined",
+      "constraints": [
+        "the material appears to facilitate negativity within the cell"
+      ],
+      "evidence": {
+        "revision": 72,
+        "section": "Addendum 035-09",
+        "locator": "The use of SCP-148 has worked well, causing morale and suicide rates to return to near pre-SCP-035 rates."
       }
     }
   ],

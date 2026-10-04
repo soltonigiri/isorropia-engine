@@ -27,48 +27,53 @@
     "uncontained"
   ],
   "themes": [
-    "anafabula",
-    "infohazard",
-    "narrative"
+    "absence",
+    "metafiction",
+    "erasure"
   ],
   "effects": [
     {
-      "domain": "narrative",
-      "operation": "suppress",
-      "target": "narrative",
-      "trigger": "representation",
-      "persistence": "persistent",
+      "domain": "information",
+      "operation": "propagate",
+      "target": "a nonexistent instance of fictional media",
+      "trigger": "SCP-2747 manifestation",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 37,
-        "section": "metadata.tags",
-        "locator": "tag:anafabula"
+        "section": "Description",
+        "locator": "SCP-2747 is a phenomenon appearing in print and online media whereby platforms dedicated to the discussion of works of fiction begin to mention a nonexistent instance of fictional media."
       }
     },
     {
       "domain": "information",
-      "operation": "propagate",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "disable",
+      "target": "a fictional construct",
+      "trigger": "included to a sufficient extent within a fictional construct",
+      "persistence": "article-defined",
+      "constraints": [
+        "The cluster is included to a sufficient extent within a fictional construct.",
+        "The mechanism is presented as a current hypothesis and interpretation."
+      ],
       "evidence": {
         "revision": 37,
-        "section": "metadata.tags",
-        "locator": "tag:infohazard"
+        "section": "Description",
+        "locator": "It is the current hypothesis of the Department of Analytics that SCP-2747 represents evidence of a naturally-occurring //anafabula//, or anti-narrative: a cluster of interdependent signs, iconography and narremes[[footnote]]A narreme is defined as a base unit of a narrative, much in the same way that a mytheme denotes a base unit of myth, or a meme denotes a base unit of culture.[[/footnote]] that, when included to a sufficient extent within a fictional construct, leads to mutual annihilation."
       }
     },
     {
-      "domain": "narrative",
-      "operation": "alter",
-      "target": "narrative",
-      "trigger": "representation",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "information",
+      "operation": "transform",
+      "target": "all affected media",
+      "trigger": "positive identification",
+      "persistence": "article-defined",
+      "constraints": [
+        "A match is positively identified as SCP-2747 manifestation."
+      ],
       "evidence": {
         "revision": 37,
-        "section": "metadata.tags",
-        "locator": "tag:narrative"
+        "section": "Special Containment Procedures",
+        "locator": "In case of positive identification, all affected media are to be suitably corrected via standard Foundation media alteration protocols (912-A \"TWILIGHT ZONE\", 943-A \"POISONED WELL\")."
       }
     }
   ],

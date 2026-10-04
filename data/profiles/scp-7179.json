@@ -25,48 +25,35 @@
     "temporal"
   ],
   "themes": [
-    "afterlife",
-    "temporal",
-    "spatial"
+    "eternity",
+    "hedonic-exhaustion",
+    "isolation"
   ],
   "effects": [
     {
-      "domain": "death",
-      "operation": "preserve_after_death",
-      "target": "consciousness",
-      "trigger": "death",
-      "persistence": "persistent",
+      "domain": "space",
+      "operation": "transport",
+      "target": "an instance of SCP-7179",
+      "trigger": "upon any human's death",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 40,
-        "section": "metadata.tags",
-        "locator": "tag:afterlife"
-      }
-    },
-    {
-      "domain": "time",
-      "operation": "alter",
-      "target": "timeline",
-      "trigger": "event",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 40,
-        "section": "metadata.tags",
-        "locator": "tag:temporal"
+        "section": "Description",
+        "locator": "Upon any human's death, their consciousness is transported to an instance of SCP-7179, where they will physically remanifest in the same state as they were upon death, except in perfect health."
       }
     },
     {
       "domain": "space",
-      "operation": "distort",
-      "target": "space",
-      "trigger": "proximity",
-      "persistence": "persistent",
+      "operation": "transport",
+      "target": "individuals attempting to leave",
+      "trigger": "attempting to leave an SCP-7179 instance",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 40,
-        "section": "metadata.tags",
-        "locator": "tag:spatial"
+        "section": "Description",
+        "locator": "Individuals attempting to leave an SCP-7179 instance simply end up on the opposite edge of the same space, with SCP-7179 acting as a functional omnilock."
       }
     }
   ],

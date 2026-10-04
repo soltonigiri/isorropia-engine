@@ -21,48 +21,52 @@
     "scp"
   ],
   "themes": [
-    "auditory",
-    "cognitohazard",
-    "mind-affecting"
+    "perception-bound-horror",
+    "sleep-deprivation",
+    "inescapable-stalking"
   ],
   "effects": [
     {
+      "domain": "cognition",
+      "operation": "activate",
+      "target": "all sentient beings who hear it",
+      "trigger": "any noise produced by SCP-513",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 34,
+        "section": "Description",
+        "locator": "Any noise produced by SCP-513 immediately induces strong anxiety in all sentient beings who hear it, regardless of their previous mental status."
+      }
+    },
+    {
       "domain": "perception",
-      "operation": "auditory_trigger",
-      "target": "observer",
-      "trigger": "audition",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "activate",
+      "target": "SCP-513-1",
+      "trigger": "roughly one hour after exposure",
+      "persistence": "sightings reoccur every 14 to 237 minutes",
+      "constraints": [
+        "The person has been exposed to SCP-513"
+      ],
       "evidence": {
         "revision": 34,
-        "section": "metadata.tags",
-        "locator": "tag:auditory"
+        "section": "Description",
+        "locator": "Roughly one hour after exposure, exposure victims begin to catch glimpses of SCP-513-1 when opening doors, walking past mirrors, turning their heads, or performing any other actions that result in a sudden change in visual perception."
       }
     },
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transform",
+      "target": "exposure victims",
+      "trigger": "SCP-513-1's behavior",
+      "persistence": "invariably",
+      "constraints": [
+        "All test cases but one have ended with the test subject’s suicide"
+      ],
       "evidence": {
         "revision": 34,
-        "section": "metadata.tags",
-        "locator": "tag:cognitohazard"
-      }
-    },
-    {
-      "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 34,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
+        "section": "Description",
+        "locator": "This sleep deprivation, along with the mental stress caused by SCP-513-1's behavior, invariably induces paranoia, aggression, hypervigilance, and depression."
       }
     }
   ],

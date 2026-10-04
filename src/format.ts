@@ -1,10 +1,16 @@
-import type { Mode, PairResponse } from './types.js';
+import type {
+  Mode,
+  PairInspectionResponse,
+  PairResponse,
+  PairResult,
+} from './types.js';
 
 export type FormatOptions = {
   judgement?: boolean;
   rich?: boolean;
   color?: boolean;
   width?: number;
+  explain?: boolean;
 };
 
 const DEFAULT_WIDTH = 78;
@@ -37,6 +43,34 @@ export function formatPairResponse(
     ...options,
     width: Math.min(MAX_RICH_WIDTH, requestedWidth),
   });
+}
+
+export function formatPairInspection(
+  response: PairInspectionResponse,
+  explain = false,
+): string {
+  const lines = [
+    `${response.status.toUpperCase()}  ${response.query.page_id} ↔ ${response.candidate.page_id}  ${response.mode}`,
+  ];
+  if (response.reason) lines.push(response.reason);
+  if (response.result) {
+    lines.push(`score=${response.result.score} confidence=${response.result.confidence.toFixed(2)}`);
+    lines.push(`READ ${response.query.url}`, `READ ${response.candidate.url}`);
+    if (explain) {
+      lines.push(`basis=${basisText(response.result)}`);
+      lines.push(`query evidence=rev.${response.result.evidence.query.revision} ${response.result.evidence.query.section}`);
+      lines.push(`candidate evidence=rev.${response.result.evidence.candidate.revision} ${response.result.evidence.candidate.section}`);
+    }
+  }
+  lines.push('', response.disclaimer);
+  return lines.join('\n');
+}
+
+function basisText(result: PairResult): string {
+  if (result.basis.kind === 'rule-fallback') return `rule-fallback/${result.basis.evidence_grade}`;
+  const components = result.basis.score_components;
+  return `reviewed/${result.basis.support_grade} ` +
+    `${components.mode_fit}+${components.coherence}+${components.specificity}+${components.discovery_value}`;
 }
 
 function formatRichPairResponse(
@@ -97,6 +131,10 @@ function formatRichPairResponse(
   }
   lines.push(bottomBorder, '');
 
+  if (response.results.length === 0) {
+    lines.push(' No supported result at this setting. Use --setting rough for weaker signals.');
+  }
+
   response.results.forEach((result, index) => {
     const rank = String(index + 1).padStart(2, '0');
     const title = displayTitle(result.title, result.page_id);
@@ -124,7 +162,8 @@ function formatRichPairResponse(
       strongestRule?.explanation ?? 'No strong interaction rule matched.',
       width,
     );
-    if (result.causal_chain) {
+    appendWrapped(lines, '     READ        ', '                 ', result.url, width);
+    if (options.explain && result.causal_chain) {
       appendWrapped(
         lines,
         '     CHAIN       ',
@@ -133,7 +172,7 @@ function formatRichPairResponse(
         width,
       );
     }
-    if (result.assumption) {
+    if (options.explain && result.assumption) {
       appendWrapped(
         lines,
         '     CONDITION   ',
@@ -142,7 +181,7 @@ function formatRichPairResponse(
         width,
       );
     }
-    if (result.limitation) {
+    if (options.explain && result.limitation) {
       appendWrapped(
         lines,
         '     LIMIT       ',
@@ -151,29 +190,20 @@ function formatRichPairResponse(
         width,
       );
     }
-    appendWrapped(
-      lines,
-      '     RULES       ',
-      '                 ',
-      result.rules.length > 0
-        ? result.rules.map((rule) => rule.id).join(' · ')
-        : 'none',
-      width,
-    );
-    appendWrapped(
-      lines,
-      '     QUERY       ',
-      '                 ',
-      richEvidence(result.evidence.query),
-      width,
-    );
-    appendWrapped(
-      lines,
-      '     MATCH       ',
-      '                 ',
-      richEvidence(result.evidence.candidate),
-      width,
-    );
+    if (options.explain) {
+      appendWrapped(lines, '     BASIS       ', '                 ', formatBasis(result), width);
+      appendWrapped(
+        lines,
+        '     RULES       ',
+        '                 ',
+        result.rules.length > 0
+          ? result.rules.map((rule) => rule.id).join(' · ')
+          : 'none',
+        width,
+      );
+      appendWrapped(lines, '     QUERY       ', '                 ', richEvidence(result.evidence.query), width);
+      appendWrapped(lines, '     MATCH       ', '                 ', richEvidence(result.evidence.candidate), width);
+    }
 
     if (index < response.results.length - 1) {
       lines.push('', separator, '');
@@ -209,32 +239,40 @@ function formatPlainPairResponse(
   }
   lines.push('');
 
+  if (response.results.length === 0) {
+    lines.push('No supported result at this setting. Use --setting rough for weaker signals.');
+  }
+
   response.results.forEach((result, index) => {
     lines.push(
       `${index + 1}. ${result.title} (${result.page_id})  score=${result.score} confidence=${result.confidence.toFixed(2)}`,
     );
-    if (result.rules.length === 0) {
-      lines.push('   rule: no strong interaction rule matched');
-    } else {
-      for (const rule of result.rules) {
-        lines.push(`   rule: ${rule.id} — ${rule.explanation}`);
-      }
-    }
-    if (result.causal_chain) {
+    lines.push(`   ${result.rules[0]?.explanation ?? 'No strong interaction rule matched.'}`);
+    lines.push(`   READ ${result.url}`);
+    if (options.explain && result.causal_chain) {
       lines.push(`   chain: ${result.causal_chain.join(' -> ')}`);
     }
-    if (result.assumption) lines.push(`   condition: ${result.assumption}`);
-    if (result.limitation) lines.push(`   limit: ${result.limitation}`);
-    lines.push(
-      `   evidence: ${response.query.page_id} ${formatEvidence(result.evidence.query)}`,
-    );
-    lines.push(
-      `   evidence: ${result.page_id} ${formatEvidence(result.evidence.candidate)}`,
-    );
+    if (options.explain && result.assumption) lines.push(`   condition: ${result.assumption}`);
+    if (options.explain && result.limitation) lines.push(`   limit: ${result.limitation}`);
+    if (options.explain) {
+      lines.push(`   basis: ${formatBasis(result)}`);
+      lines.push(`   evidence: ${response.query.page_id} ${formatEvidence(result.evidence.query)}`);
+      lines.push(`   evidence: ${result.page_id} ${formatEvidence(result.evidence.candidate)}`);
+    }
   });
 
   lines.push('', response.disclaimer);
   return lines.join('\n');
+}
+
+function formatBasis(result: PairResponse['results'][number]): string {
+  if (result.basis.kind === 'rule-fallback') {
+    return `rule fallback · ${result.basis.evidence_grade}`;
+  }
+  const components = result.basis.score_components;
+  return `reviewed · support ${result.basis.support_grade} · ` +
+    `fit ${components.mode_fit} + coherence ${components.coherence} + ` +
+    `specificity ${components.specificity} + discovery ${components.discovery_value}`;
 }
 
 function confidenceBar(confidence: number): string {

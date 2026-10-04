@@ -19,48 +19,66 @@
     "transfiguration"
   ],
   "themes": [
-    "transfiguration",
-    "artifact",
-    "liquid"
+    "inescapable-bodily-dependence",
+    "containment-breach"
   ],
   "effects": [
     {
       "domain": "biology",
       "operation": "transform",
-      "target": "body",
-      "trigger": "exposure",
-      "persistence": "persistent",
+      "target": "handler’s hand or hands",
+      "trigger": "Approximately 2 - 5 seconds after the SCP is held",
+      "persistence": "permanent until the death of its holder",
       "constraints": [],
       "evidence": {
         "revision": 23,
-        "section": "metadata.tags",
-        "locator": "tag:transfiguration"
+        "section": "Description",
+        "locator": "Approximately 2 - 5 seconds after the SCP is held, it will instantly bond itself through unknown, albeit painful means to the handler’s hand or hands."
       }
     },
     {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "user",
-      "trigger": "contact",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "propagate",
+      "target": "container contents",
+      "trigger": "Once bonded",
+      "persistence": "continues to refill automatically when contents are consumed or dumped out",
+      "constraints": [
+        "SCP-198 is bonded to a holder.",
+        "The fluid or semi-solid differs for each holder."
+      ],
       "evidence": {
         "revision": 23,
-        "section": "metadata.tags",
-        "locator": "tag:artifact"
+        "section": "Description",
+        "locator": "Once bonded, any liquid inside SCP-198 will disappear and the container will inexplicably begin to fill from the bottom-up with a fluid or a semi-solid material, stopping only once it reaches the top of the container."
       }
     },
     {
-      "domain": "matter",
-      "operation": "flow",
-      "target": "material",
-      "trigger": "contact",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "transform",
+      "target": "holder",
+      "trigger": "Once SCP-198 has filled",
+      "persistence": "until prevented; usually fatal within 24 hours",
+      "constraints": [
+        "SCP-198 has filled after bonding.",
+        "Consuming the contents can provide nourishment, but does not reduce the dehydration and emaciation rate."
+      ],
+      "evidence": {
+        "revision": 23,
+        "section": "Description",
+        "locator": "Once SCP-198 has filled, the holder will undergo rapid dehydration and/or emaciation, becoming increasingly malnourished to the point of death, which usually occurs within 24 hours if nothing is done to prevent it."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "activate",
+      "target": "digital scale and alarm system",
+      "trigger": "Any deviations in weight",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 23,
-        "section": "metadata.tags",
-        "locator": "tag:liquid"
+        "section": "Special Containment Procedures",
+        "locator": "SCP-198’s case must now be kept on a digital scale attached to an alarm system with redundant backups for power in its secure room."
       }
     }
   ],

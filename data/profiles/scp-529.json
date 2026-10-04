@@ -23,48 +23,34 @@
     "scp"
   ],
   "themes": [
-    "alive",
-    "feline",
-    "heartwarming"
+    "ordinary-affection-amid-bodily-impossibility",
+    "benign-anomaly"
   ],
   "effects": [
     {
       "domain": "biology",
-      "operation": "sustain",
-      "target": "organism",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "operation": "restore",
+      "target": "SCP-529",
+      "trigger": "despite its missing rear body",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 32,
-        "section": "metadata.tags",
-        "locator": "tag:alive"
+        "section": "Description",
+        "locator": "In spite of this, the animal has no health problems, and moves about as if its hindquarters were still in place."
       }
     },
     {
-      "domain": "biology",
-      "operation": "sustain",
-      "target": "animal",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "domain": "perception",
+      "operation": "other",
+      "target": "non-visible wavelengths of light",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 32,
-        "section": "metadata.tags",
-        "locator": "tag:feline"
-      }
-    },
-    {
-      "domain": "cognition",
-      "operation": "calm",
-      "target": "subject",
-      "trigger": "interaction",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 32,
-        "section": "metadata.tags",
-        "locator": "tag:heartwarming"
+        "section": "Description",
+        "locator": "The cross-section does not display the interior of the animal, but appears pure black to the eye, and absorbs all non-visible wavelengths of light."
       }
     }
   ],

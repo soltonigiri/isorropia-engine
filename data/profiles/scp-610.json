@@ -27,47 +27,69 @@
   ],
   "themes": [
     "contagion",
-    "transfiguration",
-    "mind-affecting"
+    "bodily-transformation",
+    "quarantine",
+    "unseen-threat"
   ],
   "effects": [
     {
       "domain": "biology",
-      "operation": "infect",
-      "target": "organism",
-      "trigger": "exposure",
-      "persistence": "persistent",
-      "constraints": [],
+      "operation": "propagate",
+      "target": "living organisms",
+      "trigger": "physical contact with an organism infected with SCP-610",
+      "persistence": "article-defined",
+      "constraints": [
+        "Known vectors seem focused on physical contact."
+      ],
       "evidence": {
         "revision": 65,
-        "section": "metadata.tags",
-        "locator": "tag:contagion"
+        "section": "Special Containment Procedures",
+        "locator": "At present the known infection vectors for SCP-610's spread seem to be focused on physical contact."
       }
     },
     {
       "domain": "biology",
       "operation": "transform",
-      "target": "body",
-      "trigger": "exposure",
-      "persistence": "persistent",
-      "constraints": [],
+      "target": "infected subjects",
+      "trigger": "completion of the infection",
+      "persistence": "article-defined",
+      "constraints": [
+        "The infection has completed.",
+        "The path of mutation appears to be largely random."
+      ],
       "evidence": {
         "revision": 65,
-        "section": "metadata.tags",
-        "locator": "tag:transfiguration"
+        "section": "Description",
+        "locator": "Normal human features start to disappear at this point under the infection and the path of mutation appears to be largely random."
       }
     },
     {
-      "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "propagate",
+      "target": "surrounding objects",
+      "trigger": "an infected individual roots itself in a suitable location",
+      "persistence": "article-defined",
+      "constraints": [
+        "An infected individual ceases moving and roots itself.",
+        "Affected objects do not spread the infection as living creatures do."
+      ],
+      "evidence": {
+        "revision": 65,
+        "section": "Description",
+        "locator": "The fleshy growth on the victim will then begin to spread itself across all surrounding objects and consume them."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "suppress",
+      "target": "SCP-610 threat",
+      "trigger": "nothing entering or leaving the infected areas",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 65,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
+        "section": "Description",
+        "locator": "The data returned from these observations coupled with the openly aggressive nature of the infected to attempt to spread SCP-610 has resulted in the Keter classification, however so long as nothing is allowed to enter or leave the infected areas it is considered a neutralized threat."
       }
     }
   ],

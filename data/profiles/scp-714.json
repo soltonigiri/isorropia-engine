@@ -19,34 +19,36 @@
     "self-repairing"
   ],
   "themes": [
-    "self-repairing",
-    "jewelry"
+    "protective-tradeoffs",
+    "misuse"
   ],
   "effects": [
     {
-      "domain": "durability",
-      "operation": "regenerate",
-      "target": "self",
-      "trigger": "damage",
-      "persistence": "persistent",
+      "domain": "biology",
+      "operation": "suppress",
+      "target": "wearers",
+      "trigger": "within minutes of putting on SCP-714",
+      "persistence": "until removed if asleep",
       "constraints": [],
       "evidence": {
         "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:self-repairing"
+        "section": "Description, Exhaustion, Compulsion to Rest/Sleep",
+        "locator": "Due to this, they will feel driven to \"sit down and rest for a bit\" on the nearest available furniture, and will likely fall asleep within the space of a few hours."
       }
     },
     {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "wearer",
-      "trigger": "wearing",
-      "persistence": "transient",
-      "constraints": [],
+      "domain": "cognition",
+      "operation": "suppress",
+      "target": "memetic and mental influences",
+      "trigger": "article-defined-condition",
+      "persistence": "only for as long as SCP-714 is worn",
+      "constraints": [
+        "Influences that do not take immediate effect still present significant risk."
+      ],
       "evidence": {
         "revision": 36,
-        "section": "metadata.tags",
-        "locator": "tag:jewelry"
+        "section": "Description, Mental 'Shield'",
+        "locator": "As a dubious \"benefit\" of seemingly reduced mental capacity, wearers of SCP-714 show abnormally high resilience to memetic and mental influences, particularly commands or immediate effects."
       }
     }
   ],

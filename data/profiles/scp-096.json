@@ -26,48 +26,55 @@
     "visual"
   ],
   "themes": [
-    "observational",
-    "murder-monster",
-    "cognitohazard"
+    "hazardous-perception",
+    "inevitability",
+    "containment-failure"
   ],
   "effects": [
     {
-      "domain": "perception",
-      "operation": "observation_trigger",
-      "target": "observer",
-      "trigger": "observation",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 58,
-        "section": "metadata.tags",
-        "locator": "tag:observational"
-      }
-    },
-    {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 58,
-        "section": "metadata.tags",
-        "locator": "tag:murder-monster"
-      }
-    },
-    {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "activate",
+      "target": "SCP-096",
+      "trigger": "someone views SCP-096's face",
+      "persistence": "article-defined",
+      "constraints": [
+        "someone views SCP-096's face",
+        "artistic depictions do not cause this reaction"
+      ],
       "evidence": {
         "revision": 58,
-        "section": "metadata.tags",
-        "locator": "tag:cognitohazard"
+        "section": "Description",
+        "locator": "However, when someone views SCP-096's face, whether it be directly, via video recording, or even a photograph, it will enter a stage of considerable emotional distress."
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "transport",
+      "target": "the person who viewed its face",
+      "trigger": "one to two minutes after first viewing",
+      "persistence": "article-defined",
+      "constraints": [
+        "someone has viewed SCP-096's face"
+      ],
+      "evidence": {
+        "revision": 58,
+        "section": "Description",
+        "locator": "Approximately one (1) to two (2) minutes after the first viewing, SCP-096 will begin running to the person who viewed its face (who will from this point on be referred to as SCP-096-1)."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "disable",
+      "target": "SCP-096-1",
+      "trigger": "arrival at SCP-096-1's location",
+      "persistence": "article-defined",
+      "constraints": [
+        "SCP-096 arrives at SCP-096-1's location"
+      ],
+      "evidence": {
+        "revision": 58,
+        "section": "Description",
+        "locator": "Upon arriving at SCP-096-1's location, SCP-096 will proceed to kill and [DATA EXPUNGED] SCP-096-1."
       }
     }
   ],

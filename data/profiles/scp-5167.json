@@ -23,48 +23,39 @@
     "uncontained"
   ],
   "themes": [
-    "cognitohazard",
-    "online",
-    "game"
+    "online-contagion",
+    "declining-potency",
+    "forgotten-identity"
   ],
   "effects": [
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "observer",
-      "trigger": "information_exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "transform",
+      "target": "individuals who interact with SCP-5167 in-game",
+      "trigger": "interaction with SCP-5167",
+      "persistence": "one or two weeks in continued observation",
+      "constraints": [
+        "Severity varies from person to person"
+      ],
       "evidence": {
         "revision": 11,
-        "section": "metadata.tags",
-        "locator": "tag:cognitohazard"
+        "section": "Description",
+        "locator": "Individuals who interact with SCP-5167 in-game will subsequently begin to exhibit symptoms of paranoia and Capgras delusion."
       }
     },
     {
       "domain": "information",
-      "operation": "propagate",
-      "target": "network_user",
-      "trigger": "network_access",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "suppress",
+      "target": "direct witnesses and secondary evidence",
+      "trigger": "confirmed sightings",
+      "persistence": "until symptoms abate",
+      "constraints": [
+        "Potential sightings are confirmed"
+      ],
       "evidence": {
         "revision": 11,
-        "section": "metadata.tags",
-        "locator": "tag:online"
-      }
-    },
-    {
-      "domain": "concept",
-      "operation": "impose_rules",
-      "target": "participant",
-      "trigger": "participation",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 11,
-        "section": "metadata.tags",
-        "locator": "tag:game"
+        "section": "Special Containment Procedures",
+        "locator": "In cases where these sightings are confirmed, all direct witnesses are to be apprehended and all secondary evidence removed from the platform in question."
       }
     }
   ],

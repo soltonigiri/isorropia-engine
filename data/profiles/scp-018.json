@@ -20,48 +20,35 @@
     "toy"
   ],
   "themes": [
-    "ectoentropic",
-    "toy",
-    "sphere"
+    "toy-turned-weapon",
+    "kinetic-escalation",
+    "improvised-weaponization"
   ],
   "effects": [
     {
-      "domain": "energy",
-      "operation": "generate",
-      "target": "energy",
-      "trigger": "passive",
-      "persistence": "persistent",
+      "domain": "other",
+      "operation": "propagate",
+      "target": "its bounce height",
+      "trigger": "dropped one (1) meter",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 52,
-        "section": "metadata.tags",
-        "locator": "tag:ectoentropic"
+        "section": "Description",
+        "locator": "At first thought to be a pleasant child's toy, SCP-018 was able to bounce with over two hundred percent (200%) efficiency (that is, if dropped one (1) meter, it would bounce two (2), then four (4), then eight (8), then sixteen (16))."
       }
     },
     {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "user",
-      "trigger": "interaction",
-      "persistence": "transient",
+      "domain": "other",
+      "operation": "suppress",
+      "target": "SCP-018",
+      "trigger": "SCP-018 is to break free from the holding box",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 52,
-        "section": "metadata.tags",
-        "locator": "tag:toy"
-      }
-    },
-    {
-      "domain": "motion",
-      "operation": "move",
-      "target": "self",
-      "trigger": "impact",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 52,
-        "section": "metadata.tags",
-        "locator": "tag:sphere"
+        "section": "Special Containment Procedures",
+        "locator": "If SCP-018 is to break free from the holding box, the polyethylene-based 'goo' will slow down kinetic activity enough for proper retrieval by containment personnel."
       }
     }
   ],

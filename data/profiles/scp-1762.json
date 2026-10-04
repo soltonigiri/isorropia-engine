@@ -27,48 +27,48 @@
     "scp"
   ],
   "themes": [
-    "airborne",
-    "document",
-    "fantasy"
+    "lost-imagination",
+    "farewell",
+    "extinction"
   ],
   "effects": [
     {
-      "domain": "containment",
-      "operation": "spread",
-      "target": "environment",
-      "trigger": "air_exposure",
-      "persistence": "persistent",
+      "domain": "space",
+      "operation": "transport",
+      "target": "SCP-1762-2",
+      "trigger": "infrequently",
+      "persistence": "release periods",
       "constraints": [],
       "evidence": {
         "revision": 51,
-        "section": "metadata.tags",
-        "locator": "tag:airborne"
+        "section": "Description",
+        "locator": "SCP-1762-1 will infrequently open and initiate a release of SCP-1762-2."
       }
     },
     {
-      "domain": "information",
-      "operation": "record",
-      "target": "knowledge",
-      "trigger": "reading",
-      "persistence": "persistent",
+      "domain": "space",
+      "operation": "transport",
+      "target": "SCP-1762-1",
+      "trigger": "after approximately two to three hours outside",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 51,
-        "section": "metadata.tags",
-        "locator": "tag:document"
+        "section": "Description",
+        "locator": "After approximately two to three hours of time spent outside of SCP-1762-1, all instances of SCP-1762-2 return and fly back into SCP-1762-1; during this time, SCP-1762-1 will once again begin emitting smoke, and instances of SCP-1762-2 will vanish after passing the rim of SCP-1762-1."
       }
     },
     {
-      "domain": "narrative",
-      "operation": "manifest",
-      "target": "fiction",
-      "trigger": "engagement",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "transform",
+      "target": "discharged matter",
+      "trigger": "during the Jabberwocky Event",
+      "persistence": "six weeks",
       "constraints": [],
       "evidence": {
         "revision": 51,
-        "section": "metadata.tags",
-        "locator": "tag:fantasy"
+        "section": "Addendum 1762-02: Documentation of \"The Jabberwocky Event\"",
+        "locator": "During this time, it continued to emit fire as the amount of paper discharged from it steadily decreased; matter resembling muscle and tissue was continuously expelled from SCP-1762-1 at increasing frequency."
       }
     }
   ],

@@ -22,48 +22,71 @@
     "sleep"
   ],
   "themes": [
-    "dream",
-    "memory-affecting",
-    "sleep"
+    "escapism",
+    "imagination",
+    "disillusionment"
   ],
   "effects": [
     {
       "domain": "cognition",
-      "operation": "induce_dream",
-      "target": "sleeper",
-      "trigger": "sleep",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "transform",
+      "target": "the reader's dream experience",
+      "trigger": "upon falling asleep",
+      "persistence": "45 seconds to 200 years in the mind of the reader",
+      "constraints": [
+        "SCP-1230 is opened",
+        "the reader falls asleep"
+      ],
       "evidence": {
         "revision": 52,
-        "section": "metadata.tags",
-        "locator": "tag:dream"
-      }
-    },
-    {
-      "domain": "memory",
-      "operation": "alter",
-      "target": "memory",
-      "trigger": "exposure",
-      "persistence": "variable",
-      "constraints": [],
-      "evidence": {
-        "revision": 52,
-        "section": "metadata.tags",
-        "locator": "tag:memory-affecting"
+        "section": "Description",
+        "locator": "This has no obvious effects at first, but upon falling asleep, the reader will dream of a fantasy world where they are the protagonist of a troubled land."
       }
     },
     {
       "domain": "cognition",
-      "operation": "induce_sleep",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "restore",
+      "target": "dream details",
+      "trigger": "Upon awaking",
+      "persistence": "article-defined",
+      "constraints": [
+        "the reader has awakened from an SCP-1230-induced dream"
+      ],
       "evidence": {
         "revision": 52,
-        "section": "metadata.tags",
-        "locator": "tag:sleep"
+        "section": "Description",
+        "locator": "Upon awaking, the reader is able to remember every aspect of their dream in detail."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "the reader's dream",
+      "trigger": "once you read ‘A hero is born’",
+      "persistence": "article-defined",
+      "constraints": [
+        "the reader reads ‘A hero is born’"
+      ],
+      "evidence": {
+        "revision": 52,
+        "section": "Experiment-1230-01",
+        "locator": "Upon his return, Dr. F███████ reported that SCP-1230-1 appeared in his dreams and explained that once you read ‘A hero is born’, the dream is immediately implanted in your subconscious, after which SCP-1230-1 is able to manipulate it remotely."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "other",
+      "target": "beings with an imagination",
+      "trigger": "the being has an imagination",
+      "persistence": "article-defined",
+      "constraints": [
+        "the being has an imagination",
+        "most creatures such as animals would not be affected"
+      ],
+      "evidence": {
+        "revision": 52,
+        "section": "Experiment-1230-02",
+        "locator": "SCP-1230-1 explained to a subsequent dreamer that it is actually only able to affect beings “with an imagination” and that most creatures such as animals would not be affected."
       }
     }
   ],

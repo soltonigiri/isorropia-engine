@@ -24,48 +24,63 @@
     "tickle-monster"
   ],
   "themes": [
-    "biological",
-    "heartwarming",
-    "tactile"
+    "comfort-amid-danger",
+    "care-and-containment",
+    "unintended-consequences"
   ],
   "effects": [
     {
-      "domain": "biology",
-      "operation": "alter",
-      "target": "organism",
-      "trigger": "exposure",
-      "persistence": "variable",
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "a person touching the surface",
+      "trigger": "touching SCP-999's surface",
+      "persistence": "lasts long after separation from the creature",
       "constraints": [],
       "evidence": {
         "revision": 40,
-        "section": "metadata.tags",
-        "locator": "tag:biological"
+        "section": "Description",
+        "locator": "Simply touching SCP-999’s surface causes an immediate mild euphoria, which intensifies the longer one is exposed to SCP-999, and lasts long after separation from the creature."
       }
     },
     {
       "domain": "cognition",
-      "operation": "calm",
-      "target": "subject",
-      "trigger": "interaction",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "transform",
+      "target": "outlook on life",
+      "trigger": "multiple interactions with SCP-999",
+      "persistence": "article-defined",
+      "constraints": [
+        "The person is suffering from crippling depression or PTSD."
+      ],
       "evidence": {
         "revision": 40,
-        "section": "metadata.tags",
-        "locator": "tag:heartwarming"
+        "section": "Description",
+        "locator": "Persons suffering from crippling depression or PTSD, for example, have reported having a far more positive outlook on life after multiple interactions with SCP-999."
       }
     },
     {
-      "domain": "perception",
-      "operation": "contact_trigger",
-      "target": "subject",
-      "trigger": "contact",
-      "persistence": "transient",
+      "domain": "cognition",
+      "operation": "propagate",
+      "target": "all persons within the wave’s range",
+      "trigger": "SCP-999 is removed after SCP-682 appears asleep",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 40,
-        "section": "metadata.tags",
-        "locator": "tag:tactile"
+        "section": "Addendum SCP-999-B",
+        "locator": "When SCP-999 is removed, SCP-682 immediately wakes up and unleashes an unidentifiable wave of energy from its body, all the while laughing maniacally."
+      }
+    },
+    {
+      "domain": "infrastructure",
+      "operation": "other",
+      "target": "its pen",
+      "trigger": "between 8PM-9PM for sleeping or during emergency lockdowns",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 40,
+        "section": "Special Containment Procedures",
+        "locator": "SCP-999 is allowed to freely roam the facility should it desire to, but otherwise must stay in its pen either between 8PM-9PM for sleeping, or during emergency lockdowns for its own safety."
       }
     }
   ],

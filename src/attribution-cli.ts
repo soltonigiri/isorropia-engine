@@ -12,6 +12,7 @@ for (const arg of args) {
 synchronizeAttribution({ apply: args.has('--apply') })
   .then((summary) => {
     process.stdout.write(`${JSON.stringify(summary, null, 2)}\n`);
+    if (summary.status === 'unavailable') process.exitCode = 1;
   })
   .catch((error: unknown) => {
     const message = error instanceof Error ? error.message : String(error);

@@ -28,48 +28,50 @@
     "uncontained"
   ],
   "themes": [
-    "teleportation",
-    "hostile",
-    "murder-monster"
+    "ritualized-violence",
+    "child-endangerment",
+    "institutional-concealment"
   ],
   "effects": [
     {
       "domain": "space",
       "operation": "transport",
-      "target": "entity",
-      "trigger": "activation",
-      "persistence": "transient",
-      "constraints": [],
+      "target": "locations north of 40°N latitude",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "its anomalous properties remain uncertain"
+      ],
       "evidence": {
         "revision": 42,
-        "section": "metadata.tags",
-        "locator": "tag:teleportation"
+        "section": "Description",
+        "locator": "Though the nature and extent of its anomalous properties remain uncertain, SCP-4666 appears capable of instantaneous or near-instantaneous travel to any location north of 40°N latitude, and possibly to any location on Earth."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "transport",
+      "target": "a family at a dwelling",
+      "trigger": "Night 12",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 42,
-        "section": "metadata.tags",
-        "locator": "tag:hostile"
+        "section": "Description",
+        "locator": "The first, and most common, is that SCP-4666 will kill all members of the family save for one child under the age of 8, whom it will abduct."
       }
     },
     {
-      "domain": "harm",
-      "operation": "attack",
-      "target": "life",
-      "trigger": "encounter",
-      "persistence": "variable",
+      "domain": "information",
+      "operation": "suppress",
+      "target": "public portrayal of deaths",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 42,
-        "section": "metadata.tags",
-        "locator": "tag:murder-monster"
+        "section": "Special Containment Procedures",
+        "locator": "Media coverage of family deaths attributed to SCP-4666 is to be suppressed or falsified to make said deaths appear as non-anomalous home invasion murders."
       }
     }
   ],

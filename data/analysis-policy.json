@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "source": {
+    "maximum_depth": 4,
+    "maximum_segments": 32,
+    "maximum_characters": 2000000
+  },
+  "candidates": {
+    "per_mode_limit": 5,
+    "mode_weights": {
+      "cycle": {
+        "opposite-state": 8,
+        "countermeasure-threat": 7,
+        "dependency-restoration": 6,
+        "explicit-link": 5
+      },
+      "breach": {
+        "outcome-trigger": 8,
+        "dependency-disable": 8,
+        "propagation": 7,
+        "amplification": 6,
+        "explicit-link": 5
+      },
+      "double-feature": {
+        "theme-dialogue": 7,
+        "structure-contrast": 6,
+        "motif": 4,
+        "explicit-link": 3
+      }
+    }
+  },
+  "review": {
+    "batch_size": 10,
+    "maximum_b_bridges": 1,
+    "maximum_c_bridges": 2
+  }
+}

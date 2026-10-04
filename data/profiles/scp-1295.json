@@ -26,48 +26,82 @@
     "transfiguration"
   ],
   "themes": [
-    "mind-affecting",
-    "religious-fiction",
-    "sapient"
+    "routine",
+    "embodied-fear",
+    "containment-through-normalcy"
   ],
   "effects": [
     {
       "domain": "cognition",
-      "operation": "influence",
-      "target": "subject",
-      "trigger": "exposure",
-      "persistence": "variable",
-      "constraints": [],
+      "operation": "disable",
+      "target": "self preservation instincts",
+      "trigger": "If prevented access or removed from the diner against its will",
+      "persistence": "begins between five (5) and ten (10) minutes after removal",
+      "constraints": [
+        "SCP-1295-1 is prevented access to the diner or removed from it against its will"
+      ],
       "evidence": {
         "revision": 21,
-        "section": "metadata.tags",
-        "locator": "tag:mind-affecting"
-      }
-    },
-    {
-      "domain": "belief",
-      "operation": "influence",
-      "target": "worshipper",
-      "trigger": "ritual",
-      "persistence": "persistent",
-      "constraints": [],
-      "evidence": {
-        "revision": 21,
-        "section": "metadata.tags",
-        "locator": "tag:religious-fiction"
+        "section": "Description",
+        "locator": "Those caught in an area beginning with approx. one hundred (100) meters from SCP-1295-1 exhibit extreme lethargy and complete lack of any self preservation instincts, making even a simple accident potentially lethal."
       }
     },
     {
       "domain": "cognition",
-      "operation": "communicate",
-      "target": "observer",
-      "trigger": "interaction",
-      "persistence": "transient",
+      "operation": "disable",
+      "target": "edible and inedible matter",
+      "trigger": "If prevented access or removed from the diner against its will",
+      "persistence": "begins between two (2) and three (3) hours after removal",
+      "constraints": [
+        "SCP-1295-2 is prevented access to the diner or removed from it against its will"
+      ],
+      "evidence": {
+        "revision": 21,
+        "section": "Description",
+        "locator": "Those caught in an area beginning with approx. five hundred (500) meters from SCP-1295-2 lose their ability to distinguish between edible and inedible matter, and will often endanger themselves or others in attempts to consume unsuitable nourishment (metal, toxic waste, living flesh, etc.)."
+      }
+    },
+    {
+      "domain": "biology",
+      "operation": "disable",
+      "target": "microbial lifeforms associated with the bodies",
+      "trigger": "If prevented access or removed from the diner against its will",
+      "persistence": "immediately after its removal",
+      "constraints": [
+        "SCP-1295-3 is prevented access to the diner or removed from it against its will"
+      ],
+      "evidence": {
+        "revision": 21,
+        "section": "Description",
+        "locator": "The bodies of those caught in an area of approx. fifty (50) meters around SCP-1295-3 will lose all microbial lifeforms associated with them."
+      }
+    },
+    {
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "self-preservation instincts",
+      "trigger": "If prevented access or removed from the diner against its will",
+      "persistence": "begins thirty (30) to forty (40) minutes after removal",
+      "constraints": [
+        "SCP-1295-4 is prevented access to the diner or removed from it against its will"
+      ],
+      "evidence": {
+        "revision": 21,
+        "section": "Description",
+        "locator": "Those caught in an area beginning with approx. one hundred and fifty (150) meters from SCP-1295-4 will experience a sharp increase of self-preservation instincts, to the point of paranoia and acute hypochondria."
+      }
+    },
+    {
+      "domain": "other",
+      "operation": "suppress",
+      "target": "containment",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 21,
-        "section": "metadata.tags",
-        "locator": "tag:sapient"
+        "section": "Special Containment Procedures",
+        "locator": "SCP-1295's daily routine is not to be interrupted under any circumstances."
       }
     }
   ],

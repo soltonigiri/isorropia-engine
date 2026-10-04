@@ -3,10 +3,15 @@ import { randomUUID } from 'node:crypto';
 import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
+import { createRequire } from 'node:module';
 import { loadDataset, defaultDataDirectory } from './data.js';
 import { IsorropiaEngine } from './engine.js';
 import { MODES, type Mode, type PairResult } from './types.js';
 import { validateDataset } from './validate.js';
+import { analysisPolicyDigests } from './analysis-policy.js';
+
+const ARTIFACT_SCHEMA_VERSION = 3;
+const packageJson = createRequire(import.meta.url)('../package.json') as { version: string };
 
 export async function buildArtifacts(options: {
   dataDirectory?: string;
@@ -25,6 +30,23 @@ export async function buildArtifacts(options: {
   }
   await mkdir(outputDirectory, { recursive: true });
   const engine = new IsorropiaEngine(dataset);
+  const policyDigests = analysisPolicyDigests({
+    policy: dataset.analysisPolicy,
+    ontology: dataset.semanticOntology,
+  });
+  const artifactMetadata = {
+    artifact_schema_version: ARTIFACT_SCHEMA_VERSION,
+    ranking_setting: 'rough',
+    default_confidence_threshold: dataset.scoringPolicy.setting_thresholds['1:1'],
+    tool_version: packageJson.version,
+    database_version: dataset.manifest.database_version,
+    rule_version: engine.ruleVersion,
+    source_revision: process.env.SOURCE_REVISION ?? process.env.GITHUB_SHA ?? 'unknown',
+    source_policy_digest: policyDigests.source,
+    semantic_policy_digest: policyDigests.semantic,
+    candidate_policy_digest: policyDigests.candidate,
+    review_policy_digest: policyDigests.review,
+  } as const;
   const rankings = Object.fromEntries(
     dataset.profiles.map((profile) => [
       profile.page_id,
@@ -44,6 +66,7 @@ export async function buildArtifacts(options: {
 
   const jsonPath = path.join(outputDirectory, 'isorropia-data.json.gz');
   const payload = JSON.stringify({
+    artifact_metadata: artifactMetadata,
     manifest: dataset.manifest,
     profiles: dataset.profiles,
     rules: dataset.rules,
@@ -51,10 +74,13 @@ export async function buildArtifacts(options: {
     semantics: dataset.semantics,
     interactions: dataset.interactions,
     selection_policy: dataset.selectionPolicy,
+    scoring_policy: dataset.scoringPolicy,
+    semantic_ontology: dataset.semanticOntology,
+    analysis_policy: dataset.analysisPolicy,
     rankings,
     golden: dataset.golden,
   });
-  const compressed = gzipSync(Buffer.from(payload));
+  const compressed = gzipSync(Buffer.from(payload), { level: 9 });
   await atomicWrite(jsonPath, compressed);
   const decoded = JSON.parse(gunzipSync(await readFile(jsonPath)).toString('utf8')) as {
     profiles?: unknown[];
@@ -124,7 +150,9 @@ export async function buildArtifacts(options: {
       const insertMetadata = database.prepare(
         'INSERT INTO metadata (key, value) VALUES (?, ?)',
       );
-      insertMetadata.run('database_version', dataset.manifest.database_version);
+      for (const [key, value] of Object.entries(artifactMetadata)) {
+        insertMetadata.run(key, String(value));
+      }
       insertMetadata.run('manifest', JSON.stringify(dataset.manifest));
       const insertProfile = database.prepare(
         'INSERT INTO profiles (page_id, scp_number, title, url, source_revision, profile_json) VALUES (?, ?, ?, ?, ?, ?)',

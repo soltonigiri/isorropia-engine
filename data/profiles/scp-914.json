@@ -23,48 +23,50 @@
     "transfiguration"
   ],
   "themes": [
-    "transfiguration",
-    "clockwork",
-    "sapient"
+    "experimental-risk",
+    "procedural-control",
+    "unpredictable-transformation"
   ],
   "effects": [
     {
-      "domain": "biology",
+      "domain": "other",
       "operation": "transform",
-      "target": "body",
-      "trigger": "exposure",
-      "persistence": "persistent",
+      "target": "the object in the booth",
+      "trigger": "an object is placed in the Intake Booth, the knob is turned to any position, and the key wound up",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 52,
-        "section": "metadata.tags",
-        "locator": "tag:transfiguration"
+        "section": "Description",
+        "locator": "If the knob is turned to any position and the key wound up, SCP-914 will “refine” the object in the booth."
       }
     },
     {
-      "domain": "technology",
-      "operation": "construct",
-      "target": "mechanism",
-      "trigger": "operation",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "suppress",
+      "target": "SCP-914",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
+      "constraints": [
+        "no testing of biological matter is allowed"
+      ],
       "evidence": {
         "revision": 52,
-        "section": "metadata.tags",
-        "locator": "tag:clockwork"
+        "section": "Special Containment Procedures",
+        "locator": "WARNING: At this time, no testing of biological matter is allowed."
       }
     },
     {
-      "domain": "cognition",
-      "operation": "communicate",
-      "target": "observer",
-      "trigger": "interaction",
-      "persistence": "transient",
+      "domain": "infrastructure",
+      "operation": "propagate",
+      "target": "three SCP areas",
+      "trigger": "Input: Subject D-187, male Caucasian, 28 years old, 63kg, 173cm tall.  (setting: Very Fine)",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 52,
-        "section": "metadata.tags",
-        "locator": "tag:sapient"
+        "section": "Document # 109-B:117: Dr.███ and Dr.███████ Test Log",
+        "locator": "Subject causes containment failure of three SCP areas in continued escape attempt."
       }
     }
   ],

@@ -3,14 +3,13 @@ import { refreshData } from './refresh.js';
 
 const args = new Set(process.argv.slice(2));
 for (const arg of args) {
-  if (arg !== '--bootstrap' && arg !== '--check') {
+  if (arg !== '--check') {
     process.stderr.write(`Error: unknown option ${arg}\n`);
     process.exit(1);
   }
 }
 
 refreshData({
-  bootstrap: args.has('--bootstrap'),
   check: args.has('--check'),
 })
   .then((summary) => {

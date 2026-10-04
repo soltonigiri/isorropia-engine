@@ -23,48 +23,50 @@
     "subterranean"
   ],
   "themes": [
-    "city",
-    "k-class-scenario",
-    "subterranean"
+    "failed-refuge",
+    "authoritarian-survivalism",
+    "urban-decay"
   ],
   "effects": [
     {
-      "domain": "space",
-      "operation": "contain",
-      "target": "population",
-      "trigger": "entry",
-      "persistence": "persistent",
+      "domain": "biology",
+      "operation": "activate",
+      "target": "Foundation personnel",
+      "trigger": "Foundation personnel are sighted",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 87,
-        "section": "metadata.tags",
-        "locator": "tag:city"
+        "section": "Description",
+        "locator": "They are dressed in a uniform similar to Victorian-era police and are extremely hostile towards Foundation personnel, attacking them on sight with improvised weapons."
       }
     },
     {
-      "domain": "civilization",
-      "operation": "destabilize",
-      "target": "baseline_reality",
-      "trigger": "event",
-      "persistence": "persistent",
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "regular consumers",
+      "trigger": "regular consumption",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 87,
-        "section": "metadata.tags",
-        "locator": "tag:k-class-scenario"
+        "section": "SCP-1678-D Overview",
+        "locator": "SCP-1678-D appears to be purposely engineered to manipulate the psyche of regular consumers."
       }
     },
     {
-      "domain": "space",
-      "operation": "contain",
-      "target": "occupant",
-      "trigger": "entry",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "biology",
+      "operation": "transform",
+      "target": "users",
+      "trigger": "more than six weeks",
+      "persistence": "article-defined",
+      "constraints": [
+        "survival is attempted by consuming SCP-1678-D alone for more than six weeks"
+      ],
       "evidence": {
         "revision": 87,
-        "section": "metadata.tags",
-        "locator": "tag:subterranean"
+        "section": "SCP-1678-D Overview",
+        "locator": "However, Foundation researchers have advised that over a period of more than six weeks users of SCP-1678-D will become dangerously underweight due to low levels of fat and protein within SCP-1678-D and are at strong likelihood of contracting illnesses such as scurvy if survival is attempted by consuming SCP-1678-D alone."
       }
     }
   ],

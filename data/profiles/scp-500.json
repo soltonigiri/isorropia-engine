@@ -19,48 +19,37 @@
     "scp"
   ],
   "themes": [
-    "medical",
-    "chemical",
-    "artifact"
+    "scarcity",
+    "medical-miracle",
+    "bureaucratic-stewardship"
   ],
   "effects": [
     {
       "domain": "biology",
       "operation": "restore",
-      "target": "organism",
-      "trigger": "administration",
-      "persistence": "persistent",
-      "constraints": [],
+      "target": "the subject",
+      "trigger": "oral ingestion",
+      "persistence": "within two hours",
+      "constraints": [
+        "exact time depends on severity and amount of the subject's conditions"
+      ],
       "evidence": {
         "revision": 51,
-        "section": "metadata.tags",
-        "locator": "tag:medical"
+        "section": "Description",
+        "locator": "One pill, when taken orally, effectively cures the subject of all diseases within two hours, exact time depending on the severity and amount of the subject's conditions."
       }
     },
     {
-      "domain": "matter",
-      "operation": "alter",
-      "target": "material",
-      "trigger": "contact",
-      "persistence": "variable",
+      "domain": "biology",
+      "operation": "other",
+      "target": "additional SCP-500-like material",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 51,
-        "section": "metadata.tags",
-        "locator": "tag:chemical"
-      }
-    },
-    {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "user",
-      "trigger": "contact",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 51,
-        "section": "metadata.tags",
-        "locator": "tag:artifact"
+        "section": "Description",
+        "locator": "Despite extensive trials, all attempts at synthesizing more of what is thought to be the active ingredient of the pills have been unsuccessful."
       }
     }
   ],

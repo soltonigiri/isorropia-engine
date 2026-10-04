@@ -1,0 +1,29 @@
+name: Data correction
+description: Correct a profile, semantic claim, or interaction record.
+title: "data: "
+body:
+  - type: input
+    id: page
+    attributes:
+      label: SCP page
+      placeholder: scp-000
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Source revision
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Correction
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Source evidence
+    validations:
+      required: true

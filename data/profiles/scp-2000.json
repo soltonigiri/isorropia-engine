@@ -31,48 +31,48 @@
     "the-administrator"
   ],
   "themes": [
-    "foundation-made",
-    "genetic",
-    "memory-affecting"
+    "civilizational-restoration",
+    "continuity",
+    "institutional-secrecy"
   ],
   "effects": [
     {
-      "domain": "technology",
-      "operation": "construct",
-      "target": "anomalous_system",
-      "trigger": "operation",
-      "persistence": "persistent",
+      "domain": "infrastructure",
+      "operation": "restore",
+      "target": "human civilization",
+      "trigger": "a K-Class end-of-the-world scenario could not be averted",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 68,
-        "section": "metadata.tags",
-        "locator": "tag:foundation-made"
+        "section": "Description",
+        "locator": "SCP-2000 is a subterranean Foundation installation originally constructed sometime in the last ███ years for the purpose of reconstructing civilization in the event that a K-Class end-of-the-world scenario could not be averted in time to prevent humanity's extinction or near-extinction."
       }
     },
     {
       "domain": "biology",
-      "operation": "alter",
-      "target": "genome",
-      "trigger": "procedure",
-      "persistence": "persistent",
+      "operation": "restore",
+      "target": "human civilization",
+      "trigger": "article-defined-condition",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 68,
-        "section": "metadata.tags",
-        "locator": "tag:genetic"
+        "section": "Description",
+        "locator": "Utilizing an underground Riemannian transit pipe to collect raw material from various hot springs and underground magma flows in the area, and a computer memory bank housing data on all known human alleles, this system is capable of recreating any lost human genome or generating as many new and unique genomes as necessary to repopulate human civilization."
       }
     },
     {
-      "domain": "memory",
-      "operation": "alter",
-      "target": "memory",
-      "trigger": "exposure",
-      "persistence": "variable",
+      "domain": "cognition",
+      "operation": "suppress",
+      "target": "all reconstructed humans",
+      "trigger": "At the conclusion of Procedure Lazarus-01",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 68,
-        "section": "metadata.tags",
-        "locator": "tag:memory-affecting"
+        "section": "Description",
+        "locator": "At the conclusion of Procedure Lazarus-01, amnestic agent ENUI-5 will be released en-masse, causing all reconstructed humans to forget their affiliation with Foundation assets."
       }
     }
   ],

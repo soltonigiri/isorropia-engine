@@ -23,48 +23,54 @@
     "tool"
   ],
   "themes": [
-    "portal",
-    "tool",
-    "extradimensional"
+    "thresholds",
+    "containment-uncertainty",
+    "exploration-risk"
   ],
   "effects": [
     {
       "domain": "space",
-      "operation": "transport",
-      "target": "traveler",
-      "trigger": "threshold_crossing",
-      "persistence": "transient",
-      "constraints": [],
+      "operation": "activate",
+      "target": "any door lock requiring a key in the coordinate area",
+      "trigger": "SCP-860 is used in an eligible door lock",
+      "persistence": "article-defined",
+      "constraints": [
+        "lock requires a key",
+        "lock is located in the area of the given coordinates",
+        "lock is attached to a door",
+        "only works on door locks",
+        "does not work on other locking devices"
+      ],
       "evidence": {
         "revision": 35,
-        "section": "metadata.tags",
-        "locator": "tag:portal"
-      }
-    },
-    {
-      "domain": "technology",
-      "operation": "enable",
-      "target": "user",
-      "trigger": "operation",
-      "persistence": "transient",
-      "constraints": [],
-      "evidence": {
-        "revision": 35,
-        "section": "metadata.tags",
-        "locator": "tag:tool"
+        "section": "Description",
+        "locator": "SCP-860 can fit in any door lock that requires a key located in the area of the given coordinates, and will function identically to the correct key for that lock."
       }
     },
     {
       "domain": "space",
-      "operation": "bridge",
-      "target": "dimension",
-      "trigger": "threshold_crossing",
-      "persistence": "variable",
+      "operation": "transport",
+      "target": "SCP-860-1",
+      "trigger": "SCP-860 is used to unlock and open a door",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 35,
-        "section": "metadata.tags",
-        "locator": "tag:extradimensional"
+        "section": "Description",
+        "locator": "When SCP-860 is used to unlock and open a door, the door does not lead to its usual destination."
+      }
+    },
+    {
+      "domain": "space",
+      "operation": "disable",
+      "target": "person entering SCP-860-1",
+      "trigger": "any person enters SCP-860-1",
+      "persistence": "article-defined",
+      "constraints": [],
+      "evidence": {
+        "revision": 35,
+        "section": "Description",
+        "locator": "As soon as any person enters SCP-860-1, the door automatically closes."
       }
     }
   ],

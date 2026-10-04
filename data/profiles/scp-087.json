@@ -25,48 +25,49 @@
     "spatial"
   ],
   "themes": [
-    "spatial",
-    "acoustic",
-    "location"
+    "unknown-depth",
+    "exploratory-dread"
   ],
   "effects": [
     {
       "domain": "space",
-      "operation": "distort",
-      "target": "space",
-      "trigger": "proximity",
-      "persistence": "persistent",
+      "operation": "other",
+      "target": "subjects",
+      "trigger": "any attempts to descend the staircase",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 54,
-        "section": "metadata.tags",
-        "locator": "tag:spatial"
+        "section": "Description",
+        "locator": "However, any attempts to descend the staircase have failed to bring subjects closer to the source."
       }
     },
     {
       "domain": "perception",
-      "operation": "auditory_trigger",
-      "target": "observer",
-      "trigger": "audition",
-      "persistence": "transient",
+      "operation": "suppress",
+      "target": "lighting sources brighter than 75 watts",
+      "trigger": "Lighting sources brighter than 75 watts",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 54,
-        "section": "metadata.tags",
-        "locator": "tag:acoustic"
+        "section": "Description",
+        "locator": "Lighting sources brighter than 75 watts have shown to be ineffective, as SCP-087 seems to absorb excess light."
       }
     },
     {
-      "domain": "space",
-      "operation": "contain",
-      "target": "occupant",
-      "trigger": "entry",
-      "persistence": "persistent",
-      "constraints": [],
+      "domain": "cognition",
+      "operation": "other",
+      "target": "subjects",
+      "trigger": "when faced with SCP-087-1",
+      "persistence": "article-defined",
+      "constraints": [
+        "It is undetermined whether said feelings are abnormal or simply natural reactions."
+      ],
       "evidence": {
         "revision": 54,
-        "section": "metadata.tags",
-        "locator": "tag:location"
+        "section": "Description",
+        "locator": "Subjects exhibit feelings of intense paranoia and fear when faced with SCP-087-1, but it is undetermined whether said feelings are abnormal or simply natural reactions."
       }
     }
   ],

@@ -21,48 +21,48 @@
     "virus"
   ],
   "themes": [
-    "virus",
-    "transfiguration",
-    "clockwork"
+    "contagion",
+    "bodily-transformation",
+    "hidden-infection"
   ],
   "effects": [
     {
       "domain": "biology",
-      "operation": "infect",
-      "target": "organism",
+      "operation": "propagate",
+      "target": "all organisms in the kingdom Animalia",
       "trigger": "exposure",
-      "persistence": "persistent",
+      "persistence": "can survive for years outside the host body",
       "constraints": [],
       "evidence": {
         "revision": 41,
-        "section": "metadata.tags",
-        "locator": "tag:virus"
+        "section": "Description",
+        "locator": "It affects all organisms in the kingdom Animalia, and can be spread via touch or contact with bodily fluid."
       }
     },
     {
       "domain": "biology",
       "operation": "transform",
-      "target": "body",
-      "trigger": "exposure",
-      "persistence": "persistent",
+      "target": "organic tissue",
+      "trigger": "infection",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 41,
-        "section": "metadata.tags",
-        "locator": "tag:transfiguration"
+        "section": "Description",
+        "locator": "SCP-217 alters the biochemistry of organic tissue, causing organic matter to re-arrange into a form of “organic metal”."
       }
     },
     {
-      "domain": "technology",
-      "operation": "construct",
-      "target": "mechanism",
-      "trigger": "operation",
-      "persistence": "persistent",
+      "domain": "cognition",
+      "operation": "transform",
+      "target": "infected subjects",
+      "trigger": "middle to advanced infection",
+      "persistence": "article-defined",
       "constraints": [],
       "evidence": {
         "revision": 41,
-        "section": "metadata.tags",
-        "locator": "tag:clockwork"
+        "section": "Description",
+        "locator": "The mental state of those in middle to advanced stages of infection has been shown to be much diminished."
       }
     }
   ],
